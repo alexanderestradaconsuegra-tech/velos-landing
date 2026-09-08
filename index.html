@@ -259,6 +259,32 @@ nav{
 
 /* production */
 .hcard.prod .hc-body{background:#fff;gap:0;padding:14px 14px 15px}
+.hcard.cont .hc-head{background:#123B47}
+.hcard.dash .hc-head{background:#0F4A5C}
+
+/* ── FRANJA "TAMBIÉN HACEMOS" ── */
+.scope-band{
+  border-top:1px solid var(--border);background:var(--bg2);
+  padding:44px 0;
+}
+.scope-inner{
+  display:flex;align-items:center;justify-content:center;gap:22px;
+  flex-wrap:wrap;text-align:center;
+}
+.scope-text{font-size:14.5px;color:var(--text2);line-height:1.6;max-width:480px}
+.scope-text strong{color:var(--text);font-weight:700}
+.scope-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.scope-pill{
+  padding:6px 15px;background:#fff;border:1px solid var(--border2);border-radius:999px;
+  font-size:12.5px;font-weight:600;color:var(--teal);white-space:nowrap;
+}
+.scope-band a.scope-link{
+  font-size:13.5px;font-weight:700;color:var(--teal);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.scope-band a.scope-link:hover{color:var(--teal-mid)}
+.scope-band a.scope-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){.scope-inner{flex-direction:column;gap:16px}}
 .prod-hero{text-align:center;padding:2px 0 12px;border-bottom:1px solid var(--border);margin-bottom:11px}
 .prod-pct{
   font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;
@@ -828,7 +854,7 @@ summary{list-style:none}
   <div class="container">
     <div class="hero-badge">
       <span class="live-dot"></span>
-      Sistema de gestión a medida · by Autix
+      Autix — Sistemas y agentes de IA a medida
     </div>
     <h1>La plataforma central que conecta,<br>automatiza y <span class="grad">opera tu empresa</span><br>en tiempo real.</h1>
     <p class="hero-sub">velOS consolida producción, inventario, rutas y finanzas en una sola arquitectura a medida. Controla cada proceso desde una plataforma centralizada o comanda tu negocio en tiempo real mediante agentes dedicados en Telegram y WhatsApp.</p>
@@ -935,12 +961,65 @@ summary{list-style:none}
           </div>
         </div>
 
+        <div class="hcard prod cont">
+          <div class="hc-head">
+            <span class="hc-av"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span>
+            <div>
+              <div class="hc-name">Contabilidad al día</div>
+              <div class="hc-sub">Cierre automático del mes</div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="prod-hero">
+              <div class="prod-pct">$8,2M</div>
+              <div class="prod-lbl">Ingresos del mes</div>
+              <span class="prod-up">▲ 12% vs. mes anterior</span>
+            </div>
+            <div class="prod-row"><span>Egresos</span><b>$3,1M</b></div>
+            <div class="prod-bar"><i style="width:62%"></i></div>
+            <div class="prod-row"><span>Resultado neto</span><b>$5,1M</b></div>
+            <div class="prod-row"><span>Boletas emitidas</span><b>184</b></div>
+            <div class="prod-status"><i></i>Actualizado hace 2 min</div>
+          </div>
+        </div>
+
+        <div class="hcard prod dash">
+          <div class="hc-head">
+            <span class="hc-av"><svg aria-hidden="true"><use href="#i-chart"/></svg></span>
+            <div>
+              <div class="hc-name">Dashboard en vivo</div>
+              <div class="hc-sub">KPIs de toda tu operación</div>
+            </div>
+          </div>
+          <div class="hc-body">
+            <div class="prod-hero">
+              <div class="prod-pct">$1,8M</div>
+              <div class="prod-lbl">Ventas de hoy</div>
+              <span class="prod-up">▲ 18% vs. ayer</span>
+            </div>
+            <div class="bars" style="margin:4px 0 6px">
+              <div class="bar" style="height:60%"></div>
+              <div class="bar" style="height:75%"></div>
+              <div class="bar" style="height:45%"></div>
+              <div class="bar" style="height:90%"></div>
+              <div class="bar low" style="height:35%"></div>
+              <div class="bar" style="height:70%"></div>
+              <div class="bar" style="height:97%"></div>
+            </div>
+            <div class="prod-row"><span>Pedidos pendientes</span><b>7</b></div>
+            <div class="prod-row"><span>Stock bajo</span><b>2</b></div>
+            <div class="prod-status"><i></i>Actualizado en tiempo real</div>
+          </div>
+        </div>
+
       </div>
 
       <div class="hc-dots" id="heroDots" role="tablist" aria-label="Seleccionar pantalla">
         <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 1: atención — agente de WhatsApp"></button>
         <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 2: operación — control de producción"></button>
         <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 3: logística y cobranza"></button>
+        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 4: contabilidad al día"></button>
+        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 5: dashboard en vivo"></button>
       </div>
     </div>
   </div>
@@ -1663,6 +1742,24 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
     </div>
   </div>
 </section>
+
+<!-- ═══ TAMBIÉN HACEMOS ═══ -->
+<div class="scope-band">
+  <div class="container">
+    <div class="scope-inner">
+      <p class="scope-text"><strong>velOS es solo un ejemplo de lo que hacemos.</strong> Autix construye sistemas completos a medida o solo el agente de IA que necesitas — para cualquier rubro, no solo producción y reparto.</p>
+      <div class="scope-pills">
+        <span class="scope-pill">Sistemas a medida</span>
+        <span class="scope-pill">Solo agentes IA</span>
+        <span class="scope-pill">Cualquier rubro</span>
+      </div>
+      <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener" class="scope-link">
+        Cuéntanos tu caso
+        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ CTA ═══ -->
 <section class="cta" id="contacto">
