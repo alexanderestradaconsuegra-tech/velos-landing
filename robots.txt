@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://TU-DOMINIO-AQUI/sitemap.xml
+Sitemap: https://autix.pro/sitemap.xml
