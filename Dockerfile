@@ -4,6 +4,5 @@ COPY index.html /usr/share/nginx/html/index.html
 COPY robots.txt /usr/share/nginx/html/robots.txt
 COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY og.png /usr/share/nginx/html/og.png
-COPY dashboard.webp /usr/share/nginx/html/dashboard.webp
 
 EXPOSE 80
