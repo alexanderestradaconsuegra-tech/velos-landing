@@ -3,13 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2D5F6E">
 <title>velOS — El sistema que dirige tu empresa</title>
 <meta name="description" content="velOS es el sistema de gestión a medida para empresas con producción, ventas, reparto y equipos. Incluye dos agentes que operan tu negocio desde Telegram y atienden a tus clientes por WhatsApp.">
 <meta property="og:title" content="velOS — Toda tu operación en un mensaje">
 <meta property="og:description" content="Producción, stock, ventas, reparto y cobranza en un solo sistema. Con agentes que operan tu negocio desde Telegram y atienden clientes por WhatsApp.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="velOS by Autix">
+<meta property="og:locale" content="es_CL">
 <meta property="og:url" content="https://autix.pro/">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://autix.pro/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="velOS by Autix — producción, stock, ventas, reparto y cobranza en un solo sistema.">
+<meta name="twitter:image" content="https://autix.pro/og.png">
 <link rel="canonical" href="https://autix.pro/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232D5F6E'/><text x='6' y='24' font-family='system-ui' font-weight='900' font-size='20' fill='white'>v</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +63,9 @@ img,svg{max-width:100%}
 :focus-visible{outline:2.5px solid var(--cyan);outline-offset:3px;border-radius:6px}
 
 .container{max-width:1140px;margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--teal);color:#fff;
+  padding:13px 22px;border-radius:0 0 12px 0;font-weight:700;font-size:14px}
+.skip:focus{left:0}
 .grad{
   background:linear-gradient(135deg,var(--teal) 0%,var(--cyan) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
@@ -266,6 +277,23 @@ nav{
 .hcard.prod .hc-body{background:#fff;gap:0;padding:14px 14px 15px}
 .hcard.cont .hc-head{background:#123B47}
 .hcard.dash .hc-head{background:#0F4A5C}
+
+/* ── PROCESO ── */
+.procgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pstep{
+  background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:28px 26px 26px;
+}
+.ps-n{
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;
+  color:var(--teal-light);letter-spacing:.08em;margin-bottom:14px;
+}
+.ps-k{font-size:17.5px;font-weight:800;letter-spacing:-.022em;margin-bottom:9px;line-height:1.25}
+.ps-d{font-size:14px;color:var(--text2);line-height:1.62}
+.proc-note{
+  margin-top:20px;text-align:center;font-size:13.5px;color:var(--muted);line-height:1.6;
+}
+@media(max-width:760px){.procgrid{grid-template-columns:1fr}}
 
 /* ── FRANJA "TAMBIÉN HACEMOS" ── */
 .scope-band{
@@ -823,6 +851,8 @@ summary{list-style:none}
   </defs>
 </svg>
 
+<a class="skip" href="#main">Saltar al contenido</a>
+
 <!-- ═══ NAV ═══ -->
 <nav>
   <div class="nav-inner">
@@ -831,10 +861,11 @@ summary{list-style:none}
       <div class="nav-by">by Autix</div>
     </div>
     <div class="nav-links">
-      <a href="#agentes">Agentes</a>
       <a href="#modulos">Módulos</a>
+      <a href="#agentes">Agentes</a>
       <a href="#caso">Caso real</a>
       <a href="#faq">Preguntas</a>
+      <a href="#proceso">Proceso</a>
     </div>
     <div class="nav-right">
       <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conocer%20velOS" target="_blank" rel="noopener" class="btn btn-wa">
@@ -846,7 +877,7 @@ summary{list-style:none}
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section class="hero">
+<section class="hero" id="main">
   <div class="container">
     <div class="hero-badge">
       <span class="live-dot"></span>
@@ -859,7 +890,7 @@ summary{list-style:none}
         <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
         Solicitar una demo
       </a>
-      <a href="#agentes" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+      <a href="#modulos" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
     </div>
 
     <div class="hero-carousel">
@@ -1045,6 +1076,101 @@ summary{list-style:none}
   </div>
 </div>
 
+<!-- ═══ MÓDULOS ═══ -->
+<section id="modulos" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head center">
+      <div class="eyebrow">Plataforma completa</div>
+      <h2>16 módulos que <span class="grad">se hablan entre sí</span></h2>
+      <p>Cada módulo alimenta al siguiente. Nada se carga dos veces, nada queda descuadrado.</p>
+    </div>
+
+    <div class="mgrid">
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Producción</div><div class="mt-v on">95,8% rendimiento</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wheat"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Insumos</div><div class="mt-v">340 L en planta</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-package"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Stock</div><div class="mt-v warn">2 bajo el mínimo</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-scale"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Productos y precios</div><div class="mt-v">84 activos</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Pedidos</div><div class="mt-v warn">7 pendientes hoy</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-qr"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Terminal de ventas</div><div class="mt-v">boleta en 20 seg</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Ventas</div><div class="mt-v on">$1,8M hoy</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Clientes</div><div class="mt-v">312 con ficha</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Cobranza</div><div class="mt-v warn">$250K por cobrar</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Reparto y rutas</div><div class="mt-v">2 de 4 entregadas</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-rotate"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Devoluciones</div><div class="mt-v">repone stock solo</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-building"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Proveedores</div><div class="mt-v">18 activos</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Cuentas por pagar</div><div class="mt-v warn">4 vencen esta semana</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-receipt"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Gastos</div><div class="mt-v">$3,1M este mes</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Contabilidad</div><div class="mt-v">cierre automático</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Usuarios y roles</div><div class="mt-v">4 perfiles</div></div>
+      </div>
+    </div>
+
+    <div class="mflow">
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
+        <div><div class="mf-k">Produces</div><div class="mf-d">Bajan los insumos, suben los kilos al stock.</div></div>
+      </div>
+      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <div><div class="mf-k">Vendes</div><div class="mf-d">Baja el stock y queda registrada la deuda.</div></div>
+      </div>
+      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
+        <div><div class="mf-k">Entregas y cobras</div><div class="mf-d">La deuda se cierra y la caja cuadra sola.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ AGENTS ═══ -->
 <section id="agentes">
   <div class="container">
@@ -1212,101 +1338,6 @@ A cobrar      $247.000<span class="t">08:16</span></div>
   </div>
 </section>
 
-<!-- ═══ MODULES / BENTO ═══ -->
-<section id="modulos" style="background:var(--bg2)">
-  <div class="container">
-    <div class="sec-head center">
-      <div class="eyebrow">Plataforma completa</div>
-      <h2>16 módulos que <span class="grad">se hablan entre sí</span></h2>
-      <p>Cada módulo alimenta al siguiente. Nada se carga dos veces, nada queda descuadrado.</p>
-    </div>
-
-    <div class="mgrid">
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Producción</div><div class="mt-v on">95,8% rendimiento</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wheat"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Insumos</div><div class="mt-v">340 L en planta</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-package"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Stock</div><div class="mt-v warn">2 bajo el mínimo</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-scale"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Productos y precios</div><div class="mt-v">84 activos</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clipboard"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Pedidos</div><div class="mt-v warn">7 pendientes hoy</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-qr"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Terminal de ventas</div><div class="mt-v">boleta en 20 seg</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-chart"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Ventas</div><div class="mt-v on">$1,8M hoy</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Clientes</div><div class="mt-v">312 con ficha</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Cobranza</div><div class="mt-v warn">$250K por cobrar</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Reparto y rutas</div><div class="mt-v">2 de 4 entregadas</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-rotate"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Devoluciones</div><div class="mt-v">repone stock solo</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-building"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Proveedores</div><div class="mt-v">18 activos</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Cuentas por pagar</div><div class="mt-v warn">4 vencen esta semana</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-receipt"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Gastos</div><div class="mt-v">$3,1M este mes</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Contabilidad</div><div class="mt-v">cierre automático</div></div>
-      </div>
-      <div class="mtile">
-        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
-        <div class="mt-tx"><div class="mt-n">Usuarios y roles</div><div class="mt-v">4 perfiles</div></div>
-      </div>
-    </div>
-
-    <div class="mflow">
-      <div class="mf-s">
-        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
-        <div><div class="mf-k">Produces</div><div class="mf-d">Bajan los insumos, suben los kilos al stock.</div></div>
-      </div>
-      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
-      <div class="mf-s">
-        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
-        <div><div class="mf-k">Vendes</div><div class="mf-d">Baja el stock y queda registrada la deuda.</div></div>
-      </div>
-      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
-      <div class="mf-s">
-        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
-        <div><div class="mf-k">Entregas y cobras</div><div class="mf-d">La deuda se cierra y la caja cuadra sola.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ POWER ═══ -->
 <section class="power">
   <div class="power-glow"></div>
@@ -1333,19 +1364,9 @@ A cobrar      $247.000<span class="t">08:16</span></div>
           <p>Stock bajo, deuda vencida, rendimiento que cayó o pedido nuevo. La alerta te llega directo al chat.</p>
         </div>
         <div class="pcard">
-          <div class="pic"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
-          <h3>Roles y permisos</h3>
-          <p>Cada usuario ve solo lo suyo. Administración, ventas, conducción y producción con accesos separados.</p>
-        </div>
-        <div class="pcard">
           <div class="pic"><svg aria-hidden="true"><use href="#i-lock"/></svg></div>
           <h3>Tus datos son tuyos</h3>
           <p>El agente público nunca revela márgenes, costos internos, claves ni información sensible de tu empresa.</p>
-        </div>
-        <div class="pcard">
-          <div class="pic"><svg aria-hidden="true"><use href="#i-wrench"/></svg></div>
-          <h3>Construido a tu medida</h3>
-          <p>Cada módulo se diseña para cómo trabaja tu operación. No adaptas tu negocio al software — es al revés.</p>
         </div>
       </div>
     </div>
@@ -1719,6 +1740,35 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
   </div>
 </section>
 
+<!-- ═══ PROCESO ═══ -->
+<section id="proceso">
+  <div class="container">
+    <div class="sec-head center">
+      <div class="eyebrow">Cómo empezamos</div>
+      <h2>De la primera conversación<br>al sistema andando</h2>
+      <p>Tres etapas, sin sorpresas. Sabes en qué punto está tu sistema en todo momento.</p>
+    </div>
+    <div class="procgrid">
+      <div class="pstep">
+        <div class="ps-n">01</div>
+        <div class="ps-k">Levantamiento</div>
+        <div class="ps-d">Recorremos cómo trabaja tu empresa hoy: qué se produce, qué se vende, quién hace qué y en qué parte se pierde tiempo.</div>
+      </div>
+      <div class="pstep">
+        <div class="ps-n">02</div>
+        <div class="ps-k">Diseño y desarrollo</div>
+        <div class="ps-d">Construimos solo los módulos que tu operación necesita, con tus procesos y tu vocabulario. No adaptas tu negocio a una plantilla.</div>
+      </div>
+      <div class="pstep">
+        <div class="ps-n">03</div>
+        <div class="ps-k">Puesta en marcha</div>
+        <div class="ps-d">Lo dejamos andando con tu equipo y configuramos los agentes de Telegram y WhatsApp. Después seguimos evolucionándolo contigo.</div>
+      </div>
+    </div>
+    <p class="proc-note">El plazo depende del alcance — te lo damos concreto después de conocer tu operación.</p>
+  </div>
+</section>
+
 <!-- ═══ TAMBIÉN HACEMOS ═══ -->
 <div class="scope-band">
   <div class="container">
@@ -1891,8 +1941,9 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
         <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.11em">by Autix</div>
       </div>
       <div class="foot-links">
-        <a href="#agentes">Agentes</a>
         <a href="#modulos">Módulos</a>
+        <a href="#agentes">Agentes</a>
+        <a href="#proceso">Proceso</a>
         <a href="#faq">Preguntas</a>
         <a href="https://claude.ai/code/artifact/388780c6-7bbd-47dc-95f1-e2a7fe967ddd" target="_blank" rel="noopener">Cumplimiento normativo</a>
         <a href="https://wa.me/56992103974" target="_blank" rel="noopener">Contacto</a>
