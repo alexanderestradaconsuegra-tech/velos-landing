@@ -127,12 +127,13 @@ nav{
 @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(37,211,102,.22)}50%{box-shadow:0 0 0 7px rgba(37,211,102,.06)}}
 .hero h1{
   font-size:clamp(30px,4.1vw,52px);font-weight:800;letter-spacing:-.035em;
-  line-height:1.08;text-wrap:balance;margin-bottom:22px;max-width:940px;
+  line-height:1.08;margin-bottom:22px;max-width:1060px;
   margin-left:auto;margin-right:auto;
 }
+.hero h1 .h1l{display:block;text-wrap:balance}
 .hero-sub{
-  max-width:640px;margin:0 auto 38px;font-size:17px;
-  color:var(--text2);line-height:1.6;
+  max-width:680px;margin:0 auto 38px;font-size:17px;
+  color:var(--text2);line-height:1.6;text-wrap:pretty;
 }
 .hero-ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:52px}
 
@@ -883,8 +884,8 @@ summary{list-style:none}
       <span class="live-dot"></span>
       Autix — Sistemas y agentes de IA a medida
     </div>
-    <h1>La plataforma central que conecta,<br>automatiza y <span class="grad">opera tu empresa</span><br>en tiempo real.</h1>
-    <p class="hero-sub">velOS consolida producción, inventario, rutas y finanzas en una sola arquitectura a medida. Controla cada proceso desde una plataforma centralizada o comanda tu negocio en tiempo real mediante agentes dedicados en Telegram y WhatsApp.</p>
+    <h1><span class="h1l">Produces, vendes, repartes y cobras.</span><span class="h1l">velOS <span class="grad">lo conecta todo.</span></span></h1>
+    <p class="hero-sub">Un solo sistema a la medida de cómo trabaja tu empresa. Con dos agentes que lo operan desde Telegram y atienden a tus clientes por WhatsApp.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener" class="btn btn-wa btn-lg">
         <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
