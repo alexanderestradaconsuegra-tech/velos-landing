@@ -187,8 +187,9 @@ nav{
 
 /* móvil: la escena es el piso de la composición y el texto se monta sobre ella */
 @media(max-width:860px){
+  .hero{padding:0}
   .hero-stage{
-    text-align:center;padding:52px 0 392px;margin-bottom:0;
+    text-align:center;padding:40px 0 392px;margin-bottom:0;
     background-position:right bottom;background-size:auto 420px;
   }
   .hero-stage::before{
@@ -208,7 +209,7 @@ nav{
   .hero-marks{justify-content:center;gap:9px 16px;margin-top:18px}
 }
 @media(max-width:600px){
-  .hero-stage{padding:46px 0 336px;background-size:auto 360px}
+  .hero-stage{padding:32px 0 336px;background-size:auto 360px}
   .hero-stage::before{
     background:linear-gradient(to top,
       rgba(244,250,251,0) 0px,
@@ -681,9 +682,6 @@ summary{list-style:none}
 }
 @media(max-width:600px){
   section{padding:66px 0}
-  .hero{padding:64px 0 48px}
-  .hcard{width:78vw;max-width:300px}
-  .hcard.lead{transform:none}
   .phone{--pw:280px}
   .foot-in{flex-direction:column;text-align:center}
   .foot-links{gap:10px 16px}
