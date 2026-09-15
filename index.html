@@ -19,7 +19,8 @@
 <meta property="og:image:alt" content="velOS by Autix — producción, stock, ventas, reparto y cobranza en un solo sistema.">
 <meta name="twitter:image" content="https://autix.pro/og.png">
 <link rel="canonical" href="https://autix.pro/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232D5F6E'/><text x='6' y='24' font-family='system-ui' font-weight='900' font-size='20' fill='white'>v</text></svg>">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -84,7 +85,10 @@ nav{
   max-width:1140px;margin:0 auto;padding:0 28px;
   display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px;
 }
-.nav-brand{display:flex;align-items:baseline;gap:9px}
+.nav-brand{display:flex;align-items:center;gap:9px}
+.nav-mark{height:30px;width:auto;display:block;flex-shrink:0}
+@media(max-width:520px){.nav-by{display:none}.nav-mark{height:26px}}
+.nav-logo{line-height:1}
 .nav-logo{font-weight:800;font-size:23px;letter-spacing:-.035em;color:var(--teal)}
 .nav-logo span{color:var(--text)}
 .nav-by{font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
@@ -136,6 +140,44 @@ nav{
   color:var(--text2);line-height:1.6;text-wrap:pretty;
 }
 .hero-ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:52px}
+
+/* ══ HERO EN DOS COLUMNAS ══ */
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr 1fr;gap:44px;align-items:center;
+  text-align:left;margin-bottom:56px;
+}
+.hero-grid .hero-badge{margin-left:0}
+.hero-grid h1{
+  font-size:clamp(30px,3.25vw,42px);max-width:none;margin-left:0;margin-right:0;
+}
+.hero-grid .hero-sub{margin-left:0;margin-right:0;max-width:520px}
+.hero-grid .hero-ctas{justify-content:flex-start;margin-bottom:0}
+.hero-marks{
+  display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:30px;
+}
+.hmark{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--text2);white-space:nowrap}
+.hmark svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.hero-vis{position:relative;margin-right:-48px}
+.hero-vis::before{
+  content:'';position:absolute;inset:-14% -10% -10%;pointer-events:none;
+  background:radial-gradient(ellipse,rgba(61,216,240,.16),transparent 66%);
+}
+.hero-vis img{
+  position:relative;display:block;width:100%;height:auto;border-radius:var(--r-lg);
+  box-shadow:0 30px 68px -18px rgba(12,30,39,.32),0 0 0 1px rgba(12,30,39,.05);
+}
+@media(max-width:1100px){.hero-vis{margin-right:0}}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:38px;text-align:center}
+  .hero-grid .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-grid .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-grid .hero-ctas{justify-content:center}
+  .hero-marks{justify-content:center;gap:10px 18px}
+}
+@media(max-width:600px){
+  .hmark{font-size:12.5px}
+  .hero-marks{gap:8px 14px;margin-top:24px}
+}
 
 /* ══ HERO CHAT CAROUSEL ══ */
 .hero-carousel{max-width:800px;margin:0 auto;position:relative}
@@ -858,6 +900,7 @@ summary{list-style:none}
 <nav>
   <div class="nav-inner">
     <div class="nav-brand">
+      <img class="nav-mark" src="logo.png" width="63" height="36" alt="" aria-hidden="true">
       <div class="nav-logo">vel<span>OS</span></div>
       <div class="nav-by">by Autix</div>
     </div>
@@ -880,18 +923,32 @@ summary{list-style:none}
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="main">
   <div class="container">
-    <div class="hero-badge">
-      <span class="live-dot"></span>
-      Autix — Sistemas y agentes de IA a medida
-    </div>
-    <h1><span class="h1l">Produces, vendes, repartes y cobras.</span><span class="h1l">velOS <span class="grad">lo conecta todo.</span></span></h1>
-    <p class="hero-sub">Un solo sistema a la medida de cómo trabaja tu empresa. Con dos agentes que lo operan desde Telegram y atienden a tus clientes por WhatsApp.</p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener" class="btn btn-wa btn-lg">
-        <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        Solicitar una demo
-      </a>
-      <a href="#modulos" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+    <div class="hero-grid">
+      <div class="hero-txt">
+        <div class="hero-badge">
+          <span class="live-dot"></span>
+          Autix — Sistemas y agentes de IA a medida
+        </div>
+        <h1><span class="h1l">Produces, vendes, repartes y cobras.</span><span class="h1l">velOS <span class="grad">lo conecta todo.</span></span></h1>
+        <p class="hero-sub">Un solo sistema a la medida de cómo trabaja tu empresa. Con dos agentes que lo operan desde Telegram y atienden a tus clientes por WhatsApp.</p>
+        <div class="hero-ctas">
+          <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener" class="btn btn-wa btn-lg">
+            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Solicitar una demo
+          </a>
+          <a href="#modulos" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+        </div>
+        <div class="hero-marks">
+          <div class="hmark"><svg aria-hidden="true"><use href="#i-wrench"/></svg><span>100% a medida</span></div>
+          <div class="hmark"><svg aria-hidden="true"><use href="#i-bot"/></svg><span>Agentes incluidos</span></div>
+          <div class="hmark"><svg aria-hidden="true"><use href="#i-lock"/></svg><span>Datos bajo tu control</span></div>
+        </div>
+      </div>
+
+      <div class="hero-vis">
+        <img src="hero-planta.webp" width="937" height="585" fetchpriority="high"
+             alt="velOS funcionando en una planta quesera: el dashboard de producción en un notebook y el agente respondiendo por chat en un teléfono">
+      </div>
     </div>
 
     <div class="hero-carousel">
