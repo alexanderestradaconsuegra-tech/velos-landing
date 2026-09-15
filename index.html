@@ -137,147 +137,55 @@ nav{
 }
 .hero-ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:52px}
 
-/* ══ HERO CHAT CAROUSEL ══ */
-.hero-carousel{max-width:800px;margin:0 auto;position:relative}
-.hero-chats{
-  display:flex;align-items:flex-start;gap:22px;text-align:left;
-  overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  padding:6px 4px 10px;margin:0 -4px;
-  scrollbar-width:none;-ms-overflow-style:none;
+/* ══ HERO SHOT ══ */
+.hero-shot{position:relative;max-width:900px;margin:0 auto;padding:0 8px 46px}
+.hs-glow{
+  position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+  width:820px;height:520px;pointer-events:none;
+  background:radial-gradient(ellipse,rgba(61,216,240,.18),transparent 68%);
 }
-.hero-chats::-webkit-scrollbar{display:none}
-.hero-chats::before,.hero-chats::after{content:'';flex:0 0 1px}
-.hcard{
-  width:266px;flex-shrink:0;background:#fff;border-radius:18px;overflow:hidden;
-  border:1px solid var(--border);box-shadow:0 14px 44px rgba(45,95,110,.16);
-  scroll-snap-align:center;
+.hs-browser{
+  position:relative;border-radius:16px;overflow:hidden;background:#0E1E26;
+  box-shadow:0 34px 74px -18px rgba(12,30,39,.34),0 0 0 1px rgba(12,30,39,.06);
+  transform:perspective(1600px) rotateX(1deg);
 }
-.hcard.lead{transform:translateY(-14px);box-shadow:0 20px 56px rgba(45,95,110,.2)}
-/* nav arrows (desktop) */
-.hc-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-  width:38px;height:38px;border-radius:50%;background:#fff;
-  border:1px solid var(--border2);box-shadow:0 6px 20px rgba(45,95,110,.18);
-  display:flex;align-items:center;justify-content:center;cursor:pointer;
-  color:var(--teal);transition:background .18s,transform .15s;
+.hs-bar{
+  height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#16232B;
 }
-.hc-arrow:hover{background:var(--bg3)}
-.hc-arrow:active{transform:translateY(-50%) scale(.92)}
-.hc-arrow svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.hc-arrow.prev{left:-6px}
-.hc-arrow.next{right:-6px}
-@media(max-width:860px){.hc-arrow{display:none}}
-/* dots */
-.hc-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px}
-.hc-dot{
-  width:7px;height:7px;border-radius:50%;background:var(--border2);border:none;
-  padding:0;cursor:pointer;transition:background .2s,width .2s;
+.hs-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.hs-dot.d1{background:#FF5F57}.hs-dot.d2{background:#FEBC2E}.hs-dot.d3{background:#28C840}
+.hs-url{
+  margin:0 auto;display:flex;align-items:center;gap:6px;
+  padding:4px 16px;border-radius:99px;background:rgba(255,255,255,.07);
+  font-size:11.5px;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:-.01em;
 }
-.hc-dot[aria-current="true"]{background:var(--teal);width:20px;border-radius:99px}
-.hc-head{display:flex;align-items:center;gap:10px;padding:13px 15px;color:#fff}
-.hcard.wa .hc-head{background:#075E54}
-.hcard.tg .hc-head{background:#517DA2}
-.hc-av{
-  width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;color:#fff;
+.hs-url svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.4}
+.hs-img{display:block;width:100%;height:auto}
+.hero-shot .hs-phone{position:absolute;right:-24px;bottom:-38px;z-index:2}
+.hs-phone .screen{height:396px}
+.hs-phone .chat{padding:9px 8px}
+.hs-phone .msg{font-size:11px;max-width:88%}
+.hs-chip{
+  position:absolute;display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:10px 15px;box-shadow:var(--shadow-lg);
+  font-size:12.5px;font-weight:600;color:var(--text2);z-index:2;
 }
-.hcard.wa .hc-av{background:#25D366}
-.hcard.tg .hc-av{background:#229ED9}
-.hc-av svg{width:19px;height:19px;fill:currentColor}
-.hc-name{font-size:12.5px;font-weight:700;line-height:1.25}
-.hc-sub{font-size:10px;opacity:.75;font-weight:500}
-.hc-body{padding:13px 12px;display:flex;flex-direction:column;gap:7px;min-height:172px}
-.hcard.wa .hc-body{background:#EFE7DE}
-.hcard.tg .hc-body{background:#C3D8E8}
-.hb{
-  max-width:86%;padding:7px 10px 5px;border-radius:9px;font-size:11.5px;
-  line-height:1.42;box-shadow:0 1px 1px rgba(12,30,39,.09);
+.hs-chip svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:2.2;flex-shrink:0}
+.hs-chip b{color:var(--text);font-weight:800}
+.hs-chip.c1{left:-18px;top:52px}
+.hs-chip.c2{left:26px;bottom:26px}
+@media(max-width:900px){
+  .hs-chip{display:none}
+  .hero-shot .hs-phone{right:6px;bottom:-30px}
 }
-.hb.rx{background:#fff;color:#111B21;align-self:flex-start;border-top-left-radius:3px}
-.hcard.wa .hb.tx{background:#D9FDD3;color:#111B21;align-self:flex-end;border-top-right-radius:3px}
-.hcard.tg .hb.tx{background:#EEFFDE;color:#000;align-self:flex-end;border-top-right-radius:3px}
-.hb.card{
-  background:#fff;color:#1F4E45;align-self:flex-start;border-top-left-radius:3px;max-width:94%;
-  font-family:'JetBrains Mono',monospace;font-size:9px;line-height:1.55;white-space:pre-line;
+@media(max-width:700px){
+  .hero-shot{padding:0 0 300px}
+  .hs-browser{transform:none}
+  .hero-shot .hs-phone{
+    right:50%;bottom:26px;transform:translateX(50%);
+  }
 }
-.hb .t{display:block;text-align:right;font-size:8.5px;opacity:.5;margin-top:2px;font-weight:500}
-.hb .t svg{width:12px;height:12px;fill:#53BDEB;vertical-align:-2px;margin-left:2px}
-
-/* ── APP SCREEN CARDS ── */
-.hcard.kds .hc-head{background:#16232B}
-.hcard.route .hc-head{background:#2D5F6E}
-.hcard.prod .hc-head{background:#1E4A5A}
-.hcard.kds .hc-av,.hcard.route .hc-av,.hcard.prod .hc-av{background:rgba(255,255,255,.16)}
-.hcard.kds .hc-av svg,.hcard.route .hc-av svg,.hcard.prod .hc-av svg{
-  width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
-}
-
-/* kitchen display — dark like a real KDS */
-.hcard.kds{background:#16232B;border-color:#16232B}
-.hcard.kds .hc-body{background:#16232B;gap:8px;padding:12px}
-.ticket{
-  background:#1F313C;border-radius:9px;padding:9px 10px;
-  border-left:3px solid #F59E0B;
-}
-.ticket.ready{border-left-color:#22C55E;opacity:.72}
-.ticket.new{border-left-color:#3DD8F0}
-.tk-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
-.tk-id{font-size:10.5px;font-weight:800;color:#fff;letter-spacing:.06em}
-.tk-time{
-  font-size:10px;font-weight:700;color:#FBBF24;
-  font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;
-}
-.ticket.ready .tk-time{color:#4ADE80}
-.ticket.new .tk-time{color:#3DD8F0}
-.tk-items{font-size:11px;color:rgba(255,255,255,.82);line-height:1.5}
-.tk-note{
-  display:inline-flex;align-items:center;gap:4px;margin-top:5px;
-  font-size:9.5px;font-weight:700;color:#FCD34D;
-  background:rgba(251,191,36,.14);padding:2px 7px;border-radius:99px;
-}
-
-/* delivery route */
-.hcard.route .hc-body{background:#fff;gap:0;padding:10px 12px 12px}
-.stop{display:flex;align-items:flex-start;gap:9px;padding:7px 0;position:relative}
-.stop+.stop{border-top:1px solid var(--border)}
-.stop-dot{
-  width:15px;height:15px;border-radius:50%;flex-shrink:0;margin-top:2px;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--bg3);border:1.5px solid var(--border2);
-}
-.stop.done .stop-dot{background:#22C55E;border-color:#22C55E}
-.stop.done .stop-dot svg{width:8px;height:8px;stroke:#fff;fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
-.stop.live .stop-dot{
-  background:var(--cyan);border-color:var(--cyan);
-  box-shadow:0 0 0 3px rgba(61,216,240,.25);animation:pulse 2s ease-in-out infinite;
-}
-.stop-info{flex:1;min-width:0;display:block}
-.stop-name{display:block;font-size:11.5px;font-weight:700;color:var(--text);line-height:1.35}
-.stop.done .stop-name{color:var(--muted);font-weight:600}
-.stop-meta{
-  display:block;font-size:10px;color:var(--muted);
-  font-variant-numeric:tabular-nums;margin-top:1px;
-}
-.stop-badge{
-  font-size:9px;font-weight:800;padding:2px 7px;border-radius:99px;flex-shrink:0;
-  margin-top:2px;letter-spacing:.04em;
-}
-.stop-badge.ok{background:rgba(34,197,94,.14);color:#15803D}
-.stop-badge.now{background:rgba(61,216,240,.18);color:#0E7490}
-.route-foot{
-  margin-top:9px;padding-top:9px;border-top:1.5px solid var(--border);
-  display:flex;align-items:baseline;justify-content:space-between;
-}
-.route-foot span{font-size:10.5px;color:var(--muted);font-weight:600}
-.route-foot b{
-  font-size:15px;font-weight:800;color:var(--teal);letter-spacing:-.02em;
-  font-variant-numeric:tabular-nums;
-}
-
-/* production */
-.hcard.prod .hc-body{background:#fff;gap:0;padding:14px 14px 15px}
-.hcard.cont .hc-head{background:#123B47}
-.hcard.dash .hc-head{background:#0F4A5C}
 
 /* ── PROCESO ── */
 .procgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -319,38 +227,6 @@ nav{
 .scope-band a.scope-link:hover{color:var(--teal-mid)}
 .scope-band a.scope-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:700px){.scope-inner{flex-direction:column;gap:16px}}
-.prod-hero{text-align:center;padding:2px 0 12px;border-bottom:1px solid var(--border);margin-bottom:11px}
-.prod-pct{
-  font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;
-  font-variant-numeric:tabular-nums;
-  background:linear-gradient(135deg,var(--teal),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.prod-lbl{font-size:10.5px;color:var(--muted);font-weight:600;margin-top:3px}
-.prod-up{
-  display:inline-flex;align-items:center;gap:3px;margin-top:6px;
-  font-size:9.5px;font-weight:800;color:#15803D;
-  background:rgba(34,197,94,.13);padding:2px 8px;border-radius:99px;
-}
-.prod-row{
-  display:flex;align-items:center;justify-content:space-between;
-  font-size:11px;padding:4px 0;
-}
-.prod-row span{color:var(--muted);font-weight:600}
-.prod-row b{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
-.prod-bar{
-  height:6px;background:var(--bg2);border-radius:99px;overflow:hidden;margin:7px 0 3px;
-}
-.prod-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}
-.prod-status{
-  display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:10px;
-  border-top:1px solid var(--border);font-size:10.5px;color:var(--muted);font-weight:600;
-}
-.prod-status i{
-  width:7px;height:7px;border-radius:50%;background:var(--cyan);
-  animation:pulse 2s ease-in-out infinite;flex-shrink:0;
-}
-
 /* ══ PHONE DEVICE ══ */
 .phone{
   --pw:278px;
@@ -426,7 +302,7 @@ html.js-anim .chat > *[data-hide]{display:none}
   display:flex;gap:7px;align-items:flex-start;flex-shrink:0;
 }
 .msg.warn svg{width:14px;height:14px;stroke:#D97706;fill:none;stroke-width:2.2;flex-shrink:0;margin-top:1px}
-/* typing */
+/* typing (creado por JS al animar la conversación) */
 .typing{
   align-self:flex-start;display:flex;align-items:center;gap:4px;
   padding:10px 12px;border-radius:9px;border-top-left-radius:3px;
@@ -436,6 +312,8 @@ html.js-anim .chat > *[data-hide]{display:none}
 .typing i:nth-child(2){animation-delay:.18s}
 .typing i:nth-child(3){animation-delay:.36s}
 @keyframes bounce{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3.5px)}}
+.phone.wa .typing{background:#fff}
+.phone.tg .typing{background:#fff}
 /* input bar */
 .inputbar{
   flex-shrink:0;padding:7px 10px 10px;display:flex;align-items:center;gap:8px;
@@ -473,7 +351,6 @@ html.js-anim .chat > *[data-hide]{display:none}
 .phone.wa .msg.rx{background:#fff;color:#111B21}
 .phone.wa .msg.tx{background:#D9FDD3;color:#111B21}
 .phone.wa .msg.card{background:#fff;color:#1F4E45}
-.phone.wa .typing{background:#fff}
 .phone.wa .inputbar{background:#EFE7DE}
 .phone.wa .ib-btn{background:#25D366}
 .phone.wa .homebar{background:#EFE7DE}
@@ -494,7 +371,6 @@ html.js-anim .chat > *[data-hide]{display:none}
 .phone.tg .msg.rx{background:#fff;color:#000}
 .phone.tg .msg.tx{background:#EEFFDE;color:#000}
 .phone.tg .msg.card{background:#fff;color:#1F4E45}
-.phone.tg .typing{background:#fff}
 .phone.tg .inputbar{background:#fff}
 .phone.tg .ib-field{background:#F1F3F5;box-shadow:none}
 .phone.tg .ib-btn{background:#229ED9}
@@ -894,161 +770,45 @@ summary{list-style:none}
       <a href="#modulos" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
     </div>
 
-    <div class="hero-carousel">
-      <button class="hc-arrow prev" type="button" aria-label="Pantalla anterior">
-        <svg aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg>
-      </button>
-      <button class="hc-arrow next" type="button" aria-label="Pantalla siguiente">
-        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
-      </button>
+    <div class="hero-shot">
+      <div class="hs-glow"></div>
 
-      <div class="hero-chats" id="heroChats" tabindex="0" aria-label="Ejemplos de conversación con los agentes de velOS, desliza para ver más">
-
-        <div class="hcard wa">
-          <div class="hc-head">
-            <span class="hc-av"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-            <div>
-              <div class="hc-name">Agente WhatsApp</div>
-              <div class="hc-sub">El pedido entra solo</div>
-            </div>
-          </div>
-          <div class="hc-body">
-            <div class="hb rx">Hola, necesito cotizar 100 kg de mozzarella<span class="t">14:32</span></div>
-            <div class="hb tx">¡Hola! 100 kg: $1.150.000 🧀<br>Se despacha en cajas de 10 kg<span class="t">14:32 <svg aria-hidden="true"><use href="#i-checks"/></svg></span></div>
-            <div class="hb rx">¿Entregan en Maipú?<span class="t">14:33</span></div>
-            <div class="typing" aria-label="escribiendo"><i></i><i></i><i></i></div>
-          </div>
+      <div class="hs-browser">
+        <div class="hs-bar">
+          <span class="hs-dot d1"></span><span class="hs-dot d2"></span><span class="hs-dot d3"></span>
+          <span class="hs-url"><svg aria-hidden="true"><use href="#i-lock"/></svg>app.autix.pro</span>
         </div>
-
-        <div class="hcard prod lead">
-          <div class="hc-head">
-            <span class="hc-av"><svg aria-hidden="true"><use href="#i-factory"/></svg></span>
-            <div>
-              <div class="hc-name">Control de producción</div>
-              <div class="hc-sub">Rendimiento en tiempo real</div>
-            </div>
-          </div>
-          <div class="hc-body">
-            <div class="prod-hero">
-              <div class="prod-pct">97,5%</div>
-              <div class="prod-lbl">Rendimiento del lote</div>
-              <span class="prod-up">▲ 2,1% sobre el objetivo</span>
-            </div>
-            <div class="prod-row"><span>Insumo utilizado</span><b>80 L</b></div>
-            <div class="prod-bar"><i style="width:78%"></i></div>
-            <div class="prod-row"><span>Salida esperada</span><b>7,8 kg</b></div>
-            <div class="prod-row"><span>Costo por unidad</span><b>$1.540</b></div>
-            <div class="prod-status"><i></i>En proceso · inició 07:14</div>
-          </div>
-        </div>
-
-        <div class="hcard route">
-          <div class="hc-head">
-            <span class="hc-av"><svg aria-hidden="true"><use href="#i-truck"/></svg></span>
-            <div>
-              <div class="hc-name">Logística y cobranza</div>
-              <div class="hc-sub">Rodrigo · 2 de 4 entregadas</div>
-            </div>
-          </div>
-          <div class="hc-body">
-            <div class="stop done">
-              <span class="stop-dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
-              <span class="stop-info">
-                <span class="stop-name">Distribuidora Sur</span>
-                <span class="stop-meta">8 kg · $96.000</span>
-              </span>
-              <span class="stop-badge ok">COBRADO</span>
-            </div>
-            <div class="stop done">
-              <span class="stop-dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
-              <span class="stop-info">
-                <span class="stop-name">La Flor de Campo</span>
-                <span class="stop-meta">4 kg · $48.000</span>
-              </span>
-              <span class="stop-badge ok">COBRADO</span>
-            </div>
-            <div class="stop live">
-              <span class="stop-dot"></span>
-              <span class="stop-info">
-                <span class="stop-name">Rotisería Central</span>
-                <span class="stop-meta">5 kg · $60.000</span>
-              </span>
-              <span class="stop-badge now">EN CAMINO</span>
-            </div>
-            <div class="stop">
-              <span class="stop-dot"></span>
-              <span class="stop-info">
-                <span class="stop-name">Minimarket Norte</span>
-                <span class="stop-meta">3 kg · $43.000</span>
-              </span>
-            </div>
-            <div class="route-foot">
-              <span>Por cobrar hoy</span>
-              <b>$103.000</b>
-            </div>
-          </div>
-        </div>
-
-        <div class="hcard prod cont">
-          <div class="hc-head">
-            <span class="hc-av"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span>
-            <div>
-              <div class="hc-name">Contabilidad al día</div>
-              <div class="hc-sub">Cierre automático del mes</div>
-            </div>
-          </div>
-          <div class="hc-body">
-            <div class="prod-hero">
-              <div class="prod-pct">$8,2M</div>
-              <div class="prod-lbl">Ingresos del mes</div>
-              <span class="prod-up">▲ 12% vs. mes anterior</span>
-            </div>
-            <div class="prod-row"><span>Egresos</span><b>$3,1M</b></div>
-            <div class="prod-bar"><i style="width:62%"></i></div>
-            <div class="prod-row"><span>Resultado neto</span><b>$5,1M</b></div>
-            <div class="prod-row"><span>Boletas emitidas</span><b>184</b></div>
-            <div class="prod-status"><i></i>Actualizado hace 2 min</div>
-          </div>
-        </div>
-
-        <div class="hcard prod dash">
-          <div class="hc-head">
-            <span class="hc-av"><svg aria-hidden="true"><use href="#i-chart"/></svg></span>
-            <div>
-              <div class="hc-name">Dashboard en vivo</div>
-              <div class="hc-sub">KPIs de toda tu operación</div>
-            </div>
-          </div>
-          <div class="hc-body">
-            <div class="prod-hero">
-              <div class="prod-pct">$1,8M</div>
-              <div class="prod-lbl">Ventas de hoy</div>
-              <span class="prod-up">▲ 18% vs. ayer</span>
-            </div>
-            <div class="bars" style="margin:4px 0 6px">
-              <div class="bar" style="height:60%"></div>
-              <div class="bar" style="height:75%"></div>
-              <div class="bar" style="height:45%"></div>
-              <div class="bar" style="height:90%"></div>
-              <div class="bar low" style="height:35%"></div>
-              <div class="bar" style="height:70%"></div>
-              <div class="bar" style="height:97%"></div>
-            </div>
-            <div class="prod-row"><span>Pedidos pendientes</span><b>7</b></div>
-            <div class="prod-row"><span>Stock bajo</span><b>2</b></div>
-            <div class="prod-status"><i></i>Actualizado en tiempo real</div>
-          </div>
-        </div>
-
+        <img class="hs-img" src="dashboard.webp" width="827" height="540" alt="Dashboard de velOS: ventas del día, pedidos pendientes, producción, stock y por cobrar en tiempo real" fetchpriority="high">
       </div>
 
-      <div class="hc-dots" id="heroDots" role="tablist" aria-label="Seleccionar pantalla">
-        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 1: atención — agente de WhatsApp"></button>
-        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 2: operación — control de producción"></button>
-        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 3: logística y cobranza"></button>
-        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 4: contabilidad al día"></button>
-        <button class="hc-dot" type="button" role="tab" aria-label="Pantalla 5: dashboard en vivo"></button>
+      <div class="hs-phone phone wa" style="--pw:194px" aria-hidden="true">
+        <div class="island"></div>
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="sb-icons">
+              <svg aria-hidden="true"><use href="#i-signal"/></svg>
+              <svg aria-hidden="true"><use href="#i-wifi"/></svg>
+              <svg aria-hidden="true"><use href="#i-battery"/></svg>
+            </span>
+          </div>
+          <div class="appbar">
+            <svg class="ab-back" aria-hidden="true"><use href="#i-chevleft"/></svg>
+            <span class="ab-av"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+            <div><div class="ab-name">Campolac</div><div class="ab-sub">en línea</div></div>
+          </div>
+          <div class="chat">
+            <div class="msg rx">Necesito cotizar 100 kg de mozzarella<span class="t">14:32</span></div>
+            <div class="msg tx">¡Hola! 100 kg: $1.150.000 🧀<br>Se despacha en cajas de 10 kg<span class="t">14:32 <svg aria-hidden="true"><use href="#i-checks"/></svg></span></div>
+            <div class="msg rx">¿Entregan en Maipú?<span class="t">14:33</span></div>
+          </div>
+          <div class="inputbar"><span class="ib-field">Mensaje</span><span class="ib-btn"><svg aria-hidden="true"><use href="#i-send"/></svg></span></div>
+          <div class="homebar"><i></i></div>
+        </div>
       </div>
+
+      <div class="hs-chip c1"><svg aria-hidden="true"><use href="#i-chart"/></svg>Ventas hoy <b>$2.456.780</b></div>
+      <div class="hs-chip c2"><svg aria-hidden="true"><use href="#i-check"/></svg>Pedido #4587 <b>despachado</b></div>
     </div>
   </div>
 </section>
