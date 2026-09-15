@@ -548,75 +548,65 @@ section{padding:100px 0}
 /* phone column centering inside agent rows */
 .phone-col{display:flex;justify-content:center}
 
-/* ── BENTO ── */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(154px,auto);gap:15px}
-.bcard{
-  background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:25px;transition:border-color .25s,box-shadow .25s,transform .25s;
-  display:flex;flex-direction:column;position:relative;overflow:hidden;
+/* ── MÓDULOS ── */
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.mtile{
+  background:#fff;border:1px solid var(--border);border-radius:14px;
+  padding:14px 15px;display:flex;align-items:center;gap:12px;
+  transition:border-color .22s,box-shadow .22s,transform .22s;
 }
-.bcard:hover{border-color:var(--teal-light);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.b2{grid-column:span 2}
-.b2r{grid-column:span 2;grid-row:span 2}
-.b-dark{background:linear-gradient(150deg,var(--teal) 0%,#1B4655 100%);border-color:transparent;color:#fff}
-.b-dark:hover{border-color:rgba(61,216,240,.4)}
-.b-dark .b-t{color:#fff}
-.b-dark .b-d{color:rgba(255,255,255,.68)}
-.b-accent{background:linear-gradient(150deg,var(--bg3),#DDF3F9);border-color:var(--border2)}
-.b-ic{
-  width:44px;height:44px;border-radius:13px;margin-bottom:15px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
+.mtile:hover{border-color:var(--teal-light);box-shadow:var(--shadow);transform:translateY(-2px)}
+.mt-tx{min-width:0}
+.mt-ic{
+  width:32px;height:32px;border-radius:10px;flex-shrink:0;
   background:var(--bg3);color:var(--teal);
+  display:flex;align-items:center;justify-content:center;
 }
-.b-dark .b-ic{background:rgba(255,255,255,.16);color:#fff}
-.b-ic svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.b-t{font-size:16.5px;font-weight:800;letter-spacing:-.02em;margin-bottom:7px;line-height:1.25}
-.b-d{font-size:13.5px;color:var(--muted);line-height:1.55}
-.b-stat{
-  font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:6px;
-  font-variant-numeric:tabular-nums;
-  background:linear-gradient(135deg,var(--teal),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.mt-ic svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mt-n{font-size:14px;font-weight:800;letter-spacing:-.015em;line-height:1.25;margin-bottom:3px}
+.mt-v{
+  display:flex;align-items:flex-start;gap:6px;
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;
+  color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.35;
 }
-.b-slabel{font-size:12.5px;color:var(--muted);font-weight:600}
+.mt-v::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--border2);flex-shrink:0;margin-top:4px}
+.mt-v.on{color:var(--teal)}
+.mt-v.on::before{background:var(--teal)}
+.mt-v.warn{color:#B45309}
+.mt-v.warn::before{background:#F59E0B}
 
-/* bars */
+/* cadena de integración */
+.mflow{
+  margin-top:22px;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:26px 28px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:18px;align-items:start;
+}
+.mf-s{display:flex;gap:13px;align-items:flex-start}
+.mf-ic{
+  width:34px;height:34px;border-radius:11px;flex-shrink:0;
+  background:linear-gradient(140deg,var(--teal),#1B4655);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+}
+.mf-ic svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mf-k{font-size:14px;font-weight:800;letter-spacing:-.02em;margin-bottom:3px}
+.mf-d{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mf-ar{display:flex;align-items:center;justify-content:center;color:var(--cyan);padding-top:6px}
+.mf-ar svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* bars (las usa la tarjeta de dashboard del hero) */
 .bars{display:flex;align-items:flex-end;gap:7px;height:76px;margin-top:auto}
 .bar{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--cyan),var(--teal))}
 .bar.low{background:linear-gradient(180deg,#FCD34D,var(--warn))}
-.bar-lbl{display:flex;gap:7px;margin-top:9px}
-.bar-lbl span{flex:1;font-size:9.5px;color:var(--muted);text-align:center;font-weight:600}
-.b-foot{margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
 
-/* stock rows */
-.srows{display:flex;flex-direction:column;gap:11px;margin-top:18px}
-.srow{display:flex;align-items:center;gap:11px}
-.sname{font-size:12px;color:var(--text2);font-weight:600;width:72px;flex-shrink:0}
-.strack{flex:1;height:8px;background:var(--bg2);border-radius:99px;overflow:hidden}
-.sfill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}
-.sfill.w{background:linear-gradient(90deg,#F59E0B,#FCD34D)}
-.sfill.d{background:linear-gradient(90deg,var(--danger),#F87171)}
-.sval{font-size:11px;color:var(--muted);font-weight:700;width:44px;text-align:right;
-  font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
-.sbadge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;
-  padding:3px 9px;border-radius:99px;background:rgba(220,38,38,.1);color:var(--danger);margin-top:14px}
-.sbadge svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.4}
-
-/* route */
-.rlist{display:flex;flex-direction:column;gap:9px;margin-top:16px}
-.rstop{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.12);
-  border-radius:11px;padding:9px 12px}
-.rnum{width:21px;height:21px;border-radius:50%;background:rgba(255,255,255,.22);
-  display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;flex-shrink:0}
-.rname{font-size:12.5px;font-weight:600;flex:1}
-.rkg{font-size:11px;opacity:.7;font-family:'JetBrains Mono',monospace;font-weight:600}
-
-.bpills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.bpill{padding:5px 13px;background:var(--bg2);border:1px solid var(--border);
-  border-radius:99px;font-size:11.5px;font-weight:600;color:var(--text2)}
-.b-dark .bpill{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.9);
-  display:inline-flex;align-items:center;gap:6px}
-.b-dark .bpill svg{width:13px;height:13px;fill:currentColor}
+@media(max-width:780px){
+  .mgrid{grid-template-columns:repeat(2,1fr);gap:9px}
+  .mt-n{font-size:13.5px}
+  .mflow{grid-template-columns:1fr;gap:16px;padding:24px 22px}
+  .mf-ar{transform:rotate(90deg);padding-top:0}
+  .mf-ar svg{width:18px;height:18px}
+}
+@media(max-width:520px){
+  .mgrid{grid-template-columns:1fr}
+}
 
 /* ── POWER ── */
 .power{background:linear-gradient(168deg,#0B1B24 0%,var(--teal) 100%);padding:120px 0;position:relative;overflow:hidden}
@@ -750,8 +740,6 @@ summary{list-style:none}
 
 @media(max-width:900px){
   .agent-row{grid-template-columns:1fr;gap:38px}
-  .bento{grid-template-columns:repeat(2,1fr)}
-  .b2r{grid-row:span 1}
   .case{grid-template-columns:1fr}
   .case-r{border-left:none;border-top:1px solid var(--border2);padding:34px 28px}
   .case-l{padding:36px 28px}
@@ -763,8 +751,6 @@ summary{list-style:none}
   .hcard{width:78vw;max-width:300px}
   .hcard.lead{transform:none}
   .phone{--pw:280px}
-  .bento{grid-template-columns:1fr}
-  .b2,.b2r{grid-column:span 1}
   .foot-in{flex-direction:column;text-align:center}
   .foot-links{gap:10px 16px}
   .strip-item{font-size:12.5px;padding:8px 14px}
@@ -831,6 +817,8 @@ summary{list-style:none}
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h2a2 2 0 002-2V2"/><path d="M7 2v20M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zM19 15v7"/></symbol>
     <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v3M14 21h3M18 18h3v3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M8 11h8M8 15h5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9.5 7h7M9.5 11h7"/></symbol>
     <symbol id="i-arrow2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
   </defs>
 </svg>
@@ -1229,139 +1217,91 @@ A cobrar      $247.000<span class="t">08:16</span></div>
   <div class="container">
     <div class="sec-head center">
       <div class="eyebrow">Plataforma completa</div>
-      <h2>Un sistema que ve<br>todo tu negocio a la vez</h2>
-      <p>Cada módulo alimenta al siguiente. La producción descuenta insumos, la venta descuenta stock, la entrega actualiza la deuda. En tiempo real y sin cargar nada dos veces.</p>
+      <h2>16 módulos que <span class="grad">se hablan entre sí</span></h2>
+      <p>Cada módulo alimenta al siguiente. Nada se carga dos veces, nada queda descuadrado.</p>
     </div>
 
-    <div class="bento">
-      <!-- Producción -->
-      <div class="bcard b2r">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
-        <div class="b-t">Producción y rendimiento</div>
-        <div class="b-d">Cada lote registra qué insumo entró, cuánto salió y a qué costo. velOS calcula el rendimiento real por producto y te avisa cuando cae fuera de rango.</div>
-        <div class="bars" role="img" aria-label="Rendimiento por producto: Mozzarella 97.5%, Brie 94.2%, Ricota 99.1%, Camembert 91.3%, Sardo 96%, Provolone 98%">
-          <div class="bar" style="height:97%"></div>
-          <div class="bar" style="height:94%"></div>
-          <div class="bar" style="height:99%"></div>
-          <div class="bar low" style="height:91%"></div>
-          <div class="bar" style="height:96%"></div>
-          <div class="bar" style="height:98%"></div>
-        </div>
-        <div class="bar-lbl">
-          <span>Mozz</span><span>Brie</span><span>Ricota</span><span>Camb</span><span>Sardo</span><span>Provo</span>
-        </div>
-        <div class="b-foot">
-          <div style="font-size:12px;color:var(--muted);font-weight:600">Rendimiento promedio · semana 36</div>
-          <div style="font-size:27px;font-weight:800;color:var(--teal);letter-spacing:-.035em;margin-top:3px;font-variant-numeric:tabular-nums">95,8%</div>
-        </div>
+    <div class="mgrid">
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Producción</div><div class="mt-v on">95,8% rendimiento</div></div>
       </div>
-
-      <!-- Stock -->
-      <div class="bcard b2">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-package"/></svg></div>
-        <div class="b-t">Stock en tiempo real</div>
-        <div class="b-d">Cada venta, lote y devolución actualiza el inventario al instante.</div>
-        <div class="srows">
-          <div class="srow"><span class="sname">Mozzarella</span><span class="strack"><span class="sfill" style="width:78%"></span></span><span class="sval">42 kg</span></div>
-          <div class="srow"><span class="sname">Ricota</span><span class="strack"><span class="sfill" style="width:62%"></span></span><span class="sval">31 kg</span></div>
-          <div class="srow"><span class="sname">Brie</span><span class="strack"><span class="sfill w" style="width:28%"></span></span><span class="sval">9 kg</span></div>
-          <div class="srow"><span class="sname">Camembert</span><span class="strack"><span class="sfill d" style="width:12%"></span></span><span class="sval">4 kg</span></div>
-        </div>
-        <div class="sbadge"><svg aria-hidden="true"><use href="#i-alert"/></svg>2 productos bajo el mínimo</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wheat"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Insumos</div><div class="mt-v">340 L en planta</div></div>
       </div>
-
-      <!-- Ruta -->
-      <div class="bcard b2 b-dark">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
-        <div class="b-t">Ruta del día</div>
-        <div class="b-d">Asignas conductor y velOS arma la hoja de ruta con lo que lleva y lo que debe cobrar en cada parada.</div>
-        <div class="rlist">
-          <div class="rstop"><span class="rnum">1</span><span class="rname">Distribuidora Sur</span><span class="rkg">8 kg</span></div>
-          <div class="rstop"><span class="rnum">2</span><span class="rname">La Flor de Campo</span><span class="rkg">4 kg</span></div>
-          <div class="rstop"><span class="rnum">3</span><span class="rname">Rotisería Central</span><span class="rkg">5 kg</span></div>
-        </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-package"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Stock</div><div class="mt-v warn">2 bajo el mínimo</div></div>
       </div>
-
-      <!-- Ventas -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
-        <div class="b-stat">$1,8M</div>
-        <div class="b-slabel">Facturado hoy</div>
-        <div class="b-d" style="margin-top:12px">Punto de venta, pedidos y ventas del agente en la misma caja.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-scale"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Productos y precios</div><div class="mt-v">84 activos</div></div>
       </div>
-
-      <!-- Terminal de Ventas -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-qr"/></svg></div>
-        <div class="b-t">Terminal de ventas</div>
-        <div class="b-d">Cobra en el mostrador, agrega productos con un clic y emite el comprobante al instante — sobre el mismo stock de siempre.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Pedidos</div><div class="mt-v warn">7 pendientes hoy</div></div>
       </div>
-
-      <!-- Pedidos -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-filecheck"/></svg></div>
-        <div class="b-t">Pedidos</div>
-        <div class="b-d">Del agente, del terminal o a mano — cada pedido pasa a producción o despacho sin digitarlo dos veces.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-qr"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Terminal de ventas</div><div class="mt-v">boleta en 20 seg</div></div>
       </div>
-
-      <!-- Cobranza -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-receipt"/></svg></div>
-        <div class="b-stat">$250K</div>
-        <div class="b-slabel">Por cobrar</div>
-        <div class="b-d" style="margin-top:12px">Deuda por cliente, abonos parciales y vencimientos.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Ventas</div><div class="mt-v on">$1,8M hoy</div></div>
       </div>
-
-      <!-- Insumos -->
-      <div class="bcard b2 b-accent">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-wheat"/></svg></div>
-        <div class="b-t">Insumos y materia prima</div>
-        <div class="b-d">Compras leche, cuajo o envases y velOS los descuenta solo cuando produces. Así sabes el costo real de cada kilo que sale de tu planta.</div>
-        <div class="bpills">
-          <span class="bpill">Leche · 340 L</span>
-          <span class="bpill">Cuajo · 2,4 kg</span>
-          <span class="bpill">Sal · 18 kg</span>
-          <span class="bpill">Envases · 640 u</span>
-        </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Clientes</div><div class="mt-v">312 con ficha</div></div>
       </div>
-
-      <!-- Proveedores -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-building"/></svg></div>
-        <div class="b-t">Proveedores</div>
-        <div class="b-d">Ficha por proveedor, historial de compras y cuentas por pagar con sus vencimientos.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Cobranza</div><div class="mt-v warn">$250K por cobrar</div></div>
       </div>
-
-      <!-- Gastos -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-scale"/></svg></div>
-        <div class="b-t">Gastos</div>
-        <div class="b-d">Cada gasto categorizado — insumos, sueldos, logística — para saber en qué se va la plata cada mes.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Reparto y rutas</div><div class="mt-v">2 de 4 entregadas</div></div>
       </div>
-
-      <!-- Clientes -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
-        <div class="b-t">Clientes y CRM</div>
-        <div class="b-d">Ficha completa, historial de compra, crédito asignado y comportamiento de pago.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-rotate"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Devoluciones</div><div class="mt-v">repone stock solo</div></div>
       </div>
-
-      <!-- Devoluciones -->
-      <div class="bcard">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-rotate"/></svg></div>
-        <div class="b-t">Devoluciones</div>
-        <div class="b-d">Repone stock, ajusta la deuda del cliente y queda registrado. Sin descuadres.</div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-building"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Proveedores</div><div class="mt-v">18 activos</div></div>
       </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Cuentas por pagar</div><div class="mt-v warn">4 vencen esta semana</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-receipt"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Gastos</div><div class="mt-v">$3,1M este mes</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Contabilidad</div><div class="mt-v">cierre automático</div></div>
+      </div>
+      <div class="mtile">
+        <div class="mt-ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+        <div class="mt-tx"><div class="mt-n">Usuarios y roles</div><div class="mt-v">4 perfiles</div></div>
+      </div>
+    </div>
 
-      <!-- Agentes -->
-      <div class="bcard b2 b-dark">
-        <div class="b-ic"><svg aria-hidden="true"><use href="#i-bot"/></svg></div>
-        <div class="b-t">Dos agentes conectados a todo esto</div>
-        <div class="b-d">Todo lo que ves aquí se puede consultar y ejecutar desde un chat. Un agente opera tu negocio, el otro atiende a tus clientes.</div>
-        <div class="bpills">
-          <span class="bpill"><svg aria-hidden="true"><use href="#i-telegram"/></svg>Telegram · interno</span>
-          <span class="bpill"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp · clientes</span>
-        </div>
+    <div class="mflow">
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-factory"/></svg></div>
+        <div><div class="mf-k">Produces</div><div class="mf-d">Bajan los insumos, suben los kilos al stock.</div></div>
+      </div>
+      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
+        <div><div class="mf-k">Vendes</div><div class="mf-d">Baja el stock y queda registrada la deuda.</div></div>
+      </div>
+      <div class="mf-ar" aria-hidden="true"><svg><use href="#i-arrow"/></svg></div>
+      <div class="mf-s">
+        <div class="mf-ic"><svg aria-hidden="true"><use href="#i-truck"/></svg></div>
+        <div><div class="mf-k">Entregas y cobras</div><div class="mf-d">La deuda se cierra y la caja cuadra sola.</div></div>
       </div>
     </div>
   </div>
