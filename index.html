@@ -188,7 +188,7 @@ nav{
 /* móvil: la escena es el piso de la composición y el texto se monta sobre ella */
 @media(max-width:860px){
   .hero-stage{
-    text-align:center;padding:74px 0 366px;margin-bottom:0;
+    text-align:center;padding:52px 0 392px;margin-bottom:0;
     background-position:right bottom;background-size:auto 420px;
   }
   .hero-stage::before{
@@ -200,13 +200,15 @@ nav{
       #F4FAFB 452px);
   }
   .hero-txt{max-width:none}
-  .hero-txt .hero-badge{margin-left:auto;margin-right:auto}
-  .hero-txt .hero-sub{margin-left:auto;margin-right:auto}
-  .hero-txt .hero-ctas{justify-content:center}
-  .hero-marks{justify-content:center;gap:9px 16px}
+  /* en móvil el badge y los botones salen: la barra superior ya lleva el CTA fijo */
+  .hero-txt .hero-badge,
+  .hero-txt .hero-ctas{display:none}
+  .hero-txt h1{margin-bottom:16px}
+  .hero-txt .hero-sub{margin:0 auto 4px}
+  .hero-marks{justify-content:center;gap:9px 16px;margin-top:18px}
 }
 @media(max-width:600px){
-  .hero-stage{padding:64px 0 306px;background-size:auto 360px}
+  .hero-stage{padding:46px 0 336px;background-size:auto 360px}
   .hero-stage::before{
     background:linear-gradient(to top,
       rgba(244,250,251,0) 0px,
