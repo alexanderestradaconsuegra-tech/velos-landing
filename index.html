@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#2D5F6E">
-<title>velOS — El sistema que dirige tu empresa</title>
+<title>velOS, El sistema que dirige tu empresa</title>
 <meta name="description" content="velOS es el sistema de gestión a medida para empresas con producción, ventas, reparto y equipos. Incluye dos agentes que operan tu negocio desde Telegram y atienden a tus clientes por WhatsApp.">
-<meta property="og:title" content="velOS — Toda tu operación en un mensaje">
+<meta property="og:title" content="velOS, Toda tu operación en un mensaje">
 <meta property="og:description" content="Producción, stock, ventas, reparto y cobranza en un solo sistema. Con agentes que operan tu negocio desde Telegram y atienden clientes por WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="velOS by Autix">
@@ -17,14 +17,14 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="velOS by Autix — producción, stock, ventas, reparto y cobranza en un solo sistema.">
+<meta property="og:image:alt" content="velOS by Autix, producción, stock, ventas, reparto y cobranza en un solo sistema.">
 <meta name="twitter:image" content="https://autix.pro/og.jpg">
 <link rel="canonical" href="https://autix.pro/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 
 <style>
 :root{
@@ -302,7 +302,7 @@ nav{
 .ab-sub{font-size:10.5px;opacity:.72;font-weight:500}
 .ab-actions{margin-left:auto;display:flex;gap:15px;opacity:.9}
 .ab-actions svg{width:17px;height:17px;fill:currentColor}
-/* chat area — scrollable, sticks to bottom */
+/* chat area, scrollable, sticks to bottom */
 .chat{
   flex:1;min-height:0;padding:12px 11px;
   display:flex;flex-direction:column;justify-content:flex-end;gap:6px;
@@ -694,6 +694,244 @@ summary{list-style:none}
   html{scroll-behavior:auto}
 }
 [hidden]:not([hidden=until-found]){display:none!important}
+
+/* =========================================================
+   taste-skill v2 refinement
+   Mode: redesign-preserve
+   Dials: variance 7 / motion 5 / density 4
+   ========================================================= */
+:root{
+  --taste-ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* Display type is more editorial/premium without changing body readability. */
+.hero h1,
+.sec-head h2,
+.power h2,
+.cta h2{
+  font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+}
+
+/* Hero: stronger hierarchy, still restrained and readable on the photo. */
+.hero-stage{
+  padding:122px 0 112px;
+}
+.hero-txt{
+  max-width:590px;
+}
+.hero-txt h1{
+  font-size:clamp(38px,4.35vw,58px);
+  line-height:.99;
+  letter-spacing:-.045em;
+  max-width:590px;
+  margin-bottom:24px;
+}
+.hero-txt .hero-sub{
+  max-width:555px;
+  font-size:18px;
+  line-height:1.62;
+}
+.hero-badge{
+  background:rgba(255,255,255,.72);
+  border-color:rgba(45,95,110,.16);
+  backdrop-filter:blur(12px);
+}
+
+/* Eyebrows: remove the repeated AI-template pill treatment. */
+.eyebrow{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  padding:0;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:.14em;
+  color:var(--teal-mid);
+  margin-bottom:17px;
+}
+/* Keep only 3 section eyebrows across the 8 major sections. */
+#caso .eyebrow,
+#faq .eyebrow{
+  display:none;
+}
+
+/* Break the repeated centered-section rhythm. */
+#modulos .sec-head.center,
+#agentes .sec-head.center,
+#faq .sec-head.center{
+  text-align:left;
+}
+#modulos .sec-head.center p,
+#agentes .sec-head.center p,
+#faq .sec-head.center p{
+  margin-left:0;
+  margin-right:0;
+}
+#modulos .sec-head,
+#agentes .sec-head,
+#faq .sec-head{
+  max-width:760px;
+}
+
+/* More deliberate vertical rhythm: sections no longer feel copy-pasted. */
+#modulos{padding-top:122px;padding-bottom:104px}
+#agentes{padding-top:106px;padding-bottom:126px}
+.power{padding-top:108px;padding-bottom:112px}
+#caso{padding-top:124px;padding-bottom:116px}
+#faq{padding-top:112px;padding-bottom:118px}
+#proceso{padding-top:104px;padding-bottom:132px}
+
+/* Module grid: quieter surfaces, more spacing, clearer hierarchy. */
+.mgrid{
+  gap:12px;
+}
+.mtile{
+  border-radius:13px;
+  padding:16px 16px;
+  box-shadow:none;
+  transition:transform .25s var(--taste-ease),border-color .25s ease,box-shadow .25s ease;
+}
+.mtile:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(45,95,110,.08);
+}
+.mt-ic{
+  border-radius:9px;
+}
+.mt-n{
+  font-weight:700;
+}
+.mflow{
+  margin-top:28px;
+  border-radius:16px;
+  padding:28px 30px;
+}
+
+/* Agent storytelling gets more breathing room and less card-wall feeling. */
+.agent-row{
+  gap:72px;
+  margin-bottom:104px;
+  padding-bottom:104px;
+}
+.agent-tag{
+  border-radius:10px;
+  padding:7px 12px;
+}
+
+/* Case studies: keep the brand surface but flatten the template-like card feel. */
+.case{
+  border-radius:18px;
+  box-shadow:0 18px 54px rgba(45,95,110,.07);
+}
+.case-l,
+.case-r{
+  padding-top:56px;
+  padding-bottom:56px;
+}
+
+/* FAQ becomes a content surface rather than a centered block. */
+.faq-wrap{
+  max-width:940px;
+  margin-left:0;
+}
+.faq-more{
+  max-width:940px;
+  text-align:left;
+}
+
+/* The process section no longer uses three identical equal cards. */
+#proceso .procgrid{
+  grid-template-columns:1.25fr .82fr 1fr;
+  gap:16px;
+  align-items:stretch;
+}
+#proceso .pstep{
+  border-radius:16px;
+  padding:30px 28px;
+}
+#proceso .pstep:nth-child(1){
+  background:linear-gradient(145deg,#fff 0%,var(--bg2) 100%);
+}
+#proceso .pstep:nth-child(2){
+  transform:translateY(22px);
+}
+#proceso .pstep:nth-child(3){
+  transform:translateY(8px);
+}
+
+/* CTA hierarchy: one decisive action instead of competing contact wording. */
+.btn{
+  transition:transform .18s var(--taste-ease),background .2s,box-shadow .2s,border-color .2s;
+}
+.btn:hover{
+  transform:translateY(-1px);
+}
+.btn:active{
+  transform:translateY(0) scale(.98);
+}
+
+/* Scroll motion uses transform + opacity only, and respects reduced motion. */
+@media (prefers-reduced-motion:no-preference){
+  .taste-reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:
+      opacity .58s var(--taste-ease),
+      transform .58s var(--taste-ease);
+    will-change:transform,opacity;
+  }
+  .taste-reveal.is-in{
+    opacity:1;
+    transform:none;
+  }
+}
+
+@media(max-width:860px){
+  .hero-stage{
+    padding-top:42px;
+  }
+  .hero-txt h1{
+    font-size:clamp(36px,10vw,50px);
+    line-height:1.01;
+  }
+  .hero-txt .hero-sub{
+    font-size:16.5px;
+  }
+  #modulos,
+  #agentes,
+  #caso,
+  #faq,
+  #proceso{
+    padding-top:82px;
+    padding-bottom:86px;
+  }
+  #modulos .sec-head.center,
+  #agentes .sec-head.center,
+  #faq .sec-head.center{
+    text-align:center;
+  }
+  #modulos .sec-head.center p,
+  #agentes .sec-head.center p,
+  #faq .sec-head.center p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  #proceso .procgrid{
+    grid-template-columns:1fr;
+  }
+  #proceso .pstep:nth-child(2),
+  #proceso .pstep:nth-child(3){
+    transform:none;
+  }
+  .faq-wrap,
+  .faq-more{
+    max-width:none;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -775,9 +1013,7 @@ summary{list-style:none}
     </div>
     <div class="nav-right">
       <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conocer%20velOS" target="_blank" rel="noopener" class="btn btn-wa">
-        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        WhatsApp
-      </a>
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>Solicitar demo</a>
     </div>
   </div>
 </nav>
@@ -789,15 +1025,13 @@ summary{list-style:none}
       <div class="hero-txt">
         <div class="hero-badge">
           <span class="live-dot"></span>
-          Autix — Sistemas y agentes de IA a medida
+          Autix, Sistemas y agentes de IA a medida
         </div>
         <h1><span class="h1l">Produces, vendes, repartes y cobras.</span><span class="h1l">velOS <span class="grad">lo conecta todo.</span></span></h1>
         <p class="hero-sub">Un solo sistema a la medida de cómo trabaja tu empresa. Con dos agentes que lo operan desde Telegram y atienden a tus clientes por WhatsApp.</p>
         <div class="hero-ctas">
           <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener" class="btn btn-wa btn-lg">
-            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-            Solicitar una demo
-          </a>
+            <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>Solicitar demo</a>
           <a href="#modulos" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
         </div>
         <div class="hero-marks">
@@ -936,7 +1170,7 @@ summary{list-style:none}
     <div class="sec-head center">
       <div class="eyebrow">Agentes conectados a tu sistema</div>
       <h2>Dos agentes que trabajan<br>mientras tú produces</h2>
-      <p>No son bots genéricos. Cada uno conoce tus productos, precios, clientes y rutas — y ejecuta acciones reales sobre tu sistema, no solo responde.</p>
+      <p>No son bots genéricos. Cada uno conoce tus productos, precios, clientes y rutas, y ejecuta acciones reales sobre tu sistema, no solo responde.</p>
     </div>
 
     <!-- ── TELEGRAM ── -->
@@ -1051,7 +1285,7 @@ A cobrar      $247.000<span class="t">08:16</span></div>
               <div class="msg rx">¿Entregan en Maipú los lunes?<span class="t">14:35</span></div>
               <div class="msg tx">Sí, vamos lunes y jueves 🚛<br>¿Me confirma razón social, RUT y dirección de bodega?<span class="t">14:35 <svg aria-hidden="true"><use href="#i-checks"/></svg></span></div>
               <div class="msg rx">Supermercados Andes SpA<br>76.543.210-K<br>Av. Pajaritos 4120, Maipú<span class="t">14:38</span></div>
-              <div class="msg tx">Pedido agendado ✅<br>Lunes 8:00–12:00 hrs<span class="t">14:38 <svg aria-hidden="true"><use href="#i-checks"/></svg></span></div>
+              <div class="msg tx">Pedido agendado ✅<br>Lunes 8:00-12:00 hrs<span class="t">14:38 <svg aria-hidden="true"><use href="#i-checks"/></svg></span></div>
               <div class="msg rx">¿Qué margen manejan ustedes?<span class="t">14:40</span></div>
               <div class="msg warn">
                 <svg aria-hidden="true"><use href="#i-lock"/></svg>
@@ -1138,7 +1372,7 @@ A cobrar      $247.000<span class="t">08:16</span></div>
     <div class="sec-head center">
       <div class="eyebrow">Casos reales</div>
       <h2>La misma arquitectura,<br>dos rubros distintos</h2>
-      <p>velOS no es un molde fijo. Se construye según cómo opera cada negocio — desde una planta de producción hasta un restaurante con salón, cocina y delivery.</p>
+      <p>velOS no es un molde fijo. Se construye según cómo opera cada negocio, desde una planta de producción hasta un restaurante con salón, cocina y delivery.</p>
     </div>
 
     <div class="case-label">
@@ -1269,7 +1503,7 @@ A cobrar      $247.000<span class="t">08:16</span></div>
           Mismo agente, otro rubro
         </div>
         <h3>De cuota mayorista a <span class="grad">reserva de mesa</span></h3>
-        <p>El agente de WhatsApp aprende el lenguaje de cada negocio. En Campolac cotiza kilos y coordina despachos; en un restaurante toma reservas, anota alergias o preferencias para la cocina y confirma pedidos de delivery — siempre protegiendo la información interna del negocio.</p>
+        <p>El agente de WhatsApp aprende el lenguaje de cada negocio. En Campolac cotiza kilos y coordina despachos; en un restaurante toma reservas, anota alergias o preferencias para la cocina y confirma pedidos de delivery, siempre protegiendo la información interna del negocio.</p>
         <ul class="blist wa">
           <li><span class="bchk wa"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><strong>Toma reservas</strong> y consulta disponibilidad real de mesas y horarios</span></li>
           <li><span class="bchk wa"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span><strong>Registra pedidos de delivery</strong> directo desde el chat, sin comisión de terceros</span></li>
@@ -1355,7 +1589,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>velOS es un sistema de gestión inteligente construido a la medida de tu empresa. No es un software genérico con funciones fijas: es una plataforma que <strong>administra tu negocio completo</strong> — desde la producción y el control de insumos, hasta el inventario, las ventas, el reparto, la cobranza y la administración general — todo conectado en un solo lugar.</p>
+          <p>velOS es un sistema de gestión inteligente construido a la medida de tu empresa. No es un software genérico con funciones fijas: es una plataforma que <strong>administra tu negocio completo</strong>, desde la producción y el control de insumos, hasta el inventario, las ventas, el reparto, la cobranza y la administración general, todo conectado en un solo lugar.</p>
           <p>Además, incluye dos agentes inteligentes integrados: uno que opera el sistema desde Telegram para tu equipo interno, y otro que atiende a tus clientes por WhatsApp. No es un complemento externo, es parte del mismo sistema.</p>
         </div>
       </details>
@@ -1367,7 +1601,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
         </summary>
         <div class="faq-a">
           <p>velOS se adapta a cualquier empresa que tenga una operación con varias áreas que necesitan hablar entre sí: producción, inventario, ventas, logística, cobranza. Aunque nuestro primer caso real es un productor de lácteos (Campolac), la lógica del sistema aplica igual a agroindustria, distribuidoras, bebidas, manufactura, salud o cualquier negocio con procesos similares.</p>
-          <p>Cada implementación se diseña según cómo trabaja tu empresa específicamente — no adaptamos tu negocio a un software fijo, construimos el software alrededor de tu operación real.</p>
+          <p>Cada implementación se diseña según cómo trabaja tu empresa específicamente, no adaptamos tu negocio a un software fijo, construimos el software alrededor de tu operación real.</p>
         </div>
       </details>
 
@@ -1377,7 +1611,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>Significa que no te vendemos una plantilla con casillas que rellenar. Autix analiza cómo funciona tu empresa hoy — tus procesos de producción, tu forma de vender, cómo repartes, cómo cobras — y construye los módulos que realmente necesitas, con la terminología, las reglas y los flujos que usa tu equipo todos los días.</p>
+          <p>Significa que no te vendemos una plantilla con casillas que rellenar. Autix analiza cómo funciona tu empresa hoy, tus procesos de producción, tu forma de vender, cómo repartes, cómo cobras, y construye los módulos que realmente necesitas, con la terminología, las reglas y los flujos que usa tu equipo todos los días.</p>
           <p>Si tu negocio tiene una particularidad que ningún sistema estándar contempla, ese es justamente el tipo de problema que velOS está pensado para resolver.</p>
         </div>
       </details>
@@ -1408,7 +1642,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>El agente de Telegram es un operador interno con acceso a toda la información de tu sistema. Le puedes pedir en lenguaje natural cosas como registrar una venta, abrir o cerrar un lote de producción, consultar el stock de un producto, revisar la deuda de un cliente, ver la ruta de un conductor o pedir el cierre de caja del día — y responde con datos reales de tu operación, en segundos.</p>
+          <p>El agente de Telegram es un operador interno con acceso a toda la información de tu sistema. Le puedes pedir en lenguaje natural cosas como registrar una venta, abrir o cerrar un lote de producción, consultar el stock de un producto, revisar la deuda de un cliente, ver la ruta de un conductor o pedir el cierre de caja del día, y responde con datos reales de tu operación, en segundos.</p>
           <p>También analiza información: si el rendimiento de un lote bajó, te puede explicar por qué ocurrió según los datos registrados. Y envía alertas automáticas sin que se las pidas, como stock bajo mínimo o deudas vencidas.</p>
         </div>
       </details>
@@ -1419,7 +1653,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>El agente de WhatsApp está diseñado específicamente para atención a clientes: cotiza productos, responde consultas, toma pedidos y agenda entregas. Está configurado con una barrera de privacidad estricta — <strong>solo entrega información de productos, precios y condiciones comerciales</strong> que tú definiste. No tiene acceso ni puede revelar información interna de la empresa: márgenes, costos, claves, datos del sistema o cualquier información sensible.</p>
+          <p>El agente de WhatsApp está diseñado específicamente para atención a clientes: cotiza productos, responde consultas, toma pedidos y agenda entregas. Está configurado con una barrera de privacidad estricta, <strong>solo entrega información de productos, precios y condiciones comerciales</strong> que tú definiste. No tiene acceso ni puede revelar información interna de la empresa: márgenes, costos, claves, datos del sistema o cualquier información sensible.</p>
           <p>Es un canal completamente separado del agente interno de Telegram, aunque ambos se conectan al mismo sistema.</p>
         </div>
       </details>
@@ -1430,7 +1664,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, incluyendo la configuración de los agentes de Telegram y WhatsApp. Cada implementación tiene un alcance distinto porque cada empresa es distinta — te damos un plazo concreto después de conocer tu operación.</p>
+          <p>Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, incluyendo la configuración de los agentes de Telegram y WhatsApp. Cada implementación tiene un alcance distinto porque cada empresa es distinta, te damos un plazo concreto después de conocer tu operación.</p>
         </div>
       </details>
 
@@ -1441,7 +1675,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
         </summary>
         <div class="faq-a">
           <p>No. La idea de construirlo a medida es exactamente lo contrario: el sistema se adapta a tus procesos actuales, no al revés. Si hoy tu conductor recibe la ruta por WhatsApp, seguirá siendo así, solo que ahora la información sale directamente del sistema. Si tu vendedor usa un lenguaje particular para describir un pedido, el agente de Telegram lo entiende porque se configura con ese lenguaje.</p>
-          <p>Cada usuario ve solo lo que le corresponde según su rol — administración, ventas, conducción o producción — así que la curva de aprendizaje es mínima para cada persona.</p>
+          <p>Cada usuario ve solo lo que le corresponde según su rol, administración, ventas, conducción o producción, así que la curva de aprendizaje es mínima para cada persona.</p>
         </div>
       </details>
 
@@ -1451,7 +1685,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta — porque fue construido pensando en que tu negocio no se queda quieto.</p>
+          <p>Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta, porque fue construido pensando en que tu negocio no se queda quieto.</p>
         </div>
       </details>
 
@@ -1461,7 +1695,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
           <span class="faq-icon"><svg aria-hidden="true"><use href="#i-arrow2"/></svg></span>
         </summary>
         <div class="faq-a">
-          <p>Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol — cada usuario solo ve lo que su función necesita. El acceso al sistema y a los agentes queda restringido a las personas que tú autorices, y el agente público de WhatsApp está diseñado para no exponer nunca información interna, precisamente para proteger los datos sensibles de tu empresa incluso en el canal más expuesto al público.</p>
+          <p>Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol, cada usuario solo ve lo que su función necesita. El acceso al sistema y a los agentes queda restringido a las personas que tú autorices, y el agente público de WhatsApp está diseñado para no exponer nunca información interna, precisamente para proteger los datos sensibles de tu empresa incluso en el canal más expuesto al público.</p>
         </div>
       </details>
 
@@ -1492,9 +1726,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
     <div class="faq-more">
       <p>¿Tienes una pregunta específica sobre tu operación?</p>
       <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20tengo%20una%20pregunta%20sobre%20velOS" target="_blank" rel="noopener" class="btn btn-wa">
-        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        Pregúntanos por WhatsApp
-      </a>
+        <svg width="17" height="17" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>Solicitar demo</a>
     </div>
   </div>
 </section>
@@ -1524,7 +1756,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
         <div class="ps-d">Lo dejamos andando con tu equipo y configuramos los agentes de Telegram y WhatsApp. Después seguimos evolucionándolo contigo.</div>
       </div>
     </div>
-    <p class="proc-note">El plazo depende del alcance — te lo damos concreto después de conocer tu operación.</p>
+    <p class="proc-note">El plazo depende del alcance, te lo damos concreto después de conocer tu operación.</p>
   </div>
 </section>
 
@@ -1532,7 +1764,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
 <div class="scope-band">
   <div class="container">
     <div class="scope-inner">
-      <p class="scope-text"><strong>velOS es solo un ejemplo de lo que hacemos.</strong> Autix construye sistemas completos a medida o solo el agente de IA que necesitas — para cualquier rubro, no solo producción y reparto.</p>
+      <p class="scope-text"><strong>velOS es solo un ejemplo de lo que hacemos.</strong> Autix construye sistemas completos a medida o solo el agente de IA que necesitas, para cualquier rubro, no solo producción y reparto.</p>
       <div class="scope-pills">
         <span class="scope-pill">Sistemas a medida</span>
         <span class="scope-pill">Solo agentes IA</span>
@@ -1555,9 +1787,7 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
     <p>Autix diseña y desarrolla velOS específicamente para tu empresa. Sin plantillas genéricas, sin módulos que no usas. Solo lo que tu operación necesita.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
       <a href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener" class="btn btn-white btn-lg">
-        <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-        Conversemos por WhatsApp
-      </a>
+        <svg width="20" height="20" fill="currentColor" aria-hidden="true"><use href="#i-whatsapp"/></svg>Solicitar demo</a>
     </div>
     <div class="cta-checks">
       <div class="cta-chk"><svg aria-hidden="true"><use href="#i-check"/></svg>Sistema 100% a medida</div>
@@ -1644,6 +1874,26 @@ Top: Lomo a lo pobre<span class="t">22:40</span></div>
 
     io.observe(chat);
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nodes = document.querySelectorAll(
+    '.mtile, .agent-row, .case, .pstep, .faq-item'
+  );
+  if (!nodes.length || !('IntersectionObserver' in window)) return;
+  nodes.forEach(function(node){ node.classList.add('taste-reveal'); });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      observer.unobserve(entry.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+  nodes.forEach(function(node){ observer.observe(node); });
 })();
 </script>
 
