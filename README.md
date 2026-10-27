@@ -9,7 +9,7 @@ index.html      → la página completa (HTML + CSS + JS inline)
 logo.png, favicon.png, og.jpg → marca
 hero-planta.webp, planta-1..5.webp → foto del hero y recortes (derivados de hero-planta.webp)
 rubro-*.svg → imágenes de ejemplo de cada rubro (mascotas, heladería, jurídico, clínica, distribución): reemplazar por fotos reales y cambiar el `src` en index.html
-demo-sistema.mp4 + demo-sistema-poster.jpg → video de un sistema funcionando (sección #caso). Si no existen, se muestra un aviso
+casos/flujo-1..5 (.mp4, .webm, .jpg) → recorrido en video de un sistema real de pedidos y ventas (sección #caso). Si no existen, se muestra un aviso
 LICENSE-8b-template → licencia MIT del diseño base
 robots.txt       → indexación para buscadores
 sitemap.xml       → mapa del sitio

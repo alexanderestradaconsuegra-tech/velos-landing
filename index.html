@@ -872,6 +872,31 @@
   #footer .footer__legal p, #footer .footer__legal a { color: var(--color-9); }
   #footer .footer__note { color: var(--color-9); padding-bottom: 2.25rem; }
   @media (max-width: 47.99rem) { #footer .footer__top { grid-template-columns: 1fr; } }
+  /* caso: recorrido en video */
+  #caso .caso__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; margin-top: clamp(2.5rem, 5vw, 4rem); padding-top: clamp(1.75rem, 3vw, 2.5rem); border-top: 0.0625rem solid color-mix(in srgb, var(--color-2) 16%, transparent); }
+  #caso .caso__cta .m-text-4 { max-width: 34rem; color: var(--color-7); }
+  .flow { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2.5rem 4rem; align-items: start; margin-top: clamp(2.5rem, 5vw, 4rem); }
+  .flow__steps { display: grid; gap: 0.375rem; }
+  .flow__step { position: relative; display: grid; gap: 0.375rem; width: 100%; overflow: hidden; padding: 1.125rem 1.25rem; border: 0; border-radius: var(--radius-4); background: transparent; color: inherit; text-align: left; cursor: pointer; opacity: 0.62; transition: background 0.3s ease, opacity 0.3s ease; }
+  .flow__step:hover { opacity: 0.9; }
+  .flow__step.is-active { background: color-mix(in srgb, var(--color-2) 9%, transparent); opacity: 1; }
+  .flow__step:focus-visible { outline: 0.1875rem solid var(--color-4); outline-offset: -0.1875rem; }
+  .flow__num { color: var(--color-4); }
+  .flow__more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .flow__more > span { display: grid; gap: 0.625rem; min-height: 0; overflow: hidden; }
+  .flow__step.is-active .flow__more { grid-template-rows: 1fr; }
+  .flow__more .m-text-8 { color: var(--color-7); }
+  .flow__more em { font-style: normal; color: var(--color-2); }
+  .flow__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 0.1875rem; background: var(--color-4); transform: scaleX(0); transform-origin: 0 50%; }
+  .flow__stage { position: sticky; top: 6rem; display: grid; place-items: center; aspect-ratio: 16 / 9; overflow: hidden; border: 0.0625rem solid rgba(255,255,255,0.1); border-radius: var(--radius-2); background: radial-gradient(60% 80% at 50% 40%, rgba(61,216,240,0.16), transparent 70%), var(--color-8); }
+  .flow__device { position: relative; overflow: hidden; background: #fff; transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-radius 0.5s; }
+  .flow__stage[data-mode="portrait"] .flow__device { height: 92%; aspect-ratio: 1 / 2; border: 0.4rem solid #050d11; border-radius: 1.9rem; box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.45); }
+  .flow__stage[data-mode="wide"] .flow__device { width: 100%; height: 100%; border-radius: 0; }
+  .flow__device video { display: block; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+  .flow__toggle { position: absolute; right: 0.875rem; bottom: 0.875rem; padding: 0.4rem 0.85rem; border: 0.0625rem solid rgba(255,255,255,0.18); border-radius: var(--radius-3); background: rgba(5,13,17,0.7); color: #fff; backdrop-filter: blur(8px); cursor: pointer; }
+  .flow__toggle:focus-visible { outline: 0.1875rem solid var(--color-4); outline-offset: 0.125rem; }
+  @media (max-width: 63.99rem) { .flow { grid-template-columns: 1fr; } .flow__stage { position: relative; top: auto; order: -1; } }
+  @media (max-width: 63.99rem) { .flow__stage { aspect-ratio: 4 / 3.2; } .flow__stage[data-mode="wide"] .flow__device { height: auto; aspect-ratio: 16 / 9; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -1134,21 +1159,27 @@
   <div class="caso__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
   <div class="caso__inner l-wrap">
     <div class="caso__head">
-      <h2 class="m-text-3" id="caso-title" data-8b-motion="captionIn">Míralo funcionando.</h2>
+      <h2 class="m-text-3" id="caso-title" data-8b-motion="captionIn">Del pedido al cobro, en un solo sistema.</h2>
       <div class="caso__copy">
-        <p class="m-text-4">Así se ve un sistema a medida cuando ya está andando en un negocio real.</p>
-        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Quiero algo así para mi negocio</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+        <p class="m-text-4">Un sistema real de pedidos y ventas para un retail con delivery. Míralo funcionar paso a paso, desde que el cliente pide hasta que cobra y recomienda. Datos de ejemplo.</p>
       </div>
     </div>
-    <div class="caso__frame" id="caso-frame">
-      <video controls playsinline preload="metadata" poster="demo-sistema-poster.jpg" aria-label="Video: un sistema a medida funcionando">
-        <source src="demo-sistema.mp4" type="video/mp4">
-      </video>
-      <div class="caso__ph" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7zM14 5H3a2 2 0 00-2 2v10a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg>
-        <p class="m-text-5">Video del sistema</p>
-        <p class="m-text-7">Agrega demo-sistema.mp4 y demo-sistema-poster.jpg a la raíz del sitio.</p>
+    <div class="flow" id="flow">
+      <ol class="flow__steps">
+        <li><button class="flow__step is-active" type="button" data-i="0" aria-pressed="true"><span class="flow__num m-text-6">01 · Pide</span><strong class="m-text-5">El cliente pide solo</strong><span class="flow__more"><span><span class="m-text-8">Entra al catálogo desde el celular y elige los productos y el peso que quiere. No necesita registrarse ni llamar.</span><em class="m-text-7">El pedido llega al panel del local.</em></span></span><i class="flow__bar" aria-hidden="true"></i></button></li>
+        <li><button class="flow__step" type="button" data-i="1" aria-pressed="false"><span class="flow__num m-text-6">02 · Calcula</span><strong class="m-text-5">El delivery se calcula solo</strong><span class="flow__more"><span><span class="m-text-8">Con su ubicación, el sistema mide la distancia al local y muestra el costo del envío según los tramos que define el negocio.</span><em class="m-text-7">A 4,2 km: delivery $3.500.</em></span></span><i class="flow__bar" aria-hidden="true"></i></button></li>
+        <li><button class="flow__step" type="button" data-i="2" aria-pressed="false"><span class="flow__num m-text-6">03 · Avisa</span><strong class="m-text-5">El cliente sabe en qué va</strong><span class="flow__more"><span><span class="m-text-8">Cada vez que el local cambia la etapa (preparando, en camino, entregado), el sistema avisa por WhatsApp. Nadie tiene que escribir.</span><em class="m-text-7">Aviso automático en cada etapa.</em></span></span><i class="flow__bar" aria-hidden="true"></i></button></li>
+        <li><button class="flow__step" type="button" data-i="3" aria-pressed="false"><span class="flow__num m-text-6">04 · Cobra</span><strong class="m-text-5">La caja pesa, cobra y deja la boleta</strong><span class="flow__more"><span><span class="m-text-8">Se elige el producto, se marca el peso y se cobra en efectivo, transferencia, tarjeta o mixto. El stock se descuenta solo.</span><em class="m-text-7">Venta y boleta registradas.</em></span></span><i class="flow__bar" aria-hidden="true"></i></button></li>
+        <li><button class="flow__step" type="button" data-i="4" aria-pressed="false"><span class="flow__num m-text-6">05 · Crece</span><strong class="m-text-5">Cada cliente trae más clientes</strong><span class="flow__more"><span><span class="m-text-8">Cada cliente tiene su link personal: si un amigo nuevo compra con él, tiene delivery gratis, y quien lo invitó gana otro envío gratis.</span><em class="m-text-7">El premio se aplica solo en su próximo pedido.</em></span></span><i class="flow__bar" aria-hidden="true"></i></button></li>
+      </ol>
+      <div class="flow__stage" id="flow-stage" data-mode="portrait">
+        <div class="flow__device"><video muted playsinline preload="auto" poster="casos/flujo-1-pide.jpg" aria-label="Recorrido de un sistema real de pedidos y ventas"><source src="casos/flujo-1-pide.webm" type="video/webm"><source src="casos/flujo-1-pide.mp4" type="video/mp4"></video></div>
+        <button class="flow__toggle m-text-7" type="button" id="flow-toggle" aria-label="Pausar o reanudar el video">Pausar</button>
       </div>
+    </div>
+    <div class="caso__cta">
+      <p class="m-text-4">¿Tu negocio tiene una operación parecida? Cuéntanos cómo trabajas hoy y te decimos qué se puede conectar.</p>
+      <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Quiero algo así para mi negocio</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
     </div>
   </div>
 </section>
@@ -1446,13 +1477,50 @@
   new IntersectionObserver(([entry]) => hero.classList.toggle('is-paused', !entry.isIntersecting)).observe(hero);
 })();
 </script>
-<script data-8b-part="section-script:caso">
+<script data-8b-part="section-script:flow">
 (() => {
-  const frame = document.getElementById('caso-frame');
-  const video = frame && frame.querySelector('video');
-  if (!video) return;
-  const ok = () => frame.classList.add('has-video');
-  if (video.readyState >= 1) ok(); else video.addEventListener('loadedmetadata', ok, { once: true });
+  const root = document.getElementById('flow');
+  if (!root) return;
+  const stage = root.querySelector('#flow-stage');
+  const video = stage.querySelector('video');
+  const toggle = root.querySelector('#flow-toggle');
+  const btns = [...root.querySelectorAll('.flow__step')];
+  const steps = [
+    { id: 'flujo-1-pide', mode: 'portrait' }, { id: 'flujo-2-calcula', mode: 'portrait' },
+    { id: 'flujo-3-avisa', mode: 'wide' }, { id: 'flujo-4-cobra', mode: 'wide' }, { id: 'flujo-5-crece', mode: 'wide' }
+  ];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, auto = true, visible = false;
+  if (reduced) video.controls = true;
+  const play = () => { if (!reduced && visible) video.play().catch(() => {}); };
+  function load(i) {
+    idx = i;
+    const s = steps[i];
+    stage.dataset.mode = s.mode;
+    video.poster = `casos/${s.id}.jpg`;
+    video.innerHTML = `<source src="casos/${s.id}.webm" type="video/webm"><source src="casos/${s.id}.mp4" type="video/mp4">`;
+    video.loop = !auto;
+    video.load();
+    btns.forEach((b, k) => { b.classList.toggle('is-active', k === i); b.setAttribute('aria-pressed', String(k === i)); b.querySelector('.flow__bar').style.transform = 'scaleX(0)'; });
+    toggle.textContent = 'Pausar';
+    play();
+  }
+  video.addEventListener('timeupdate', () => {
+    if (video.duration) btns[idx].querySelector('.flow__bar').style.transform = `scaleX(${video.currentTime / video.duration})`;
+  });
+  video.addEventListener('ended', () => { if (auto) load((idx + 1) % steps.length); });
+  btns.forEach((b, i) => b.addEventListener('click', () => { auto = false; load(i); }));
+  toggle.addEventListener('click', () => {
+    if (video.paused) { video.play().catch(() => {}); toggle.textContent = 'Pausar'; }
+    else { video.pause(); toggle.textContent = 'Reproducir'; }
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (visible) { if (!reduced && toggle.textContent === 'Pausar') play(); }
+      else video.pause();
+    }, { threshold: 0.35 }).observe(stage);
+  } else visible = true;
 })();
 </script>
 <script data-8b-part="section-script:erp">
