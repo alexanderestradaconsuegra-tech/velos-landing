@@ -33,7 +33,7 @@ El repo trae un `Dockerfile` (nginx:alpine, puerto 80) que copia `index.html` y 
 Si agregas un archivo nuevo (imagen, etc.), añade su `COPY` al `Dockerfile`; si no, no llega al contenedor.
 
 ### Otras opciones
-Al ser un sitio 100% estático, se puede servir desde cualquiera de estas opciones sin cambios. Recomendado: **Vercel o Netlify** — llevan el certificado SSL de `autix.pro` automático y gratis, y no dependen de tu VPS.
+Al ser un sitio 100% estático, se puede servir desde cualquiera de estas opciones sin cambios. Alternativas si no usas el VPS: **Vercel** o **Netlify** (SSL automático y gratis).
 
 ### Vercel (gratis)
 1. Entra a [vercel.com/new](https://vercel.com/new) e importa este repositorio.
