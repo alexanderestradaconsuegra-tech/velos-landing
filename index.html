@@ -644,6 +644,55 @@
   #tune .tune__toggle::after { content: none; }
   #tune .tune__toggle i { position: absolute; top: 0.1875rem; left: 0.1875rem; width: 1.125rem; height: 1.125rem; border-radius: 50%; background: var(--color-1); transform: translateX(1.25rem); }
   @media (max-width: 47.99rem) { #tune .tune__mods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* rooms: paneles por rubro */
+  #rooms .rooms__lines { z-index: 0; }
+  #rooms .rooms__place { z-index: 1; container-type: inline-size; background: var(--color-2); aspect-ratio: auto; min-height: 31rem; }
+  #rooms .rooms__place::after { display: none; }
+  #rooms .rooms__place .rooms__label { background: var(--color-1); color: var(--color-2); }
+  #rooms:not(.is-track) .dash__tag { display: none; }
+  #rooms .rooms__place .rooms__label { max-width: calc(100% - 1.75rem); }
+  #rooms .dash__tag { position: absolute; z-index: 2; top: 0.875rem; right: 0.875rem; padding: 0.25rem 0.625rem; border-radius: var(--radius-3); background: var(--color-3); color: var(--color-5); }
+  #rooms .dash { position: absolute; inset: 0; display: grid; align-content: start; gap: 0.8em; padding: max(4.3em, 3.6rem) 1.1em max(7.2em, 6.6rem); background: var(--color-2); color: var(--color-1); font-size: clamp(0.6rem, 2.7cqi, 0.85rem); line-height: 1.3; }
+  #rooms .dash__kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5em; }
+  #rooms .dash__kpi { display: grid; gap: 0.2em; padding: 0.6em 0.7em; border-radius: 0.7em; background: var(--color-3); }
+  #rooms .dash__kpi span { font-size: 0.78em; color: var(--color-5); }
+  #rooms .dash__kpi b { font-size: 1.4em; line-height: 1.05; letter-spacing: -0.03em; font-weight: 600; }
+  #rooms .dash__block { display: grid; gap: 0.4em; }
+  #rooms .dash__title { font-size: 0.82em; font-weight: 600; color: var(--color-5); }
+  #rooms .dash__chart { display: flex; align-items: flex-end; gap: 0.35em; height: 6.4em; padding: 0.7em 0.7em 0; border-radius: 0.7em; background: var(--color-3); }
+  #rooms .dash__chart i { flex: 1; height: var(--h); border-radius: 0.2em 0.2em 0 0; background: var(--color-6); }
+  #rooms .dash__chart i.hl { background: var(--color-4); }
+  #rooms .dash__list, #rooms .dash__prog { display: grid; }
+  #rooms .dash__list li, #rooms .dash__prog li { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; padding: 0.5em 0; border-top: 0.0625rem solid color-mix(in srgb, var(--color-1) 12%, transparent); }
+  #rooms .dash__prog li { display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: 0.35em; }
+  #rooms .dash__prog em { font-style: normal; font-weight: 600; font-size: 0.85em; color: var(--color-5); }
+  #rooms .dash__prog .dash__bar { grid-column: 1 / -1; height: 0.4em; border-radius: 1em; background: linear-gradient(90deg, var(--color-6) var(--w), var(--color-3) var(--w)); }
+  #rooms .dash__chip { flex: none; padding: 0.15em 0.65em; border-radius: 1em; font-size: 0.8em; font-weight: 600; white-space: nowrap; }
+  #rooms .dash__chip--ok { background: color-mix(in srgb, var(--color-4) 38%, var(--color-2)); color: var(--color-1); }
+  #rooms .dash__chip--warn { background: #fde7c8; color: #7a4300; }
+  #rooms .dash__chip--info { background: var(--color-3); color: var(--color-6); }
+  #rooms .rooms__talk { left: 0.75rem; right: 0.75rem; bottom: 0.75rem; }
+  #rooms .dash__plus { display: block; padding: 0.7rem 0.9rem; border-radius: 1rem; background: var(--color-1); color: var(--color-2); font-size: 0.78rem; line-height: 1.35; }
+  #rooms .dash__plus b { display: block; margin-bottom: 0.15rem; color: var(--color-4); font-weight: 600; }
+  @media (max-width: 63.99rem) { #rooms .rooms__place:last-child { aspect-ratio: auto; } }
+  @media (max-width: 47.99rem) { #rooms .rooms__place, #rooms .rooms__place:last-child { aspect-ratio: auto; min-height: 32rem; } }
+  /* asistentes (opcional) */
+  #agentes { position: relative; isolation: isolate; color: var(--color-2); padding-block: var(--space-2); }
+  #agentes > :not(.agentes__sheet) { position: relative; z-index: 1; }
+  #agentes .agentes__head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.5rem 4rem; align-items: end; }
+  #agentes .agentes__head .m-text-4 { color: var(--color-9); }
+  #agentes .agentes__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+  #agentes .agentes__card { display: grid; gap: 1rem; align-content: start; padding: clamp(1.25rem, 2.5vw, 2rem); border-radius: var(--radius-2); background: var(--color-8); }
+  #agentes .agentes__label { display: flex; align-items: center; gap: 0.5rem; color: var(--color-9); }
+  #agentes .agentes__label i { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--color-4); }
+  #agentes .agentes__chat { display: grid; gap: 0.625rem; }
+  #agentes .agentes__row { display: flex; }
+  #agentes .agentes__row--bot { justify-content: flex-end; }
+  #agentes .agentes__row p { font-size: 0.875rem; }
+  #agentes .agentes__note { color: var(--color-9); }
+  #agentes .agentes__pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  #agentes .agentes__pills li { padding: 0.5rem 1rem; border-radius: var(--radius-3); background: var(--color-8); color: var(--color-7); }
+  @media (max-width: 63.99rem) { #agentes .agentes__head, #agentes .agentes__grid { grid-template-columns: 1fr; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -822,56 +871,46 @@
 <section class="rooms on-dark" id="rooms" data-8b-section="in-person" aria-labelledby="rooms-title">
   <div class="rooms__sheet m-band-4" aria-hidden="true"></div>
   <div class="rooms__head l-wrap">
-    <h2 class="m-text-3" id="rooms-title" data-8b-motion="captionIn">Para cada negocio, un sistema distinto.</h2>
-    <p class="m-text-4 rooms__lead" data-8b-motion="readAlong">No hay un molde. Estos son ejemplos de lo que podemos construir para distintos negocios, con la pregunta que cada dueño se hace y cómo la responde su sistema. Si tu rubro no está, también.</p>
+    <h2 class="m-text-3" id="rooms-title" data-8b-motion="captionIn">Cada negocio opera distinto. Su sistema también.</h2>
+    <p class="m-text-4 rooms__lead" data-8b-motion="readAlong">No hay un molde: una tienda online, una clínica y un estudio jurídico miran números muy distintos. Estos son paneles de ejemplo de lo que podemos construir; el tuyo se diseña desde cero con lo que tu negocio necesita ver y hacer cada día.</p>
   </div>
   <div class="rooms__hold">
     <div class="rooms__stage">
-      <p class="rooms__now m-text-6"><i aria-hidden="true"></i>Ejemplos · Pregunta y respuesta</p>
+      <p class="rooms__now m-text-6"><i aria-hidden="true"></i>Paneles de ejemplo · Un sistema por negocio</p>
       <div class="rooms__track">
         <svg class="rooms__lines" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
           <path class="rooms__line rooms__line--a" pathLength="1" d="M0 60C40 10 80 10 120 50S200 95 240 55 320 5 360 45 440 95 480 55 560 5 600 45 680 95 720 55 800 5 840 45 920 95 1000 50"/>
           <path class="rooms__line rooms__line--b" pathLength="1" d="M0 40C40 90 80 90 120 50S200 5 240 45 320 95 360 55 440 5 480 45 560 95 600 55 680 5 720 45 800 95 840 55 920 5 1000 50"/>
         </svg>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-mascotas.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Tiendas de mascotas</figcaption>
-          <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué alimento se me acaba esta semana?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Inventario con alertas y ventas por producto.</span></p>
-          </div>
+          <figcaption class="rooms__label m-text-6">Tienda online</figcaption>
+          <span class="dash__tag m-text-7" aria-hidden="true">Ejemplo</span>
+          <div class="dash" role="img" aria-label="Panel de ejemplo: Tienda online"><div class="dash__kpis"><p class="dash__kpi"><span>Ventas hoy</span><b>$1,25M</b></p><p class="dash__kpi"><span>Pedidos</span><b>38</b></p><p class="dash__kpi"><span>Carritos abiertos</span><b>14</b></p></div><div class="dash__block"><p class="dash__title">Ventas por hora</p><div class="dash__chart" aria-hidden="true"><i style="--h:18%"></i><i style="--h:24%"></i><i style="--h:20%"></i><i style="--h:32%"></i><i style="--h:44%"></i><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:61%"></i><i style="--h:48%"></i><i style="--h:70%"></i><i class="hl" style="--h:84%"></i></div></div><div class="dash__block"><p class="dash__title">Pedidos recientes</p><ul class="dash__list"><li><span>#1042 · Zapatillas trail</span><span class="dash__chip dash__chip--ok">Pagado</span></li><li><span>#1041 · Mochila 30 L</span><span class="dash__chip dash__chip--warn">Preparando</span></li><li><span>#1040 · Gorro de lana</span><span class="dash__chip dash__chip--info">Despachado</span></li><li><span>#1039 · Polera técnica</span><span class="dash__chip dash__chip--ok">Pagado</span></li><li><span>#1038 · Bidón 1 L</span><span class="dash__chip dash__chip--ok">Pagado</span></li></ul></div></div>
+          <div class="rooms__talk"><p class="dash__plus m-text-7"><b>El plus</b>Catálogo, pagos, stock y despacho conectados: cada venta online descuenta el stock y avisa a bodega.</p></div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-heladeria.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Heladerías y cafeterías</figcaption>
-          <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué sabor se vende más y cuál se agotó?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Caja rápida, stock por sabor y cierre del día.</span></p>
-          </div>
+          <figcaption class="rooms__label m-text-6">Clínica</figcaption>
+          <span class="dash__tag m-text-7" aria-hidden="true">Ejemplo</span>
+          <div class="dash" role="img" aria-label="Panel de ejemplo: Clínica"><div class="dash__kpis"><p class="dash__kpi"><span>Citas hoy</span><b>24</b></p><p class="dash__kpi"><span>Confirmadas</span><b>19</b></p><p class="dash__kpi"><span>Por confirmar</span><b>5</b></p></div><div class="dash__block"><p class="dash__title">Ocupación por profesional</p><ul class="dash__prog"><li><span>Dra. Soto</span><em>90%</em><i class="dash__bar" style="--w:90%"></i></li><li><span>Dr. Rojas</span><em>70%</em><i class="dash__bar" style="--w:70%"></i></li><li><span>Dr. Vega</span><em>55%</em><i class="dash__bar" style="--w:55%"></i></li></ul></div><div class="dash__block"><p class="dash__title">Próximas citas</p><ul class="dash__list"><li><span>09:00 · Control</span><span class="dash__chip dash__chip--ok">Confirmada</span></li><li><span>09:30 · Evaluación</span><span class="dash__chip dash__chip--ok">Confirmada</span></li><li><span>10:00 · Limpieza</span><span class="dash__chip dash__chip--warn">Por confirmar</span></li><li><span>10:30 · Ortodoncia</span><span class="dash__chip dash__chip--ok">Confirmada</span></li><li><span>11:00 · Control</span><span class="dash__chip dash__chip--warn">Por confirmar</span></li></ul></div></div>
+          <div class="rooms__talk"><p class="dash__plus m-text-7"><b>El plus</b>Agenda por profesional, fichas y recordatorios automáticos: menos citas perdidas, más pacientes atendidos.</p></div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-juridico.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Estudios jurídicos</figcaption>
-          <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué plazo vence esta semana?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Casos, clientes, plazos y honorarios en un solo lugar.</span></p>
-          </div>
+          <figcaption class="rooms__label m-text-6">Estudio jurídico</figcaption>
+          <span class="dash__tag m-text-7" aria-hidden="true">Ejemplo</span>
+          <div class="dash" role="img" aria-label="Panel de ejemplo: Estudio jurídico"><div class="dash__kpis"><p class="dash__kpi"><span>Causas activas</span><b>42</b></p><p class="dash__kpi"><span>Plazos 7 días</span><b>6</b></p><p class="dash__kpi"><span>Por cobrar</span><b>$3,4M</b></p></div><div class="dash__block"><p class="dash__title">Honorarios cobrados por mes</p><div class="dash__chart" aria-hidden="true"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:36%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:66%"></i><i class="hl" style="--h:72%"></i></div></div><div class="dash__block"><p class="dash__title">Vencimientos</p><ul class="dash__list"><li><span>Contestar demanda · C-218</span><span class="dash__chip dash__chip--warn">Hoy</span></li><li><span>Audiencia · C-190</span><span class="dash__chip dash__chip--warn">Mañana</span></li><li><span>Presentar escrito · C-231</span><span class="dash__chip dash__chip--info">3 días</span></li><li><span>Revisar contrato · C-244</span><span class="dash__chip dash__chip--info">5 días</span></li><li><span>Alegatos · C-205</span><span class="dash__chip dash__chip--info">8 días</span></li></ul></div></div>
+          <div class="rooms__talk"><p class="dash__plus m-text-7"><b>El plus</b>Casos, plazos y honorarios en un solo lugar: nada se vence sin que lo veas venir.</p></div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-clinica.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Clínicas y centros de salud</figcaption>
-          <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Quién atiende hoy y quién no confirmó?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Agenda por profesional, fichas y recordatorios.</span></p>
-          </div>
+          <figcaption class="rooms__label m-text-6">Tienda de mascotas</figcaption>
+          <span class="dash__tag m-text-7" aria-hidden="true">Ejemplo</span>
+          <div class="dash" role="img" aria-label="Panel de ejemplo: Tienda de mascotas"><div class="dash__kpis"><p class="dash__kpi"><span>Ventas hoy</span><b>$486 mil</b></p><p class="dash__kpi"><span>Ticket prom.</span><b>$14.200</b></p><p class="dash__kpi"><span>Stock bajo</span><b>7</b></p></div><div class="dash__block"><p class="dash__title">Ventas por día</p><div class="dash__chart" aria-hidden="true"><i style="--h:40%"></i><i style="--h:46%"></i><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:60%"></i><i class="hl" style="--h:88%"></i><i style="--h:74%"></i></div></div><div class="dash__block"><p class="dash__title">Stock de lo más vendido</p><ul class="dash__prog"><li><span>Alimento perro 15 kg</span><em>Reponer</em><i class="dash__bar" style="--w:22%"></i></li><li><span>Arena sanitaria</span><em>Ok</em><i class="dash__bar" style="--w:60%"></i></li><li><span>Antipulgas gato</span><em>Reponer</em><i class="dash__bar" style="--w:15%"></i></li><li><span>Collar reflectante</span><em>Ok</em><i class="dash__bar" style="--w:80%"></i></li><li><span>Juguete mordedor</span><em>Ok</em><i class="dash__bar" style="--w:45%"></i></li></ul></div></div>
+          <div class="rooms__talk"><p class="dash__plus m-text-7"><b>El plus</b>Caja, stock y proveedores conectados: sabes qué reponer antes de quedarte sin.</p></div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-distribucion.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Distribución y producción</figcaption>
-          <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Quién me debe y qué lleva cada conductor?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Rutas, cobranza y costo real por producto.</span></p>
-          </div>
+          <figcaption class="rooms__label m-text-6">Distribución y reparto</figcaption>
+          <span class="dash__tag m-text-7" aria-hidden="true">Ejemplo</span>
+          <div class="dash" role="img" aria-label="Panel de ejemplo: Distribución y reparto"><div class="dash__kpis"><p class="dash__kpi"><span>Entregas</span><b>18/24</b></p><p class="dash__kpi"><span>Por cobrar</span><b>$2,1M</b></p><p class="dash__kpi"><span>Rutas</span><b>4</b></p></div><div class="dash__block"><p class="dash__title">Rutas de hoy</p><ul class="dash__prog"><li><span>Norte · Pedro</span><em>8/10</em><i class="dash__bar" style="--w:80%"></i></li><li><span>Sur · Ana</span><em>5/10</em><i class="dash__bar" style="--w:50%"></i></li><li><span>Centro · Luis</span><em>Completa</em><i class="dash__bar" style="--w:100%"></i></li><li><span>Oriente · Marta</span><em>3/10</em><i class="dash__bar" style="--w:30%"></i></li><li><span>Poniente · Raúl</span><em>6/10</em><i class="dash__bar" style="--w:65%"></i></li></ul></div><div class="dash__block"><p class="dash__title">Cobranza por vencimiento</p><div class="dash__chart" aria-hidden="true"><i class="hl" style="--h:70%"></i><i style="--h:52%"></i><i style="--h:38%"></i><i style="--h:24%"></i><i style="--h:14%"></i></div></div></div>
+          <div class="rooms__talk"><p class="dash__plus m-text-7"><b>El plus</b>Rutas, entregas y cobranza conectadas: cada conductor ve su ruta y tú ves toda la operación.</p></div>
         </figure>
       </div>
     </div>
@@ -909,6 +948,37 @@
         <p class="m-text-7">Agrega demo-sistema.mp4 y demo-sistema-poster.jpg a la raíz del sitio.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="agentes on-dark" id="agentes" data-8b-section="agents" aria-labelledby="agentes-title">
+  <div class="agentes__sheet m-band-4" aria-hidden="true"></div>
+  <div class="agentes__inner l-wrap">
+    <div class="agentes__head">
+      <h2 class="m-text-3" id="agentes-title" data-8b-motion="captionIn">Si quieres, tu sistema también puede conversar.</h2>
+      <p class="m-text-4">Los asistentes de IA son opcionales. Se conectan a tu sistema o a tu web para atender clientes, o para que tu equipo consulte y registre sin abrir pantallas. Cada negocio decide si los necesita.</p>
+    </div>
+    <div class="agentes__grid">
+      <article class="agentes__card">
+        <p class="agentes__label m-text-6"><i aria-hidden="true"></i>Asistente para tus clientes · WhatsApp o tu web</p>
+        <div class="agentes__chat">
+          <div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Tienen hora el jueves en la tarde?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Sí, tengo 15:30 y 17:00. ¿Cuál prefieres?</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">A las 15:30, por favor.</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Listo, quedó agendada. Te lo recuerdo el día antes.</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cuánto ganan con esto?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Esa información es interna. ¿Te ayudo con algo más?</span></p></div>
+        </div>
+        <p class="agentes__note m-text-7">Atiende, agenda y cotiza a cualquier hora, y nunca revela información interna.</p>
+      </article>
+      <article class="agentes__card">
+        <p class="agentes__label m-text-6"><i aria-hidden="true"></i>Asistente para tu equipo · Telegram</p>
+        <div class="agentes__chat">
+          <div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cómo van las ventas hoy?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Llevas 12 ventas por $184.000, 8% sobre ayer.</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué stock está bajo?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">3 productos bajo el mínimo. ¿Genero la orden de compra?</span></p></div>
+        </div>
+        <p class="agentes__note m-text-7">Consulta y registra desde el chat, con acceso solo para tu equipo.</p>
+      </article>
+    </div>
+    <ul class="agentes__pills m-text-6">
+      <li>Conectados a tu sistema, a tu web o a ambos</li>
+      <li>Conversaciones de ejemplo</li>
+      <li>Siempre opcionales</li>
+    </ul>
   </div>
 </section>
 
@@ -1443,7 +1513,7 @@ queueMotion(() => {
     main.fromTo(track, { x: 0 }, { x: () => -travel(), duration: 1 }, 0)
       .fromTo(lines, { strokeDasharray: 1, strokeDashoffset: () => 1 - lead() }, { strokeDashoffset: 0, duration: 1 }, 0);
     places.forEach((place, index) => {
-      const image = place.querySelector('img');
+      const image = place.querySelector('.dash');
       const talk = place.querySelectorAll('.rooms__talk > *');
       gsap.fromTo(image, { xPercent: 7 }, { xPercent: 0, ease: 'none', scrollTrigger: { id: `rooms:photo-${index}`, trigger: place, containerAnimation: main, start: 'left right', end: wide ? 'left 66%' : 'left 40%', scrub: true } });
       gsap.fromTo(talk, { y: 36, opacity: 0 }, { y: 0, opacity: 1, ease: 'power2.out', stagger: 0.3, scrollTrigger: { id: `rooms:talk-${index}`, trigger: place, containerAnimation: main, start: wide ? 'left 100%' : 'left 100%', end: wide ? 'left 66%' : 'left 40%', scrub: true } });
