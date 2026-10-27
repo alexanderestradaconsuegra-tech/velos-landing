@@ -79,3 +79,15 @@ Para actualizar tras un cambio: `cd /var/www/velos-landing && git pull && system
 ## Actualizar el contenido
 
 El archivo se genera y edita habitualmente desde Claude como Artifact. Para publicar una edición nueva: reemplaza `index.html` con la versión actualizada, haz commit y push — el hosting elegido se redepliega automáticamente en cada push a `main`.
+
+## SEO e indexación
+
+La página ya incluye: título y descripción con la palabra clave principal, `canonical`, `hreflang es-CL`, Open Graph y Twitter con `og.jpg`, datos estructurados JSON-LD (Organization, WebSite, ProfessionalService, ItemList de sistemas y FAQPage con las preguntas visibles), `robots.txt`, `sitemap.xml` y `site.webmanifest`.
+
+Para aparecer en Google:
+1. **Google Search Console** → agregar la propiedad de dominio `autix.pro` y verificarla con un registro TXT en el DNS (Hostinger).
+2. En **Sitemaps** enviar `https://autix.pro/sitemap.xml` y en **Inspección de URL** pedir la indexación de `https://autix.pro/`.
+3. Repetir en **Bing Webmaster Tools** (importa la propiedad desde Search Console).
+4. Crear la ficha de **Google Business Profile** de Autix.
+5. Poner en el pie de velOS, Merka POS, AgendaOS, Holu, Métrikas y Goat League un enlace "Hecho por Autix" a `https://autix.pro/`: son enlaces propios y de contexto relevante.
+6. Cuando cambie el contenido, actualizar `lastmod` en `sitemap.xml`.
