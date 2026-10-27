@@ -22,9 +22,20 @@ Esta landing va en la **raíz** de `autix.pro` (marketing). El sistema velOS sig
 
 ## Desplegar
 
+### EasyPanel (recomendado, VPS propio)
+El repo trae un `Dockerfile` (nginx:alpine, puerto 80) que copia `index.html` y todos los assets.
+1. En EasyPanel: **Proyecto → + Servicio → App**.
+2. **Source → Github**: repo `alexanderestradaconsuegra-tech/velos-landing`, rama `main` (o la rama a probar), **Build → Dockerfile**.
+3. **Domains**: agrega `autix.pro` y `www.autix.pro` apuntando al puerto `80`. EasyPanel emite el SSL.
+4. En DNS (Hostinger) crea el registro `A` de `autix.pro` hacia la IP del VPS.
+5. Para actualizar: push a la rama configurada y **Deploy** (o activa Auto Deploy con el webhook de GitHub).
+
+Si agregas un archivo nuevo (imagen, etc.), añade su `COPY` al `Dockerfile`; si no, no llega al contenedor.
+
+### Otras opciones
 Al ser un sitio 100% estático, se puede servir desde cualquiera de estas opciones sin cambios. Recomendado: **Vercel o Netlify** — llevan el certificado SSL de `autix.pro` automático y gratis, y no dependen de tu VPS.
 
-### Vercel (recomendado, gratis)
+### Vercel (gratis)
 1. Entra a [vercel.com/new](https://vercel.com/new) e importa este repositorio.
 2. No hace falta configurar nada — Vercel detecta que es estático.
 3. En **Project → Settings → Domains** agrega `autix.pro` y `www.autix.pro`.
