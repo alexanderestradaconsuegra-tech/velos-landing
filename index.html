@@ -693,6 +693,51 @@
   #agentes .agentes__pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
   #agentes .agentes__pills li { padding: 0.5rem 1rem; border-radius: var(--radius-3); background: var(--color-8); color: var(--color-7); }
   @media (max-width: 63.99rem) { #agentes .agentes__head, #agentes .agentes__grid { grid-template-columns: 1fr; } }
+  /* sistemas reales: carpetas de cristal (port de IconFolder) */
+  #voices { position: relative; isolation: isolate; overflow-x: clip; color: var(--color-2); padding-block: var(--space-2); }
+  #voices > :not(.voices__sheet) { position: relative; z-index: 1; }
+  #voices .voices__sheet { background-image: radial-gradient(circle, rgba(255,255,255,0.045) 0 1px, transparent 1.4px); background-size: 20px 13px; background-position: -6px -1px; }
+  #voices .sist__head { display: grid; gap: 1.5rem; max-width: 62rem; }
+  #voices .sist__head .m-text-4 { max-width: 40rem; color: var(--color-7); }
+  #voices .sist__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 2.5vw, 2.5rem); margin-top: clamp(3rem, 6vw, 5rem); }
+  #voices .sist__item { display: grid; gap: 1.75rem; align-content: start; }
+  #voices .sist__text { display: grid; gap: 0.5rem; justify-items: start; max-width: 26rem; margin-inline: auto; width: 100%; }
+  #voices .sist__kicker { color: var(--color-4); }
+  #voices .sist__text .m-text-8 { color: var(--color-7); }
+  #voices .sist__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; margin-top: clamp(3rem, 6vw, 5rem); padding-top: clamp(2rem, 4vw, 3rem); border-top: 0.0625rem solid color-mix(in srgb, var(--color-2) 16%, transparent); }
+  .ifd { --spread: 70px; --gap: var(--spread); --rm: 1; --lift: 0px; --ease: cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; isolation: isolate; width: 100%; max-width: 420px; height: 286px; margin-inline: auto; color: #fff; letter-spacing: -0.03em; cursor: pointer; user-select: none; outline: none; -webkit-tap-highlight-color: transparent; transition: transform 0.9s var(--ease), opacity 0.6s ease; }
+  .ifd.is-pre:not(.is-shown) { opacity: 0; transform: translateY(34px) scale(0.92); }
+  .ifd.is-wide { --gap: calc(var(--spread) * 1.15); --rm: 1.2; --lift: 4px; z-index: 2; transform: translateY(-6px) scale(1.02); }
+  .ifd:focus-visible { outline: 0.0625rem solid rgba(255,255,255,0.4); outline-offset: 4px; border-radius: 1.5rem; }
+  .ifd__glow { position: absolute; z-index: -1; left: 8%; right: 8%; top: 2.5rem; height: 200px; border-radius: 999px; opacity: 0.8; filter: blur(18px); background: radial-gradient(closest-side, rgba(255,255,255,0.12), transparent); pointer-events: none; }
+  .ifd__back, .ifd__front { position: absolute; left: 0; right: 0; bottom: 0; }
+  .ifd__back { top: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008) 60%); }
+  .ifd__back svg, .ifd__front > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .ifd__back path { fill: none; stroke: rgba(255,255,255,0.07); stroke-width: 2; }
+  .ifd__front > svg path { fill: none; stroke-width: 2; }
+  .ifd__icons { position: absolute; inset: 0; pointer-events: none; }
+  .ifd__tile { position: absolute; left: 50%; top: 42px; width: 101px; height: 101px; margin-left: -50.5px; border-radius: 26px; backface-visibility: hidden; transform: translate3d(calc(var(--k) * var(--gap)), calc(var(--k) * var(--k) * 9px - var(--lift)), 0) rotate(calc(var(--k) * var(--rs) * var(--rm) * 1deg)); transition: transform 0.9s var(--ease), opacity 0.5s; transition-delay: calc(0.35s + var(--i) * 0.08s); }
+  .ifd.is-wide .ifd__tile { transition-duration: 0.6s; transition-delay: calc(var(--i) * 0.04s); }
+  .ifd.is-pre:not(.is-shown) .ifd__tile { opacity: 0; transform: translate3d(calc(var(--k) * var(--spread) * 0.6), 80px, 0); }
+  .ifd__tile:hover { z-index: 5; }
+  .ifd__in { position: relative; display: grid; place-items: center; width: 100%; height: 100%; border-radius: inherit; pointer-events: auto; box-shadow: 0 18px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.14); transition: transform 0.45s var(--ease), filter 0.3s ease; }
+  .ifd__in > svg { width: 46%; height: 46%; fill: none; stroke: #fff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .ifd__tile:hover .ifd__in { transform: translateY(-26px) rotate(calc(var(--k) * var(--rs) * var(--rm) * -1deg)) scale(1.1); }
+  .ifd__icons:has(.ifd__tile:hover) .ifd__tile:not(:hover) .ifd__in { transform: scale(0.96); filter: saturate(0.75) brightness(0.85); }
+  .ifd__lbl { position: absolute; bottom: 100%; left: 50%; margin-bottom: 0.625rem; padding: 0.25rem 0.625rem; border: 0.0625rem solid rgba(255,255,255,0.08); border-radius: 999px; background: rgba(0,0,0,0.55); backdrop-filter: blur(8px); font-size: 0.75rem; font-weight: 500; line-height: 1rem; white-space: nowrap; opacity: 0; transform: translateX(-50%) translateY(6px); transition: opacity 0.25s ease, transform 0.35s var(--ease); pointer-events: none; }
+  .ifd__tile:hover .ifd__lbl { opacity: 1; transform: translateX(-50%); }
+  .ifd__front { height: 180px; overflow: hidden; backdrop-filter: blur(18px) saturate(1.5); background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.015) 55%), rgba(12,12,12,0.78); transition: transform 0.6s var(--ease); }
+  .ifd.is-wide .ifd__front { transform: translateY(6px); }
+  .ifd__title { margin: 0; padding: 34px 18px 0; font-size: 1.25rem; font-weight: 500; line-height: 26px; }
+  .ifd__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 18px 0; }
+  .ifd__tags span { height: 24px; padding: 2px 10px; border: 0.0625rem solid #282828; border-radius: 999px; background: rgba(36,36,36,0.7); color: #9f9f9f; font-size: 0.75rem; line-height: 20px; white-space: nowrap; backdrop-filter: blur(7px); transition: border-color 0.25s ease, color 0.25s ease; }
+  .ifd__pill { position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 6px; border: 0.0625rem solid rgba(255,255,255,0.08); border-radius: 999px; background: rgba(0,0,0,0.55); }
+  .ifd__pill i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; }
+  .ifd__pill svg { width: 60%; height: 60%; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ifd:has(.ifd__tile:nth-child(1):hover) .ifd__tags span:nth-child(1), .ifd:has(.ifd__tile:nth-child(2):hover) .ifd__tags span:nth-child(2),
+  .ifd:has(.ifd__tile:nth-child(3):hover) .ifd__tags span:nth-child(3), .ifd:has(.ifd__tile:nth-child(4):hover) .ifd__tags span:nth-child(4) { border-color: rgba(255,255,255,0.4); color: #fff; }
+  @media (prefers-reduced-motion: reduce) { .ifd, .ifd__tile, .ifd__in, .ifd__front, .ifd__lbl { transition: none; } }
+  @media (max-width: 63.99rem) { #voices .sist__grid { grid-template-columns: 1fr; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -982,24 +1027,70 @@
   </div>
 </section>
 
-<section class="voices" id="voices" data-8b-section="testimonials" aria-labelledby="voices-title">
-  <div class="voices__sheet m-band" aria-hidden="true" data-8b-motion="bandRise"></div>
-  <div class="voices__inner l-wrap">
-    <h2 class="m-text-3 voices__title" id="voices-title" data-8b-motion="captionIn">Sistemas reales, hechos por Autix.</h2>
-    <div class="voices__grid">
-      <figure class="voices__expert">
-        <div class="voices__photo"><img sizes="(max-width: 767px) 95vw, 51vw" src="hero-planta.webp" width="1672" height="941" alt="Panel de un sistema Autix en un notebook junto a un celular" loading="lazy" decoding="async" style="object-position:56% 40%"></div>
-        <blockquote class="voices__quote m-text-4" data-8b-motion="readAlong"><p>No adaptamos tu negocio a un software. Construimos el software alrededor de tu negocio: tus procesos, tu vocabulario y tus reglas.</p></blockquote>
-        <figcaption class="voices__who m-text-6"><span class="voices__badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><p>Autix<br><span>Sistemas a medida · Ábrelos y míralos funcionar</span></p></figcaption>
-      </figure>
-      <div class="voices__cols">
-        <ul class="voices__col">
-          <li class="m-card"><p class="voices__stat">velOS</p><p class="m-text">Producción, inventario, ventas, reparto y cobranza en un solo sistema, para empresas con operación y equipos.</p><p class="m-text-6 voices__src">Producción y distribución</p><a class="m-link m-text-6" href="https://velos.autix.pro/" target="_blank" rel="noopener">Abrir velOS</a></li><li class="m-card"><p class="voices__stat">Merka POS</p><p class="m-text">Punto de venta para comercios: productos, ventas y clientes en una sola pantalla.</p><p class="m-text-6 voices__src">Comercio y retail</p><a class="m-link m-text-6" href="https://merkapos.pro/" target="_blank" rel="noopener">Abrir Merka POS</a></li>
-        </ul>
-        <ul class="voices__col">
-          <li class="m-card"><p class="voices__stat">Autix Agenda</p><p class="m-text">Agenda y reservas online para negocios que trabajan con citas: barberías, clínicas, centros deportivos y más.</p><p class="m-text-6 voices__src">Servicios con citas</p><a class="m-link m-text-6" href="https://agenda.autix.pro/" target="_blank" rel="noopener">Abrir Autix Agenda</a></li><li class="m-card"><p class="voices__stat">El tuyo</p><p class="m-text">Estos sistemas ya funcionan. El siguiente puede ser el de tu negocio, construido desde cero a tu medida.</p><p class="m-text-6 voices__src">Tu rubro, tu forma de trabajar</p><a class="m-link m-text-6" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener">Contarnos mi caso</a></li>
-        </ul>
-      </div>
+<section class="voices on-dark" id="voices" data-8b-section="testimonials" aria-labelledby="voices-title">
+  <div class="voices__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
+  <div class="sist__inner l-wrap">
+    <div class="sist__head">
+      <h2 class="m-text-2" id="voices-title" data-8b-motion="captionIn">Sistemas reales. Ábrelos y míralos funcionar.</h2>
+      <p class="m-text-4">Estos sistemas hechos por Autix ya están en uso. Pasa el mouse por cada carpeta, ábrelos y comprueba cómo se siente algo construido a la medida de un negocio.</p>
+    </div>
+    <ul class="sist__grid">
+      <li class="sist__item">
+        <div class="ifd" role="button" tabindex="0" aria-expanded="false" aria-label="velOS: Producción, Inventario, Reparto, Cobranza" style="--spread:70px;--rs:8.333">
+          <div class="ifd__glow" aria-hidden="true"></div>
+          <div class="ifd__back" aria-hidden="true"><svg><path/></svg></div>
+          <div class="ifd__icons" aria-hidden="true"><div class="ifd__tile" style="--k:-1.5;--i:0"><div class="ifd__in" style="background:linear-gradient(135deg,#1f7a92,#0f3a4a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><span class="ifd__lbl">Producción</span></div></div><div class="ifd__tile" style="--k:-0.5;--i:1"><div class="ifd__in" style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><span class="ifd__lbl">Inventario</span></div></div><div class="ifd__tile" style="--k:0.5;--i:2"><div class="ifd__in" style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><span class="ifd__lbl">Reparto</span></div></div><div class="ifd__tile" style="--k:1.5;--i:3"><div class="ifd__in" style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><span class="ifd__lbl">Cobranza</span></div></div></div>
+          <div class="ifd__front">
+            <svg aria-hidden="true"><defs><linearGradient id="ifd-edge-velOS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(255,255,255,.38)"/><stop offset=".35" stop-color="rgba(255,255,255,.1)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></linearGradient></defs><path stroke="url(#ifd-edge-velOS)"/></svg>
+            <h3 class="ifd__title">velOS</h3>
+            <div class="ifd__tags"><span>Producción</span><span>Inventario</span><span>Reparto</span><span>Cobranza</span></div>
+            <span class="ifd__pill" aria-hidden="true"><i style="background:linear-gradient(135deg,#1f7a92,#0f3a4a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></i><i style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></i><i style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></i><i style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></i></span>
+          </div>
+        </div>
+        <div class="sist__text">
+          <p class="m-text-6 sist__kicker">Producción y distribución</p>
+          <p class="m-text-8">Producción, inventario, ventas, reparto y cobranza en un solo sistema, para empresas con operación y equipos.</p>
+          <a class="m-link m-text-6" href="https://velos.autix.pro/" target="_blank" rel="noopener">Abrir velOS</a>
+        </div>
+      </li><li class="sist__item">
+        <div class="ifd" role="button" tabindex="0" aria-expanded="false" aria-label="Merka POS: Productos, Ventas, Clientes" style="--spread:70px;--rs:12.500">
+          <div class="ifd__glow" aria-hidden="true"></div>
+          <div class="ifd__back" aria-hidden="true"><svg><path/></svg></div>
+          <div class="ifd__icons" aria-hidden="true"><div class="ifd__tile" style="--k:-1.0;--i:0"><div class="ifd__in" style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><span class="ifd__lbl">Productos</span></div></div><div class="ifd__tile" style="--k:0.0;--i:1"><div class="ifd__in" style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><span class="ifd__lbl">Ventas</span></div></div><div class="ifd__tile" style="--k:1.0;--i:2"><div class="ifd__in" style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="ifd__lbl">Clientes</span></div></div></div>
+          <div class="ifd__front">
+            <svg aria-hidden="true"><defs><linearGradient id="ifd-edge-Merka-POS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(255,255,255,.38)"/><stop offset=".35" stop-color="rgba(255,255,255,.1)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></linearGradient></defs><path stroke="url(#ifd-edge-Merka-POS)"/></svg>
+            <h3 class="ifd__title">Merka POS</h3>
+            <div class="ifd__tags"><span>Productos</span><span>Ventas</span><span>Clientes</span></div>
+            <span class="ifd__pill" aria-hidden="true"><i style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></i><i style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg></i><i style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></i></span>
+          </div>
+        </div>
+        <div class="sist__text">
+          <p class="m-text-6 sist__kicker">Comercio y retail</p>
+          <p class="m-text-8">Punto de venta para comercios: productos, ventas y clientes en una sola pantalla.</p>
+          <a class="m-link m-text-6" href="https://merkapos.pro/" target="_blank" rel="noopener">Abrir Merka POS</a>
+        </div>
+      </li><li class="sist__item">
+        <div class="ifd" role="button" tabindex="0" aria-expanded="false" aria-label="Autix Agenda: Agenda, Profesionales, Servicios, Pagos" style="--spread:70px;--rs:8.333">
+          <div class="ifd__glow" aria-hidden="true"></div>
+          <div class="ifd__back" aria-hidden="true"><svg><path/></svg></div>
+          <div class="ifd__icons" aria-hidden="true"><div class="ifd__tile" style="--k:-1.5;--i:0"><div class="ifd__in" style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="ifd__lbl">Agenda</span></div></div><div class="ifd__tile" style="--k:-0.5;--i:1"><div class="ifd__in" style="background:linear-gradient(135deg,#1f7a92,#0f3a4a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="ifd__lbl">Profesionales</span></div></div><div class="ifd__tile" style="--k:0.5;--i:2"><div class="ifd__in" style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M8 11h8M8 15h5"/></svg><span class="ifd__lbl">Servicios</span></div></div><div class="ifd__tile" style="--k:1.5;--i:3"><div class="ifd__in" style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><span class="ifd__lbl">Pagos</span></div></div></div>
+          <div class="ifd__front">
+            <svg aria-hidden="true"><defs><linearGradient id="ifd-edge-Autix-Agenda" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(255,255,255,.38)"/><stop offset=".35" stop-color="rgba(255,255,255,.1)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></linearGradient></defs><path stroke="url(#ifd-edge-Autix-Agenda)"/></svg>
+            <h3 class="ifd__title">Autix Agenda</h3>
+            <div class="ifd__tags"><span>Agenda</span><span>Profesionales</span><span>Servicios</span><span>Pagos</span></div>
+            <span class="ifd__pill" aria-hidden="true"><i style="background:linear-gradient(135deg,#8b6cff,#4b2fd0)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></i><i style="background:linear-gradient(135deg,#1f7a92,#0f3a4a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></i><i style="background:linear-gradient(135deg,#2fc7e4,#0e7a96)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M8 11h8M8 15h5"/></svg></i><i style="background:linear-gradient(135deg,#ff9559,#e5531a)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg></i></span>
+          </div>
+        </div>
+        <div class="sist__text">
+          <p class="m-text-6 sist__kicker">Servicios con citas</p>
+          <p class="m-text-8">Agenda y reservas online para negocios que trabajan con citas: barberías, clínicas, centros deportivos y más.</p>
+          <a class="m-link m-text-6" href="https://agenda.autix.pro/" target="_blank" rel="noopener">Abrir Autix Agenda</a>
+        </div>
+      </li>
+    </ul>
+    <div class="sist__cta">
+      <p class="m-text-3">El siguiente puede ser el tuyo.</p>
+      <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener"><span class="m-btn__label">Contarnos mi caso</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
     </div>
   </div>
 </section>
@@ -1184,6 +1275,36 @@
   if (!video) return;
   const ok = () => frame.classList.add('has-video');
   if (video.readyState >= 1) ok(); else video.addEventListener('loadedmetadata', ok, { once: true });
+})();
+</script>
+<script data-8b-part="section-script:folders">
+(() => {
+  const L = (w, h, r, d, tw, s) => `M0 ${r}A${r} ${r} 0 0 1 ${r} 0L${tw} 0C${tw + s * 0.55} 0 ${tw + s * 0.45} ${d} ${tw + s} ${d}L${w - r} ${d}A${r} ${r} 0 0 1 ${w} ${d + r}L${w} ${h - r}A${r} ${r} 0 0 1 ${w - r} ${h}L${r} ${h}A${r} ${r} 0 0 1 0 ${h - r}Z`;
+  const R = (w, h, r, d, tw, s) => { const x = w - tw; return `M0 ${d + r}A${r} ${r} 0 0 1 ${r} ${d}L${x - s} ${d}C${x - s * 0.45} ${d} ${x - s * 0.55} 0 ${x} 0L${w - r} 0A${r} ${r} 0 0 1 ${w} ${r}L${w} ${h - r}A${r} ${r} 0 0 1 ${w - r} ${h}L${r} ${h}A${r} ${r} 0 0 1 0 ${h - r}Z`; };
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.ifd').forEach(root => {
+    const front = root.querySelector('.ifd__front');
+    const back = root.querySelector('.ifd__back');
+    const fp = front.querySelector('svg path');
+    const bp = back.querySelector('svg path');
+    const shape = () => {
+      const fd = L(front.offsetWidth, front.offsetHeight, 24, 24, Math.round(front.offsetWidth * 0.42), 46);
+      const bd = R(back.offsetWidth, back.offsetHeight, 24, 24, Math.round(back.offsetWidth * 0.4), 46);
+      front.style.clipPath = `path('${fd}')`; fp.setAttribute('d', fd);
+      back.style.clipPath = `path('${bd}')`; bp.setAttribute('d', bd);
+    };
+    if ('ResizeObserver' in window) { const ro = new ResizeObserver(shape); ro.observe(front); ro.observe(back); } else shape();
+    let open = false, hover = false;
+    const sync = () => root.classList.toggle('is-wide', open || hover);
+    const toggle = () => { open = !open; root.setAttribute('aria-expanded', String(open)); sync(); };
+    root.addEventListener('click', toggle);
+    root.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    root.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hover = true; sync(); } });
+    root.addEventListener('pointerleave', () => { hover = false; sync(); });
+    if (reduced || !('IntersectionObserver' in window)) { root.classList.add('is-shown'); return; }
+    root.classList.add('is-pre');
+    new IntersectionObserver((entries, io) => { if (entries.some(e => e.isIntersecting)) { root.classList.add('is-shown'); io.disconnect(); } }, { threshold: 0.3 }).observe(root);
+  });
 })();
 </script>
 <script data-8b-part="motion-queue">
@@ -1524,24 +1645,6 @@ queueMotion(() => {
     };
   });
 }, { id: 'rooms' });
-</script>
-<script data-8b-part="scene:voices">
-queueMotion(() => {
-  const root = document.getElementById('voices');
-  const colsBox = root.querySelector('.voices__cols');
-  const cols = [...root.querySelectorAll('.voices__col')];
-  const cards = [...root.querySelectorAll('.voices__col > li')];
-  const photo = root.querySelector('.voices__photo img');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
-    const { wide } = context.conditions;
-    if (wide) {
-      cols.forEach((col, index) => gsap.fromTo(col, { y: () => innerHeight * (index ? 0.42 : 0.14) }, { y: 0, ease: 'none', scrollTrigger: { id: `voices:col-${index}`, trigger: colsBox, start: 'top bottom', end: 'top 18%', scrub: true, invalidateOnRefresh: true } }));
-    } else {
-      cards.forEach((card, index) => gsap.fromTo(card, { y: () => innerHeight * (index % 2 ? 0.16 : 0.06), x: index % 2 ? 28 : -28 }, { y: 0, x: 0, ease: 'none', scrollTrigger: { id: `voices:card-${index}`, trigger: card, start: 'top bottom', end: 'top 58%', scrub: true, invalidateOnRefresh: true } }));
-    }
-    gsap.fromTo(photo, { scale: 1.2 }, { scale: 1, ease: 'none', scrollTrigger: { id: 'voices:photo', trigger: photo.parentElement, start: 'top bottom', end: 'center 50%', scrub: true } });
-  });
-}, { near: document.getElementById('voices'), id: 'voices' });
 </script>
 <script data-8b-part="scene:setup">
 queueMotion(() => {
