@@ -858,6 +858,19 @@
     #hero .hero__copy { pointer-events: auto; flex: none; padding-bottom: 2rem; }
     #hero .hero__intro { justify-content: flex-start; }
   }
+  /* pie de página sobrio */
+  #footer { padding-top: clamp(3.5rem, 6vw, 5rem); }
+  #footer .footer__top { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 2.5rem 4rem; }
+  #footer .footer__pitch { gap: 0.875rem; }
+  #footer .footer__mark { font-family: var(--font-1); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.045em; line-height: 1; text-decoration: none; }
+  #footer .footer__mark b { color: var(--color-4); font-weight: inherit; }
+  #footer .footer__pitch h2 { max-width: 18rem; color: var(--color-9); }
+  #footer .footer__col h2 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  #footer .footer__col a { color: color-mix(in srgb, var(--color-2) 84%, transparent); font-size: 0.9375rem; font-weight: 400; }
+  #footer .footer__legal { margin-top: clamp(2.5rem, 5vw, 4rem); padding-block: 1.25rem; }
+  #footer .footer__legal p, #footer .footer__legal a { color: var(--color-9); }
+  #footer .footer__note { color: var(--color-9); padding-bottom: 2.25rem; }
+  @media (max-width: 47.99rem) { #footer .footer__top { grid-template-columns: 1fr; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -1314,32 +1327,6 @@
     </div>
   </div>
 </section>
-
-<section class="contact" id="contact" data-8b-section="contact" aria-labelledby="contact-title">
-  <div class="contact__sheet m-band-2" aria-hidden="true" data-8b-motion="bandRise"></div>
-  <div class="contact__inner l-wrap">
-    <div class="contact__info">
-      <h2 class="m-text-3" id="contact-title" data-8b-motion="captionIn">Cuéntanos tu caso.</h2>
-      <p class="m-text-4">Autix construye sistemas completos a medida, webs inteligentes y automatizaciones, para cualquier rubro.</p>
-      <figure class="contact__photo"><img sizes="(max-width: 767px) 90vw, 47vw" src="planta-1.webp" width="426" height="611" alt="Panel de un sistema Autix en un notebook" loading="lazy" decoding="async" style="object-position:50% 40%"></figure>
-      <ul class="contact__ways">
-        <li><p class="m-text-6">WhatsApp</p><a class="m-link m-text-5" href="https://wa.me/56992103974" target="_blank" rel="noopener">+56 9 9210 3974</a></li>
-        <li><p class="m-text-6">Sitio</p><a class="m-link m-text-5" href="https://autix.pro/">autix.pro</a></li>
-        <li><p class="m-text-6">Demo</p><a class="m-link m-text-5" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li>
-      </ul>
-    </div>
-    <div class="contact__form">
-      <h3 class="m-text-5">Hecho por Autix</h3>
-      <p class="m-text-8">Sistemas completos a medida, webs inteligentes o solo la pieza que tu negocio necesita. Cuéntanos cómo trabajas y te decimos por dónde empezar.</p>
-      <ul class="contact__tags m-text-6">
-        <li>Sistemas a medida</li>
-        <li>Webs inteligentes</li>
-        <li>Cualquier rubro</li>
-      </ul>
-      <a class="m-btn-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener"><span class="m-btn__label">Contarles mi caso</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer class="footer on-dark" id="footer" data-8b-section="footer" aria-labelledby="footer-title">
@@ -1347,22 +1334,18 @@
   <div class="footer__inner l-wrap">
     <div class="footer__top">
       <div class="footer__pitch">
-        <h2 class="m-text-5" id="footer-title">Sistemas a medida para cualquier negocio.</h2>
-        <p class="m-text-4">Autix construye el sistema que cada negocio necesita.</p>
-        <a class="m-link m-text-6" href="#hero">Volver arriba</a>
+        <a class="footer__mark" href="#hero" aria-label="Autix, volver arriba">aut<b>ix</b></a>
+        <h2 class="m-text-8" id="footer-title">Sistemas a medida para cualquier negocio.</h2>
       </div>
       <div class="footer__cols m-text-6">
         <div class="footer__col"><h2 class="m-text-6">Autix</h2><ul><li><a class="m-link-2" href="#listen">Sistemas a medida</a></li><li><a class="m-link-2" href="#rooms">Para tu negocio</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li></ul></div>
         <div class="footer__col"><h2 class="m-text-6">Sistemas</h2><ul><li><a class="m-link-2" href="https://velos.autix.pro/" target="_blank" rel="noopener">velOS</a></li><li><a class="m-link-2" href="https://merkapos.pro/" target="_blank" rel="noopener">Merka POS</a></li><li><a class="m-link-2" href="https://agenda.autix.pro/" target="_blank" rel="noopener">Autix Agenda</a></li><li><a class="m-link-2" href="#voices">Ver todos</a></li></ul></div>
-        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li><li><a class="m-link-2" href="#contact">Cuéntanos tu caso</a></li></ul></div>
+        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener">Cuéntanos tu caso</a></li></ul></div>
       </div>
-    </div>
-    <div class="footer__brand" aria-hidden="true">
-      <p class="footer__word m-text-2" style="--len:4.4">aut<b>ix</b></p>
     </div>
     <div class="footer__legal m-text-7">
       <p>© 2026 Autix · Sistemas a medida · Diseño: <a href="https://8b.com/" style="color:inherit" data-8b-credit>8B</a></p>
-      <ul><li><a class="m-link" href="#faq">Cumplimiento normativo</a></li></ul>
+      <ul><li><a class="m-link" href="#faq">Cumplimiento normativo</a></li><li><a class="m-link" href="#hero">Volver arriba</a></li></ul>
     </div>
     <p class="footer__note m-text-7">Cada sistema se diseña considerando las obligaciones de la Ley 21.719 de protección de datos personales, que entra en vigencia el 1 de diciembre de 2026. El cumplimiento también depende de cómo opera tu empresa: recomendamos validarlo con un abogado especialista.</p>
   </div>
@@ -1919,17 +1902,6 @@ queueMotion(() => {
     return () => root.classList.remove('is-transcribing');
   });
 }, { near: document.getElementById('start'), id: 'start' });
-</script>
-<script data-8b-part="scene:footer">
-queueMotion(() => {
-  const root = document.getElementById('footer');
-  const brand = root.querySelector('.footer__brand');
-  const word = root.querySelector('.footer__word');
-    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'footer', trigger: brand, start: 'top bottom', end: 'bottom bottom', scrub: true } })
-      .fromTo(word, { yPercent: 70 }, { yPercent: 0 }, 0);
-  });
-}, { near: document.getElementById('footer'), id: 'footer' });
 </script>
 </body>
 </html>
