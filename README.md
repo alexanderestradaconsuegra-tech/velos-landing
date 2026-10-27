@@ -1,11 +1,14 @@
 # velOS — Landing page
 
-Landing page de **velOS by Autix**. Es un único archivo HTML estático (`index.html`), sin build ni dependencias — las fuentes se cargan desde Google Fonts vía CDN y todos los íconos son SVG inline.
+Landing page de **velOS by Autix**. Es un único archivo HTML estático (`index.html`), sin build. Diseño y animaciones de scroll basados en la plantilla gratuita de 8B (MIT, ver `LICENSE-8b-template`); GSAP, ScrollTrigger y Lenis se cargan desde jsDelivr y la tipografía desde Google Fonts.
 
 ## Estructura
 
 ```
 index.html      → la página completa (HTML + CSS + JS inline)
+logo.png, favicon.png, og.jpg → marca
+hero-planta.webp, planta-1..5.webp → foto del hero y recortes (derivados de hero-planta.webp)
+LICENSE-8b-template → licencia MIT del diseño base
 robots.txt       → indexación para buscadores
 sitemap.xml       → mapa del sitio
 vercel.json       → configuración para despliegue en Vercel
