@@ -635,6 +635,15 @@
   #nav .nav__word { font-size: 1.625rem; letter-spacing: -0.04em; }
   #nav .nav__brand { padding-block: 0.25rem; }
   #footer .footer__word { font-size: min(28rem, (100vw - 2 * var(--space-1)) / (var(--len) * 0.46)); }
+  /* tune: arma tu sistema */
+  #tune .tune__mods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-top: clamp(1.5rem, 4vw, 3rem); }
+  #tune .tune__mod { display: grid; gap: 0.75rem; align-content: space-between; min-height: 6.5rem; padding: 1rem; border-radius: var(--radius-4); background: var(--color-4); color: var(--color-1); }
+  #tune .tune__mod svg { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  #tune .tune__tagline { margin-top: clamp(1.75rem, 4vw, 3rem); font-size: clamp(1.75rem, 3.6cqi, 3.25rem); }
+  #tune .tune__tagline span { color: var(--color-4); }
+  #tune .tune__toggle::after { content: none; }
+  #tune .tune__toggle i { position: absolute; top: 0.1875rem; left: 0.1875rem; width: 1.125rem; height: 1.125rem; border-radius: 50%; background: var(--color-1); transform: translateX(1.25rem); }
+  @media (max-width: 47.99rem) { #tune .tune__mods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -794,16 +803,21 @@
   <div class="tune__sheet m-band-2" aria-hidden="true"></div>
   <div class="tune__inner l-wrap">
     <div class="tune__stage">
-      <p class="tune__meta m-text-6"><span><i aria-hidden="true"></i>Vista en vivo</span><span>16 módulos · 1 sistema</span></p>
-      <p class="tune__sample m-text-2"><span class="tune__line" style="--len:13">Nada se carga</span> <span class="tune__line" style="--len:10">dos veces.</span></p>
+      <p class="tune__meta m-text-6"><span><i aria-hidden="true"></i>Tu sistema, en vivo</span><span class="tune__count"><b>6</b> de 6 módulos</span></p>
+      <ul class="tune__mods"><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><span class="m-text-6">Terminal de ventas</span></li><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><span class="m-text-6">Producción</span></li><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><span class="m-text-6">Reparto y rutas</span></li><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><span class="m-text-6">Cobranza</span></li><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.22-.17-.47-.29z"/>
+    </svg><span class="m-text-6">Agente WhatsApp</span></li><li class="tune__mod"><svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.64 6.79l-1.55 7.32c-.12.52-.42.65-.85.4l-2.35-1.73-1.13 1.09c-.13.13-.24.24-.48.24l.17-2.43 4.42-3.99c.19-.17-.04-.27-.3-.1l-5.46 3.44-2.35-.73c-.51-.16-.52-.51.11-.76l9.18-3.54c.43-.15.8.1.66.79z"/>
+    </svg><span class="m-text-6">Agente Telegram</span></li></ul>
+      <p class="tune__tagline m-text-3">Lo registras una vez. <span>velOS lo actualiza en todas partes.</span></p>
     </div>
     <div class="tune__body">
       <div class="tune__head">
-        <h2 class="m-text-3" id="tune-title" data-8b-motion="captionIn">Hecho a tu medida.</h2>
-        <p class="m-text-4">No adaptas tu negocio a un software fijo: construimos el software alrededor de tu operación real.</p>
+        <h2 class="m-text-3" id="tune-title" data-8b-motion="captionIn">Arma tu sistema.</h2>
+        <p class="m-text-4">Marca lo que tu negocio hace hoy y velOS suma solo los módulos que lo resuelven. Todo queda conectado: lo que registras en uno se actualiza en los demás.</p>
       </div>
       <ul class="tune__settings">
-        <li class="tune__row"><h3 class="m-text-5">Módulos a tu medida</h3><p class="m-text-8">Construimos solo los que tu operación necesita. Sin módulos que no usas.</p><span class="tune__ctl tune__slider" data-ctl="size" aria-hidden="true"><span class="tune__fill"></span><span class="tune__thumb"></span></span></li><li class="tune__row"><h3 class="m-text-5">Tu vocabulario</h3><p class="m-text-8">Los términos, reglas y flujos que usa tu equipo, no los de una plantilla.</p><span class="tune__ctl tune__slider" data-ctl="weight" aria-hidden="true"><span class="tune__fill"></span><span class="tune__thumb"></span></span></li><li class="tune__row"><h3 class="m-text-5">Un agente por canal</h3><p class="m-text-8">Telegram para tu equipo, WhatsApp para tus clientes.</p><span class="tune__ctl tune__seg" data-ctl="contrast" aria-hidden="true"><b class="tune__pill"></b><span>Equipo</span><span>Clientes</span></span></li><li class="tune__row"><h3 class="m-text-5">Roles y permisos</h3><p class="m-text-8">Cada quien ve lo que le corresponde: el conductor su ruta, el vendedor sus clientes, tú todo.</p><span class="tune__ctl tune__tag" aria-hidden="true">4 perfiles</span></li><li class="tune__row"><h3 class="m-text-5">Alertas automáticas</h3><p class="m-text-8">Stock bajo, deuda vencida o rendimiento fuera de rango, directo a tu chat.</p><span class="tune__ctl tune__toggle" aria-hidden="true"></span></li><li class="tune__row"><h3 class="m-text-5">Datos cifrados</h3><p class="m-text-8">En tránsito y en reposo, con respaldo y control de acceso por rol.</p><span class="tune__ctl tune__tag" aria-hidden="true">Cifrado</span></li><li class="tune__row"><h3 class="m-text-5">Barrera de privacidad</h3><p class="m-text-8">El agente público nunca revela márgenes, costos, claves ni datos internos.</p><span class="tune__ctl tune__toggle" aria-hidden="true"></span></li><li class="tune__row"><h3 class="m-text-5">Soporte y evolución</h3><p class="m-text-8">Te acompañamos después de la puesta en marcha, y el sistema crece contigo.</p><span class="tune__ctl tune__toggle" aria-hidden="true"></span></li>
+        <li class="tune__row"><h3 class="m-text-5">Vendo en mostrador</h3><p class="m-text-8">Terminal de ventas: boleta en 20 segundos.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li><li class="tune__row"><h3 class="m-text-5">Produzco lo que vendo</h3><p class="m-text-8">Producción e insumos, con el costo real por unidad.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li><li class="tune__row"><h3 class="m-text-5">Reparto con conductores</h3><p class="m-text-8">Rutas y entregas: cada conductor ve la suya.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li><li class="tune__row"><h3 class="m-text-5">Vendo a crédito</h3><p class="m-text-8">Deuda por cliente, abonos y vencimientos.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li><li class="tune__row"><h3 class="m-text-5">Atiendo clientes por WhatsApp</h3><p class="m-text-8">Un agente que cotiza, toma datos y agenda pedidos.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li><li class="tune__row"><h3 class="m-text-5">Quiero verlo todo desde el chat</h3><p class="m-text-8">Un agente de Telegram para tu equipo.</p><span class="tune__ctl tune__toggle" aria-hidden="true"><i></i></span></li>
       </ul>
     </div>
   </div>
@@ -1398,17 +1412,23 @@ queueMotion(() => {
         .fromTo(stage, { autoAlpha: 0 }, { autoAlpha: 1, ease: 'none', duration: 0.1, immediateRender: false }, 0);
     }
     const track = element => element.parentElement.offsetWidth;
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'tune', trigger: root, start: 'top 30%', end: 'top -45%', scrub: true, invalidateOnRefresh: true } })
-      .fromTo(lines, { fontVariationSettings: '"wght" 300', scale: 0.8 }, { fontVariationSettings: '"wght" 800', scale: 1, duration: 1 }, 0)
-      .fromTo(sizeFill, { scaleX: 0.3 }, { scaleX: 0.75, duration: 1 }, 0)
-      .fromTo(sizeThumb, { x: () => -0.45 * track(sizeThumb) }, { x: 0, duration: 1 }, 0)
-      .fromTo(weightFill, { scaleX: 0 }, { scaleX: 1, duration: 1 }, 0)
-      .fromTo(weightThumb, { x: () => -0.6 * track(weightThumb) }, { x: () => 0.4 * track(weightThumb), duration: 1 }, 0)
-      .fromTo(stage, { backgroundColor: paper, color: ink }, { backgroundColor: ink, color: paper, duration: 0.3 }, 1.05)
-      .fromTo(pill, { xPercent: -100 }, { xPercent: 0, duration: 0.3 }, 1.05)
-      .to(lines, { fontVariationSettings: '"wght" 600', duration: 0.8 }, 1.45)
-      .to(weightFill, { scaleX: 0.6, duration: 0.8 }, 1.45)
-      .to(weightThumb, { x: 0, duration: 0.8 }, 1.45);
+    const mods = [...root.querySelectorAll('.tune__mod')];
+    const toggles = [...root.querySelectorAll('.tune__toggle')];
+    const tagline = root.querySelector('.tune__tagline');
+    const countEl = root.querySelector('.tune__count b');
+    const cyan = tokens.getPropertyValue('--color-4').trim();
+    const step = 0.3, count = { n: 0 };
+    countEl.textContent = '0';
+    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'tune', trigger: root, start: 'top 30%', end: 'top -45%', scrub: true, invalidateOnRefresh: true } });
+    mods.forEach((mod, i) => {
+      const at = i * step;
+      tl.fromTo(mod, { backgroundColor: 'rgba(244,250,252,0.07)', color: 'rgba(244,250,252,0.4)' }, { backgroundColor: cyan, color: ink, duration: 0.25 }, at)
+        .fromTo(toggles[i], { backgroundColor: 'rgba(12,30,39,0.18)' }, { backgroundColor: cyan, duration: 0.25 }, at)
+        .fromTo(toggles[i].querySelector('i'), { x: 0 }, { x: '1.25rem', duration: 0.25 }, at);
+    });
+    tl.fromTo(count, { n: 0 }, { n: mods.length, duration: mods.length * step - 0.05, onUpdate: () => { countEl.textContent = String(Math.round(count.n)); } }, 0)
+      .fromTo(tagline, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.4 }, mods.length * step);
+
   });
 }, { near: document.getElementById('tune'), id: 'tune' });
 </script>
