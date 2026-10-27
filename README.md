@@ -1,6 +1,6 @@
-# Autix — Landing page (producto estrella: velOS)
+# Autix — Landing page
 
-Landing page de **Autix**: sistemas a medida y agentes de IA, con **velOS** como producto estrella. Es un único archivo HTML estático (`index.html`), sin build. Diseño y animaciones de scroll basados en la plantilla gratuita de 8B (MIT, ver `LICENSE-8b-template`); GSAP, ScrollTrigger y Lenis se cargan desde jsDelivr y la tipografía desde Google Fonts.
+Landing page de **Autix**: sistemas a medida para cualquier negocio (ventas, agenda, inventario, clientes, cobros, webs inteligentes y asistentes opcionales). Muestra los sistemas reales velOS, Merka POS y Autix Agenda. Es un único archivo HTML estático (`index.html`), sin build. Diseño y animaciones de scroll basados en la plantilla gratuita de 8B (MIT, ver `LICENSE-8b-template`); GSAP, ScrollTrigger y Lenis se cargan desde jsDelivr y la tipografía desde Google Fonts.
 
 ## Estructura
 
@@ -8,8 +8,8 @@ Landing page de **Autix**: sistemas a medida y agentes de IA, con **velOS** como
 index.html      → la página completa (HTML + CSS + JS inline)
 logo.png, favicon.png, og.jpg → marca
 hero-planta.webp, planta-1..5.webp → foto del hero y recortes (derivados de hero-planta.webp)
-rubro-*.svg → imágenes de ejemplo de cada rubro: reemplazar por fotos reales y cambiar el `src` en index.html
-punto-queso.mp4 + punto-queso-poster.jpg → video del caso Punto Queso (sección #caso). Si no existen, se muestra un aviso
+rubro-*.svg → imágenes de ejemplo de cada rubro (mascotas, heladería, jurídico, clínica, distribución): reemplazar por fotos reales y cambiar el `src` en index.html
+demo-sistema.mp4 + demo-sistema-poster.jpg → video de un sistema funcionando (sección #caso). Si no existen, se muestra un aviso
 LICENSE-8b-template → licencia MIT del diseño base
 robots.txt       → indexación para buscadores
 sitemap.xml       → mapa del sitio
