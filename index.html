@@ -738,6 +738,119 @@
   .ifd:has(.ifd__tile:nth-child(3):hover) .ifd__tags span:nth-child(3), .ifd:has(.ifd__tile:nth-child(4):hover) .ifd__tags span:nth-child(4) { border-color: rgba(255,255,255,0.4); color: #fff; }
   @media (prefers-reduced-motion: reduce) { .ifd, .ifd__tile, .ifd__in, .ifd__front, .ifd__lbl { transition: none; } }
   @media (max-width: 63.99rem) { #voices .sist__grid { grid-template-columns: 1fr; } }
+  /* hero: sistema interactivo */
+  #hero .hero__media { position: absolute; z-index: 2; top: clamp(6.5rem, 14vh, 8.5rem); bottom: auto; left: 45%; right: auto; width: clamp(34rem, 53vw, 62rem); height: auto; overflow: visible; mask-image: none; container: erpc / inline-size; }
+  #hero .hero__shade { background: radial-gradient(48rem 34rem at 74% 42%, rgba(61,216,240,0.26), transparent 62%), radial-gradient(34rem 26rem at 8% 96%, rgba(61,216,240,0.12), transparent 62%), radial-gradient(circle, rgba(255,255,255,0.05) 0 1px, transparent 1.4px) 0 0 / 22px 22px; }
+  #hero .hero__title { max-width: 7.6em; font-size: clamp(2.6rem, 4.7vw, 4.5rem); }
+  #hero .hero__copy { pointer-events: none; }
+  #hero .hero__copy a, #hero .hero__copy .m-btn { pointer-events: auto; }
+  .erp { --e-ink: #0c1e27; --e-mut: #567280; --e-rule: #e2ecf0; --e-acc: #3dd8f0; --e-deep: #123845; position: relative; overflow: hidden; border-radius: 1.4em; background: #fff; color: var(--e-ink); font-family: var(--font-1); font-size: clamp(9px, 1.5cqi, 13.5px); line-height: 1.3; letter-spacing: -0.01em; box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 2.6em 6em rgba(0,0,0,0.5), 0 0 9em rgba(61,216,240,0.22); transform: perspective(2400px) rotateY(-7deg) rotateX(2deg); transform-origin: 0 50%; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .erp:hover, .erp:focus-within { transform: none; }
+  .erp *, .erp *::before, .erp *::after { box-sizing: border-box; }
+:where(.erp) button { font: inherit; color: inherit; cursor: pointer; }
+  .erp button:focus-visible { outline: 0.2em solid var(--e-acc); outline-offset: 0.15em; }
+  .erp__chrome { display: flex; align-items: center; gap: 1em; height: 3.5em; padding: 0 1.1em; border-bottom: 1px solid var(--e-rule); background: #f6fafb; }
+  .erp__dots { display: flex; gap: 0.45em; flex: none; }
+  .erp__dots i { width: 0.75em; height: 0.75em; border-radius: 50%; }
+  .erp__dots i:nth-child(1) { background: #ff5f57; } .erp__dots i:nth-child(2) { background: #febc2e; } .erp__dots i:nth-child(3) { background: #28c840; }
+  .erp__tabs { display: flex; gap: 0.3em; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .erp__tabs::-webkit-scrollbar { display: none; }
+  .erp__tab { flex: none; border: 0; border-radius: 0.7em; background: transparent; padding: 0.55em 0.95em; color: var(--e-mut); font-size: 0.92em; font-weight: 600; white-space: nowrap; transition: background 0.2s, color 0.2s; }
+  .erp__tab:hover { background: #e7f1f4; color: var(--e-ink); }
+  .erp__tab[aria-selected="true"] { background: var(--e-deep); color: #fff; }
+  .erp__note { flex: none; margin-left: auto; color: #8aa1ab; font-size: 0.7em; letter-spacing: 0.08em; text-transform: uppercase; }
+  .erp__app { display: grid; grid-template-columns: 13.5em minmax(0, 1fr); min-height: 35em; }
+  .erp__side { display: flex; flex-direction: column; gap: 2em; padding: 1.7em 1em; border-right: 1px solid var(--e-rule); background: #f4f9fb; }
+  .erp__brand { display: flex; align-items: center; gap: 0.55em; padding: 0 0.4em; font-size: 1.5em; font-weight: 800; letter-spacing: -0.045em; }
+  #hero .erp__brand img { width: auto; max-width: none; height: 1.35em; object-fit: contain; object-position: 50% 50%; }
+  .erp__nav { display: grid; gap: 0.2em; }
+  .erp__nav button { position: relative; display: flex; align-items: center; gap: 0.7em; width: 100%; border: 0; border-radius: 0.75em; background: transparent; padding: 0.85em 0.85em; color: #5c7782; font-size: 0.95em; font-weight: 600; text-align: left; transition: background 0.2s, color 0.2s; }
+  .erp__nav button:hover { background: #e6f1f4; color: var(--e-ink); }
+  .erp__nav button[aria-current] { background: #d9f5fb; color: #0a5a6e; }
+  .erp__nav button[aria-current]::before { content: ""; position: absolute; left: -1em; top: 20%; bottom: 20%; width: 0.25em; border-radius: 0 0.3em 0.3em 0; background: var(--e-acc); }
+  .erp__nav svg { width: 1.3em; height: 1.3em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .erp__foot { margin-top: auto; border-top: 1px solid var(--e-rule); padding-top: 1.1em; color: #7a909a; font-size: 0.78em; line-height: 1.45; }
+  .erp__foot b { display: block; margin-bottom: 0.3em; color: #3d5a66; font-size: 1.05em; }
+  .erp__main { display: flex; flex-direction: column; gap: 1.3em; min-width: 0; padding: 1.7em 1.9em 1.4em; }
+  .erp__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; }
+  .erp__h { margin: 0 0 0.25em; font-size: 2em; font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; }
+  .erp__sub { margin: 0; color: var(--e-mut); font-size: 0.92em; }
+  .erp__status { flex: none; padding: 0.55em 0.95em; border: 1px solid #c4edf6; border-radius: 99px; background: #e3f8fc; color: #0a6176; font-size: 0.78em; font-weight: 700; white-space: nowrap; }
+  .erp__status::before { content: ""; display: inline-block; width: 0.55em; height: 0.55em; margin-right: 0.55em; border-radius: 50%; background: var(--e-acc); }
+  .erp__metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--e-rule); }
+  .erp__metric { min-width: 0; padding: 1.1em 0.8em 1.1em 0; }
+  .erp__metric:not(:first-child) { padding-left: 1.2em; border-left: 1px solid var(--e-rule); }
+  .erp__metric span { display: block; margin-bottom: 0.5em; color: var(--e-mut); font-size: 0.78em; }
+  .erp__metric strong { display: block; font-size: 1.85em; font-weight: 700; letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .erp__metric small { display: block; margin-top: 0.5em; color: #8ca2ac; font-size: 0.72em; }
+  .erp__metric.is-bump strong { animation: erp-bump 0.7s ease; }
+  @keyframes erp-bump { 0% { color: #0a8fa8; transform: translateY(0.25em); opacity: 0.2; } 100% { color: var(--e-ink); transform: none; opacity: 1; } }
+  .erp__work { display: grid; flex: 1; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 1em; min-height: 0; }
+  .erp__pane { display: flex; flex-direction: column; min-height: 0; overflow: hidden; border: 1px solid var(--e-rule); border-radius: 1em; background: #fff; }
+  .erp__panehead { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; padding: 0.95em 1.2em; border-bottom: 1px solid var(--e-rule); }
+  .erp__panehead b { font-size: 0.95em; } .erp__panehead small { color: #8ca2ac; font-size: 0.75em; }
+  .erp__ledger { flex: 1; overflow: hidden; }
+  .erp__row { display: grid; grid-template-columns: 3.4em minmax(0, 1fr) auto auto; align-items: center; gap: 0.9em; padding: 0.9em 1.2em; border-top: 1px solid #edf3f5; font-size: 0.9em; animation: erp-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .erp__row:first-child { border-top: 0; }
+  .erp__row.is-new { background: #effbfd; }
+  .erp__row strong { display: block; margin-bottom: 0.2em; font-size: 1.02em; }
+  .erp__row small { display: block; color: #8ca2ac; font-size: 0.82em; }
+  .erp__time { color: #8ca2ac; font-size: 0.85em; font-variant-numeric: tabular-nums; }
+  .erp__delta { color: #0b6a7e; font-weight: 700; white-space: nowrap; }
+  .erp__chip { display: inline-flex; padding: 0.4em 0.65em; border-radius: 0.55em; background: #e3f8fc; color: #0a6176; font-size: 0.78em; font-weight: 700; white-space: nowrap; }
+  @keyframes erp-in { from { opacity: 0; transform: translateY(0.6em); } }
+  .erp__empty { padding: 3.5em 1.2em; color: #8ca2ac; font-size: 0.9em; text-align: center; }
+  .erp__detail { background: linear-gradient(160deg, #fbfeff, #edf8fb); }
+  .erp__dbody { display: flex; flex: 1; flex-direction: column; gap: 0.8em; min-height: 0; padding: 1.2em; }
+  .erp__mark { display: grid; place-items: center; width: 2.7em; height: 2.7em; border-radius: 0.85em; background: #d6f4fa; }
+  .erp__mark svg { width: 1.4em; height: 1.4em; fill: none; stroke: #0a6176; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .erp__dt { margin: 0; font-size: 1.45em; font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; }
+  .erp__dd { margin: 0; color: var(--e-mut); font-size: 0.84em; }
+  .erp__line { display: flex; justify-content: space-between; gap: 1em; padding: 0.7em 0; border-top: 1px solid #dce9ee; font-size: 0.82em; }
+  .erp__line span { color: #7d939d; } .erp__line b { color: #2b4752; text-align: right; }
+  .erp__spark { display: flex; align-items: flex-end; gap: 0.3em; height: 3.6em; margin-top: auto; }
+  .erp__spark i { flex: 1; height: var(--h); border-radius: 0.2em 0.2em 0 0; background: #bde8f1; transition: height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .erp__spark i:last-child { background: var(--e-acc); }
+  .erp__foot2 { display: flex; align-items: center; justify-content: space-between; gap: 1em; padding-top: 1.1em; border-top: 1px solid var(--e-rule); }
+  .erp__foot2 p { max-width: 30em; margin: 0; color: var(--e-mut); font-size: 0.85em; }
+  .erp__actions { display: flex; flex: none; gap: 0.6em; }
+  .erp__btn { border: 1px solid #cde0e7; border-radius: 0.75em; background: #fff; padding: 0.8em 1.05em; font-size: 0.85em; font-weight: 700; transition: box-shadow 0.2s, transform 0.2s; }
+  .erp__btn:hover { box-shadow: 0 0.5em 1.2em rgba(18,56,69,0.14); transform: translateY(-1px); }
+  .erp__btn--primary { border-color: var(--e-deep); background: var(--e-deep); color: #fff; }
+  .erp__btn:disabled { opacity: 0.55; cursor: wait; box-shadow: none; transform: none; }
+  .erp__toast { position: absolute; z-index: 5; top: 4.7em; right: 1.3em; display: grid; gap: 0.2em; max-width: 19em; padding: 0.95em 1.2em; border-radius: 1em; background: #0c1e27; color: #fff; box-shadow: 0 1.2em 3em rgba(0,0,0,0.38); opacity: 0; transform: translateY(-0.8em) scale(0.97); pointer-events: none; transition: opacity 0.3s, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .erp__toast.is-on { opacity: 1; transform: none; }
+  .erp__toast b { color: var(--e-acc); font-size: 0.8em; letter-spacing: 0.06em; text-transform: uppercase; }
+  .erp__toast span { font-size: 0.92em; }
+  @media (prefers-reduced-motion: reduce) { .erp, .erp__row, .erp__metric.is-bump strong, .erp__toast, .erp__spark i { transition: none; animation: none; } .erp { transform: none; } }
+  @container erpc (max-width: 46rem) {
+    .erp { font-size: clamp(10px, 2.55cqi, 13px); transform: none; }
+    .erp__app { display: block; min-height: 0; }
+    .erp__side { flex-direction: row; align-items: center; gap: 0.8em; padding: 0.8em 1em; border-right: 0; border-bottom: 1px solid var(--e-rule); }
+    .erp__brand { font-size: 1.2em; }
+    .erp__nav { display: flex; gap: 0.2em; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+    .erp__nav button { width: auto; flex: none; white-space: nowrap; padding: 0.6em 0.8em; }
+    .erp__nav button[aria-current]::before, .erp__foot, .erp__note, .erp__dots { display: none; }
+    .erp__main { padding: 1.1em 1.1em 1em; gap: 0.9em; }
+    .erp__h { font-size: 1.6em; }
+    .erp__status { display: none; }
+    .erp__metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .erp__metric:nth-child(3) { padding-left: 0; border-left: 0; }
+    .erp__metric:nth-child(n+3) { border-top: 1px solid var(--e-rule); }
+    .erp__metric strong { font-size: 1.5em; }
+    .erp__work { grid-template-columns: 1fr; }
+    .erp__detail { display: none; }
+    .erp__row { grid-template-columns: minmax(0, 1fr) auto; }
+    .erp__time, .erp__delta { display: none; }
+    .erp__foot2 { flex-direction: column; align-items: stretch; }
+    .erp__actions { justify-content: stretch; } .erp__btn { flex: 1; }
+    .erp__toast { top: 3.4em; right: 0.8em; }
+  }
+  @media (max-width: 47.99rem) {
+    #hero .hero__media { position: relative; top: auto; left: auto; right: auto; bottom: auto; width: auto; order: 3; margin: 0 var(--space-1) 2.5rem; aspect-ratio: auto; mask-image: none; }
+    #hero .hero__title { max-width: none; font-size: clamp(2.2rem, 9.4vw, 2.9rem); }
+    #hero .hero__copy { pointer-events: auto; }
+  }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -788,22 +901,45 @@
 <main id="main">
 <section class="hero on-dark" id="hero" data-8b-section="hero" aria-labelledby="hero-title">
   <div class="hero__media">
-    <img src="hero-planta.webp" width="1672" height="941" alt="Notebook y celular mostrando un sistema a medida en un lugar de trabajo" fetchpriority="high" decoding="async">
-  </div>
-  <div class="hero__shade" aria-hidden="true"></div>
-  <div class="hero__talk" aria-hidden="true">
-    <div class="hero__draw">
-      <svg class="hero__lines">
-        <ellipse class="hero__arc hero__arc--a" pathLength="1"/>
-        <ellipse class="hero__arc hero__arc--b" pathLength="1"/>
-        <ellipse class="hero__flow hero__flow--a" pathLength="1"/>
-        <ellipse class="hero__flow hero__flow--b" pathLength="1"/>
-      </svg>
-      <div class="hero__chip hero__chip--1"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Cita confirmada · Jueves 15:30</span></p></div>
-      <div class="hero__chip hero__chip--2"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Stock bajo: 3 productos</span></p></div>
-      <div class="hero__chip hero__chip--3"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Venta registrada · stock al día</span></p></div>
+    <div class="erp" id="erp" role="group" aria-label="Demostración interactiva de un sistema velOS: elige un tipo de negocio y pulsa Ver recorrido">
+      <div class="erp__chrome">
+        <span class="erp__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="erp__tabs" role="tablist" aria-label="Tipo de negocio"></div>
+        <span class="erp__note">Datos ilustrativos</span>
+      </div>
+      <div class="erp__app">
+        <aside class="erp__side">
+          <div class="erp__brand"><img src="logo-velos.png" width="360" height="202" alt="" aria-hidden="true"><span>velOS</span></div>
+          <nav class="erp__nav" aria-label="Módulos del sistema"></nav>
+          <div class="erp__foot"><b>Operación enlazada</b>Lo que se registra en un módulo actualiza a los demás.</div>
+        </aside>
+        <main class="erp__main">
+          <header class="erp__head"><div><div class="erp__h" id="erp-title"></div><p class="erp__sub" id="erp-sub"></p></div><span class="erp__status" id="erp-status"></span></header>
+          <div class="erp__metrics" id="erp-metrics" aria-label="Indicadores"></div>
+          <div class="erp__work">
+            <section class="erp__pane" aria-label="Movimientos conectados">
+              <div class="erp__panehead"><b>Movimientos conectados</b><small id="erp-filter"></small></div>
+              <div class="erp__ledger" id="erp-ledger" aria-live="polite"></div>
+            </section>
+            <section class="erp__pane erp__detail" aria-label="Detalle">
+              <div class="erp__panehead"><b id="erp-dhead"></b><small>velOS</small></div>
+              <div class="erp__dbody">
+                <div class="erp__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+                <p class="erp__dt" id="erp-dtitle"></p>
+                <p class="erp__dd" id="erp-ddesc"></p>
+                <div id="erp-lines"></div>
+                <div class="erp__spark" id="erp-spark" aria-hidden="true"></div>
+              </div>
+            </section>
+          </div>
+          <footer class="erp__foot2"><p id="erp-note"></p><div class="erp__actions"><button class="erp__btn" id="erp-reset" type="button">Reiniciar</button><button class="erp__btn erp__btn--primary" id="erp-run" type="button">Ver recorrido →</button></div></footer>
+        </main>
+      </div>
+      <div class="erp__toast" id="erp-toast" role="status" aria-live="polite"></div>
     </div>
   </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__talk" aria-hidden="true"></div>
   <div class="hero__copy l-wrap">
     <div class="hero__intro">
       <h1 class="m-text-2 hero__title" id="hero-title">Un sistema hecho a la medida de tu negocio.</h1>
@@ -1275,6 +1411,100 @@
   if (!video) return;
   const ok = () => frame.classList.add('has-video');
   if (video.readyState >= 1) ok(); else video.addEventListener('loadedmetadata', ok, { once: true });
+})();
+</script>
+<script data-8b-part="section-script:erp">
+(() => {
+  const D = {"order": ["tienda", "clinica", "juridico", "mascotas", "distribucion"], "biz": {"tienda": {"label": "Tienda online", "title": "Tienda online", "sub": "Pedidos, pagos, stock y despacho sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "Cada pedido nuevo entra con sus productos y su pago."}, {"id": "pagos", "label": "Pagos", "icon": "card", "sub": "El pago aprobado confirma el pedido en el acto."}, {"id": "inventario", "label": "Inventario", "icon": "box", "sub": "Cada venta descuenta el stock al instante."}, {"id": "despacho", "label": "Despacho", "icon": "truck", "sub": "El pedido pagado queda listo para entregar al courier."}], "steps": [{"view": "pedidos", "time": "09:12", "area": "Pedidos", "title": "Pedido #2041 recibido", "note": "2 productos · pago con tarjeta", "delta": "$89.980", "status": "Nuevo"}, {"view": "pagos", "time": "09:13", "area": "Pagos", "title": "Pago aprobado", "note": "Pedido #2041 confirmado", "delta": "$89.980", "status": "Aprobado"}, {"view": "inventario", "time": "09:14", "area": "Inventario", "title": "Stock descontado", "note": "Zapatillas trail 42 · quedan 7", "delta": "−1 u.", "status": "Actualizado"}, {"view": "despacho", "time": "10:05", "area": "Despacho", "title": "Etiqueta de envío creada", "note": "Courier · retiro hoy 17:00", "delta": "1 envío", "status": "Listo"}], "metrics": [{"l": "Pedidos hoy", "v": ["37", "38", "38", "38", "38"], "s": "Pedido #2041"}, {"l": "Ventas hoy", "v": ["$1.158.000", "$1.158.000", "$1.248.000", "$1.248.000", "$1.248.000"], "s": "Pago aprobado"}, {"l": "Stock zapatillas", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."], "s": "Talla 42"}, {"l": "Por despachar", "v": ["3", "3", "3", "3", "4"], "s": "Retiro 17:00"}], "detail": {"head": "Pedido #2041", "titles": ["Esperando pedidos", "Pedido recibido", "Pago aprobado", "Stock actualizado", "Listo para despachar"], "desc": "Una venta online recorre catálogo, pago, stock y despacho sin que nadie digite nada dos veces.", "lines": [{"l": "Cliente", "v": ["—", "Valentina R.", "Valentina R.", "Valentina R.", "Valentina R."]}, {"l": "Pago", "v": ["—", "Pendiente", "Aprobado", "Aprobado", "Aprobado"]}, {"l": "Stock", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."]}, {"l": "Despacho", "v": ["—", "—", "—", "En preparación", "Retiro 17:00"]}]}, "spark": [30, 44, 38, 52, 47, 63, 58, 74, 69, 88], "note": ["Un pedido online atraviesa pago, stock y despacho de forma automática.", "Inicia el recorrido: pedido → pago → stock → despacho."]}, "clinica": {"label": "Clínica", "title": "Clínica", "sub": "Agenda, fichas, atención y cobros sobre una misma operación.", "nav": [{"id": "agenda", "label": "Agenda", "icon": "cal", "sub": "Tus pacientes reservan online y la agenda se ordena sola."}, {"id": "pacientes", "label": "Pacientes", "icon": "user", "sub": "Cada reserva actualiza la ficha del paciente."}, {"id": "atencion", "label": "Atención", "icon": "doc", "sub": "La atención queda registrada con su duración y notas."}, {"id": "cobros", "label": "Cobros", "icon": "card", "sub": "Cada atención genera su cobro y su boleta."}], "steps": [{"view": "agenda", "time": "08:30", "area": "Agenda", "title": "Cita reservada online", "note": "Control dental · Dra. Soto · 15:30", "delta": "15:30", "status": "Agendada"}, {"view": "pacientes", "time": "08:31", "area": "Pacientes", "title": "Ficha del paciente actualizada", "note": "Historial y alergias al día", "delta": "1 ficha", "status": "Actualizada"}, {"view": "atencion", "time": "15:30", "area": "Atención", "title": "Atención registrada", "note": "Limpieza dental · 45 min", "delta": "45 min", "status": "Realizada"}, {"view": "cobros", "time": "16:20", "area": "Cobros", "title": "Pago registrado", "note": "Boleta enviada por correo", "delta": "$35.000", "status": "Pagado"}], "metrics": [{"l": "Citas hoy", "v": ["23", "24", "24", "24", "24"], "s": "Dra. Soto · 9"}, {"l": "Fichas al día", "v": ["96%", "96%", "97%", "97%", "97%"], "s": "Historial completo"}, {"l": "Atenciones", "v": ["18", "18", "18", "19", "19"], "s": "Del día"}, {"l": "Cobrado hoy", "v": ["$412.000", "$412.000", "$412.000", "$412.000", "$447.000"], "s": "Boleta enviada"}], "detail": {"head": "Cita de las 15:30", "titles": ["Agenda libre", "Cita agendada", "Ficha actualizada", "Atención realizada", "Cobrada y cerrada"], "desc": "La cita nace en la web, ordena la agenda, alimenta la ficha clínica y termina en el cobro.", "lines": [{"l": "Paciente", "v": ["—", "M. Fuentes", "M. Fuentes", "M. Fuentes", "M. Fuentes"]}, {"l": "Profesional", "v": ["—", "Dra. Soto", "Dra. Soto", "Dra. Soto", "Dra. Soto"]}, {"l": "Estado", "v": ["—", "Agendada", "Agendada", "Realizada", "Realizada"]}, {"l": "Cobro", "v": ["—", "—", "—", "Pendiente", "$35.000"]}]}, "spark": [55, 62, 48, 70, 66, 82, 74, 90, 78, 86], "note": ["Una cita recorre agenda, ficha, atención y cobro sin planillas.", "Inicia el recorrido: agenda → ficha → atención → cobro."]}, "juridico": {"label": "Estudio jurídico", "title": "Estudio jurídico", "sub": "Causas, plazos, documentos y honorarios sobre una misma operación.", "nav": [{"id": "causas", "label": "Causas", "icon": "scale", "sub": "Cada causa nueva abre su expediente con cliente y materia."}, {"id": "plazos", "label": "Plazos", "icon": "clock", "sub": "El plazo se calcula y se vigila automáticamente."}, {"id": "documentos", "label": "Documentos", "icon": "doc", "sub": "Escritos y contratos quedan ligados a la causa."}, {"id": "honorarios", "label": "Honorarios", "icon": "card", "sub": "Los honorarios se emiten según la etapa de cada causa."}], "steps": [{"view": "causas", "time": "09:00", "area": "Causas", "title": "Causa C-248 ingresada", "note": "Constructora Andes · Civil", "delta": "1 causa", "status": "Abierta"}, {"view": "plazos", "time": "09:05", "area": "Plazos", "title": "Plazo calculado", "note": "Contestar demanda · vence 18 nov", "delta": "15 días", "status": "Vigilado"}, {"view": "documentos", "time": "11:30", "area": "Documentos", "title": "Escrito generado", "note": "Contestación v2 · pendiente de firma", "delta": "1 doc.", "status": "En revisión"}, {"view": "honorarios", "time": "12:10", "area": "Honorarios", "title": "Honorario emitido", "note": "Anticipo etapa 1", "delta": "$450.000", "status": "Emitido"}], "metrics": [{"l": "Causas activas", "v": ["42", "43", "43", "43", "43"], "s": "C-248 nueva"}, {"l": "Plazos 7 días", "v": ["5", "5", "6", "6", "6"], "s": "1 vence hoy"}, {"l": "Documentos", "v": ["118", "118", "118", "119", "119"], "s": "En el mes"}, {"l": "Por cobrar", "v": ["$3,4M", "$3,4M", "$3,4M", "$3,4M", "$3,85M"], "s": "Honorarios"}], "detail": {"head": "Causa C-248", "titles": ["Sin movimientos", "Causa abierta", "Plazo vigilado", "Escrito en revisión", "Honorario emitido"], "desc": "La causa concentra su cliente, sus plazos, sus documentos y sus honorarios: nada se vence sin verlo.", "lines": [{"l": "Cliente", "v": ["—", "Constructora Andes", "Constructora Andes", "Constructora Andes", "Constructora Andes"]}, {"l": "Plazo", "v": ["—", "—", "18 nov", "18 nov", "18 nov"]}, {"l": "Documento", "v": ["—", "—", "—", "Contestación v2", "Contestación v2"]}, {"l": "Honorario", "v": ["—", "—", "—", "—", "$450.000"]}]}, "spark": [32, 40, 36, 52, 49, 58, 66, 61, 78, 84], "note": ["Una causa recorre plazos, documentos y honorarios con todo conectado.", "Inicia el recorrido: causa → plazo → documento → honorario."]}, "mascotas": {"label": "Tienda de mascotas", "title": "Tienda de mascotas", "sub": "Ventas, stock, compras y clientes sobre una misma operación.", "nav": [{"id": "ventas", "label": "Ventas", "icon": "cart", "sub": "La caja registra cada venta en segundos."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "Cada venta descuenta el stock y avisa cuando baja del mínimo."}, {"id": "compras", "label": "Compras", "icon": "truck", "sub": "El sistema sugiere qué reponer y a qué proveedor."}, {"id": "clientes", "label": "Clientes", "icon": "user", "sub": "Cada compra construye el historial del cliente."}], "steps": [{"view": "ventas", "time": "10:15", "area": "Ventas", "title": "Venta #874 en caja", "note": "Alimento perro 15 kg", "delta": "$38.990", "status": "Cobrada"}, {"view": "stock", "time": "10:15", "area": "Stock", "title": "Stock descontado", "note": "Alimento perro 15 kg · quedan 3", "delta": "−1 u.", "status": "Bajo mínimo"}, {"view": "compras", "time": "10:16", "area": "Compras", "title": "Reposición sugerida", "note": "12 bolsas al proveedor habitual", "delta": "12 u.", "status": "Sugerida"}, {"view": "clientes", "time": "10:16", "area": "Clientes", "title": "Historial actualizado", "note": "Próxima compra estimada en 28 días", "delta": "+1 compra", "status": "Registrado"}], "metrics": [{"l": "Ventas hoy", "v": ["$486.000", "$524.990", "$524.990", "$524.990", "$524.990"], "s": "Venta #874"}, {"l": "Stock bajo", "v": ["6", "6", "7", "7", "7"], "s": "Productos"}, {"l": "Reposiciones", "v": ["0", "0", "0", "1", "1"], "s": "Sugeridas"}, {"l": "Clientes frecuentes", "v": ["84", "84", "84", "84", "85"], "s": "Con historial"}], "detail": {"head": "Alimento perro 15 kg", "titles": ["Stock normal", "Venta registrada", "Bajo el mínimo", "Reposición sugerida", "Cliente al día"], "desc": "Lo que se vende en caja actualiza el stock, sugiere compras y alimenta al cliente, sin planillas.", "lines": [{"l": "Venta", "v": ["—", "$38.990", "$38.990", "$38.990", "$38.990"]}, {"l": "Stock", "v": ["4 u.", "4 u.", "3 u.", "3 u.", "3 u."]}, {"l": "Compra sugerida", "v": ["—", "—", "—", "12 u.", "12 u."]}, {"l": "Cliente", "v": ["—", "Camila P.", "Camila P.", "Camila P.", "Camila P. · +1"]}]}, "spark": [40, 46, 38, 52, 60, 88, 74, 66, 72, 80], "note": ["Una venta en caja descuenta stock, sugiere compras y actualiza al cliente.", "Inicia el recorrido: venta → stock → compra → cliente."]}, "distribucion": {"label": "Distribución", "title": "Distribución y reparto", "sub": "Pedidos, stock, rutas y cobranza sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "El pedido confirmado reserva producto del stock."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "El stock disponible se actualiza con cada pedido."}, {"id": "reparto", "label": "Reparto", "icon": "truck", "sub": "El pedido pasa a una ruta y queda listo para despacho."}, {"id": "cobranza", "label": "Cobranza", "icon": "card", "sub": "Cada entrega se cobra y cierra su deuda."}], "steps": [{"view": "pedidos", "time": "08:40", "area": "Pedidos", "title": "Pedido #1842 confirmado", "note": "120 u. · Distribuidora Sur", "delta": "$948.000", "status": "Confirmado"}, {"view": "stock", "time": "08:41", "area": "Stock", "title": "Stock reservado", "note": "Disponible: 840 → 720 u.", "delta": "−120 u.", "status": "Actualizado"}, {"view": "reparto", "time": "09:30", "area": "Reparto", "title": "Ruta Norte asignada", "note": "Pedido #1842 listo para despacho", "delta": "1 ruta", "status": "Asignada"}, {"view": "cobranza", "time": "12:12", "area": "Cobranza", "title": "Entrega cobrada", "note": "Firma digital · transferencia", "delta": "$948.000", "status": "Cobrado"}], "metrics": [{"l": "Pedidos", "v": ["8", "9", "9", "9", "9"], "s": "Pedido #1842"}, {"l": "Stock disponible", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."], "s": "Bodega central"}, {"l": "Rutas activas", "v": ["3", "3", "3", "4", "4"], "s": "Ruta Norte"}, {"l": "Cobrado hoy", "v": ["$2,1M", "$2,1M", "$2,1M", "$2,1M", "$3,05M"], "s": "Transferencia"}], "detail": {"head": "Pedido #1842", "titles": ["Esperando pedido", "Pedido confirmado", "Stock reservado", "Ruta asignada", "Entregado y cobrado"], "desc": "El pedido reserva stock, se asigna a una ruta y termina en cobranza: todo queda enlazado.", "lines": [{"l": "Cliente", "v": ["—", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur"]}, {"l": "Stock", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."]}, {"l": "Ruta", "v": ["—", "—", "—", "Norte · asignada", "Norte · cerrada"]}, {"l": "Cobro", "v": ["—", "Pendiente", "Pendiente", "Pendiente", "$948.000"]}]}, "spark": [28, 36, 44, 40, 58, 52, 68, 64, 80, 92], "note": ["Un pedido reserva stock, se reparte y se cobra con todo conectado.", "Inicia el recorrido: pedido → stock → ruta → cobro."]}}, "icons": {"resumen": "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", "cart": "M4 6h2l2 11h11l2-8H7M9 21h1M17 21h1", "card": "M3 6h18v12H3zM3 10h18M7 14h4", "box": "M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8", "truck": "M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 19h1M17 19h1", "cal": "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4", "user": "M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0", "doc": "M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6", "scale": "M12 3v18M7 21h10M4 7h16M7 7l-3 7a3.5 3.5 0 007 0zM17 7l-3 7a3.5 3.5 0 007 0z", "clock": "M12 7v5l3 2M12 21a9 9 0 100-18 9 9 0 000 18z"}};
+  const root = document.getElementById('erp');
+  if (!root) return;
+  const $ = s => root.querySelector(s);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tabsEl = $('.erp__tabs'), navEl = $('.erp__nav');
+  let biz = D.order[0], phase = 0, view = 'resumen', timers = [], auto = !reduced, running = false, visible = true, last = {};
+  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${D.icons[k]}"/></svg>`;
+  const cur = () => D.biz[biz];
+
+  tabsEl.innerHTML = D.order.map(k => `<button class="erp__tab" role="tab" type="button" data-biz="${k}" aria-selected="false">${D.biz[k].label}</button>`).join('');
+
+  function drawNav() {
+    const b = cur();
+    const items = [{ id: 'resumen', label: 'Resumen', icon: 'resumen' }, ...b.nav];
+    navEl.innerHTML = items.map(n => `<button type="button" data-view="${n.id}" ${n.id === view ? 'aria-current="page"' : ''}>${icon(n.icon)}${n.label}</button>`).join('');
+  }
+  function render(newIndex = -1) {
+    const b = cur();
+    const items = b.nav;
+    const sel = view === 'resumen' ? null : items.find(n => n.id === view);
+    $('#erp-title').textContent = sel ? sel.label : b.title;
+    $('#erp-sub').textContent = sel ? sel.sub : b.sub;
+    $('#erp-filter').textContent = sel ? 'Solo ' + sel.label.toLowerCase() : 'Todas las áreas';
+    $('#erp-status').textContent = phase === 4 ? 'Recorrido completo' : phase === 0 ? 'Listo para iniciar' : `Paso ${phase} de 4`;
+    // métricas
+    $('#erp-metrics').innerHTML = b.metrics.map((m, i) => {
+      const val = m.v[phase], bump = last.biz === biz && last.phase !== phase && last.vals && last.vals[i] !== val;
+      return `<div class="erp__metric${bump ? ' is-bump' : ''}"><span>${m.l}</span><strong>${val}</strong><small>${m.s}</small></div>`;
+    }).join('');
+    last = { biz, phase, vals: b.metrics.map(m => m.v[phase]) };
+    // movimientos
+    const rows = b.steps.slice(0, phase).filter(s => view === 'resumen' || s.view === view);
+    $('#erp-ledger').innerHTML = rows.length ? rows.map(s => {
+      const isNew = newIndex >= 0 && b.steps[newIndex] === s;
+      return `<div class="erp__row${isNew ? ' is-new' : ''}"><div class="erp__time">${s.time}</div><div><strong>${s.title}</strong><small>${s.note}</small></div><div class="erp__delta">${s.delta}</div><div><span class="erp__chip">${s.status}</span></div></div>`;
+    }).join('') : `<div class="erp__empty">${phase === 0 ? 'Ejecuta el recorrido para ver cómo se conectan los módulos.' : 'Aún no hay movimientos en esta área.'}</div>`;
+    // detalle
+    $('#erp-dhead').textContent = b.detail.head;
+    $('#erp-dtitle').textContent = b.detail.titles[phase];
+    $('#erp-ddesc').textContent = b.detail.desc;
+    $('#erp-lines').innerHTML = b.detail.lines.map(l => `<div class="erp__line"><span>${l.l}</span><b>${l.v[phase]}</b></div>`).join('');
+    $('#erp-spark').innerHTML = b.spark.map((h, i) => `<i style="--h:${Math.min(100, h + phase * 3 + (i === b.spark.length - 1 ? phase * 2 : 0))}%"></i>`).join('');
+    $('#erp-note').textContent = phase === 0 ? b.note[1] : phase === 4 ? b.note[0] : b.steps[phase - 1].note;
+    tabsEl.querySelectorAll('.erp__tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.biz === biz)));
+    navEl.querySelectorAll('button').forEach(n => n.toggleAttribute('aria-current', n.dataset.view === view));
+  }
+  function toast(step) {
+    const t = $('#erp-toast');
+    t.innerHTML = `<b>${step.area}</b><span>${step.title}</span>`;
+    t.classList.add('is-on');
+    clearTimeout(toast.t);
+    toast.t = setTimeout(() => t.classList.remove('is-on'), 1500);
+  }
+  function stop() { timers.forEach(clearTimeout); timers = []; running = false; $('#erp-run').disabled = false; }
+  function play() {
+    stop(); running = true; phase = 0; view = 'resumen'; drawNav(); render(); $('#erp-run').disabled = true;
+    const b = cur();
+    b.steps.forEach((s, i) => timers.push(setTimeout(() => {
+      phase = i + 1; render(i); toast(s);
+      if (i === b.steps.length - 1) {
+        running = false; $('#erp-run').disabled = false;
+        if (auto && visible) timers.push(setTimeout(next, 4200));
+      }
+    }, 1000 + i * 1250)));
+  }
+  function setBiz(k, autoplay) {
+    biz = k; view = 'resumen'; phase = 0; last = {};
+    drawNav(); render();
+    if (autoplay) play(); else { stop(); phase = 4; render(); }
+  }
+  function next() { setBiz(D.order[(D.order.indexOf(biz) + 1) % D.order.length], true); }
+
+  tabsEl.addEventListener('click', e => { const t = e.target.closest('.erp__tab'); if (!t) return; auto = false; setBiz(t.dataset.biz, true); });
+  navEl.addEventListener('click', e => { const n = e.target.closest('button'); if (!n) return; auto = false; view = n.dataset.view; render(); });
+  $('#erp-run').addEventListener('click', () => { auto = false; play(); });
+  $('#erp-reset').addEventListener('click', () => { auto = false; stop(); phase = 0; view = 'resumen'; last = {}; drawNav(); render(); });
+  root.addEventListener('pointerdown', () => { auto = false; });
+
+  drawNav();
+  if (reduced) { phase = 4; render(); return; }
+  render();
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => {
+      visible = en.isIntersecting;
+      if (!visible) { stop(); }
+      else if (auto && !running) play();
+    }, { threshold: 0.25 }).observe(root);
+  }
+  setTimeout(() => { if (auto && !running && visible) play(); }, 700);
 })();
 </script>
 <script data-8b-part="section-script:folders">
