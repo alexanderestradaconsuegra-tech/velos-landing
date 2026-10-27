@@ -9,16 +9,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>velOS — El sistema que dirige tu empresa</title>
-<meta name="description" content="velOS es el sistema de gestión a medida para empresas con producción, ventas, reparto y equipos. Incluye dos agentes que operan tu negocio desde Telegram y atienden a tus clientes por WhatsApp.">
+<title>Autix — Sistemas a medida y agentes de IA para tu empresa</title>
+<meta name="description" content="Autix diseña y construye sistemas a medida para empresas con producción, ventas, reparto y equipos, con agentes de IA que los operan desde Telegram y WhatsApp. Su producto estrella: velOS.">
 <meta name="theme-color" content="#123845">
 <meta name="generator" content="8B Templates">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="velOS by Autix">
+<meta property="og:site_name" content="Autix">
 <meta property="og:locale" content="es_CL">
 <meta property="og:url" content="https://autix.pro/">
-<meta property="og:title" content="velOS — Toda tu operación en un mensaje">
-<meta property="og:description" content="Producción, stock, ventas, reparto y cobranza en un solo sistema. Con agentes que operan tu negocio desde Telegram y atienden clientes por WhatsApp.">
+<meta property="og:title" content="Autix — Sistemas a medida para tu empresa">
+<meta property="og:description" content="Sistemas a medida con agentes de IA que operan tu negocio desde Telegram y atienden a tus clientes por WhatsApp. Producto estrella: velOS.">
 <meta property="og:image" content="https://autix.pro/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -632,6 +632,30 @@
   #contact .contact__form .m-text-8 { max-width: 28rem; }
   #start .start__window img { object-position: 78% 55%; }
   #calls .phone__bar span:nth-child(n+2) { color: var(--color-5); }
+  #nav .nav__word { font-size: 1.625rem; letter-spacing: -0.04em; }
+  #nav .nav__brand { padding-block: 0.25rem; }
+  #footer .footer__word { font-size: min(28rem, (100vw - 2 * var(--space-1)) / (var(--len) * 0.46)); }
+  /* módulos */
+  #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
+  #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
+  #modulos .modulos__head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.5rem 4rem; align-items: end; }
+  #modulos .modulos__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+  #modulos .modulos__tile { display: grid; gap: 0.5rem; align-content: start; min-height: 8.5rem; padding: 1.25rem; border-radius: var(--radius-4); background: var(--color-2); }
+  #modulos .modulos__tile svg { width: 1.625rem; height: 1.625rem; fill: none; stroke: var(--color-6); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  #modulos .modulos__tile p:last-child { color: var(--color-5); }
+  #modulos .modulos__note { margin-top: 1.25rem; color: var(--color-5); }
+  @media (max-width: 63.99rem) { #modulos .modulos__head { grid-template-columns: 1fr; } #modulos .modulos__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* caso en video */
+  #caso { position: relative; isolation: isolate; color: var(--color-2); padding-block: var(--space-2); }
+  #caso > :not(.caso__sheet) { position: relative; z-index: 1; }
+  #caso .caso__head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.5rem 4rem; align-items: end; }
+  #caso .caso__copy { display: grid; gap: 1.5rem; justify-items: start; }
+  #caso .caso__frame { position: relative; margin-top: clamp(2.5rem, 5vw, 4rem); aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-2); background: var(--color-8); }
+  #caso .caso__frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  #caso .caso__ph { position: absolute; inset: 0; display: grid; place-content: center; gap: 0.5rem; padding: 1.5rem; text-align: center; color: var(--color-7); pointer-events: none; }
+  #caso .caso__ph svg { width: 3.5rem; height: 3.5rem; margin-inline: auto; fill: none; stroke: var(--color-4); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  #caso .caso__frame.has-video .caso__ph { display: none; }
+  @media (max-width: 63.99rem) { #caso .caso__head { grid-template-columns: 1fr; } }
 }
 </style>
 </head>
@@ -640,22 +664,21 @@
 
 <header class="nav on-dark" id="nav" data-8b-section="navigation">
   <nav class="nav__bar" aria-label="Principal">
-    <a class="nav__brand" href="#hero" aria-label="velOS, volver arriba">
-      <img class="nav__logo" src="logo.png" width="63" height="36" alt="" aria-hidden="true">
-      <span class="nav__word m-text-5">vel<b>OS</b></span>
+    <a class="nav__brand" href="#hero" aria-label="Autix, volver arriba">
+      <span class="nav__word m-text-5">aut<b>ix</b></span>
     </a>
     <ul class="nav__links m-text-6">
-      <li><a class="m-link-2" href="#listen">Módulos</a></li><li><a class="m-link-2" href="#calls">Agentes</a></li><li><a class="m-link-2" href="#voices">Caso real</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li><li><a class="m-link-2" href="#contact">Contacto</a></li>
+      <li><a class="m-link-2" href="#listen">A medida</a></li><li><a class="m-link-2" href="#calls">velOS</a></li><li><a class="m-link-2" href="#rooms">Tu negocio</a></li><li><a class="m-link-2" href="#caso">Casos</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li>
     </ul>
-    <a class="m-btn-3 nav__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Solicitar una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+    <a class="m-btn-3 nav__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
     <button class="m-icon-btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
   </nav>
   <div class="menu" id="menu" data-lenis-prevent hidden role="dialog" aria-modal="true" aria-label="Menú">
     <button class="m-icon-btn menu__close" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <ul class="menu__links m-text-5">
-      <li><a class="m-link-2" href="#listen">Módulos</a></li><li><a class="m-link-2" href="#calls">Agentes</a></li><li><a class="m-link-2" href="#voices">Caso real</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li><li><a class="m-link-2" href="#contact">Contacto</a></li>
+      <li><a class="m-link-2" href="#listen">A medida</a></li><li><a class="m-link-2" href="#calls">velOS</a></li><li><a class="m-link-2" href="#rooms">Tu negocio</a></li><li><a class="m-link-2" href="#caso">Casos</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li>
     </ul>
-    <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Solicitar una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+    <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
   </div>
 </header>
 
@@ -680,17 +703,17 @@
   </div>
   <div class="hero__copy l-wrap">
     <div class="hero__intro">
-      <h1 class="m-text-2 hero__title" id="hero-title">Produces, vendes, repartes y cobras. velOS lo conecta todo.</h1>
+      <h1 class="m-text-2 hero__title" id="hero-title">Sistemas a medida que dirigen tu empresa.</h1>
       <div class="hero__lower">
-        <p class="m-text-4 hero__lead">Un solo sistema a la medida de cómo trabaja tu empresa. Con dos agentes que lo operan desde Telegram y atienden a tus clientes por WhatsApp.</p>
+        <p class="m-text-4 hero__lead">Autix diseña y construye el sistema que tu negocio necesita, con agentes de IA que lo operan desde Telegram y atienden a tus clientes por WhatsApp. Nuestro producto estrella se llama velOS.</p>
         <ul class="hero__proof m-text-6">
           <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>100% a medida</li>
-          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>Agentes incluidos</li>
-          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>Datos bajo tu control</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>Agentes de IA incluidos</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>Tus datos, bajo tu control</li>
         </ul>
         <div class="hero__actions">
-          <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Solicitar una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
-          <a class="m-link m-text-6" href="#listen">Ver cómo funciona</a>
+          <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+          <a class="m-link m-text-6" href="#listen">Qué es un sistema a medida</a>
         </div>
       </div>
     </div>
@@ -700,21 +723,21 @@
 <section class="listen" id="listen" data-8b-section="voice-to-text" aria-labelledby="listen-title">
   <div class="listen__sheet m-band" aria-hidden="true"></div>
   <div class="listen__head l-wrap">
-    <h2 class="m-text-3 listen__title" id="listen-title">Cada módulo alimenta al siguiente.</h2>
-    <p class="m-text-4 listen__lead" data-8b-motion="readAlong">16 módulos que se hablan entre sí: producción, insumos, stock, pedidos, ventas, reparto, cobranza, contabilidad y más. Nada se carga dos veces, nada queda descuadrado.</p>
+    <h2 class="m-text-3 listen__title" id="listen-title">Un sistema a medida se adapta a ti, no al revés.</h2>
+    <p class="m-text-4 listen__lead" data-8b-motion="readAlong">Muchas empresas trabajan con planillas, cuadernos o varios programas que no se hablan entre sí. Un sistema a medida reúne todo en un solo lugar y se construye alrededor de cómo opera tu negocio.</p>
   </div>
   <div class="listen__hold">
     <div class="listen__stage l-wrap">
       <div class="listen__panels">
         <div class="listen__panel listen__panel--voice">
-          <p class="m-text-6 listen__label">Tu operación</p>
+          <p class="m-text-6 listen__label">Hoy en tu empresa</p>
           <div class="listen__wave" aria-hidden="true"><i style="--h:.32"></i><i style="--h:.5"></i><i style="--h:.74"></i><i style="--h:.58"></i><i style="--h:.9"></i><i style="--h:.66"></i><i style="--h:.42"></i><i style="--h:.3"></i><i style="--h:.54"></i><i style="--h:.82"></i><i style="--h:1"></i><i style="--h:.7"></i><i style="--h:.46"></i><i style="--h:.36"></i><i style="--h:.6"></i><i style="--h:.86"></i><i style="--h:.64"></i><i style="--h:.4"></i><i style="--h:.28"></i><i style="--h:.48"></i><i style="--h:.72"></i><i style="--h:.94"></i><i style="--h:.62"></i><i style="--h:.38"></i><i style="--h:.52"></i><i style="--h:.78"></i><i style="--h:.56"></i><i style="--h:.34"></i></div>
           <div class="listen__track listen__track--voice" aria-hidden="true"></div>
         </div>
         <div class="listen__panel listen__panel--read">
-          <p class="m-text-6 listen__label">velOS lo conecta</p>
+          <p class="m-text-6 listen__label">Con un sistema a medida</p>
           <div class="listen__track listen__track--read">
-            <div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Produces: bajan los insumos, suben los kilos al stock.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Vendes: baja el stock y queda registrada la deuda.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Cobras: la deuda se cierra y la caja cuadra sola.</span></p></div>
+            <div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Un solo lugar para producción, ventas, reparto y cobranza.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Tus procesos y tu vocabulario, no los de una plantilla.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Crece contigo: si tu negocio cambia, el sistema también.</span></p></div>
           </div>
         </div>
       </div>
@@ -726,10 +749,10 @@
   <div class="calls__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
   <div class="calls__inner l-wrap">
     <div class="calls__head">
-      <h2 class="m-text-3" id="calls-title" data-8b-motion="captionIn">Dos agentes que trabajan mientras tú produces.</h2>
+      <h2 class="m-text-3" id="calls-title" data-8b-motion="captionIn">velOS, nuestro sistema estrella.</h2>
       <div class="calls__head-copy">
-        <p class="m-text-4 calls__lead">No son bots genéricos. Cada uno conoce tus productos, precios, clientes y rutas, y ejecuta acciones reales sobre tu sistema, no solo responde. Este es el agente de Telegram para tu equipo.</p>
-        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Solicitar una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+        <p class="m-text-4 calls__lead">velOS es el sistema a medida que ya opera negocios reales: 16 módulos conectados y dos agentes de IA que ejecutan acciones reales, no solo responden. Este es el agente de Telegram de tu equipo; el de WhatsApp atiende a tus clientes.</p>
+        <a class="m-btn" href="#caso"><span class="m-btn__label">Ver velOS en acción</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
       </div>
     </div>
     <div class="calls__grid">
@@ -789,57 +812,92 @@
 <section class="rooms on-dark" id="rooms" data-8b-section="in-person" aria-labelledby="rooms-title">
   <div class="rooms__sheet m-band-4" aria-hidden="true"></div>
   <div class="rooms__head l-wrap">
-    <h2 class="m-text-3" id="rooms-title" data-8b-motion="captionIn">El agente de WhatsApp atiende, cotiza y cierra pedidos.</h2>
-    <p class="m-text-4 rooms__lead" data-8b-motion="readAlong">Recibe clientes nuevos, cotiza volúmenes mayoristas, toma los datos de despacho y deja el pedido agendado en tu sistema. Solo habla de productos, precios y condiciones: nunca revela información interna de tu empresa.</p>
+    <h2 class="m-text-3" id="rooms-title" data-8b-motion="captionIn">Para cada negocio, un sistema distinto.</h2>
+    <p class="m-text-4 rooms__lead" data-8b-motion="readAlong">La misma arquitectura se construye según cómo opera cada empresa: de una planta de producción a un restaurante con salón y delivery. También trabajamos con bebidas, salud y farma. Estas son las preguntas que cada rubro resuelve.</p>
   </div>
   <div class="rooms__hold">
     <div class="rooms__stage">
-      <p class="rooms__now m-text-6"><i aria-hidden="true"></i>Agente WhatsApp · Clientes</p>
+      <p class="rooms__now m-text-6"><i aria-hidden="true"></i>Rubros · Pregunta y respuesta</p>
       <div class="rooms__track">
         <svg class="rooms__lines" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
           <path class="rooms__line rooms__line--a" pathLength="1" d="M0 60C40 10 80 10 120 50S200 95 240 55 320 5 360 45 440 95 480 55 560 5 600 45 680 95 720 55 800 5 840 45 920 95 1000 50"/>
           <path class="rooms__line rooms__line--b" pathLength="1" d="M0 40C40 90 80 90 120 50S200 5 240 45 320 95 360 55 440 5 480 45 560 95 600 55 680 5 720 45 800 95 840 55 920 5 1000 50"/>
         </svg>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="planta-1.webp" width="426" height="611" alt="Panel de velOS en un notebook dentro de la planta" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Cotiza pedidos grandes</figcaption>
+          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-lacteos.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
+          <figcaption class="rooms__label m-text-6">Lácteos y alimentos</figcaption>
           <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Cotizar 100 kg mozzarella + 40 kg ricota semanal</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Total mayorista: $1.474.000</span></p>
+            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cuánto rindió cada lote?</span></p>
+            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Rendimiento por producto y costo real por unidad.</span></p>
           </div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="planta-2.webp" width="430" height="616" alt="Operaria de la planta junto a estantes con quesos" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Agenda la entrega</figcaption>
+          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-distribucion.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
+          <figcaption class="rooms__label m-text-6">Distribuidoras y mayoristas</figcaption>
           <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Entregan en Maipú los lunes?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Sí, vamos lunes y jueves.</span></p>
+            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Quién me debe y qué lleva cada conductor?</span></p>
+            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Rutas, deuda por cliente y cobranza en un mensaje.</span></p>
           </div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="planta-3.webp" width="470" height="674" alt="Operario preparando queso con el agente de Telegram de velOS en primer plano" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Toma los datos de despacho</figcaption>
+          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-gastronomia.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
+          <figcaption class="rooms__label m-text-6">Gastronomía</figcaption>
           <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Supermercados Andes SpA · Av. Pajaritos 4120, Maipú</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Pedido agendado. Lunes 8:00–12:00 hrs.</span></p>
+            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué plato se agotó hoy?</span></p>
+            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Reservas, carta QR, cocina y caja en un solo sistema.</span></p>
           </div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="planta-5.webp" width="330" height="473" alt="Tablero de control de la planta y panel de velOS" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Mismo agente, otro rubro</figcaption>
+          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-retail.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
+          <figcaption class="rooms__label m-text-6">Retail y puntos de venta</figcaption>
           <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Tienen mesa para 6 el sábado a las 21:00?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Reserva confirmada. Sábado 21:00 hrs.</span></p>
+            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cuánto vendimos y qué queda en stock?</span></p>
+            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Terminal de ventas con boleta en 20 seg y stock al día.</span></p>
           </div>
         </figure>
         <figure class="rooms__place">
-          <img sizes="(max-width: 767px) 90vw, 22vw" src="planta-4.webp" width="300" height="430" alt="Conversación con el agente de Telegram de velOS en un celular" loading="lazy" decoding="async">
-          <figcaption class="rooms__label m-text-6">Protege tu información</figcaption>
+          <img sizes="(max-width: 767px) 90vw, 22vw" src="rubro-manufactura.svg" width="600" height="860" alt="" loading="lazy" decoding="async">
+          <figcaption class="rooms__label m-text-6">Manufactura y agroindustria</figcaption>
           <div class="rooms__talk">
-            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué margen manejan ustedes?</span></p>
-            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Esa información es interna. ¿Le ayudo con algo más?</span></p>
+            <p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cuánto costó realmente producir?</span></p>
+            <p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Insumos, producción y costo real conectados.</span></p>
           </div>
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modulos" id="modulos" data-8b-section="modules" aria-labelledby="modulos-title">
+  <div class="modulos__sheet m-band-2" aria-hidden="true"></div>
+  <div class="modulos__inner l-wrap">
+    <div class="modulos__head">
+      <h2 class="m-text-3" id="modulos-title" data-8b-motion="captionIn">16 módulos. Eliges los que tu operación necesita.</h2>
+      <p class="m-text-4">Cada módulo alimenta al siguiente: nada se carga dos veces, nada queda descuadrado. Y si tu negocio tiene una particularidad que ningún sistema estándar contempla, la construimos.</p>
+    </div>
+    <ul class="modulos__grid"><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><h3 class="m-text-5">Producción</h3><p class="m-text-7">95,8% rendimiento</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 22l10-10M16 8l-1.17 1.17a3 3 0 01-4.24 0L9.41 8a3 3 0 010-4.24L10.59 2.6a3 3 0 014.24 0L16 3.76a3 3 0 010 4.24z"/><path d="M17.5 14.5L16.33 15.67a3 3 0 01-4.24 0l-1.18-1.17a3 3 0 010-4.25l1.18-1.17a3 3 0 014.24 0l1.17 1.17a3 3 0 010 4.25z"/></svg><h3 class="m-text-5">Insumos</h3><p class="m-text-7">340 L en planta</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><h3 class="m-text-5">Stock</h3><p class="m-text-7">2 bajo el mínimo</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M8 11h8M8 15h5"/></svg><h3 class="m-text-5">Productos y precios</h3><p class="m-text-7">84 activos</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg><h3 class="m-text-5">Pedidos</h3><p class="m-text-7">7 pendientes hoy</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><h3 class="m-text-5">Terminal de ventas</h3><p class="m-text-7">boleta en 20 seg</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><h3 class="m-text-5">Ventas</h3><p class="m-text-7">$1,8M hoy</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h3 class="m-text-5">Clientes</h3><p class="m-text-7">312 con ficha</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><h3 class="m-text-5">Cobranza</h3><p class="m-text-7">$250K por cobrar</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h3 class="m-text-5">Reparto y rutas</h3><p class="m-text-7">2 de 4 entregadas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg><h3 class="m-text-5">Devoluciones</h3><p class="m-text-7">repone stock solo</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg><h3 class="m-text-5">Proveedores</h3><p class="m-text-7">18 activos</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3 class="m-text-5">Cuentas por pagar</h3><p class="m-text-7">4 vencen esta semana</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M8 21h8M3 7h18M6.5 7L3 14a4 4 0 007 0zM17.5 7L14 14a4 4 0 007 0z"/></svg><h3 class="m-text-5">Gastos</h3><p class="m-text-7">$3,1M este mes</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9.5 7h7M9.5 11h7"/></svg><h3 class="m-text-5">Contabilidad</h3><p class="m-text-7">cierre automático</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><h3 class="m-text-5">Usuarios y roles</h3><p class="m-text-7">4 perfiles</p></li></ul>
+    <p class="modulos__note m-text-7">Cifras de ejemplo del sistema en funcionamiento.</p>
+  </div>
+</section>
+
+<section class="caso on-dark" id="caso" data-8b-section="case-video" aria-labelledby="caso-title">
+  <div class="caso__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
+  <div class="caso__inner l-wrap">
+    <div class="caso__head">
+      <h2 class="m-text-3" id="caso-title" data-8b-motion="captionIn">Míralo funcionando en Punto Queso.</h2>
+      <div class="caso__copy">
+        <p class="m-text-4">Un negocio real usando velOS en el día a día. Así se ve un sistema a medida cuando ya está andando.</p>
+        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Quiero algo así para mi negocio</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+      </div>
+    </div>
+    <div class="caso__frame" id="caso-frame">
+      <video controls playsinline preload="metadata" poster="punto-queso-poster.jpg" aria-label="Video: velOS funcionando en Punto Queso">
+        <source src="punto-queso.mp4" type="video/mp4">
+      </video>
+      <div class="caso__ph" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7zM14 5H3a2 2 0 00-2 2v10a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg>
+        <p class="m-text-5">Video de Punto Queso</p>
+        <p class="m-text-7">Agrega punto-queso.mp4 y punto-queso-poster.jpg a la raíz del sitio.</p>
       </div>
     </div>
   </div>
@@ -848,7 +906,7 @@
 <section class="voices" id="voices" data-8b-section="testimonials" aria-labelledby="voices-title">
   <div class="voices__sheet m-band" aria-hidden="true" data-8b-motion="bandRise"></div>
   <div class="voices__inner l-wrap">
-    <h2 class="m-text-3 voices__title" id="voices-title" data-8b-motion="captionIn">La misma arquitectura, dos rubros distintos.</h2>
+    <h2 class="m-text-3 voices__title" id="voices-title" data-8b-motion="captionIn">Más casos: Campolac y Fogón Norte.</h2>
     <div class="voices__grid">
       <figure class="voices__expert">
         <div class="voices__photo"><img sizes="(max-width: 767px) 95vw, 51vw" src="hero-planta.webp" width="1672" height="941" alt="Operarios de Campolac elaborando queso en la planta" loading="lazy" decoding="async" style="object-position:56% 40%"></div>
@@ -871,8 +929,8 @@
   <div class="setup__sheet m-band-2" aria-hidden="true"></div>
   <div class="setup__inner l-wrap">
     <div class="setup__head">
-      <h2 class="m-text-3" id="setup-title" data-8b-motion="captionIn">De la primera conversación al sistema andando.</h2>
-      <p class="m-text-4">Tres etapas, sin sorpresas. El plazo depende del alcance: te lo damos concreto después de conocer tu operación.</p>
+      <h2 class="m-text-3" id="setup-title" data-8b-motion="captionIn">Así trabajamos contigo.</h2>
+      <p class="m-text-4">De la primera conversación al sistema andando, en tres etapas y sin sorpresas. El plazo depende del alcance: te lo damos concreto después de conocer tu operación.</p>
     </div>
     <ol class="setup__steps">
       <li class="setup__card" style="--setup-i:0">
@@ -908,10 +966,12 @@
   <div class="faq__sheet m-band" aria-hidden="true"></div>
   <div class="faq__inner l-wrap">
     <div class="faq__head">
-      <h2 class="m-text-3" id="faq-title" data-8b-motion="captionIn">Todo lo que necesitas saber sobre velOS.</h2>
+      <h2 class="m-text-3" id="faq-title" data-8b-motion="captionIn">Todo lo que necesitas saber.</h2>
       <p class="m-text-8">Si tu pregunta no está acá, <a class="m-link" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20tengo%20una%20pregunta%20sobre%20velOS" target="_blank" rel="noopener">escríbenos por WhatsApp</a> y te respondemos directamente.</p>
     </div>
     <div class="faq__list">
+      <details class="faq__item"><summary class="m-text-5">¿Qué es un sistema a medida y en qué se diferencia de un software normal?<span class="faq__icon" aria-hidden="true"></span></summary><p class="m-text">Un software normal te da funciones fijas y eres tú quien adapta su forma de trabajar. Un sistema a medida se construye después de entender cómo opera tu empresa: tus procesos, tu vocabulario y tus reglas.</p><p class="m-text">Incluye solo los módulos que usas, se conecta con cómo trabaja tu equipo hoy y evoluciona cuando tu negocio cambia.</p></details>
+      <details class="faq__item"><summary class="m-text-5">¿Qué es Autix y qué es velOS?<span class="faq__icon" aria-hidden="true"></span></summary><p class="m-text">Autix diseña y construye sistemas a medida y agentes de IA para empresas. velOS es nuestro producto estrella: el sistema que ya opera negocios reales como Campolac, Punto Queso y Fogón Norte, con 16 módulos y dos agentes de IA.</p><p class="m-text">Cada implementación se adapta a la empresa: velOS es la base y la medida la pones tú.</p></details>
       <details class="faq__item"><summary class="m-text-5">¿Qué es exactamente velOS?<span class="faq__icon" aria-hidden="true"></span></summary><p class="m-text">velOS es un sistema de gestión inteligente construido a la medida de tu empresa. No es un software genérico con funciones fijas: es una plataforma que <strong>administra tu negocio completo</strong> — desde la producción y el control de insumos, hasta el inventario, las ventas, el reparto, la cobranza y la administración general — todo conectado en un solo lugar.</p> <p class="m-text">Además, incluye dos agentes inteligentes integrados: uno que opera el sistema desde Telegram para tu equipo interno, y otro que atiende a tus clientes por WhatsApp. No es un complemento externo, es parte del mismo sistema.</p></details>
       <details class="faq__item"><summary class="m-text-5">¿velOS sirve para cualquier tipo de empresa o solo para productores de alimentos?<span class="faq__icon" aria-hidden="true"></span></summary><p class="m-text">velOS se adapta a cualquier empresa que tenga una operación con varias áreas que necesitan hablar entre sí: producción, inventario, ventas, logística, cobranza. Aunque nuestro primer caso real es un productor de lácteos (Campolac), la lógica del sistema aplica igual a agroindustria, distribuidoras, bebidas, manufactura, salud o cualquier negocio con procesos similares.</p> <p class="m-text">Cada implementación se diseña según cómo trabaja tu empresa específicamente — no adaptamos tu negocio a un software fijo, construimos el software alrededor de tu operación real.</p></details>
       <details class="faq__item"><summary class="m-text-5">¿Qué significa que el sistema es "a medida"?<span class="faq__icon" aria-hidden="true"></span></summary><p class="m-text">Significa que no te vendemos una plantilla con casillas que rellenar. Autix analiza cómo funciona tu empresa hoy — tus procesos de producción, tu forma de vender, cómo repartes, cómo cobras — y construye los módulos que realmente necesitas, con la terminología, las reglas y los flujos que usa tu equipo todos los días.</p> <p class="m-text">Si tu negocio tiene una particularidad que ningún sistema estándar contempla, ese es justamente el tipo de problema que velOS está pensado para resolver.</p></details>
@@ -935,11 +995,11 @@
       <img sizes="(max-width: 767px) 269vw, 92vw" src="hero-planta.webp" width="1672" height="941" alt="Notebook con el panel de velOS en una planta de lácteos" loading="lazy" decoding="async" style="object-position:78% 55%">
     </div>
     <div class="start__copy">
-      <h2 class="m-text-3" id="start-title">Tu sistema, construido a tu medida.</h2>
-      <p class="m-text-4">Autix diseña y desarrolla velOS específicamente para tu empresa. Sin plantillas genéricas, sin módulos que no usas. Solo lo que tu operación necesita.</p>
+      <h2 class="m-text-3" id="start-title">Cuéntanos cómo trabaja tu negocio.</h2>
+      <p class="m-text-4">Te mostramos cómo se vería tu sistema a medida. Sin plantillas genéricas, sin módulos que no usas. Solo lo que tu operación necesita.</p>
       <div class="start__actions">
-        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Conversemos por WhatsApp</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
-        <a class="m-link m-text-6" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Solicitar una demo</a>
+        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+        <a class="m-link m-text-6" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener">Conversemos por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -950,12 +1010,12 @@
   <div class="contact__inner l-wrap">
     <div class="contact__info">
       <h2 class="m-text-3" id="contact-title" data-8b-motion="captionIn">Cuéntanos tu caso.</h2>
-      <p class="m-text-4">velOS es solo un ejemplo de lo que hacemos. Autix construye sistemas completos a medida, o solo el agente de IA que necesitas, para cualquier rubro y no solo producción y reparto.</p>
-      <figure class="contact__photo"><img sizes="(max-width: 767px) 90vw, 47vw" src="hero-planta.webp" width="1672" height="941" alt="Celular con el agente de Telegram de velOS junto a un notebook en la planta" loading="lazy" decoding="async" style="object-position:52% 68%"></figure>
+      <p class="m-text-4">Autix construye sistemas completos a medida, o solo el agente de IA que necesitas, para cualquier rubro y no solo producción y reparto.</p>
+      <figure class="contact__photo"><img sizes="(max-width: 767px) 90vw, 47vw" src="planta-1.webp" width="426" height="611" alt="Panel de velOS en un notebook dentro de una planta" loading="lazy" decoding="async" style="object-position:50% 40%"></figure>
       <ul class="contact__ways">
         <li><p class="m-text-6">WhatsApp</p><a class="m-link m-text-5" href="https://wa.me/56992103974" target="_blank" rel="noopener">+56 9 9210 3974</a></li>
         <li><p class="m-text-6">Sitio</p><a class="m-link m-text-5" href="https://autix.pro/">autix.pro</a></li>
-        <li><p class="m-text-6">Demo</p><a class="m-link m-text-5" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Solicitar una demo</a></li>
+        <li><p class="m-text-6">Demo</p><a class="m-link m-text-5" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li>
       </ul>
     </div>
     <div class="contact__form">
@@ -977,22 +1037,21 @@
   <div class="footer__inner l-wrap">
     <div class="footer__top">
       <div class="footer__pitch">
-        <h2 class="m-text-5" id="footer-title">El sistema que dirige tu empresa.</h2>
-        <p class="m-text-4">Sistemas y agentes de IA a medida, por Autix.</p>
+        <h2 class="m-text-5" id="footer-title">Sistemas a medida y agentes de IA para tu empresa.</h2>
+        <p class="m-text-4">Autix construye velOS y el sistema que cada negocio necesita.</p>
         <a class="m-link m-text-6" href="#hero">Volver arriba</a>
       </div>
       <div class="footer__cols m-text-6">
-        <div class="footer__col"><h2 class="m-text-6">Producto</h2><ul><li><a class="m-link-2" href="#listen">Módulos</a></li><li><a class="m-link-2" href="#calls">Agente Telegram</a></li><li><a class="m-link-2" href="#rooms">Agente WhatsApp</a></li><li><a class="m-link-2" href="#tune">A tu medida</a></li></ul></div>
-        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="#contact">Cuéntanos tu caso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li></ul></div>
-        <div class="footer__col"><h2 class="m-text-6">Autix</h2><ul><li><a class="m-link-2" href="#voices">Caso real</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Solicitar una demo</a></li></ul></div>
+        <div class="footer__col"><h2 class="m-text-6">Autix</h2><ul><li><a class="m-link-2" href="#listen">Sistemas a medida</a></li><li><a class="m-link-2" href="#rooms">Para tu negocio</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li></ul></div>
+        <div class="footer__col"><h2 class="m-text-6">velOS</h2><ul><li><a class="m-link-2" href="#calls">Producto</a></li><li><a class="m-link-2" href="#modulos">Módulos</a></li><li><a class="m-link-2" href="#caso">Caso Punto Queso</a></li><li><a class="m-link-2" href="#voices">Campolac y Fogón Norte</a></li></ul></div>
+        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li><li><a class="m-link-2" href="#contact">Cuéntanos tu caso</a></li></ul></div>
       </div>
     </div>
     <div class="footer__brand" aria-hidden="true">
-      <img class="footer__logo" src="logo.png" width="189" height="108" alt="">
-      <p class="footer__word m-text-2" style="--len:6.6">vel<b>OS</b></p>
+      <p class="footer__word m-text-2" style="--len:4.4">aut<b>ix</b></p>
     </div>
     <div class="footer__legal m-text-7">
-      <p>© 2026 Autix · Sistema construido a medida · Diseño: <a href="https://8b.com/" style="color:inherit" data-8b-credit>8B</a></p>
+      <p>© 2026 Autix · Sistemas a medida · Diseño: <a href="https://8b.com/" style="color:inherit" data-8b-credit>8B</a></p>
       <ul><li><a class="m-link" href="#faq">Cumplimiento normativo</a></li></ul>
     </div>
     <p class="footer__note m-text-7">velOS se diseña considerando las obligaciones de la Ley 21.719 de protección de datos personales, que entra en vigencia el 1 de diciembre de 2026. El cumplimiento también depende de cómo opera tu empresa: recomendamos validarlo con un abogado especialista.</p>
@@ -1040,6 +1099,15 @@
   const hero = document.getElementById('hero');
   if (!hero || !('IntersectionObserver' in window)) return;
   new IntersectionObserver(([entry]) => hero.classList.toggle('is-paused', !entry.isIntersecting)).observe(hero);
+})();
+</script>
+<script data-8b-part="section-script:caso">
+(() => {
+  const frame = document.getElementById('caso-frame');
+  const video = frame && frame.querySelector('video');
+  if (!video) return;
+  const ok = () => frame.classList.add('has-video');
+  if (video.readyState >= 1) ok(); else video.addEventListener('loadedmetadata', ok, { once: true });
 })();
 </script>
 <script data-8b-part="motion-queue">
@@ -1435,11 +1503,9 @@ queueMotion(() => {
   const root = document.getElementById('footer');
   const brand = root.querySelector('.footer__brand');
   const word = root.querySelector('.footer__word');
-  const strokes = root.querySelectorAll('.footer__logo');
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
     gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'footer', trigger: brand, start: 'top bottom', end: 'bottom bottom', scrub: true } })
-      .fromTo(word, { yPercent: 70 }, { yPercent: 0 }, 0)
-      .fromTo(strokes, { autoAlpha: 0, scale: 0.7, transformOrigin: '0% 100%' }, { autoAlpha: 1, scale: 1 }, 0);
+      .fromTo(word, { yPercent: 70 }, { yPercent: 0 }, 0);
   });
 }, { near: document.getElementById('footer'), id: 'footer' });
 </script>

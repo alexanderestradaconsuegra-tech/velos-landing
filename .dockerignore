@@ -1,0 +1,9 @@
+.git
+.gitignore
+.nojekyll
+.dockerignore
+Dockerfile
+README.md
+vercel.json
+netlify.toml
+LICENSE-8b-template

@@ -1,6 +1,6 @@
-# velOS — Landing page
+# Autix — Landing page (producto estrella: velOS)
 
-Landing page de **velOS by Autix**. Es un único archivo HTML estático (`index.html`), sin build. Diseño y animaciones de scroll basados en la plantilla gratuita de 8B (MIT, ver `LICENSE-8b-template`); GSAP, ScrollTrigger y Lenis se cargan desde jsDelivr y la tipografía desde Google Fonts.
+Landing page de **Autix**: sistemas a medida y agentes de IA, con **velOS** como producto estrella. Es un único archivo HTML estático (`index.html`), sin build. Diseño y animaciones de scroll basados en la plantilla gratuita de 8B (MIT, ver `LICENSE-8b-template`); GSAP, ScrollTrigger y Lenis se cargan desde jsDelivr y la tipografía desde Google Fonts.
 
 ## Estructura
 
@@ -8,6 +8,8 @@ Landing page de **velOS by Autix**. Es un único archivo HTML estático (`index.
 index.html      → la página completa (HTML + CSS + JS inline)
 logo.png, favicon.png, og.jpg → marca
 hero-planta.webp, planta-1..5.webp → foto del hero y recortes (derivados de hero-planta.webp)
+rubro-*.svg → imágenes de ejemplo de cada rubro: reemplazar por fotos reales y cambiar el `src` en index.html
+punto-queso.mp4 + punto-queso-poster.jpg → video del caso Punto Queso (sección #caso). Si no existen, se muestra un aviso
 LICENSE-8b-template → licencia MIT del diseño base
 robots.txt       → indexación para buscadores
 sitemap.xml       → mapa del sitio
@@ -30,7 +32,7 @@ El repo trae un `Dockerfile` (nginx:alpine, puerto 80) que copia `index.html` y 
 4. En DNS (Hostinger) crea el registro `A` de `autix.pro` hacia la IP del VPS.
 5. Para actualizar: push a la rama configurada y **Deploy** (o activa Auto Deploy con el webhook de GitHub).
 
-Si agregas un archivo nuevo (imagen, etc.), añade su `COPY` al `Dockerfile`; si no, no llega al contenedor.
+El `Dockerfile` copia todo el sitio (menos lo listado en `.dockerignore`): los archivos nuevos, como el video, llegan solos al contenedor. Recomendado: comprimir el video (H.264, ~1080p, bajo 25 MB) para que cargue rápido.
 
 ### Otras opciones
 Al ser un sitio 100% estático, se puede servir desde cualquiera de estas opciones sin cambios. Alternativas si no usas el VPS: **Vercel** o **Netlify** (SSL automático y gratis).
