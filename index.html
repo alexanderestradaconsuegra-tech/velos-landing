@@ -1430,7 +1430,7 @@
         <li><a class="kt__row" href="https://holu.pro/" target="_blank" rel="noopener" data-img=""><span class="kt__n">05</span><span class="kt__name">Holu</span><span class="kt__role">Restaurantes</span><span class="kt__arrow" aria-hidden="true">&#8599;</span></a></li>
         <li><a class="kt__row" href="https://goatleague2026.vercel.app/" target="_blank" rel="noopener" data-img=""><span class="kt__n">06</span><span class="kt__name">Goat League</span><span class="kt__role">Torneos con web pública</span><span class="kt__arrow" aria-hidden="true">&#8599;</span></a></li>
     </ul>
-    <div class="kt__float" aria-hidden="true"><img alt="" width="320" height="256"><div class="kt__ph"><img src="mark-autix.png" alt="" width="64" height="64"><span>Captura próximamente</span></div></div>
+    <div class="kt__float" aria-hidden="true"><img alt="" width="320" height="256"><div class="kt__ph"><img src="mark-autix.png" alt="" width="64" height="64"><span></span></div></div>
   </div>
 </section>
 
@@ -1658,7 +1658,7 @@
   function move(e){ var w=f.offsetWidth,h=f.offsetHeight; tx=Math.min(e.clientX+24,innerWidth-w-12); ty=Math.min(e.clientY+24,innerHeight-h-12); if(!raf) raf=requestAnimationFrame(loop); }
   document.querySelectorAll('#fundador .kt__row').forEach(function(r){
     r.addEventListener('mouseenter',function(e){
-      var src=r.getAttribute('data-img'); if(src){ im.src=src; im.hidden=false; ph.hidden=true; } else { im.hidden=true; ph.hidden=false; }
+      var src=r.getAttribute('data-img'); if(src){ im.src=src; im.hidden=false; ph.hidden=true; } else { im.hidden=true; ph.hidden=false; ph.querySelector('span').textContent=r.querySelector('.kt__name').textContent; }
       if(!on){ x=tx=e.clientX+24; y=ty=e.clientY+24; }
       on=true; move(e); f.classList.add('is-on');
     });
