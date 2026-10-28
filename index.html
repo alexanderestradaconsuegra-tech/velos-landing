@@ -941,17 +941,17 @@
   /* quién está detrás */
   #fundador { position: relative; isolation: isolate; color: var(--color-2); padding-block: var(--space-2); }
   #fundador > :not(.fund__sheet) { position: relative; z-index: 1; }
-  #fundador .fund__inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2.5rem clamp(2rem, 6vw, 6rem); align-items: center; }
-  #fundador .fund__photo { overflow: hidden; border-radius: var(--radius-2); box-shadow: 0 0 0 0.0625rem rgba(255,255,255,0.12), 0 2rem 4rem rgba(0,0,0,0.4); }
-  #fundador .fund__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
-  #fundador .fund__copy { display: grid; gap: 1.5rem; justify-items: start; }
+  #fundador .fund__inner { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; max-width: 62rem; margin-inline: auto; }
+  #fundador .fund__photo { width: clamp(7rem, 14vw, 11rem); aspect-ratio: 1; overflow: hidden; border-radius: 50%; box-shadow: 0 0 0 0.1875rem var(--color-4), 0 0 0 0.5rem rgba(255,255,255,0.08); }
+  #fundador .fund__photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  #fundador .fund__copy { display: grid; gap: 1.25rem; justify-items: start; }
   #fundador .fund__kicker { color: var(--color-4); }
-  #fundador .fund__copy .m-text-4 { max-width: 38rem; color: var(--color-7); }
+  #fundador .fund__copy h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.05; }
+  #fundador .fund__copy .m-text-4 { max-width: 40rem; color: var(--color-7); }
   #fundador .fund__facts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   #fundador .fund__facts li { padding: 0.5rem 1rem; border-radius: var(--radius-3); background: var(--color-8); color: var(--color-7); }
-  #fundador .fund__facts b { margin-right: 0.35em; color: var(--color-4); font-weight: 600; }
-  #fundador .fund__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 0.5rem; }
-  @media (max-width: 47.99rem) { #fundador .fund__inner { grid-template-columns: 1fr; } #fundador .fund__photo { max-width: 22rem; } }
+  #fundador .fund__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 0.25rem; }
+  @media (max-width: 47.99rem) { #fundador .fund__inner { grid-template-columns: 1fr; justify-items: start; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -1393,15 +1393,15 @@
 <section class="fund on-dark" id="fundador" data-8b-section="founder" aria-labelledby="fund-title">
   <div class="fund__sheet m-band-4" aria-hidden="true"></div>
   <div class="fund__inner l-wrap">
-    <figure class="fund__photo"><img src="alexander-estrada.webp" width="900" height="1125" alt="Alexander Estrada, fundador de Autix" loading="lazy" decoding="async"></figure>
+    <figure class="fund__photo"><img src="alexander-estrada.webp" width="400" height="400" alt="Alexander Estrada, fundador de Autix" loading="lazy" decoding="async"></figure>
     <div class="fund__copy">
       <p class="fund__kicker m-text-6">Quién está detrás</p>
-      <h2 class="m-text-3" id="fund-title" data-8b-motion="captionIn">Hablas directo con quien construye tu sistema.</h2>
-      <p class="m-text-4">Soy Alexander Estrada, fundador de Autix. Diseño, desarrollo y pongo en marcha cada sistema, desde el primer levantamiento hasta que tu equipo lo usa. Los seis sistemas que ves arriba nacieron del mismo proceso: entender cómo trabaja un negocio y construir el software alrededor.</p>
+      <h2 class="m-text-3" id="fund-title" data-8b-motion="captionIn">Alexander Estrada, fundador de Autix.</h2>
+      <p class="m-text-4">Diseño y programo cada sistema: reparto y rutas, agenda con recordatorios por WhatsApp, punto de venta, torneos con web pública. Los conecto con WhatsApp e IA, los despliego y los mantengo. Hablas conmigo desde el levantamiento hasta que tu equipo lo usa.</p>
       <ul class="fund__facts m-text-6">
-        <li><b>6</b> sistemas en operación</li>
-        <li>Del levantamiento a la puesta en marcha</li>
-        <li>Contacto directo por WhatsApp</li>
+        <li>Software a medida, no plantillas</li>
+        <li>WhatsApp, n8n e IA integrados</li>
+        <li>Despliegue y soporte directo</li>
       </ul>
       <div class="fund__actions">
         <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Hablemos por WhatsApp</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
