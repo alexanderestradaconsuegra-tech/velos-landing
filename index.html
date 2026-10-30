@@ -988,6 +988,11 @@
 </style>
 <style data-8b-part="hero-dash">
 @layer sections {
+  /* encaje en pantallas de escritorio: el tamaño depende del ancho y del alto disponibles */
+  @media (min-width: 48rem) {
+    #hero .hero__media { top: calc(50% + 2.5rem); left: auto; right: var(--space-1); width: min(52vw, 64rem, calc((100svh - 11rem) * 1.12)); translate: 0 -50%; }
+    #hero .hero__lower { max-width: min(30rem, 36vw); }
+  }
   .erp .hd { display: flex; flex-direction: column; gap: 1em; padding: 1.2em; min-height: 0; background: #eef7fb; }
   .hd__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; }
   #hero .hero__media .hd__brand { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.4em; color: var(--e-mut); font-size: 0.85em; font-weight: 700; letter-spacing: -0.01em; }
@@ -1020,7 +1025,15 @@
   .hd-tile__v b { font-weight: 500; line-height: 0.95; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
   .hd-tile__v em { padding: 0.18em 0.35em; border-radius: 0.35em; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.66em; font-style: normal; font-weight: 500; }
   @media (prefers-reduced-motion: reduce) { .hd-tile { transition: none; } }
-  @container erpc (max-width: 46rem) {
+  @container erpc (min-width: 30rem) and (max-width: 46rem) {
+    .erp { font-size: clamp(9px, 1.5cqi, 13.5px); transform: perspective(2400px) rotateY(-7deg) rotateX(2deg); }
+    .erp:hover, .erp:focus-within { transform: none; }
+    .erp__note { display: block; } .erp__dots { display: flex; }
+    .erp__foot2 { flex-direction: row; align-items: center; }
+    .erp__actions { justify-content: flex-end; } .erp__btn { flex: none; }
+    .erp__toast { top: 4.7em; right: 1.3em; }
+  }
+  @container erpc (max-width: 30rem) {
     .hd__h { font-size: 1.45em; } .hd__status { display: none; }
     .hc--a, .hc--c { grid-column: 1 / -1; } .hc--b, .hc--d { display: none; }
     .hc__num { font-size: 1.7em; }
