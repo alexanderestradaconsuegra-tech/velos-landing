@@ -938,6 +938,31 @@
   .faqc__cta:active { transform: scale(0.98); }
   @media (prefers-reduced-motion: reduce) { .faqc__pill, .faqc__a, .faqc__q svg, .faqc__cta { transition: none; } .faqc__panel.is-active { animation: none; } }
   @media (max-width: 47.99rem) { .faqc { max-width: none; margin-left: 0; } }
+  /* listen: fallas de hoy vs sistema */
+  #listen .lst { position: absolute; inset: 4.25rem 1.75rem 1.5rem; display: grid; grid-template-rows: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+  #listen .lst__item { display: flex; align-items: center; gap: 0.875rem; font-size: clamp(0.9rem, 1.15vw, 1.1rem); line-height: 1.3; }
+  #listen .lst__mark { flex: none; display: grid; place-items: center; width: 1.625rem; height: 1.625rem; border-radius: 50%; font-size: 0.95rem; line-height: 1; }
+  #listen .lst--pain .lst__mark { background: rgba(255, 139, 122, 0.18); color: #ff9b8a; }
+  #listen .lst--pain .lst__txt { text-decoration: line-through; text-decoration-color: rgb(255 255 255 / calc(var(--done, 0) * 0.7)); }
+  #listen .lst--fix .lst__mark { background: color-mix(in srgb, var(--color-1) 14%, transparent); color: var(--color-1); font-weight: 700; }
+  @media (max-width: 47.99rem) {
+    #listen .listen__panels { height: auto; }
+    #listen .listen__panel--voice { grid-row: 1; border-radius: var(--radius-2) var(--radius-2) 0 0; }
+    #listen .listen__panel--read { grid-row: 2; border-radius: 0 0 var(--radius-2) var(--radius-2); }
+    #listen .listen__panel { padding: 1.25rem; }
+    #listen .listen__label { position: static; margin-bottom: 1rem; }
+    #listen .lst { position: static; display: grid; grid-template-rows: none; gap: 0.875rem; }
+    #listen .lst__item { font-size: 0.9375rem; }
+  }
+  /* agentes: conversación en vivo */
+  #agentes .agentes__chat { transition: opacity 0.5s ease; }
+  #agentes .agentes__chat.is-fading { opacity: 0; }
+  #agentes .agentes__chat.is-live .agentes__row { opacity: 0; transform: translateY(0.75rem) scale(0.97); transition: opacity 0.35s ease, transform 0.35s ease; }
+  #agentes .agentes__chat.is-live .agentes__row.is-in { opacity: 1; transform: none; }
+  #agentes .agentes__row.is-typing p { position: relative; }
+  #agentes .agentes__row.is-typing p > * { visibility: hidden; }
+  #agentes .agentes__row.is-typing p::after { content: "•••"; position: absolute; inset: 0; display: grid; place-items: center; letter-spacing: 0.2em; animation: agt-blink 1s ease-in-out infinite; }
+  @keyframes agt-blink { 50% { opacity: 0.3; } }
   /* módulos */
   #modulos { position: relative; isolation: isolate; color: var(--color-1); padding-block: var(--space-2); }
   #modulos > :not(.modulos__sheet) { position: relative; z-index: 1; }
@@ -1058,14 +1083,11 @@
       <div class="listen__panels">
         <div class="listen__panel listen__panel--voice">
           <p class="m-text-6 listen__label">Hoy en tu empresa</p>
-          <div class="listen__wave" aria-hidden="true"><i style="--h:.32"></i><i style="--h:.5"></i><i style="--h:.74"></i><i style="--h:.58"></i><i style="--h:.9"></i><i style="--h:.66"></i><i style="--h:.42"></i><i style="--h:.3"></i><i style="--h:.54"></i><i style="--h:.82"></i><i style="--h:1"></i><i style="--h:.7"></i><i style="--h:.46"></i><i style="--h:.36"></i><i style="--h:.6"></i><i style="--h:.86"></i><i style="--h:.64"></i><i style="--h:.4"></i><i style="--h:.28"></i><i style="--h:.48"></i><i style="--h:.72"></i><i style="--h:.94"></i><i style="--h:.62"></i><i style="--h:.38"></i><i style="--h:.52"></i><i style="--h:.78"></i><i style="--h:.56"></i><i style="--h:.34"></i></div>
-          <div class="listen__track listen__track--voice" aria-hidden="true"></div>
+          <ul class="lst lst--pain"><li class="lst__item"><span class="lst__mark" aria-hidden="true">&times;</span><span class="lst__txt">Ventas en cuadernos y planillas que nadie mantiene al día.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&times;</span><span class="lst__txt">Un stock que no cuadra con lo que hay en bodega.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&times;</span><span class="lst__txt">Clientes que escriben por WhatsApp y nadie responde a tiempo.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&times;</span><span class="lst__txt">Cobros pendientes que se recuerdan cuando ya es tarde.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&times;</span><span class="lst__txt">Cada programa por su lado y los mismos datos repetidos.</span></li></ul>
         </div>
         <div class="listen__panel listen__panel--read">
           <p class="m-text-6 listen__label">Con un sistema a medida</p>
-          <div class="listen__track listen__track--read">
-            <div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Un solo lugar para producción, ventas, reparto y cobranza.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Tus procesos y tu vocabulario, no los de una plantilla.</span></p></div><div class="listen__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Crece contigo: si tu negocio cambia, el sistema también.</span></p></div>
-          </div>
+          <ul class="lst lst--fix"><li class="lst__item"><span class="lst__mark" aria-hidden="true">&#10003;</span><span class="lst__txt">Producción, ventas, reparto y cobranza en un solo lugar.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&#10003;</span><span class="lst__txt">Cada venta descuenta el stock al instante.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&#10003;</span><span class="lst__txt">Pedidos y reservas entran solos, a cualquier hora.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&#10003;</span><span class="lst__txt">Te avisa los pagos pendientes antes de que se atrasen.</span></li><li class="lst__item"><span class="lst__mark" aria-hidden="true">&#10003;</span><span class="lst__txt">Hecho a tu medida: cambia tu negocio, cambia el sistema.</span></li></ul>
         </div>
       </div>
     </div>
@@ -1244,9 +1266,9 @@
       <article class="agentes__card">
         <p class="agentes__label m-text-6"><i aria-hidden="true"></i>Asistente para tu equipo · Telegram</p>
         <div class="agentes__chat">
-          <div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Cómo van las ventas hoy?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Llevas 12 ventas por $184.000, 8% sobre ayer.</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">¿Qué stock está bajo?</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">3 productos bajo el mínimo. ¿Genero la orden de compra?</span></p></div>
+          <div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Adjunto: factura_4521.jpg</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Leí la factura: Proveedor Sur, N° 4521, $380.000 con IVA. ¿La registro?</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Sí.</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Registrada en compras. Vence el 15 de noviembre; te aviso dos días antes.</span></p></div><div class="agentes__row"><p class="m-caption"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Súmale 40 sacos de harina al stock.</span></p></div><div class="agentes__row agentes__row--bot"><p class="m-caption-2"><span class="m-caption__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="m-caption__text">Harina 25 kg: de 62 a 102 unidades. ¿Algo más?</span></p></div>
         </div>
-        <p class="agentes__note m-text-7">Consulta y registra desde el chat, con acceso solo para tu equipo.</p>
+        <p class="agentes__note m-text-7">Registra facturas, ajusta el stock y consulta ventas desde el chat, con acceso solo para tu equipo.</p>
       </article>
     </div>
     <ul class="agentes__pills m-text-6">
@@ -1591,6 +1613,46 @@
   });
 })();
 </script>
+<script data-8b-part="section-script:agentes">
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  document.querySelectorAll('#agentes .agentes__chat').forEach(function (chat) {
+    var rows = [].slice.call(chat.querySelectorAll('.agentes__row'));
+    var timer = 0, gen = 0, running = false;
+    chat.classList.add('is-live');
+    function reset() { rows.forEach(function (r) { r.classList.remove('is-in', 'is-typing'); }); }
+    function play() {
+      var my = ++gen, i = 0;
+      reset();
+      (function next() {
+        if (my !== gen) return;
+        if (i >= rows.length) {
+          timer = setTimeout(function () {
+            if (my !== gen) return;
+            chat.classList.add('is-fading');
+            timer = setTimeout(function () { if (my === gen) { chat.classList.remove('is-fading'); play(); } }, 600);
+          }, 5000);
+          return;
+        }
+        var r = rows[i++], bot = r.classList.contains('agentes__row--bot');
+        r.classList.add('is-in');
+        if (bot) {
+          r.classList.add('is-typing');
+          timer = setTimeout(function () { r.classList.remove('is-typing'); timer = setTimeout(next, 1200); }, 1000);
+        } else {
+          timer = setTimeout(next, 1100);
+        }
+      })();
+    }
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { if (!running) { running = true; play(); } }
+        else { running = false; gen++; clearTimeout(timer); chat.classList.remove('is-fading'); reset(); }
+      });
+    }, { threshold: 0.5 }).observe(chat);
+  });
+})();
+</script>
 <script data-8b-part="section-script:erp">
 (() => {
   const D = {"order": ["tienda", "clinica", "juridico", "mascotas", "distribucion"], "biz": {"tienda": {"label": "Tienda online", "title": "Tienda online", "sub": "Pedidos, pagos, stock y despacho sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "Cada pedido nuevo entra con sus productos y su pago."}, {"id": "pagos", "label": "Pagos", "icon": "card", "sub": "El pago aprobado confirma el pedido en el acto."}, {"id": "inventario", "label": "Inventario", "icon": "box", "sub": "Cada venta descuenta el stock al instante."}, {"id": "despacho", "label": "Despacho", "icon": "truck", "sub": "El pedido pagado queda listo para entregar al courier."}], "steps": [{"view": "pedidos", "time": "09:12", "area": "Pedidos", "title": "Pedido #2041 recibido", "note": "2 productos · pago con tarjeta", "delta": "$89.980", "status": "Nuevo"}, {"view": "pagos", "time": "09:13", "area": "Pagos", "title": "Pago aprobado", "note": "Pedido #2041 confirmado", "delta": "$89.980", "status": "Aprobado"}, {"view": "inventario", "time": "09:14", "area": "Inventario", "title": "Stock descontado", "note": "Zapatillas trail 42 · quedan 7", "delta": "−1 u.", "status": "Actualizado"}, {"view": "despacho", "time": "10:05", "area": "Despacho", "title": "Etiqueta de envío creada", "note": "Courier · retiro hoy 17:00", "delta": "1 envío", "status": "Listo"}], "metrics": [{"l": "Pedidos hoy", "v": ["37", "38", "38", "38", "38"], "s": "Pedido #2041"}, {"l": "Ventas hoy", "v": ["$1.158.000", "$1.158.000", "$1.248.000", "$1.248.000", "$1.248.000"], "s": "Pago aprobado"}, {"l": "Stock zapatillas", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."], "s": "Talla 42"}, {"l": "Por despachar", "v": ["3", "3", "3", "3", "4"], "s": "Retiro 17:00"}], "detail": {"head": "Pedido #2041", "titles": ["Esperando pedidos", "Pedido recibido", "Pago aprobado", "Stock actualizado", "Listo para despachar"], "desc": "Una venta online recorre catálogo, pago, stock y despacho sin que nadie digite nada dos veces.", "lines": [{"l": "Cliente", "v": ["—", "Valentina R.", "Valentina R.", "Valentina R.", "Valentina R."]}, {"l": "Pago", "v": ["—", "Pendiente", "Aprobado", "Aprobado", "Aprobado"]}, {"l": "Stock", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."]}, {"l": "Despacho", "v": ["—", "—", "—", "En preparación", "Retiro 17:00"]}]}, "spark": [30, 44, 38, 52, 47, 63, 58, 74, 69, 88], "note": ["Un pedido online atraviesa pago, stock y despacho de forma automática.", "Inicia el recorrido: pedido → pago → stock → despacho."]}, "clinica": {"label": "Clínica", "title": "Clínica", "sub": "Agenda, fichas, atención y cobros sobre una misma operación.", "nav": [{"id": "agenda", "label": "Agenda", "icon": "cal", "sub": "Tus pacientes reservan online y la agenda se ordena sola."}, {"id": "pacientes", "label": "Pacientes", "icon": "user", "sub": "Cada reserva actualiza la ficha del paciente."}, {"id": "atencion", "label": "Atención", "icon": "doc", "sub": "La atención queda registrada con su duración y notas."}, {"id": "cobros", "label": "Cobros", "icon": "card", "sub": "Cada atención genera su cobro y su boleta."}], "steps": [{"view": "agenda", "time": "08:30", "area": "Agenda", "title": "Cita reservada online", "note": "Control dental · Dra. Soto · 15:30", "delta": "15:30", "status": "Agendada"}, {"view": "pacientes", "time": "08:31", "area": "Pacientes", "title": "Ficha del paciente actualizada", "note": "Historial y alergias al día", "delta": "1 ficha", "status": "Actualizada"}, {"view": "atencion", "time": "15:30", "area": "Atención", "title": "Atención registrada", "note": "Limpieza dental · 45 min", "delta": "45 min", "status": "Realizada"}, {"view": "cobros", "time": "16:20", "area": "Cobros", "title": "Pago registrado", "note": "Boleta enviada por correo", "delta": "$35.000", "status": "Pagado"}], "metrics": [{"l": "Citas hoy", "v": ["23", "24", "24", "24", "24"], "s": "Dra. Soto · 9"}, {"l": "Fichas al día", "v": ["96%", "96%", "97%", "97%", "97%"], "s": "Historial completo"}, {"l": "Atenciones", "v": ["18", "18", "18", "19", "19"], "s": "Del día"}, {"l": "Cobrado hoy", "v": ["$412.000", "$412.000", "$412.000", "$412.000", "$447.000"], "s": "Boleta enviada"}], "detail": {"head": "Cita de las 15:30", "titles": ["Agenda libre", "Cita agendada", "Ficha actualizada", "Atención realizada", "Cobrada y cerrada"], "desc": "La cita nace en la web, ordena la agenda, alimenta la ficha clínica y termina en el cobro.", "lines": [{"l": "Paciente", "v": ["—", "M. Fuentes", "M. Fuentes", "M. Fuentes", "M. Fuentes"]}, {"l": "Profesional", "v": ["—", "Dra. Soto", "Dra. Soto", "Dra. Soto", "Dra. Soto"]}, {"l": "Estado", "v": ["—", "Agendada", "Agendada", "Realizada", "Realizada"]}, {"l": "Cobro", "v": ["—", "—", "—", "Pendiente", "$35.000"]}]}, "spark": [55, 62, 48, 70, 66, 82, 74, 90, 78, 86], "note": ["Una cita recorre agenda, ficha, atención y cobro sin planillas.", "Inicia el recorrido: agenda → ficha → atención → cobro."]}, "juridico": {"label": "Estudio jurídico", "title": "Estudio jurídico", "sub": "Causas, plazos, documentos y honorarios sobre una misma operación.", "nav": [{"id": "causas", "label": "Causas", "icon": "scale", "sub": "Cada causa nueva abre su expediente con cliente y materia."}, {"id": "plazos", "label": "Plazos", "icon": "clock", "sub": "El plazo se calcula y se vigila automáticamente."}, {"id": "documentos", "label": "Documentos", "icon": "doc", "sub": "Escritos y contratos quedan ligados a la causa."}, {"id": "honorarios", "label": "Honorarios", "icon": "card", "sub": "Los honorarios se emiten según la etapa de cada causa."}], "steps": [{"view": "causas", "time": "09:00", "area": "Causas", "title": "Causa C-248 ingresada", "note": "Constructora Andes · Civil", "delta": "1 causa", "status": "Abierta"}, {"view": "plazos", "time": "09:05", "area": "Plazos", "title": "Plazo calculado", "note": "Contestar demanda · vence 18 nov", "delta": "15 días", "status": "Vigilado"}, {"view": "documentos", "time": "11:30", "area": "Documentos", "title": "Escrito generado", "note": "Contestación v2 · pendiente de firma", "delta": "1 doc.", "status": "En revisión"}, {"view": "honorarios", "time": "12:10", "area": "Honorarios", "title": "Honorario emitido", "note": "Anticipo etapa 1", "delta": "$450.000", "status": "Emitido"}], "metrics": [{"l": "Causas activas", "v": ["42", "43", "43", "43", "43"], "s": "C-248 nueva"}, {"l": "Plazos 7 días", "v": ["5", "5", "6", "6", "6"], "s": "1 vence hoy"}, {"l": "Documentos", "v": ["118", "118", "118", "119", "119"], "s": "En el mes"}, {"l": "Por cobrar", "v": ["$3,4M", "$3,4M", "$3,4M", "$3,4M", "$3,85M"], "s": "Honorarios"}], "detail": {"head": "Causa C-248", "titles": ["Sin movimientos", "Causa abierta", "Plazo vigilado", "Escrito en revisión", "Honorario emitido"], "desc": "La causa concentra su cliente, sus plazos, sus documentos y sus honorarios: nada se vence sin verlo.", "lines": [{"l": "Cliente", "v": ["—", "Constructora Andes", "Constructora Andes", "Constructora Andes", "Constructora Andes"]}, {"l": "Plazo", "v": ["—", "—", "18 nov", "18 nov", "18 nov"]}, {"l": "Documento", "v": ["—", "—", "—", "Contestación v2", "Contestación v2"]}, {"l": "Honorario", "v": ["—", "—", "—", "—", "$450.000"]}]}, "spark": [32, 40, 36, 52, 49, 58, 66, 61, 78, 84], "note": ["Una causa recorre plazos, documentos y honorarios con todo conectado.", "Inicia el recorrido: causa → plazo → documento → honorario."]}, "mascotas": {"label": "Tienda de mascotas", "title": "Tienda de mascotas", "sub": "Ventas, stock, compras y clientes sobre una misma operación.", "nav": [{"id": "ventas", "label": "Ventas", "icon": "cart", "sub": "La caja registra cada venta en segundos."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "Cada venta descuenta el stock y avisa cuando baja del mínimo."}, {"id": "compras", "label": "Compras", "icon": "truck", "sub": "El sistema sugiere qué reponer y a qué proveedor."}, {"id": "clientes", "label": "Clientes", "icon": "user", "sub": "Cada compra construye el historial del cliente."}], "steps": [{"view": "ventas", "time": "10:15", "area": "Ventas", "title": "Venta #874 en caja", "note": "Alimento perro 15 kg", "delta": "$38.990", "status": "Cobrada"}, {"view": "stock", "time": "10:15", "area": "Stock", "title": "Stock descontado", "note": "Alimento perro 15 kg · quedan 3", "delta": "−1 u.", "status": "Bajo mínimo"}, {"view": "compras", "time": "10:16", "area": "Compras", "title": "Reposición sugerida", "note": "12 bolsas al proveedor habitual", "delta": "12 u.", "status": "Sugerida"}, {"view": "clientes", "time": "10:16", "area": "Clientes", "title": "Historial actualizado", "note": "Próxima compra estimada en 28 días", "delta": "+1 compra", "status": "Registrado"}], "metrics": [{"l": "Ventas hoy", "v": ["$486.000", "$524.990", "$524.990", "$524.990", "$524.990"], "s": "Venta #874"}, {"l": "Stock bajo", "v": ["6", "6", "7", "7", "7"], "s": "Productos"}, {"l": "Reposiciones", "v": ["0", "0", "0", "1", "1"], "s": "Sugeridas"}, {"l": "Clientes frecuentes", "v": ["84", "84", "84", "84", "85"], "s": "Con historial"}], "detail": {"head": "Alimento perro 15 kg", "titles": ["Stock normal", "Venta registrada", "Bajo el mínimo", "Reposición sugerida", "Cliente al día"], "desc": "Lo que se vende en caja actualiza el stock, sugiere compras y alimenta al cliente, sin planillas.", "lines": [{"l": "Venta", "v": ["—", "$38.990", "$38.990", "$38.990", "$38.990"]}, {"l": "Stock", "v": ["4 u.", "4 u.", "3 u.", "3 u.", "3 u."]}, {"l": "Compra sugerida", "v": ["—", "—", "—", "12 u.", "12 u."]}, {"l": "Cliente", "v": ["—", "Camila P.", "Camila P.", "Camila P.", "Camila P. · +1"]}]}, "spark": [40, 46, 38, 52, 60, 88, 74, 66, 72, 80], "note": ["Una venta en caja descuenta stock, sugiere compras y actualiza al cliente.", "Inicia el recorrido: venta → stock → compra → cliente."]}, "distribucion": {"label": "Distribución", "title": "Distribución y reparto", "sub": "Pedidos, stock, rutas y cobranza sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "El pedido confirmado reserva producto del stock."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "El stock disponible se actualiza con cada pedido."}, {"id": "reparto", "label": "Reparto", "icon": "truck", "sub": "El pedido pasa a una ruta y queda listo para despacho."}, {"id": "cobranza", "label": "Cobranza", "icon": "card", "sub": "Cada entrega se cobra y cierra su deuda."}], "steps": [{"view": "pedidos", "time": "08:40", "area": "Pedidos", "title": "Pedido #1842 confirmado", "note": "120 u. · Distribuidora Sur", "delta": "$948.000", "status": "Confirmado"}, {"view": "stock", "time": "08:41", "area": "Stock", "title": "Stock reservado", "note": "Disponible: 840 → 720 u.", "delta": "−120 u.", "status": "Actualizado"}, {"view": "reparto", "time": "09:30", "area": "Reparto", "title": "Ruta Norte asignada", "note": "Pedido #1842 listo para despacho", "delta": "1 ruta", "status": "Asignada"}, {"view": "cobranza", "time": "12:12", "area": "Cobranza", "title": "Entrega cobrada", "note": "Firma digital · transferencia", "delta": "$948.000", "status": "Cobrado"}], "metrics": [{"l": "Pedidos", "v": ["8", "9", "9", "9", "9"], "s": "Pedido #1842"}, {"l": "Stock disponible", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."], "s": "Bodega central"}, {"l": "Rutas activas", "v": ["3", "3", "3", "4", "4"], "s": "Ruta Norte"}, {"l": "Cobrado hoy", "v": ["$2,1M", "$2,1M", "$2,1M", "$2,1M", "$3,05M"], "s": "Transferencia"}], "detail": {"head": "Pedido #1842", "titles": ["Esperando pedido", "Pedido confirmado", "Stock reservado", "Ruta asignada", "Entregado y cobrado"], "desc": "El pedido reserva stock, se asigna a una ruta y termina en cobranza: todo queda enlazado.", "lines": [{"l": "Cliente", "v": ["—", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur"]}, {"l": "Stock", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."]}, {"l": "Ruta", "v": ["—", "—", "—", "Norte · asignada", "Norte · cerrada"]}, {"l": "Cobro", "v": ["—", "Pendiente", "Pendiente", "Pendiente", "$948.000"]}]}, "spark": [28, 36, 44, 40, 58, 52, 68, 64, 80, 92], "note": ["Un pedido reserva stock, se reparte y se cobra con todo conectado.", "Inicia el recorrido: pedido → stock → ruta → cobro."]}}, "icons": {"resumen": "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", "cart": "M4 6h2l2 11h11l2-8H7M9 21h1M17 21h1", "card": "M3 6h18v12H3zM3 10h18M7 14h4", "box": "M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8", "truck": "M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 19h1M17 19h1", "cal": "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4", "user": "M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0", "doc": "M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6", "scale": "M12 3v18M7 21h10M4 7h16M7 7l-3 7a3.5 3.5 0 007 0zM17 7l-3 7a3.5 3.5 0 007 0z", "clock": "M12 7v5l3 2M12 21a9 9 0 100-18 9 9 0 000 18z"}};
@@ -1873,9 +1935,8 @@ queueMotion(() => {
   const hold = root.querySelector('.listen__hold');
   const voice = root.querySelector('.listen__panel--voice');
   const read = root.querySelector('.listen__panel--read');
-  const voiceTrack = root.querySelector('.listen__track--voice');
-  const rows = [...root.querySelectorAll('.listen__track--read > .listen__row')];
-  const bars = [...root.querySelectorAll('.listen__wave > i')];
+  const pain = [...root.querySelectorAll('.lst--pain .lst__item')];
+  const fix = [...root.querySelectorAll('.lst--fix .lst__item')];
   gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
     const { wide } = context.conditions;
     if (adjacent('hero', 'listen')) {
@@ -1883,48 +1944,23 @@ queueMotion(() => {
         .add(effects.bandRise(sheet), 0)
         .fromTo(title, wide ? { y: () => innerHeight * 0.22 } : { x: () => innerWidth * 0.22 }, wide ? { y: 0 } : { x: 0 }, 0);
     }
-    root.classList.add('is-staged');
-    const clones = rows.map(row => {
-      const clone = row.cloneNode(true);
-      clone.classList.add('listen__row--voice');
-      const text = clone.querySelector('.m-caption__text');
-      const words = text.textContent.trim().split(/\s+/);
-      text.textContent = '';
-      words.forEach((word, index) => {
-        const span = document.createElement('span');
-        span.className = 'listen__word';
-        span.style.setProperty('--h', (0.45 + 0.55 * Math.abs(Math.sin(index * 1.7 + word.length))).toFixed(2));
-        span.textContent = word;
-        text.append(span, index < words.length - 1 ? ' ' : '');
-      });
-      voiceTrack.append(clone);
-      return clone;
-    });
-    const pairs = rows.map((row, index) => [row, clones[index]]);
-    gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'listen:join', trigger: hold, start: 'top bottom', end: 'top top', scrub: true, invalidateOnRefresh: true } })
-      .fromTo(voice, { x: () => -innerWidth * (wide ? 0.08 : 0.07) }, { x: 0 }, 0)
-      .fromTo(read, { x: () => innerWidth * (wide ? 0.08 : 0.07) }, { x: 0 }, 0);
-    const setters = bars.map(bar => gsap.quickSetter(bar, 'scaleY'));
-    const cross = gsap.timeline({ defaults: { ease: 'power1.inOut' }, scrollTrigger: {
-      id: 'listen', trigger: hold, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true,
-      onUpdate: self => {
-        const progress = self.progress;
-        const swell = Math.sin(Math.PI * progress);
-        setters.forEach((set, index) => set(1 - swell * 0.7 * (1 - Math.abs(Math.sin(index * 0.45 + progress * 18)))));
-      }
+    if (wide) root.classList.add('is-staged');
+    gsap.set(fix, { opacity: 0, x: 28 });
+    gsap.set(pain, { '--done': 0 });
+    if (wide) {
+      gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'listen:join', trigger: hold, start: 'top bottom', end: 'top top', scrub: true, invalidateOnRefresh: true } })
+        .fromTo(voice, { x: () => -innerWidth * 0.08 }, { x: 0 }, 0)
+        .fromTo(read, { x: () => innerWidth * 0.08 }, { x: 0 }, 0);
+    }
+    const tl = gsap.timeline({ defaults: { ease: 'power1.inOut' }, scrollTrigger: {
+      id: 'listen', trigger: hold, start: wide ? 'top top' : 'top 65%', end: wide ? 'bottom bottom' : 'bottom 85%', scrub: true, invalidateOnRefresh: true
     } });
-    pairs.forEach((pair, index) => {
-      const row = pair[0];
-      const shift = wide
-        ? () => -(row.offsetLeft - read.offsetWidth + row.offsetWidth + 32)
-        : () => voice.offsetHeight;
-      cross.fromTo(pair, wide ? { x: shift } : { y: shift }, wide ? { x: 0, duration: 1 } : { y: 0, duration: 1 }, index * 0.8);
+    pain.forEach((item, index) => {
+      tl.to(item, { '--done': 1, opacity: 0.45, duration: 0.8 }, index * 0.8)
+        .to(fix[index], { opacity: 1, x: 0, duration: 0.8 }, index * 0.8 + 0.2);
     });
-    cross.to({}, { duration: 0.35 });
-    return () => {
-      root.classList.remove('is-staged');
-      clones.forEach(clone => clone.remove());
-    };
+    tl.to({}, { duration: 0.35 });
+    return () => root.classList.remove('is-staged');
   });
 }, { first: true, id: 'listen' });
 </script>
@@ -2085,9 +2121,6 @@ queueMotion(() => {
     gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'start', trigger: frame, start: 'top 92%', end: 'top 10%', scrub: true } })
       .fromTo(frame, { clipPath: `inset(${sideY}% ${sideX}% ${sideY}% ${sideX}% round ${radius * 3}px)` }, { clipPath: `inset(0% 0% 0% 0% round ${radius}px)` }, 0)
       .fromTo(image, { scale: 1.32 }, { scale: 1 }, 0);
-    root.classList.add('is-transcribing');
-    ScrollTrigger.create({ id: 'start:words', trigger: heading, start: 'top 96%', end: 'bottom 64%', scrub: true, animation: transcribe(heading, 'start__word') });
-    return () => root.classList.remove('is-transcribing');
   });
 }, { near: document.getElementById('start'), id: 'start' });
 </script>
