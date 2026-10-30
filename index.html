@@ -986,6 +986,103 @@
   @media (max-width: 63.99rem) { #caso .caso__head { grid-template-columns: 1fr; } }
 }
 </style>
+<style data-8b-part="section:panel">
+@layer sections {
+  #panel { position: relative; isolation: isolate; overflow-x: clip; color: var(--color-2); padding-block: var(--space-2); }
+  #panel > :not(.pnl__sheet) { position: relative; z-index: 1; }
+  #panel .pnl__head { display: grid; gap: 1.25rem; max-width: 46rem; justify-items: start; }
+  #panel .pnl__kicker { color: var(--color-4); }
+  #panel .pnl__head .m-text-4 { color: var(--color-7); }
+  #panel .pnl__stage { margin-top: clamp(2.5rem, 5vw, 4rem); perspective: 2400px; }
+  #panel .pnl__tilt { transform: rotateY(-9deg) rotateX(3deg) rotateZ(-1deg) scale(0.97); transform-origin: 50% 40%; transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.25, 1); will-change: transform; }
+  #panel .pnl__stage:hover .pnl__tilt, #panel .pnl__stage:focus-within .pnl__tilt { transform: none; }
+  #panel .pnl__win { padding: 0.75rem; border-radius: 2rem; background: rgba(250,253,255,0.96); box-shadow: 0 2.5rem 6rem -2rem rgba(0,0,0,0.6), 0 0 0 0.0625rem rgba(255,255,255,0.4); }
+  #panel .pnl__bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.25rem 0.75rem 0.75rem; color: #5b7482; font-size: 0.75rem; }
+  #panel .pnl__dots { display: flex; gap: 0.375rem; }
+  #panel .pnl__dots i { width: 0.625rem; height: 0.625rem; border-radius: 50%; background: #ff6159; }
+  #panel .pnl__dots i:nth-child(2) { background: #febc2e; }
+  #panel .pnl__dots i:nth-child(3) { background: #28c840; }
+  #panel .pnl__url { flex: 1; max-width: 28rem; margin-inline: auto; padding: 0.3rem 1rem; border-radius: 62.5rem; background: #e3f0f6; text-align: center; }
+  #panel .pnl__tag { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; }
+  #panel .pnl__screen { padding: 0.1875rem; border-radius: 1.5rem; background: #0b1c25; }
+  #panel .pnl__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; padding: 1.25rem; border-radius: 1.375rem; background: #eef7fb; color: #0b1c25; font-variant-numeric: tabular-nums; }
+  #panel .pc { position: relative; min-width: 0; padding: 1.375rem; border: 0.0625rem solid #d5e6ee; border-radius: 1.5rem; background: #fff; box-shadow: 0 0.0625rem 0.125rem rgba(11,28,37,0.06); }
+  #panel .pc--a { grid-column: span 5; } #panel .pc--b { grid-column: span 7; } #panel .pc--c { grid-column: span 7; } #panel .pc--d { grid-column: span 5; }
+  #panel .pc__lbl, #panel .pc__note { color: #5b7482; font-size: 0.8125rem; }
+  #panel .pc__num { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 0.75rem; margin-block: 0.5rem 0.25rem; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 500; line-height: 1; letter-spacing: -0.03em; }
+  #panel .pc__delta { color: #0f9d63; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0; }
+  #panel .pc--a, #panel .pc--b, #panel .pc--c { display: flex; flex-direction: column; }
+  #panel .pc__chart { position: relative; flex: 1; min-height: 9.5rem; margin-top: 1rem; overflow: hidden; border: 0.0625rem solid #d5e6ee; border-radius: 1.125rem; background: rgba(227,240,246,0.45); }
+  #panel .pc--b .pc__chart { min-height: 11rem; }
+  #panel .pc__chart svg, #panel .pc__radar svg { display: block; }
+  #panel .pc__legend { display: flex; flex-wrap: wrap; gap: 0.375rem 0.875rem; margin-top: 0.75rem; color: #5b7482; font-size: 0.75rem; }
+  #panel .pc__legend span { display: inline-flex; align-items: center; gap: 0.375rem; }
+  #panel .pc__legend i { width: 0.875rem; height: 0.125rem; border-radius: 0.0625rem; } #panel .pc__legend i.sq { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; } #panel .pc__prior { background: #9bb2bf; }
+  #panel .pc__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  #panel .pc__top .pc__legend { margin-top: 0; }
+  #panel .pc__title { margin: 0; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.02em; }
+  #panel .pc__periods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin-block: 1rem; }
+  #panel .pc__per { padding: 0.625rem; border: 0; border-radius: 0.875rem; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: background 0.25s ease; }
+  #panel .pc__per:hover, #panel .pc__per[aria-pressed="true"] { background: #e3f0f6; }
+  #panel .pc__per b { display: flex; align-items: center; gap: 0.375rem; font-size: 0.8125rem; font-weight: 600; }
+  #panel .pc__per b::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: #9bb2bf; } #panel .pc__per[aria-pressed="true"] b::before { background: #0f9d63; }
+  #panel .pc__per strong { display: block; margin-top: 0.375rem; font-size: clamp(1rem, 1.7vw, 1.5rem); font-weight: 500; letter-spacing: -0.03em; }
+  #panel .pc__per small { display: block; margin-top: 0.25rem; color: #5b7482; font-size: 0.6875rem; }
+  #panel .pc__tm { position: relative; flex: 1; min-height: 19rem; }
+  #panel .pnl-tile { position: absolute; left: 50%; top: 50%; width: 0; height: 0; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 0.75rem; border-radius: 0.875rem; transition: left 0.7s cubic-bezier(.2,.9,.25,1), top 0.7s cubic-bezier(.2,.9,.25,1), width 0.7s cubic-bezier(.2,.9,.25,1), height 0.7s cubic-bezier(.2,.9,.25,1), filter 0.2s ease; }
+  #panel .pnl-tile:hover { filter: brightness(1.08); }
+  #panel .pnl-tile__n { display: flex; align-items: center; gap: 0.375rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  #panel .pnl-tile__n i { flex: none; width: 0.75rem; height: 0.75rem; border-radius: 0.25rem; background: currentColor; opacity: 0.9; }
+  #panel .pnl-tile__n span { overflow: hidden; text-overflow: ellipsis; }
+  #panel .pnl-tile__v { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.375rem; }
+  #panel .pnl-tile__v b { font-weight: 500; line-height: 0.9; letter-spacing: -0.04em; }
+  #panel .pnl-tile__v em { padding: 0.1875rem 0.3125rem; border-radius: 0.375rem; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.625rem; font-style: normal; font-weight: 500; }
+  #panel .pc__seg { display: inline-flex; padding: 0.125rem; border-radius: 0.625rem; background: #e3f0f6; }
+  #panel .pc__seg button { padding: 0.3rem 0.75rem; border: 0; border-radius: 0.5rem; background: transparent; color: #5b7482; font: inherit; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: background 0.25s ease, color 0.25s ease; }
+  #panel .pc__seg button[aria-pressed="true"] { background: #fff; color: #0b1c25; box-shadow: 0 0.0625rem 0.125rem rgba(11,28,37,0.15); }
+  #panel .pc__radar { display: grid; place-items: center; margin-top: 0.5rem; }
+  #panel .pc__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1rem; margin-top: 0.5rem; }
+  #panel .pc__stats p { color: #5b7482; font-size: 0.8125rem; }
+  #panel .pc__stats strong { display: block; margin-top: 0.375rem; color: #0b1c25; font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1; }
+  #panel .pc__stats small { display: block; margin-top: 0.375rem; color: #5b7482; font-size: 0.75rem; }
+  #panel .pc__rows { grid-column: 1 / -1; margin-top: 0.5rem; }
+  #panel .pc__rows div { display: flex; justify-content: space-between; padding-block: 0.625rem; border-top: 0.0625rem solid #d5e6ee; font-size: 0.875rem; }
+  #panel .pc__rows span { color: #5b7482; }
+  #panel .pnl-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s cubic-bezier(.3,.8,.2,1) 0.2s; }
+  #panel.is-in .pnl-line { stroke-dashoffset: 0; }
+  #panel.pnl--js .pc { opacity: 0; transform: translateY(0.875rem); transition: opacity 0.9s cubic-bezier(.2,.9,.25,1), transform 0.9s cubic-bezier(.2,.9,.25,1); }
+  #panel.pnl--js.is-in .pc { opacity: 1; transform: none; }
+  #panel.pnl--js.is-in .pc--b { transition-delay: 0.08s; } #panel.pnl--js.is-in .pc--c { transition-delay: 0.16s; } #panel.pnl--js.is-in .pc--d { transition-delay: 0.24s; }
+  @media (max-width: 63.99rem) {
+    #panel .pnl__tilt { transform: none; }
+    #panel .pnl__tag { display: none; }
+    #panel .pc--a, #panel .pc--b, #panel .pc--c, #panel .pc--d { grid-column: 1 / -1; }
+    #panel .pnl__grid { padding: 0.75rem; gap: 0.75rem; }
+    #panel .pc { padding: 1rem; }
+    #panel .pc__tm { min-height: 16rem; }
+  }
+  @media (max-width: 39.99rem) {
+    #panel .pc__periods { grid-template-columns: 1fr; gap: 0.25rem; }
+    #panel .pc__per { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+    #panel .pc__per strong { margin-top: 0; font-size: 1.125rem; }
+    #panel .pc__per small { display: none; }
+    #panel .pc__stats strong { font-size: 1.125rem; }
+  }
+  @media (hover: none) { #panel .pnl__tilt { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    #panel .pnl__tilt { transform: none; transition: none; }
+    #panel.pnl--js .pc { opacity: 1; transform: none; transition: none; }
+    #panel .pnl-line { stroke-dashoffset: 0; transition: none; }
+    #panel .pnl-tile { transition: none; }
+  }
+}
+.pnl-tip { position: fixed; z-index: 90; left: 0; top: 0; padding: 0.5rem 0.625rem; border: 0.0625rem solid #d5e6ee; border-radius: 0.75rem; background: rgba(255,255,255,0.96); color: #0b1c25; font-size: 0.75rem; box-shadow: 0 0.5rem 1.5rem rgba(11,28,37,0.2); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
+.pnl-tip.is-on { opacity: 1; }
+.pnl-tip__t { margin-bottom: 0.25rem; color: #5b7482; }
+.pnl-tip__r { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.pnl-tip__r span { display: inline-flex; align-items: center; gap: 0.375rem; color: #5b7482; }
+.pnl-tip__r i { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; }
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://autix.pro/#org","name":"Autix","url":"https://autix.pro/","logo":{"@type":"ImageObject","url":"https://autix.pro/logo-autix.png","width":1000,"height":200},"image":"https://autix.pro/og.jpg","description":"Autix diseña y construye sistemas a medida, webs inteligentes y automatizaciones para cualquier negocio.","contactPoint":[{"@type":"ContactPoint","contactType":"ventas","telephone":"+56992103974","availableLanguage":"es","areaServed":"CL"}]},{"@type":"WebSite","@id":"https://autix.pro/#website","url":"https://autix.pro/","name":"Autix","inLanguage":"es-CL","publisher":{"@id":"https://autix.pro/#org"}},{"@type":"ProfessionalService","@id":"https://autix.pro/#service","name":"Autix","url":"https://autix.pro/","image":"https://autix.pro/og.jpg","telephone":"+56992103974","areaServed":{"@type":"Country","name":"Chile"},"parentOrganization":{"@id":"https://autix.pro/#org"},"serviceType":["Desarrollo de sistemas a medida","Webs inteligentes","Automatización de procesos","Asistentes de IA"],"knowsAbout":["Software a medida","Sistemas de gestión","ERP","Punto de venta","Agenda y reservas","Inventario","Automatización"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de Autix","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistemas a medida","description":"Software de gestión construido alrededor de los procesos de cada negocio: ventas, agenda, inventario, clientes, cobros y reportes.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Webs inteligentes","description":"Sitios web conectados al sistema del negocio: reservas, catálogo y pagos online.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatizaciones y asistentes de IA","description":"Asistentes opcionales que atienden clientes o permiten al equipo consultar y registrar desde el chat.","provider":{"@id":"https://autix.pro/#org"}}}]}},{"@type":"ItemList","name":"Sistemas hechos por Autix","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"velOS","description":"ERP operativo: producción, inventario, ventas, reparto y cobranza conectados en una sola plataforma.","url":"https://velos.autix.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Merka POS","description":"Punto de venta: ventas por peso o unidad, inventario, crédito, caja y rentabilidad.","url":"https://merkapos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"AgendaOS","description":"Reservas y servicios: profesionales, disponibilidad, caja y confirmaciones automáticas.","url":"https://agendaos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Holu","description":"Sistema para restaurantes: menú QR, pedidos, cocina, caja y delivery en tiempo real.","url":"https://holu.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Métrikas","description":"Gestión de academias de fútbol: jugadores, asistencia, evaluaciones y pagos.","url":"https://metrikas.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Goat League","description":"Sistema para torneos con portal público: equipos, fixtures, resultados, posiciones y pagos.","url":"https://goatleague2026.vercel.app/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un sistema a medida y en qué se diferencia de un software normal?","acceptedAnswer":{"@type":"Answer","text":"Un software normal te da funciones fijas y eres tú quien adapta su forma de trabajar. Un sistema a medida se construye después de entender cómo opera tu negocio: tus procesos, tu vocabulario y tus reglas. Incluye solo los módulos que usas, se conecta con cómo trabaja tu equipo hoy y evoluciona cuando tu negocio cambia."}},{"@type":"Question","name":"¿Sirve para mi tipo de negocio?","acceptedAnswer":{"@type":"Answer","text":"Sí. No partimos de un molde por rubro, partimos de cómo funciona tu negocio. Podemos construir sistemas para una tienda de mascotas, una heladería, un estudio jurídico, una clínica, un restaurante, una distribuidora o cualquier negocio que hoy lleve sus procesos en planillas, cuadernos o varios programas que no se hablan. Si tu rubro no está en esa lista, también."}},{"@type":"Question","name":"¿Qué puede incluir mi sistema?","acceptedAnswer":{"@type":"Answer","text":"Lo que tu operación necesite. Algunos de los bloques con los que trabajamos: Ventas y caja: punto de venta, pedidos y boletas Agenda y reservas: citas, profesionales y recordatorios Inventario: stock en tiempo real con alertas Clientes: ficha, historial y crédito asignado Cobros y pagos: deudas, abonos y vencimientos Logística y producción: rutas, entregas, lotes y costos Reportes: cierre del día y estado del mes, sin planillas"}},{"@type":"Question","name":"¿Solo hacen sistemas o también webs?","acceptedAnswer":{"@type":"Answer","text":"Hacemos sistemas completos, webs inteligentes conectadas a tu sistema (reservas, catálogo o pagos online) y automatizaciones. Eliges qué necesitas: no es un paquete cerrado."}},{"@type":"Question","name":"¿Tengo que usar agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"No. Los asistentes de IA son un módulo opcional. Algunos negocios prefieren un sistema simple; otros suman un asistente que atiende clientes por WhatsApp o que opera el sistema desde Telegram. Lo decidimos según lo que tu negocio necesite, no al revés."}},{"@type":"Question","name":"¿Qué sistemas de Autix ya están funcionando?","acceptedAnswer":{"@type":"Answer","text":"Son sistemas hechos por Autix que ya están en uso: velOS (producción, inventario, ventas, reparto y cobranza), Merka POS (punto de venta), AgendaOS (reservas y servicios), Holu (restaurantes), Métrikas (academias de fútbol) y Goat League (torneos con portal público). Puedes abrirlos y ver cómo se ven por dentro. El tuyo se construye según cómo trabaja tu negocio."}},{"@type":"Question","name":"¿Cuánto tiempo toma implementar velOS en mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, y, si los quieres, la configuración de asistentes de IA. Cada implementación tiene un alcance distinto porque cada empresa es distinta — te damos un plazo concreto después de conocer tu operación."}},{"@type":"Question","name":"¿Necesito cambiar cómo trabaja mi equipo para usar velOS?","acceptedAnswer":{"@type":"Answer","text":"No. La idea de construirlo a medida es exactamente lo contrario: el sistema se adapta a tus procesos actuales, no al revés. Si hoy tu conductor recibe la ruta por WhatsApp, seguirá siendo así, solo que ahora la información sale directamente del sistema. Si tu vendedor usa un lenguaje particular para describir un pedido, el sistema lo habla igual, porque se configura con ese lenguaje. Cada usuario ve solo lo que le corresponde según su rol — administración, ventas, conducción o producción — así que la curva de aprendizaje es mínima para cada persona."}},{"@type":"Question","name":"¿Qué pasa después de que el sistema esté funcionando? ¿Hay soporte?","acceptedAnswer":{"@type":"Answer","text":"Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta — porque fue construido pensando en que tu negocio no se queda quieto."}},{"@type":"Question","name":"¿Dónde vive la información? ¿Es seguro tener todo mi negocio en un solo sistema?","acceptedAnswer":{"@type":"Answer","text":"Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol — cada usuario solo ve lo que su función necesita. El acceso al sistema queda restringido a las personas que tú autorices."}},{"@type":"Question","name":"¿Cumple con la Ley 21.719 de protección de datos personales?","acceptedAnswer":{"@type":"Answer","text":"Cada sistema se diseña considerando las obligaciones de la Ley 21.719, que entra en vigencia el 1 de diciembre de 2026 y crea la Agencia de Protección de Datos Personales (APDP). Esto incluye consentimiento y base de licitud para cada tratamiento, capacidad de responder los derechos ARCOP del titular (acceso, rectificación, cancelación, oposición y portabilidad), minimización de datos, medidas de seguridad y registro de actividades de tratamiento. Autix acompaña a cada cliente en la adecuación de su operación antes de esa fecha. De todos modos, el cumplimiento normativo también depende de cómo tu empresa opera: recomendamos validarlo con un abogado especialista."}}]}]}</script>
 </head>
 <body class="m-text">
@@ -1218,6 +1315,56 @@
     <ul class="modulos__grid"><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><h3 class="m-text-5">Ventas y caja</h3><p class="m-text-7">Punto de venta, pedidos y boletas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3 class="m-text-5">Agenda y reservas</h3><p class="m-text-7">Citas, profesionales y recordatorios</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><h3 class="m-text-5">Inventario</h3><p class="m-text-7">Stock en tiempo real con alertas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h3 class="m-text-5">Clientes y fichas</h3><p class="m-text-7">Historial, notas y crédito</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><h3 class="m-text-5">Cobros y deudas</h3><p class="m-text-7">Abonos, vencimientos y caja</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg><h3 class="m-text-5">Compras y proveedores</h3><p class="m-text-7">Órdenes y cuentas por pagar</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h3 class="m-text-5">Reparto y rutas</h3><p class="m-text-7">Entregas y seguimiento por conductor</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><h3 class="m-text-5">Producción</h3><p class="m-text-7">Lotes, recetas y costo real</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><h3 class="m-text-5">Reportes y cierre</h3><p class="m-text-7">El estado del día y del mes</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><h3 class="m-text-5">Usuarios y permisos</h3><p class="m-text-7">Cada quien ve lo que le corresponde</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><h3 class="m-text-5">Web inteligente</h3><p class="m-text-7">Tu sitio conectado al sistema</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg><h3 class="m-text-5">Asistentes de IA</h3><p class="m-text-7">Opcionales: WhatsApp o Telegram</p></li></ul>
   </div>
 </section>
+
+<section class="pnl on-dark" id="panel" data-8b-section="dashboard" aria-labelledby="panel-title">
+  <div class="pnl__sheet m-band-4" aria-hidden="true"></div>
+  <div class="pnl__inner l-wrap">
+    <div class="pnl__head">
+      <p class="pnl__kicker m-text-6">Tu negocio en números</p>
+      <h2 class="m-text-3" id="panel-title" data-8b-motion="captionIn">Cada venta, pedido y cobro, medido sin armar reportes.</h2>
+      <p class="m-text-4">Un panel hecho a tu medida: lo que importa de tu operación, actualizado mientras trabajas. Pasa el cursor por encima para explorarlo.</p>
+    </div>
+    <div class="pnl__stage">
+      <div class="pnl__tilt">
+        <div class="pnl__win">
+          <div class="pnl__bar">
+            <span class="pnl__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="pnl__url">tu-negocio.autix.pro</span>
+            <span class="pnl__tag">Datos ilustrativos</span>
+          </div>
+          <div class="pnl__screen">
+            <div class="pnl__grid">
+              <section class="pc pc--a" aria-label="Ventas del mes">
+                <p class="pc__lbl">Ventas del mes</p>
+                <p class="pc__num"><span id="pnlAn">$18.420.000</span><span class="pc__delta">&#8593; 8,2%</span></p>
+                <p class="pc__note">Ticket promedio $24.800 · últimos 30 días</p>
+                <div class="pc__chart" id="pnlA"></div>
+              </section>
+              <section class="pc pc--b" aria-label="Pedidos por hora">
+                <p class="pc__lbl">Pedidos</p>
+                <p class="pc__num"><span id="pnlBn">3.482</span><span class="pc__delta">&#8593; 12,4%</span></p>
+                <p class="pc__note">Por hora, últimas 3 semanas</p>
+                <p class="pc__legend"><span><i style="background:linear-gradient(90deg,#2fc7e4,#0e7a96)"></i>Mostrador</span><span><i style="background:linear-gradient(90deg,#8b6cff,#4b2fd0)"></i>WhatsApp</span><span><i class="pc__prior"></i>Semanas anteriores</span></p>
+                <div class="pc__chart" id="pnlB"></div>
+              </section>
+              <section class="pc pc--c" aria-label="Ventas por área">
+                <div class="pc__top"><h3 class="pc__title">Ventas por área</h3><p class="pc__legend" id="pnlCl"></p></div>
+                <div class="pc__periods" id="pnlPer" role="group" aria-label="Periodo"></div>
+                <div class="pc__tm" id="pnlC" role="img" aria-label="Ventas por área del negocio"></div>
+              </section>
+              <section class="pc pc--d" aria-label="Estacionalidad">
+                <div class="pc__top"><h3 class="pc__title">Estacionalidad</h3><div class="pc__seg" id="pnlYear" role="group" aria-label="Año"></div></div>
+                <div class="pc__radar" id="pnlD"></div>
+                <div class="pc__stats" id="pnlDs"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="caso on-dark" id="caso" data-8b-section="case-video" aria-labelledby="caso-title">
   <div class="caso__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
@@ -1611,6 +1758,290 @@
     })));
     select(0);
   });
+})();
+</script>
+<script data-8b-part="section-script:panel">
+(function () {
+  var root = document.getElementById('panel');
+  if (!root || !('IntersectionObserver' in window) || !window.ResizeObserver) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var q = function (s) { return root.querySelector(s); };
+  var fmt = function (n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+  var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+  var started = false, vis = false, t0 = 0;
+  root.classList.add('pnl--js');
+
+  /* ---------- utilidades ---------- */
+  function smooth(P) {
+    var n = P.length, d = 'M' + P[0][0] + ',' + P[0][1], g = function (i) { return P[clamp(i, 0, n - 1)]; };
+    for (var i = 0; i < n - 1; i++) {
+      var a = g(i - 1), b = g(i), c = g(i + 1), e = g(i + 2), k = 0.18;
+      d += 'C' + (b[0] + (c[0] - a[0]) * k) + ',' + (b[1] + (c[1] - a[1]) * k) + ' ' + (c[0] - (e[0] - b[0]) * k) + ',' + (c[1] - (e[1] - b[1]) * k) + ' ' + c[0] + ',' + c[1];
+    }
+    return d;
+  }
+  function sized(el, cb) {
+    new ResizeObserver(function () { var w = Math.round(el.clientWidth), h = Math.round(el.clientHeight); if (w && h) cb(w, h); }).observe(el);
+  }
+  function countTo(el, to, prefix, dur) {
+    cancelAnimationFrame(el._r);
+    var from = el._v || 0, t = performance.now();
+    el._v = to;
+    if (reduce) { el.textContent = prefix + fmt(to); return; }
+    (function f(now) {
+      var k = Math.min(1, (now - t) / (dur || 1100));
+      el.textContent = prefix + fmt(from + (to - from) * ease(k));
+      if (k < 1) el._r = requestAnimationFrame(f);
+    })(t);
+  }
+  var tip = document.createElement('div');
+  tip.className = 'pnl-tip'; tip.setAttribute('role', 'tooltip'); document.body.appendChild(tip);
+  function showTip(x, y, title, rows) {
+    tip.innerHTML = '<div class="pnl-tip__t">' + title + '</div>' + rows.map(function (r) {
+      return '<div class="pnl-tip__r"><span>' + (r[2] ? '<i style="background:' + r[2] + '"></i>' : '') + r[0] + '</span><b>' + r[1] + '</b></div>';
+    }).join('');
+    tip.classList.add('is-on');
+    var b = tip.getBoundingClientRect(), l = x + 14, t = y - b.height - 12;
+    if (l + b.width > innerWidth - 8) l = x - b.width - 14;
+    if (t < 8) t = y + 16;
+    tip.style.transform = 'translate(' + l + 'px,' + t + 'px)';
+  }
+  function hideTip() { tip.classList.remove('is-on'); }
+  var svgOpen = function (w, h, label) { return '<svg width="' + w + '" height="' + h + '" role="img" aria-label="' + label + '">'; };
+
+  /* ---------- A: ventas (línea) ---------- */
+  var REV = [612, 640, 598, 655, 702, 688, 540, 575, 630, 664, 701, 718, 690, 560, 588, 645, 672, 710, 735, 748, 702, 590, 612, 668, 705, 742, 760, 781, 770, 804].map(function (k) { return k * 1000; });
+  var elA = q('#pnlA');
+  sized(elA, function (w, h) {
+    var lo = Math.min.apply(0, REV), hi = Math.max.apply(0, REV), span = hi - lo, mn = lo - span * 0.45, mx = hi + span * 0.08, top = 26, bot = 12;
+    var Y = function (v) { return top + (1 - (v - mn) / (mx - mn)) * (h - top - bot); };
+    var X = function (i) { return 12 + i / (REV.length - 1) * (w - 56); };
+    var P = REV.map(function (v, i) { return [X(i), Y(v)]; }), d = smooth(P), last = P[P.length - 1], ticks = '';
+    [600000, 700000, 800000].forEach(function (v) {
+      ticks += '<line x1="0" x2="' + w + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="#d5e6ee"/><text x="' + (w - 8) + '" y="' + (Y(v) - 5) + '" text-anchor="end" font-size="10" fill="#5b7482">' + (v / 1000) + 'K</text>';
+    });
+    elA.innerHTML = svgOpen(w, h, 'Ventas diarias de los últimos 30 días, de $612.000 a $804.000') +
+      '<defs><linearGradient id="pnlAl" x1="0" x2="1"><stop offset="0" stop-color="#2fc7e4"/><stop offset="1" stop-color="#0e7a96"/></linearGradient><linearGradient id="pnlAa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0e7a96" stop-opacity=".2"/><stop offset="1" stop-color="#0e7a96" stop-opacity="0"/></linearGradient></defs>' +
+      ticks + '<path d="' + d + 'L' + last[0] + ',' + h + 'L' + P[0][0] + ',' + h + 'Z" fill="url(#pnlAa)"/>' +
+      '<path class="pnl-line" pathLength="1" d="' + d + '" fill="none" stroke="url(#pnlAl)" stroke-width="2.5" stroke-linecap="round"/>' +
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2"/>' +
+      '<line id="pnlAx" y1="0" y2="' + h + '" stroke="#9bb2bf" visibility="hidden"/><circle id="pnlAc" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2" visibility="hidden"/>' +
+      '<rect width="' + w + '" height="' + h + '" fill="transparent"/></svg>';
+    var hit = elA.querySelector('rect'), ax = elA.querySelector('#pnlAx'), ac = elA.querySelector('#pnlAc');
+    hit.addEventListener('pointermove', function (e) {
+      var r = elA.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 12) / (w - 56) * (REV.length - 1)), 0, REV.length - 1);
+      ax.setAttribute('x1', P[i][0]); ax.setAttribute('x2', P[i][0]); ac.setAttribute('cx', P[i][0]); ac.setAttribute('cy', P[i][1]);
+      ax.setAttribute('visibility', 'visible'); ac.setAttribute('visibility', 'visible');
+      showTip(r.left + P[i][0], r.top + P[i][1], 'Octubre · día ' + (i + 1), [['Ventas', '$' + fmt(REV[i]), '#0e7a96']]);
+    });
+    hit.addEventListener('pointerleave', function () { ax.setAttribute('visibility', 'hidden'); ac.setAttribute('visibility', 'hidden'); hideTip(); });
+  });
+
+  /* ---------- B: pedidos por hora (ondas) ---------- */
+  var bell = function (x, m, s) { return Math.exp(-Math.pow((x - m) / s, 2) / 2); };
+  var HRS = []; for (var hh = 0; hh <= 24; hh++) HRS.push(hh);
+  var MOS = [0, 1, 2].map(function (w) { return HRS.map(function (h) { return Math.round(2400 * (1 - w * 0.16) * (bell(h, 13 - w * 0.6, 3.4) * 0.92 + bell(h, 20, 2.2) * 0.18)); }); });
+  var WAP = [0, 1, 2].map(function (w) { return HRS.map(function (h) { return Math.round(2600 * (1 - w * 0.18) * (bell(h, 20.5 - w * 0.4, 3) * 0.95 + bell(h, 8, 1.8) * 0.2)); }); });
+  var MAXB = Math.max.apply(0, MOS.concat(WAP).reduce(function (a, b) { return a.concat(b); }));
+  var elB = q('#pnlB'), Bs = { w: 0, h: 0, paths: [], on: false };
+  var SETS = []; MOS.forEach(function (a, k) { SETS.push({ a: a, dir: -1, k: k, g: 'd' }); }); WAP.forEach(function (a, k) { SETS.push({ a: a, dir: 1, k: k, g: 'm' }); });
+  var BX = function (i) { return 24 + i / 24 * (Bs.w - 48); };
+  function stepB(t) {
+    var grow = reduce ? 1 : ease(Math.min(1, t / 1.3)), mid = Bs.h / 2, amp = Bs.h / 2 - 14;
+    SETS.forEach(function (s, j) {
+      var br = reduce ? 1 : 1 + Math.sin(t * 1.2 + s.k * 0.9) * 0.035;
+      Bs.paths[j].setAttribute('d', smooth(s.a.map(function (v, i) { return [BX(i), mid + s.dir * (3 + v / MAXB * amp * grow * br)]; })));
+    });
+  }
+  function loopB(now) {
+    if (!vis || reduce) { Bs.on = false; return; }
+    stepB((now - t0) / 1000); requestAnimationFrame(loopB);
+  }
+  function kickB() { if (started && vis && !reduce && !Bs.on) { Bs.on = true; requestAnimationFrame(loopB); } }
+  sized(elB, function (w, h) {
+    Bs.w = w; Bs.h = h;
+    var ps = '';
+    SETS.forEach(function (s) { ps += '<path class="pnl-w" fill="none" stroke="url(#pnlB' + s.g + ')" stroke-width="' + (s.k ? 1.6 : 2.5) + '" stroke-linecap="round" opacity="' + (s.k === 0 ? 1 : s.k === 1 ? 0.55 : 0.3) + '"/>'; });
+    elB.innerHTML = svgOpen(w, h, 'Pedidos por hora: mostrador y WhatsApp') +
+      '<defs><linearGradient id="pnlBd"><stop offset=".1" stop-color="#2fc7e4"/><stop offset=".9" stop-color="#0e7a96"/></linearGradient><linearGradient id="pnlBm"><stop offset=".15" stop-color="#8b6cff"/><stop offset=".85" stop-color="#4b2fd0"/></linearGradient></defs>' +
+      '<line x1="24" x2="' + (w - 24) + '" y1="' + h / 2 + '" y2="' + h / 2 + '" stroke="#d5e6ee"/>' + ps +
+      '<line id="pnlBx" y1="4" y2="' + (h - 4) + '" stroke="#9bb2bf" visibility="hidden"/><rect width="' + w + '" height="' + h + '" fill="transparent"/></svg>';
+    Bs.paths = [].slice.call(elB.querySelectorAll('path.pnl-w'));
+    stepB(started ? (performance.now() - t0) / 1000 : 0);
+    var hit = elB.querySelector('rect'), bx = elB.querySelector('#pnlBx');
+    hit.addEventListener('pointermove', function (e) {
+      var r = elB.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 24) / (w - 48) * 24), 0, 24);
+      bx.setAttribute('x1', BX(i)); bx.setAttribute('x2', BX(i)); bx.setAttribute('visibility', 'visible');
+      showTip(r.left + BX(i), r.top + 12, ('0' + (i % 24)).slice(-2) + ':00 · esta semana', [['Mostrador', fmt(MOS[0][i]), '#2fc7e4'], ['WhatsApp', fmt(WAP[0][i]), '#4b2fd0']]);
+    });
+    hit.addEventListener('pointerleave', function () { bx.setAttribute('visibility', 'hidden'); hideTip(); });
+    kickB();
+  });
+
+  /* ---------- C: ventas por área (treemap) ---------- */
+  var GR = {
+    prod: { n: 'Producción', c: '#1f7a92', ink: '#fff' }, rep: { n: 'Reparto', c: '#2fc7e4', ink: '#0b1c25' }, cob: { n: 'Cobranza', c: '#ff9559', ink: '#0b1c25' },
+    age: { n: 'Agenda', c: '#8b6cff', ink: '#fff' }, otr: { n: 'Otros', c: '#b9c7d0', ink: '#0b1c25' }
+  };
+  var PER = [
+    { l: 'Semanal', t: 4380000, d: '9,6%', c: 'vs $3.996.000 semana anterior' },
+    { l: 'Mensual', t: 18420000, d: '8,2%', c: 'vs $17.020.000 mes anterior' },
+    { l: 'Anual', t: 201300000, d: '22%', c: 'vs $165.000.000 año anterior' }
+  ];
+  var ITEMS = [
+    ['Venta mayorista', 'prod', [1480000, 6200000, 68000000]], ['Producción', 'prod', [820000, 3300000, 36000000]],
+    ['Reparto norte', 'rep', [640000, 2700000, 29000000]], ['Reparto sur', 'rep', [510000, 2150000, 24500000]],
+    ['Cobranza', 'cob', [430000, 1850000, 20400000]], ['Fiado', 'cob', [190000, 820000, 9100000]],
+    ['Reservas', 'age', [210000, 900000, 9800000]], ['Servicios', 'age', [90000, 380000, 4300000]], ['Mostrador', 'otr', [160000, 690000, 7600000]]
+  ];
+  q('#pnlCl').innerHTML = Object.keys(GR).map(function (k) { return '<span><i class="sq" style="background:' + GR[k].c + '"></i>' + GR[k].n + '</span>'; }).join('');
+  var per = 1, elC = q('#pnlC'), tiles = {}, elPer = q('#pnlPer');
+  PER.forEach(function (p, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'pc__per'; b.dataset.i = i;
+    b.innerHTML = '<b>' + p.l + '</b><strong></strong><small>' + p.c + '</small>';
+    b.addEventListener('click', function () { per = i; syncPer(); layoutC(); });
+    elPer.appendChild(b);
+  });
+  function syncPer() {
+    [].forEach.call(elPer.children, function (b, i) { b.setAttribute('aria-pressed', i === per); if (started) countTo(b.querySelector('strong'), PER[i].t, '$', 900); });
+  }
+  function squarify(items, x, y, w, h) {
+    var total = items.reduce(function (a, b) { return a + b.v; }, 0) || 1, sc = w * h / total, out = [], rest = items.map(function (i) { return { n: i.n, g: i.g, v: i.v, a: i.v * sc }; });
+    var worst = function (row, len) {
+      var s = row.reduce(function (a, b) { return a + b.a; }, 0), mx = Math.max.apply(0, row.map(function (r) { return r.a; })), mn = Math.min.apply(0, row.map(function (r) { return r.a; }));
+      return Math.max(len * len * mx / (s * s), s * s / (len * len * mn));
+    };
+    while (rest.length) {
+      var len = Math.min(w, h), row = [rest[0]], i = 1;
+      while (i < rest.length && worst(row.concat([rest[i]]), len) <= worst(row, len)) row.push(rest[i++]);
+      rest = rest.slice(i);
+      var s = row.reduce(function (a, b) { return a + b.a; }, 0), k;
+      if (w >= h) { var cw = s / h, cy = y; for (k = 0; k < row.length; k++) { var rh = row[k].a / cw; out.push({ n: row[k].n, g: row[k].g, v: row[k].v, x: x, y: cy, w: cw, h: rh }); cy += rh; } x += cw; w -= cw; }
+      else { var rh2 = s / w, cx = x; for (k = 0; k < row.length; k++) { var rw = row[k].a / rh2; out.push({ n: row[k].n, g: row[k].g, v: row[k].v, x: cx, y: y, w: rw, h: rh2 }); cx += rw; } y += rh2; h -= rh2; }
+    }
+    return out;
+  }
+  ITEMS.forEach(function (it) {
+    var g = GR[it[1]], d = document.createElement('div');
+    d.className = 'pnl-tile'; d.style.background = g.c; d.style.color = g.ink;
+    d.innerHTML = '<div class="pnl-tile__n"><i></i><span>' + it[0] + '</span></div><div class="pnl-tile__v"><b></b><em></em></div>';
+    d.addEventListener('pointermove', function (e) {
+      var v = it[2][per], tot = ITEMS.reduce(function (a, b) { return a + b[2][per]; }, 0);
+      showTip(e.clientX, e.clientY, PER[per].l + ' · ' + g.n, [[it[0], '$' + fmt(v), g.c], ['Participación', (v / tot * 100).toFixed(1).replace('.', ',') + '%']]);
+    });
+    d.addEventListener('pointerleave', hideTip);
+    tiles[it[0]] = d; elC.appendChild(d);
+  });
+  function layoutC() {
+    var W = elC.clientWidth, H = elC.clientHeight, G = 6;
+    if (!started || !W || !H) return;
+    var arr = ITEMS.map(function (it) { return { n: it[0], g: it[1], v: it[2][per] }; }).sort(function (a, b) { return b.v - a.v; });
+    var total = arr.reduce(function (a, b) { return a + b.v; }, 0) || 1;
+    squarify(arr, 0, 0, W + G, H + G).forEach(function (r) {
+      var d = tiles[r.n], w = r.w - G, h = r.h - G, chars = fmt(r.v).length + 1, fs = Math.min(26, (w - 24 - 54) / (chars * 0.6)), pct = true;
+      if (fs < 15) { pct = false; fs = Math.min(26, (w - 24) / (chars * 0.6)); }
+      var tiny = fs < 11 || h < 54 || w < 60;
+      d.style.left = r.x + 'px'; d.style.top = r.y + 'px'; d.style.width = w + 'px'; d.style.height = h + 'px';
+      d.querySelector('.pnl-tile__n span').style.display = (h >= 78 && w >= 96) ? '' : 'none';
+      var v = d.querySelector('.pnl-tile__v'), b = v.querySelector('b'), em = v.querySelector('em');
+      v.style.display = tiny ? 'none' : ''; b.style.fontSize = fs + 'px'; em.style.display = pct ? '' : 'none';
+      em.textContent = (r.v / total * 100).toFixed(1).replace('.', ',') + '%';
+      countTo(b, r.v, '$', 800);
+    });
+  }
+  sized(elC, layoutC);
+
+  /* ---------- D: estacionalidad (radar) ---------- */
+  var MES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  var YRS = [
+    { l: '2026', v: [16120, 20540, 24440, 18460, 28080, 21580, 17160, 25740, 30160, 22880, 32240, 23660],
+      s: [['Promedio mensual', 16775000, '19,6%', '4.221 pedidos'], ['Total del año', 201300000, '22%', '50.652 pedidos']], r: [['Local 1', '$98.200.000'], ['Local 2', '$64.700.000'], ['Local 3', '$38.400.000']] },
+    { l: '2025', v: [13260, 16640, 18720, 22360, 20020, 15860, 14560, 19240, 23920, 26260, 23140, 19760],
+      s: [['Promedio mensual', 13750000, '8,1%', '3.890 pedidos'], ['Total del año', 165000000, '4,4%', '46.680 pedidos']], r: [['Local 1', '$81.000.000'], ['Local 2', '$52.400.000'], ['Local 3', '$31.600.000']] }
+  ];
+  var yr = 0, elD = q('#pnlD'), elDs = q('#pnlDs'), elY = q('#pnlYear'), Ds = { S: 0, line: null, cur: null, raf: 0 };
+  var NN = 12, RAD = '#0e9fbd';
+  YRS.forEach(function (y, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = y.l;
+    b.addEventListener('click', function () { yr = i; syncYear(); morphD(); });
+    elY.appendChild(b);
+  });
+  function norm(v) { var lo = Math.min.apply(0, v), hi = Math.max.apply(0, v); return v.map(function (x) { return 0.42 + (x - lo) / (hi - lo || 1) * 0.58; }); }
+  function fit(v) {
+    var K = 5, co = [];
+    for (var k = 0; k <= K; k++) {
+      var a = 0, b = 0;
+      v.forEach(function (x, i) { var th = i / NN * Math.PI * 2; a += x * Math.cos(k * th); b += x * Math.sin(k * th); });
+      co.push([a * (k ? 2 : 1) / NN, b * (k ? 2 : 1) / NN]);
+    }
+    return function (th) { return co.reduce(function (r, c, k) { return r + c[0] * Math.cos(k * th) + c[1] * Math.sin(k * th); }, 0); };
+  }
+  function atD(f, th) { var S = Ds.S, R = S / 2 - 34, C = S / 2, v = Math.max(0.05, f(th)), a = -Math.PI / 2 + th; return [C + Math.cos(a) * (R * 0.2 + v * R * 0.8), C + Math.sin(a) * (R * 0.2 + v * R * 0.8)]; }
+  function shapeD(v) { var f = fit(norm(v)), d = ''; for (var j = 0; j <= 180; j++) { var p = atD(f, j / 180 * Math.PI * 2); d += (j ? 'L' : 'M') + p[0].toFixed(2) + ',' + p[1].toFixed(2); } return d + 'Z'; }
+  function morphD() {
+    if (!Ds.line) return;
+    cancelAnimationFrame(Ds.raf);
+    var from = Ds.cur || YRS[yr].v.map(function () { return 1; }), to = YRS[yr].v, t1 = performance.now();
+    (function step(now) {
+      var t = reduce ? 1 : ease(Math.min(1, (now - t1) / 900));
+      Ds.cur = from.map(function (v, i) { return v + (to[i] - v) * t; });
+      Ds.line.setAttribute('d', shapeD(Ds.cur));
+      if (t < 1) Ds.raf = requestAnimationFrame(step);
+    })(t1);
+  }
+  function syncYear() {
+    [].forEach.call(elY.children, function (b, i) { b.setAttribute('aria-pressed', i === yr); });
+    var y = YRS[yr];
+    if (!elDs.children.length) {
+      elDs.innerHTML = y.s.map(function () { return '<p><span></span><strong></strong><small></small></p>'; }).join('') + '<div class="pc__rows"></div>';
+    }
+    [].forEach.call(elDs.querySelectorAll('p'), function (p, i) {
+      p.querySelector('span').textContent = y.s[i][0];
+      p.querySelector('small').innerHTML = '<span style="color:#0f9d63;font-weight:600">&#8593; ' + y.s[i][2] + '</span> ' + y.s[i][3];
+      if (started) countTo(p.querySelector('strong'), y.s[i][1], '$', 1000); else p.querySelector('strong').textContent = '$' + fmt(y.s[i][1]);
+    });
+    elDs.querySelector('.pc__rows').innerHTML = y.r.map(function (r) { return '<div><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join('');
+  }
+  new ResizeObserver(function () { var w = Math.round(elD.clientWidth); if (w) drawD(w); }).observe(elD);
+  function drawD(w) {
+    var S = Math.min(w, 380), R = S / 2 - 34, C = S / 2, g = '', ax = '';
+    Ds.S = S;
+    [0.33, 0.66, 1].forEach(function (k) { g += '<circle cx="' + C + '" cy="' + C + '" r="' + R * k + '" fill="none" stroke="#d5e6ee"/>'; });
+    MES.forEach(function (m, i) {
+      var a = -Math.PI / 2 + i / NN * Math.PI * 2;
+      ax += '<line x1="' + (C + Math.cos(a) * R * 0.2) + '" y1="' + (C + Math.sin(a) * R * 0.2) + '" x2="' + (C + Math.cos(a) * R) + '" y2="' + (C + Math.sin(a) * R) + '" stroke="#d5e6ee"/><text x="' + (C + Math.cos(a) * (R + 18)) + '" y="' + (C + Math.sin(a) * (R + 18)) + '" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#5b7482">' + m + '</text>';
+    });
+    elD.innerHTML = svgOpen(S, S, 'Ventas por mes') + g + ax + '<path id="pnlDp" fill="' + RAD + '" fill-opacity=".1" stroke="' + RAD + '" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<circle cx="' + C + '" cy="' + C + '" r="' + R * 0.2 + '" fill="#fff" stroke="#d5e6ee"/><circle id="pnlDc" r="4.5" fill="' + RAD + '" stroke="#fff" stroke-width="2" visibility="hidden"/><rect width="' + S + '" height="' + S + '" fill="transparent"/></svg>';
+    Ds.line = elD.querySelector('#pnlDp');
+    Ds.line.setAttribute('d', shapeD(Ds.cur || YRS[yr].v.map(function () { return 1; })));
+    if (started) { Ds.cur = null; morphD(); }
+    var hit = elD.querySelector('rect'), dot = elD.querySelector('#pnlDc');
+    hit.addEventListener('pointermove', function (e) {
+      var r = elD.querySelector('svg').getBoundingClientRect(), x = e.clientX - r.left - C, y = e.clientY - r.top - C;
+      if (Math.hypot(x, y) < R * 0.2) { dot.setAttribute('visibility', 'hidden'); hideTip(); return; }
+      var a = Math.atan2(y, x) + Math.PI / 2; if (a < 0) a += Math.PI * 2;
+      var i = Math.round(a / (Math.PI * 2) * NN) % NN, p = atD(fit(norm(YRS[yr].v)), i / NN * Math.PI * 2);
+      dot.setAttribute('cx', p[0]); dot.setAttribute('cy', p[1]); dot.setAttribute('visibility', 'visible');
+      showTip(r.left + p[0], r.top + p[1], MES[i] + ' ' + YRS[yr].l, [['Ventas', '$' + fmt(YRS[yr].v[i] * 1000), RAD]]);
+    });
+    hit.addEventListener('pointerleave', function () { dot.setAttribute('visibility', 'hidden'); hideTip(); });
+  }
+  syncYear(); syncPer();
+  PER.forEach(function (p, i) { elPer.children[i].querySelector('strong').textContent = '$' + fmt(p.t); });
+
+  /* ---------- arranque ---------- */
+  function start() {
+    started = true; t0 = performance.now();
+    root.classList.add('is-in');
+    countTo(q('#pnlAn'), 18420000, '$', 1300); countTo(q('#pnlBn'), 3482, '', 1300);
+    syncPer(); syncYear(); layoutC(); morphD(); kickB();
+  }
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) { vis = e.isIntersecting; if (vis && !started && e.intersectionRatio > 0.15) start(); kickB(); });
+  }, { threshold: [0, 0.15] }).observe(root.querySelector('.pnl__stage'));
+  document.addEventListener('scroll', hideTip, { passive: true });
 })();
 </script>
 <script data-8b-part="section-script:agentes">
