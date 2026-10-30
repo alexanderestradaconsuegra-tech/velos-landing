@@ -1083,6 +1083,62 @@
 .pnl-tip__r span { display: inline-flex; align-items: center; gap: 0.375rem; color: #5b7482; }
 .pnl-tip__r i { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; }
 </style>
+<style data-8b-part="hero-dash">
+@layer sections {
+  .erp .hd { display: flex; flex-direction: column; gap: 1.1em; padding: 1.3em; min-height: 0; background: #eef7fb; }
+  .hd__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; }
+  .hd__brand { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; color: var(--e-mut); font-size: 0.85em; font-weight: 700; letter-spacing: -0.01em; }
+  #hero .hero__media .hd__brand img { position: static; inset: auto; width: auto; height: 1.9em; max-width: none; object-fit: contain; transform: none; }
+  .hd__h { font-size: 1.9em; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+  .hd__sub { max-width: 34em; margin: 0.35em 0 0; color: var(--e-mut); font-size: 0.95em; }
+  .hd__status { flex: none; padding: 0.4em 0.85em; border: 1px solid #d5e6ee; border-radius: 62.5rem; background: #fff; color: var(--e-mut); font-size: 0.8em; font-weight: 600; }
+  .hd__kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8em; }
+  .hd__kpi { padding: 1em 1.1em; border: 1px solid #d5e6ee; border-radius: 1.1em; background: #fff; box-shadow: 0 1px 2px rgba(11,28,37,0.05); transition: box-shadow 0.4s ease, border-color 0.4s ease; }
+  .hd__kpi span { display: block; color: var(--e-mut); font-size: 0.85em; }
+  .hd__kpi strong { display: block; margin-top: 0.35em; font-size: 1.75em; font-weight: 600; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .hd__kpi small { display: block; margin-top: 0.4em; color: var(--e-mut); font-size: 0.78em; }
+  .hd__kpi.is-bump { border-color: var(--e-acc); box-shadow: 0 0 0 0.2em rgba(61,216,240,0.28); }
+  .hd__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0.8em; flex: 1; }
+  .hc { display: flex; flex-direction: column; min-width: 0; padding: 1.1em; border: 1px solid #d5e6ee; border-radius: 1.3em; background: #fff; }
+  .hc__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5em; margin-bottom: 0.9em; }
+  .hc__head b { font-size: 1em; } .hc__head small { color: var(--e-mut); font-size: 0.78em; }
+  .hd__steps { display: flex; margin: 0 0 1em; padding: 0; list-style: none; }
+  .hd__step { position: relative; flex: 1; display: grid; justify-items: center; gap: 0.45em; text-align: center; color: var(--e-mut); font-size: 0.78em; font-weight: 600; }
+  .hd__step:not(:last-child)::before, .hd__step:not(:last-child)::after { content: ""; position: absolute; top: 1.35em; left: calc(50% + 1.6em); width: calc(100% - 3.2em); height: 0.2em; border-radius: 0.1em; background: #d5e6ee; }
+  .hd__step:not(:last-child)::after { background: var(--e-acc); transform: scaleX(0); transform-origin: 0 50%; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .hd__step.is-link::after { transform: scaleX(1); }
+  .hd__node { display: grid; place-items: center; width: 2.7em; height: 2.7em; border-radius: 50%; background: #e3f0f6; color: var(--e-mut); transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease; }
+  .hd__node svg { width: 1.3em; height: 1.3em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .hd__step.is-done { color: var(--e-ink); }
+  .hd__step.is-done .hd__node { background: var(--e-acc); color: #07323d; }
+  .hd__step.is-now .hd__node { transform: scale(1.12); animation: hd-pulse 1.6s ease-out infinite; }
+  @keyframes hd-pulse { 0% { box-shadow: 0 0 0 0 rgba(61,216,240,0.55); } 100% { box-shadow: 0 0 0 0.9em rgba(61,216,240,0); } }
+  .hd__chart { position: relative; flex: 1; min-height: 8.5em; overflow: hidden; border: 1px solid #d5e6ee; border-radius: 1em; background: rgba(227,240,246,0.45); }
+  .hd__chart svg { display: block; }
+  .hd__chartlbl { position: absolute; z-index: 1; top: 0.7em; left: 0.9em; color: var(--e-mut); font-size: 0.75em; }
+  .hd__ledger { display: flex; flex-direction: column; gap: 0.55em; flex: 1; min-height: 14em; }
+  .hd__row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.2em 0.8em; padding: 0.75em 0.85em; border: 1px solid #e2ecf0; border-radius: 0.9em; background: #f4fafc; }
+  .hd__row.is-new { animation: hd-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; border-color: var(--e-acc); }
+  @keyframes hd-in { from { opacity: 0; transform: translateX(1.2em); } to { opacity: 1; transform: none; } }
+  .hd__time { color: var(--e-mut); font-size: 0.78em; font-variant-numeric: tabular-nums; }
+  .hd__row strong { display: block; font-size: 0.92em; } .hd__row small { display: block; color: var(--e-mut); font-size: 0.78em; }
+  .hd__right { display: grid; justify-items: end; gap: 0.3em; }
+  .hd__delta { font-size: 0.9em; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .hd__chip { padding: 0.18em 0.6em; border-radius: 62.5rem; background: #dff6fb; color: #0e6a80; font-size: 0.7em; font-weight: 700; }
+  .hd__empty { display: grid; flex: 1; place-items: center; padding: 1.5em; color: var(--e-mut); font-size: 0.88em; text-align: center; }
+  @media (prefers-reduced-motion: reduce) { .hd__row.is-new, .hd__step.is-now .hd__node { animation: none; } .hd__step::after { transition: none; } }
+  @container erpc (max-width: 46rem) {
+    .hd__h { font-size: 1.55em; } .hd__status { display: none; }
+    .hd__kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hd__kpi strong { font-size: 1.45em; }
+    .hd__grid { grid-template-columns: 1fr; }
+    .hd__chart { min-height: 7em; }
+    .hd__ledger { min-height: 0; }
+    .hd__time, .hd__step span { display: none; }
+    .hd__row { grid-template-columns: minmax(0, 1fr) auto; }
+  }
+}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://autix.pro/#org","name":"Autix","url":"https://autix.pro/","logo":{"@type":"ImageObject","url":"https://autix.pro/logo-autix.png","width":1000,"height":200},"image":"https://autix.pro/og.jpg","description":"Autix diseña y construye sistemas a medida, webs inteligentes y automatizaciones para cualquier negocio.","contactPoint":[{"@type":"ContactPoint","contactType":"ventas","telephone":"+56992103974","availableLanguage":"es","areaServed":"CL"}]},{"@type":"WebSite","@id":"https://autix.pro/#website","url":"https://autix.pro/","name":"Autix","inLanguage":"es-CL","publisher":{"@id":"https://autix.pro/#org"}},{"@type":"ProfessionalService","@id":"https://autix.pro/#service","name":"Autix","url":"https://autix.pro/","image":"https://autix.pro/og.jpg","telephone":"+56992103974","areaServed":{"@type":"Country","name":"Chile"},"parentOrganization":{"@id":"https://autix.pro/#org"},"serviceType":["Desarrollo de sistemas a medida","Webs inteligentes","Automatización de procesos","Asistentes de IA"],"knowsAbout":["Software a medida","Sistemas de gestión","ERP","Punto de venta","Agenda y reservas","Inventario","Automatización"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de Autix","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistemas a medida","description":"Software de gestión construido alrededor de los procesos de cada negocio: ventas, agenda, inventario, clientes, cobros y reportes.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Webs inteligentes","description":"Sitios web conectados al sistema del negocio: reservas, catálogo y pagos online.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatizaciones y asistentes de IA","description":"Asistentes opcionales que atienden clientes o permiten al equipo consultar y registrar desde el chat.","provider":{"@id":"https://autix.pro/#org"}}}]}},{"@type":"ItemList","name":"Sistemas hechos por Autix","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"velOS","description":"ERP operativo: producción, inventario, ventas, reparto y cobranza conectados en una sola plataforma.","url":"https://velos.autix.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Merka POS","description":"Punto de venta: ventas por peso o unidad, inventario, crédito, caja y rentabilidad.","url":"https://merkapos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"AgendaOS","description":"Reservas y servicios: profesionales, disponibilidad, caja y confirmaciones automáticas.","url":"https://agendaos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Holu","description":"Sistema para restaurantes: menú QR, pedidos, cocina, caja y delivery en tiempo real.","url":"https://holu.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Métrikas","description":"Gestión de academias de fútbol: jugadores, asistencia, evaluaciones y pagos.","url":"https://metrikas.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Goat League","description":"Sistema para torneos con portal público: equipos, fixtures, resultados, posiciones y pagos.","url":"https://goatleague2026.vercel.app/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un sistema a medida y en qué se diferencia de un software normal?","acceptedAnswer":{"@type":"Answer","text":"Un software normal te da funciones fijas y eres tú quien adapta su forma de trabajar. Un sistema a medida se construye después de entender cómo opera tu negocio: tus procesos, tu vocabulario y tus reglas. Incluye solo los módulos que usas, se conecta con cómo trabaja tu equipo hoy y evoluciona cuando tu negocio cambia."}},{"@type":"Question","name":"¿Sirve para mi tipo de negocio?","acceptedAnswer":{"@type":"Answer","text":"Sí. No partimos de un molde por rubro, partimos de cómo funciona tu negocio. Podemos construir sistemas para una tienda de mascotas, una heladería, un estudio jurídico, una clínica, un restaurante, una distribuidora o cualquier negocio que hoy lleve sus procesos en planillas, cuadernos o varios programas que no se hablan. Si tu rubro no está en esa lista, también."}},{"@type":"Question","name":"¿Qué puede incluir mi sistema?","acceptedAnswer":{"@type":"Answer","text":"Lo que tu operación necesite. Algunos de los bloques con los que trabajamos: Ventas y caja: punto de venta, pedidos y boletas Agenda y reservas: citas, profesionales y recordatorios Inventario: stock en tiempo real con alertas Clientes: ficha, historial y crédito asignado Cobros y pagos: deudas, abonos y vencimientos Logística y producción: rutas, entregas, lotes y costos Reportes: cierre del día y estado del mes, sin planillas"}},{"@type":"Question","name":"¿Solo hacen sistemas o también webs?","acceptedAnswer":{"@type":"Answer","text":"Hacemos sistemas completos, webs inteligentes conectadas a tu sistema (reservas, catálogo o pagos online) y automatizaciones. Eliges qué necesitas: no es un paquete cerrado."}},{"@type":"Question","name":"¿Tengo que usar agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"No. Los asistentes de IA son un módulo opcional. Algunos negocios prefieren un sistema simple; otros suman un asistente que atiende clientes por WhatsApp o que opera el sistema desde Telegram. Lo decidimos según lo que tu negocio necesite, no al revés."}},{"@type":"Question","name":"¿Qué sistemas de Autix ya están funcionando?","acceptedAnswer":{"@type":"Answer","text":"Son sistemas hechos por Autix que ya están en uso: velOS (producción, inventario, ventas, reparto y cobranza), Merka POS (punto de venta), AgendaOS (reservas y servicios), Holu (restaurantes), Métrikas (academias de fútbol) y Goat League (torneos con portal público). Puedes abrirlos y ver cómo se ven por dentro. El tuyo se construye según cómo trabaja tu negocio."}},{"@type":"Question","name":"¿Cuánto tiempo toma implementar velOS en mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, y, si los quieres, la configuración de asistentes de IA. Cada implementación tiene un alcance distinto porque cada empresa es distinta — te damos un plazo concreto después de conocer tu operación."}},{"@type":"Question","name":"¿Necesito cambiar cómo trabaja mi equipo para usar velOS?","acceptedAnswer":{"@type":"Answer","text":"No. La idea de construirlo a medida es exactamente lo contrario: el sistema se adapta a tus procesos actuales, no al revés. Si hoy tu conductor recibe la ruta por WhatsApp, seguirá siendo así, solo que ahora la información sale directamente del sistema. Si tu vendedor usa un lenguaje particular para describir un pedido, el sistema lo habla igual, porque se configura con ese lenguaje. Cada usuario ve solo lo que le corresponde según su rol — administración, ventas, conducción o producción — así que la curva de aprendizaje es mínima para cada persona."}},{"@type":"Question","name":"¿Qué pasa después de que el sistema esté funcionando? ¿Hay soporte?","acceptedAnswer":{"@type":"Answer","text":"Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta — porque fue construido pensando en que tu negocio no se queda quieto."}},{"@type":"Question","name":"¿Dónde vive la información? ¿Es seguro tener todo mi negocio en un solo sistema?","acceptedAnswer":{"@type":"Answer","text":"Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol — cada usuario solo ve lo que su función necesita. El acceso al sistema queda restringido a las personas que tú autorices."}},{"@type":"Question","name":"¿Cumple con la Ley 21.719 de protección de datos personales?","acceptedAnswer":{"@type":"Answer","text":"Cada sistema se diseña considerando las obligaciones de la Ley 21.719, que entra en vigencia el 1 de diciembre de 2026 y crea la Agencia de Protección de Datos Personales (APDP). Esto incluye consentimiento y base de licitud para cada tratamiento, capacidad de responder los derechos ARCOP del titular (acceso, rectificación, cancelación, oposición y portabilidad), minimización de datos, medidas de seguridad y registro de actividades de tratamiento. Autix acompaña a cada cliente en la adecuación de su operación antes de esa fecha. De todos modos, el cumplimiento normativo también depende de cómo tu empresa opera: recomendamos validarlo con un abogado especialista."}}]}]}</script>
 </head>
 <body class="m-text">
@@ -1117,33 +1173,24 @@
         <div class="erp__tabs" role="tablist" aria-label="Tipo de negocio"></div>
         <span class="erp__note">Datos ilustrativos</span>
       </div>
-      <div class="erp__app">
-        <aside class="erp__side">
-          <div class="erp__brand"><img src="logo-velos.png" width="360" height="202" alt="" aria-hidden="true"><span>velOS</span></div>
-          <nav class="erp__nav" aria-label="Módulos del sistema"></nav>
-          <div class="erp__foot"><b>Operación enlazada</b>Lo que se registra en un módulo actualiza a los demás.</div>
-        </aside>
-        <main class="erp__main">
-          <header class="erp__head"><div><div class="erp__h" id="erp-title"></div><p class="erp__sub" id="erp-sub"></p></div><span class="erp__status" id="erp-status"></span></header>
-          <div class="erp__metrics" id="erp-metrics" aria-label="Indicadores"></div>
-          <div class="erp__work">
-            <section class="erp__pane" aria-label="Movimientos conectados">
-              <div class="erp__panehead"><b>Movimientos conectados</b><small id="erp-filter"></small></div>
-              <div class="erp__ledger" id="erp-ledger" aria-live="polite"></div>
-            </section>
-            <section class="erp__pane erp__detail" aria-label="Detalle">
-              <div class="erp__panehead"><b id="erp-dhead"></b><small>velOS</small></div>
-              <div class="erp__dbody">
-                <div class="erp__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-                <p class="erp__dt" id="erp-dtitle"></p>
-                <p class="erp__dd" id="erp-ddesc"></p>
-                <div id="erp-lines"></div>
-                <div class="erp__spark" id="erp-spark" aria-hidden="true"></div>
-              </div>
-            </section>
-          </div>
-          <footer class="erp__foot2"><p id="erp-note"></p><div class="erp__actions"><button class="erp__btn" id="erp-reset" type="button">Reiniciar</button><button class="erp__btn erp__btn--primary" id="erp-run" type="button">Ver recorrido →</button></div></footer>
-        </main>
+      <div class="erp__app hd">
+        <div class="hd__top">
+          <div><div class="hd__brand"><img src="logo-velos.png" width="360" height="202" alt="" aria-hidden="true"><span>velOS</span></div><div class="hd__h" id="erp-title"></div><p class="hd__sub" id="erp-sub"></p></div>
+          <span class="hd__status" id="erp-status"></span>
+        </div>
+        <div class="hd__kpis" id="erp-metrics" aria-label="Indicadores"></div>
+        <div class="hd__grid">
+          <section class="hc hc--flow" aria-label="Recorrido conectado">
+            <div class="hc__head"><b>Operación enlazada</b><small>Cada módulo alimenta al siguiente</small></div>
+            <ol class="hd__steps" id="erp-steps"></ol>
+            <div class="hd__chart" id="erp-chart" role="img" aria-label="Actividad del día"><span class="hd__chartlbl">Actividad del día</span></div>
+          </section>
+          <section class="hc hc--feed" aria-label="Movimientos conectados">
+            <div class="hc__head"><b>Movimientos conectados</b><small>Todas las áreas</small></div>
+            <div class="hd__ledger" id="erp-ledger" aria-live="polite"></div>
+          </section>
+        </div>
+        <footer class="erp__foot2"><p id="erp-note"></p><div class="erp__actions"><button class="erp__btn" id="erp-reset" type="button">Reiniciar</button><button class="erp__btn erp__btn--primary" id="erp-run" type="button">Ver recorrido →</button></div></footer>
       </div>
       <div class="erp__toast" id="erp-toast" role="status" aria-live="polite"></div>
     </div>
@@ -2091,47 +2138,93 @@
   if (!root) return;
   const $ = s => root.querySelector(s);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tabsEl = $('.erp__tabs'), navEl = $('.erp__nav');
-  let biz = D.order[0], phase = 0, view = 'resumen', timers = [], auto = !reduced, running = false, visible = true, last = {};
-  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${D.icons[k]}"/></svg>`;
+  const tabsEl = $('.erp__tabs'), stepsEl = $('#erp-steps'), chartEl = $('#erp-chart');
+  let biz = D.order[0], phase = 0, timers = [], auto = !reduced, running = false, visible = true, last = {};
   const cur = () => D.biz[biz];
+  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${D.icons[k]}"/></svg>`;
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const dots = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
   tabsEl.innerHTML = D.order.map(k => `<button class="erp__tab" role="tab" type="button" data-biz="${k}" aria-selected="false">${D.biz[k].label}</button>`).join('');
 
-  function drawNav() {
-    const b = cur();
-    const items = [{ id: 'resumen', label: 'Resumen', icon: 'resumen' }, ...b.nav];
-    navEl.innerHTML = items.map(n => `<button type="button" data-view="${n.id}" ${n.id === view ? 'aria-current="page"' : ''}>${icon(n.icon)}${n.label}</button>`).join('');
+  /* cuenta animada si el valor es "$1.248.000", "38", "7 u."; si no, texto directo */
+  function setVal(el, text, fromZero) {
+    cancelAnimationFrame(el._r);
+    const m = text.match(/^(\D*)(\d{1,3}(?:\.\d{3})*|\d+)(\D*)$/);
+    if (!m || reduced) { el.textContent = text; el._v = m ? parseInt(m[2].replace(/\./g, ''), 10) : 0; return; }
+    const to = parseInt(m[2].replace(/\./g, ''), 10), from = fromZero ? 0 : (el._v || 0), t0 = performance.now(), thousands = m[2].includes('.');
+    el._v = to;
+    (function f(now) {
+      const k = Math.min(1, (now - t0) / 900), v = from + (to - from) * ease(k);
+      el.textContent = m[1] + (thousands ? dots(v) : String(Math.round(v))) + m[3];
+      if (k < 1) el._r = requestAnimationFrame(f);
+    })(t0);
   }
-  function render(newIndex = -1) {
+
+  /* gráfico: la línea avanza con cada paso del recorrido */
+  const cs = { w: 0, h: 0, prog: 0.3 };
+  function smooth(P) {
+    const n = P.length, g = i => P[Math.max(0, Math.min(n - 1, i))];
+    let d = `M${P[0][0]},${P[0][1]}`;
+    for (let i = 0; i < n - 1; i++) {
+      const a = g(i - 1), b = g(i), c = g(i + 1), e = g(i + 2), k = 0.18;
+      d += `C${b[0] + (c[0] - a[0]) * k},${b[1] + (c[1] - a[1]) * k} ${c[0] - (e[0] - b[0]) * k},${c[1] - (e[1] - b[1]) * k} ${c[0]},${c[1]}`;
+    }
+    return d;
+  }
+  function drawChart() {
+    const { w, h } = cs;
+    if (!w || !h) return;
+    const s = cur().spark, n = s.length, top = 28, bot = 14;
+    const X = i => 14 + i / (n - 1) * (w - 28), Y = v => top + (1 - v / 100) * (h - top - bot);
+    const f = cs.prog * (n - 1), k = Math.floor(f), fr = f - k;
+    const P = s.slice(0, k + 1).map((v, i) => [X(i), Y(v)]);
+    if (k < n - 1) { const v = s[k] + (s[k + 1] - s[k]) * fr; P.push([X(k + fr), Y(v)]); }
+    const prev = s.map((v, i) => [X(i), Y(Math.max(8, v * 0.78 - 4))]);
+    const d = smooth(P), last = P[P.length - 1];
+    chartEl.querySelector('svg')?.remove();
+    chartEl.insertAdjacentHTML('beforeend',
+      `<svg width="${w}" height="${h}" aria-hidden="true"><defs><linearGradient id="hdl" x1="0" x2="1"><stop offset="0" stop-color="#3dd8f0"/><stop offset="1" stop-color="#0e7a96"/></linearGradient><linearGradient id="hda" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0e7a96" stop-opacity=".22"/><stop offset="1" stop-color="#0e7a96" stop-opacity="0"/></linearGradient></defs>` +
+      [25, 50, 75].map(v => `<line x1="0" x2="${w}" y1="${Y(v)}" y2="${Y(v)}" stroke="#d5e6ee"/>`).join('') +
+      `<path d="${smooth(prev)}" fill="none" stroke="#9bb2bf" stroke-width="1.6" stroke-dasharray="4 4"/>` +
+      `<path d="${d}L${last[0]},${h}L${P[0][0]},${h}Z" fill="url(#hda)"/><path d="${d}" fill="none" stroke="url(#hdl)" stroke-width="2.8" stroke-linecap="round"/>` +
+      `<circle cx="${last[0]}" cy="${last[1]}" r="9" fill="#3dd8f0" opacity=".25"/><circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2"/></svg>`);
+  }
+  let chartRaf = 0;
+  function tweenChart(target) {
+    cancelAnimationFrame(chartRaf);
+    if (reduced) { cs.prog = target; drawChart(); return; }
+    const from = cs.prog, t0 = performance.now();
+    (function f(now) { const k = Math.min(1, (now - t0) / 900); cs.prog = from + (target - from) * ease(k); drawChart(); if (k < 1) chartRaf = requestAnimationFrame(f); })(t0);
+  }
+  new ResizeObserver(() => { cs.w = Math.round(chartEl.clientWidth); cs.h = Math.round(chartEl.clientHeight); drawChart(); }).observe(chartEl);
+
+  function render(newIndex = -1, fresh = false) {
     const b = cur();
-    const items = b.nav;
-    const sel = view === 'resumen' ? null : items.find(n => n.id === view);
-    $('#erp-title').textContent = sel ? sel.label : b.title;
-    $('#erp-sub').textContent = sel ? sel.sub : b.sub;
-    $('#erp-filter').textContent = sel ? 'Solo ' + sel.label.toLowerCase() : 'Todas las áreas';
+    $('#erp-title').textContent = b.title;
+    $('#erp-sub').textContent = b.sub;
     $('#erp-status').textContent = phase === 4 ? 'Recorrido completo' : phase === 0 ? 'Listo para iniciar' : `Paso ${phase} de 4`;
-    // métricas
-    $('#erp-metrics').innerHTML = b.metrics.map((m, i) => {
-      const val = m.v[phase], bump = last.biz === biz && last.phase !== phase && last.vals && last.vals[i] !== val;
-      return `<div class="erp__metric${bump ? ' is-bump' : ''}"><span>${m.l}</span><strong>${val}</strong><small>${m.s}</small></div>`;
-    }).join('');
+    /* KPIs */
+    const box = $('#erp-metrics');
+    if (fresh || box.children.length !== b.metrics.length) {
+      box.innerHTML = b.metrics.map(m => `<div class="hd__kpi"><span>${m.l}</span><strong></strong><small>${m.s}</small></div>`).join('');
+    }
+    [...box.children].forEach((el, i) => {
+      const m = b.metrics[i], val = m.v[phase], changed = !fresh && last.biz === biz && last.vals && last.vals[i] !== val;
+      el.querySelector('span').textContent = m.l; el.querySelector('small').textContent = m.s;
+      setVal(el.querySelector('strong'), val, fresh);
+      if (changed) { el.classList.add('is-bump'); setTimeout(() => el.classList.remove('is-bump'), 1100); }
+    });
     last = { biz, phase, vals: b.metrics.map(m => m.v[phase]) };
-    // movimientos
-    const rows = b.steps.slice(0, phase).filter(s => view === 'resumen' || s.view === view);
-    $('#erp-ledger').innerHTML = rows.length ? rows.map(s => {
-      const isNew = newIndex >= 0 && b.steps[newIndex] === s;
-      return `<div class="erp__row${isNew ? ' is-new' : ''}"><div class="erp__time">${s.time}</div><div><strong>${s.title}</strong><small>${s.note}</small></div><div class="erp__delta">${s.delta}</div><div><span class="erp__chip">${s.status}</span></div></div>`;
-    }).join('') : `<div class="erp__empty">${phase === 0 ? 'Ejecuta el recorrido para ver cómo se conectan los módulos.' : 'Aún no hay movimientos en esta área.'}</div>`;
-    // detalle
-    $('#erp-dhead').textContent = b.detail.head;
-    $('#erp-dtitle').textContent = b.detail.titles[phase];
-    $('#erp-ddesc').textContent = b.detail.desc;
-    $('#erp-lines').innerHTML = b.detail.lines.map(l => `<div class="erp__line"><span>${l.l}</span><b>${l.v[phase]}</b></div>`).join('');
-    $('#erp-spark').innerHTML = b.spark.map((h, i) => `<i style="--h:${Math.min(100, h + phase * 3 + (i === b.spark.length - 1 ? phase * 2 : 0))}%"></i>`).join('');
+    /* pasos */
+    stepsEl.innerHTML = b.nav.map((n, i) => `<li class="hd__step${phase > i ? ' is-done' : ''}${phase === i + 1 ? ' is-now' : ''}${phase >= i + 2 ? ' is-link' : ''}"><span class="hd__node">${icon(n.icon)}</span><span>${n.label}</span></li>`).join('');
+    /* movimientos */
+    const rows = b.steps.slice(0, phase);
+    $('#erp-ledger').innerHTML = rows.length ? rows.map((s, i) => `<div class="hd__row${i === newIndex ? ' is-new' : ''}"><div class="hd__time">${s.time}</div><div><strong>${s.title}</strong><small>${s.note}</small></div><div class="hd__right"><span class="hd__delta">${s.delta}</span><span class="hd__chip">${s.status}</span></div></div>`).join('')
+      : `<div class="hd__empty">Ejecuta el recorrido para ver cómo se conectan los módulos.</div>`;
     $('#erp-note').textContent = phase === 0 ? b.note[1] : phase === 4 ? b.note[0] : b.steps[phase - 1].note;
+    tweenChart([0.32, 0.5, 0.66, 0.82, 1][phase]);
     tabsEl.querySelectorAll('.erp__tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.biz === biz)));
-    navEl.querySelectorAll('button').forEach(n => n.toggleAttribute('aria-current', n.dataset.view === view));
   }
   function toast(step) {
     const t = $('#erp-toast');
@@ -2142,7 +2235,7 @@
   }
   function stop() { timers.forEach(clearTimeout); timers = []; running = false; $('#erp-run').disabled = false; }
   function play() {
-    stop(); running = true; phase = 0; view = 'resumen'; drawNav(); render(); $('#erp-run').disabled = true;
+    stop(); running = true; phase = 0; render(-1, false); $('#erp-run').disabled = true;
     const b = cur();
     b.steps.forEach((s, i) => timers.push(setTimeout(() => {
       phase = i + 1; render(i); toast(s);
@@ -2153,21 +2246,19 @@
     }, 1000 + i * 1250)));
   }
   function setBiz(k, autoplay) {
-    biz = k; view = 'resumen'; phase = 0; last = {};
-    drawNav(); render();
+    biz = k; phase = 0; last = {}; cs.prog = 0.3;
+    render(-1, true);
     if (autoplay) play(); else { stop(); phase = 4; render(); }
   }
   function next() { setBiz(D.order[(D.order.indexOf(biz) + 1) % D.order.length], true); }
 
   tabsEl.addEventListener('click', e => { const t = e.target.closest('.erp__tab'); if (!t) return; auto = false; setBiz(t.dataset.biz, true); });
-  navEl.addEventListener('click', e => { const n = e.target.closest('button'); if (!n) return; auto = false; view = n.dataset.view; render(); });
   $('#erp-run').addEventListener('click', () => { auto = false; play(); });
-  $('#erp-reset').addEventListener('click', () => { auto = false; stop(); phase = 0; view = 'resumen'; last = {}; drawNav(); render(); });
+  $('#erp-reset').addEventListener('click', () => { auto = false; stop(); phase = 0; last = {}; render(-1, true); });
   root.addEventListener('pointerdown', () => { auto = false; });
 
-  drawNav();
-  if (reduced) { phase = 4; render(); return; }
-  render();
+  if (reduced) { phase = 4; render(-1, true); return; }
+  render(-1, true);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([en]) => {
       visible = en.isIntersecting;
