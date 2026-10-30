@@ -986,158 +986,55 @@
   @media (max-width: 63.99rem) { #caso .caso__head { grid-template-columns: 1fr; } }
 }
 </style>
-<style data-8b-part="section:panel">
-@layer sections {
-  #panel { position: relative; isolation: isolate; overflow-x: clip; color: var(--color-2); padding-block: var(--space-2); }
-  #panel > :not(.pnl__sheet) { position: relative; z-index: 1; }
-  #panel .pnl__head { display: grid; gap: 1.25rem; max-width: 46rem; justify-items: start; }
-  #panel .pnl__kicker { color: var(--color-4); }
-  #panel .pnl__head .m-text-4 { color: var(--color-7); }
-  #panel .pnl__stage { margin-top: clamp(2.5rem, 5vw, 4rem); perspective: 2400px; }
-  #panel .pnl__tilt { transform: rotateY(-9deg) rotateX(3deg) rotateZ(-1deg) scale(0.97); transform-origin: 50% 40%; transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.25, 1); will-change: transform; }
-  #panel .pnl__stage:hover .pnl__tilt, #panel .pnl__stage:focus-within .pnl__tilt { transform: none; }
-  #panel .pnl__win { padding: 0.75rem; border-radius: 2rem; background: rgba(250,253,255,0.96); box-shadow: 0 2.5rem 6rem -2rem rgba(0,0,0,0.6), 0 0 0 0.0625rem rgba(255,255,255,0.4); }
-  #panel .pnl__bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.25rem 0.75rem 0.75rem; color: #5b7482; font-size: 0.75rem; }
-  #panel .pnl__dots { display: flex; gap: 0.375rem; }
-  #panel .pnl__dots i { width: 0.625rem; height: 0.625rem; border-radius: 50%; background: #ff6159; }
-  #panel .pnl__dots i:nth-child(2) { background: #febc2e; }
-  #panel .pnl__dots i:nth-child(3) { background: #28c840; }
-  #panel .pnl__url { flex: 1; max-width: 28rem; margin-inline: auto; padding: 0.3rem 1rem; border-radius: 62.5rem; background: #e3f0f6; text-align: center; }
-  #panel .pnl__tag { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; }
-  #panel .pnl__screen { padding: 0.1875rem; border-radius: 1.5rem; background: #0b1c25; }
-  #panel .pnl__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; padding: 1.25rem; border-radius: 1.375rem; background: #eef7fb; color: #0b1c25; font-variant-numeric: tabular-nums; }
-  #panel .pc { position: relative; min-width: 0; padding: 1.375rem; border: 0.0625rem solid #d5e6ee; border-radius: 1.5rem; background: #fff; box-shadow: 0 0.0625rem 0.125rem rgba(11,28,37,0.06); }
-  #panel .pc--a { grid-column: span 5; } #panel .pc--b { grid-column: span 7; } #panel .pc--c { grid-column: span 7; } #panel .pc--d { grid-column: span 5; }
-  #panel .pc__lbl, #panel .pc__note { color: #5b7482; font-size: 0.8125rem; }
-  #panel .pc__num { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 0.75rem; margin-block: 0.5rem 0.25rem; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 500; line-height: 1; letter-spacing: -0.03em; }
-  #panel .pc__delta { color: #0f9d63; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0; }
-  #panel .pc--a, #panel .pc--b, #panel .pc--c { display: flex; flex-direction: column; }
-  #panel .pc__chart { position: relative; flex: 1; min-height: 9.5rem; margin-top: 1rem; overflow: hidden; border: 0.0625rem solid #d5e6ee; border-radius: 1.125rem; background: rgba(227,240,246,0.45); }
-  #panel .pc--b .pc__chart { min-height: 11rem; }
-  #panel .pc__chart svg, #panel .pc__radar svg { display: block; }
-  #panel .pc__legend { display: flex; flex-wrap: wrap; gap: 0.375rem 0.875rem; margin-top: 0.75rem; color: #5b7482; font-size: 0.75rem; }
-  #panel .pc__legend span { display: inline-flex; align-items: center; gap: 0.375rem; }
-  #panel .pc__legend i { width: 0.875rem; height: 0.125rem; border-radius: 0.0625rem; } #panel .pc__legend i.sq { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; } #panel .pc__prior { background: #9bb2bf; }
-  #panel .pc__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
-  #panel .pc__top .pc__legend { margin-top: 0; }
-  #panel .pc__title { margin: 0; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.02em; }
-  #panel .pc__periods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin-block: 1rem; }
-  #panel .pc__per { padding: 0.625rem; border: 0; border-radius: 0.875rem; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: background 0.25s ease; }
-  #panel .pc__per:hover, #panel .pc__per[aria-pressed="true"] { background: #e3f0f6; }
-  #panel .pc__per b { display: flex; align-items: center; gap: 0.375rem; font-size: 0.8125rem; font-weight: 600; }
-  #panel .pc__per b::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: #9bb2bf; } #panel .pc__per[aria-pressed="true"] b::before { background: #0f9d63; }
-  #panel .pc__per strong { display: block; margin-top: 0.375rem; font-size: clamp(1rem, 1.7vw, 1.5rem); font-weight: 500; letter-spacing: -0.03em; }
-  #panel .pc__per small { display: block; margin-top: 0.25rem; color: #5b7482; font-size: 0.6875rem; }
-  #panel .pc__tm { position: relative; flex: 1; min-height: 19rem; }
-  #panel .pnl-tile { position: absolute; left: 50%; top: 50%; width: 0; height: 0; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 0.75rem; border-radius: 0.875rem; transition: left 0.7s cubic-bezier(.2,.9,.25,1), top 0.7s cubic-bezier(.2,.9,.25,1), width 0.7s cubic-bezier(.2,.9,.25,1), height 0.7s cubic-bezier(.2,.9,.25,1), filter 0.2s ease; }
-  #panel .pnl-tile:hover { filter: brightness(1.08); }
-  #panel .pnl-tile__n { display: flex; align-items: center; gap: 0.375rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
-  #panel .pnl-tile__n i { flex: none; width: 0.75rem; height: 0.75rem; border-radius: 0.25rem; background: currentColor; opacity: 0.9; }
-  #panel .pnl-tile__n span { overflow: hidden; text-overflow: ellipsis; }
-  #panel .pnl-tile__v { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.375rem; }
-  #panel .pnl-tile__v b { font-weight: 500; line-height: 0.9; letter-spacing: -0.04em; }
-  #panel .pnl-tile__v em { padding: 0.1875rem 0.3125rem; border-radius: 0.375rem; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.625rem; font-style: normal; font-weight: 500; }
-  #panel .pc__seg { display: inline-flex; padding: 0.125rem; border-radius: 0.625rem; background: #e3f0f6; }
-  #panel .pc__seg button { padding: 0.3rem 0.75rem; border: 0; border-radius: 0.5rem; background: transparent; color: #5b7482; font: inherit; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: background 0.25s ease, color 0.25s ease; }
-  #panel .pc__seg button[aria-pressed="true"] { background: #fff; color: #0b1c25; box-shadow: 0 0.0625rem 0.125rem rgba(11,28,37,0.15); }
-  #panel .pc__radar { display: grid; place-items: center; margin-top: 0.5rem; }
-  #panel .pc__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1rem; margin-top: 0.5rem; }
-  #panel .pc__stats p { color: #5b7482; font-size: 0.8125rem; }
-  #panel .pc__stats strong { display: block; margin-top: 0.375rem; color: #0b1c25; font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1; }
-  #panel .pc__stats small { display: block; margin-top: 0.375rem; color: #5b7482; font-size: 0.75rem; }
-  #panel .pc__rows { grid-column: 1 / -1; margin-top: 0.5rem; }
-  #panel .pc__rows div { display: flex; justify-content: space-between; padding-block: 0.625rem; border-top: 0.0625rem solid #d5e6ee; font-size: 0.875rem; }
-  #panel .pc__rows span { color: #5b7482; }
-  #panel .pnl-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s cubic-bezier(.3,.8,.2,1) 0.2s; }
-  #panel.is-in .pnl-line { stroke-dashoffset: 0; }
-  #panel.pnl--js .pc { opacity: 0; transform: translateY(0.875rem); transition: opacity 0.9s cubic-bezier(.2,.9,.25,1), transform 0.9s cubic-bezier(.2,.9,.25,1); }
-  #panel.pnl--js.is-in .pc { opacity: 1; transform: none; }
-  #panel.pnl--js.is-in .pc--b { transition-delay: 0.08s; } #panel.pnl--js.is-in .pc--c { transition-delay: 0.16s; } #panel.pnl--js.is-in .pc--d { transition-delay: 0.24s; }
-  @media (max-width: 63.99rem) {
-    #panel .pnl__tilt { transform: none; }
-    #panel .pnl__tag { display: none; }
-    #panel .pc--a, #panel .pc--b, #panel .pc--c, #panel .pc--d { grid-column: 1 / -1; }
-    #panel .pnl__grid { padding: 0.75rem; gap: 0.75rem; }
-    #panel .pc { padding: 1rem; }
-    #panel .pc__tm { min-height: 16rem; }
-  }
-  @media (max-width: 39.99rem) {
-    #panel .pc__periods { grid-template-columns: 1fr; gap: 0.25rem; }
-    #panel .pc__per { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-    #panel .pc__per strong { margin-top: 0; font-size: 1.125rem; }
-    #panel .pc__per small { display: none; }
-    #panel .pc__stats strong { font-size: 1.125rem; }
-  }
-  @media (hover: none) { #panel .pnl__tilt { transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    #panel .pnl__tilt { transform: none; transition: none; }
-    #panel.pnl--js .pc { opacity: 1; transform: none; transition: none; }
-    #panel .pnl-line { stroke-dashoffset: 0; transition: none; }
-    #panel .pnl-tile { transition: none; }
-  }
-}
-.pnl-tip { position: fixed; z-index: 90; left: 0; top: 0; padding: 0.5rem 0.625rem; border: 0.0625rem solid #d5e6ee; border-radius: 0.75rem; background: rgba(255,255,255,0.96); color: #0b1c25; font-size: 0.75rem; box-shadow: 0 0.5rem 1.5rem rgba(11,28,37,0.2); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
-.pnl-tip.is-on { opacity: 1; }
-.pnl-tip__t { margin-bottom: 0.25rem; color: #5b7482; }
-.pnl-tip__r { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-.pnl-tip__r span { display: inline-flex; align-items: center; gap: 0.375rem; color: #5b7482; }
-.pnl-tip__r i { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; }
-</style>
 <style data-8b-part="hero-dash">
 @layer sections {
-  .erp .hd { display: flex; flex-direction: column; gap: 1.1em; padding: 1.3em; min-height: 0; background: #eef7fb; }
+  .erp .hd { display: flex; flex-direction: column; gap: 1em; padding: 1.2em; min-height: 0; background: #eef7fb; }
   .hd__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; }
-  .hd__brand { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.5em; color: var(--e-mut); font-size: 0.85em; font-weight: 700; letter-spacing: -0.01em; }
+  #hero .hero__media .hd__brand { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.4em; color: var(--e-mut); font-size: 0.85em; font-weight: 700; letter-spacing: -0.01em; }
   #hero .hero__media .hd__brand img { position: static; inset: auto; width: auto; height: 1.9em; max-width: none; object-fit: contain; transform: none; }
-  .hd__h { font-size: 1.9em; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
-  .hd__sub { max-width: 34em; margin: 0.35em 0 0; color: var(--e-mut); font-size: 0.95em; }
+  .hd__h { font-size: 1.7em; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+  .hd__sub { max-width: 34em; margin: 0.3em 0 0; color: var(--e-mut); font-size: 0.9em; }
   .hd__status { flex: none; padding: 0.4em 0.85em; border: 1px solid #d5e6ee; border-radius: 62.5rem; background: #fff; color: var(--e-mut); font-size: 0.8em; font-weight: 600; }
-  .hd__kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8em; }
-  .hd__kpi { padding: 1em 1.1em; border: 1px solid #d5e6ee; border-radius: 1.1em; background: #fff; box-shadow: 0 1px 2px rgba(11,28,37,0.05); transition: box-shadow 0.4s ease, border-color 0.4s ease; }
-  .hd__kpi span { display: block; color: var(--e-mut); font-size: 0.85em; }
-  .hd__kpi strong { display: block; margin-top: 0.35em; font-size: 1.75em; font-weight: 600; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .hd__kpi small { display: block; margin-top: 0.4em; color: var(--e-mut); font-size: 0.78em; }
-  .hd__kpi.is-bump { border-color: var(--e-acc); box-shadow: 0 0 0 0.2em rgba(61,216,240,0.28); }
-  .hd__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0.8em; flex: 1; }
-  .hc { display: flex; flex-direction: column; min-width: 0; padding: 1.1em; border: 1px solid #d5e6ee; border-radius: 1.3em; background: #fff; }
-  .hc__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5em; margin-bottom: 0.9em; }
-  .hc__head b { font-size: 1em; } .hc__head small { color: var(--e-mut); font-size: 0.78em; }
-  .hd__steps { display: flex; margin: 0 0 1em; padding: 0; list-style: none; }
-  .hd__step { position: relative; flex: 1; display: grid; justify-items: center; gap: 0.45em; text-align: center; color: var(--e-mut); font-size: 0.78em; font-weight: 600; }
-  .hd__step:not(:last-child)::before, .hd__step:not(:last-child)::after { content: ""; position: absolute; top: 1.35em; left: calc(50% + 1.6em); width: calc(100% - 3.2em); height: 0.2em; border-radius: 0.1em; background: #d5e6ee; }
-  .hd__step:not(:last-child)::after { background: var(--e-acc); transform: scaleX(0); transform-origin: 0 50%; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .hd__step.is-link::after { transform: scaleX(1); }
-  .hd__node { display: grid; place-items: center; width: 2.7em; height: 2.7em; border-radius: 50%; background: #e3f0f6; color: var(--e-mut); transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease; }
-  .hd__node svg { width: 1.3em; height: 1.3em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .hd__step.is-done { color: var(--e-ink); }
-  .hd__step.is-done .hd__node { background: var(--e-acc); color: #07323d; }
-  .hd__step.is-now .hd__node { transform: scale(1.12); animation: hd-pulse 1.6s ease-out infinite; }
-  @keyframes hd-pulse { 0% { box-shadow: 0 0 0 0 rgba(61,216,240,0.55); } 100% { box-shadow: 0 0 0 0.9em rgba(61,216,240,0); } }
-  .hd__chart { position: relative; flex: 1; min-height: 8.5em; overflow: hidden; border: 1px solid #d5e6ee; border-radius: 1em; background: rgba(227,240,246,0.45); }
-  .hd__chart svg { display: block; }
-  .hd__chartlbl { position: absolute; z-index: 1; top: 0.7em; left: 0.9em; color: var(--e-mut); font-size: 0.75em; }
-  .hd__ledger { display: flex; flex-direction: column; gap: 0.55em; flex: 1; min-height: 14em; }
-  .hd__row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.2em 0.8em; padding: 0.75em 0.85em; border: 1px solid #e2ecf0; border-radius: 0.9em; background: #f4fafc; }
-  .hd__row.is-new { animation: hd-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; border-color: var(--e-acc); }
-  @keyframes hd-in { from { opacity: 0; transform: translateX(1.2em); } to { opacity: 1; transform: none; } }
-  .hd__time { color: var(--e-mut); font-size: 0.78em; font-variant-numeric: tabular-nums; }
-  .hd__row strong { display: block; font-size: 0.92em; } .hd__row small { display: block; color: var(--e-mut); font-size: 0.78em; }
-  .hd__right { display: grid; justify-items: end; gap: 0.3em; }
-  .hd__delta { font-size: 0.9em; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .hd__chip { padding: 0.18em 0.6em; border-radius: 62.5rem; background: #dff6fb; color: #0e6a80; font-size: 0.7em; font-weight: 700; }
-  .hd__empty { display: grid; flex: 1; place-items: center; padding: 1.5em; color: var(--e-mut); font-size: 0.88em; text-align: center; }
-  @media (prefers-reduced-motion: reduce) { .hd__row.is-new, .hd__step.is-now .hd__node { animation: none; } .hd__step::after { transition: none; } }
+  .hd__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0.8em; }
+  .hc { display: flex; flex-direction: column; min-width: 0; padding: 1.1em; border: 1px solid #d5e6ee; border-radius: 1.3em; background: #fff; box-shadow: 0 1px 2px rgba(11,28,37,0.05); }
+  .hc--a { grid-column: span 5; } .hc--b { grid-column: span 7; } .hc--c { grid-column: span 7; } .hc--d { grid-column: span 5; }
+  .hc__lbl, .hc__note { margin: 0; color: var(--e-mut); font-size: 0.82em; }
+  .hc__num { display: flex; align-items: baseline; gap: 0.5em; margin: 0.35em 0 0.2em; font-size: 2em; font-weight: 600; letter-spacing: -0.035em; line-height: 1; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .hc__delta { color: #0f9d63; font-size: 0.6em; font-style: normal; font-weight: 700; }
+  .hc__chart { position: relative; flex: 1; min-height: 9.5em; margin-top: 0.8em; overflow: hidden; border: 1px solid #d5e6ee; border-radius: 1em; background: rgba(227,240,246,0.45); }
+  .hc__chart svg, .hc__radar svg { display: block; }
+  .hc__legend { display: flex; flex-wrap: wrap; gap: 0.3em 0.9em; margin: 0; color: var(--e-mut); font-size: 0.78em; }
+  .hc__legend span { display: inline-flex; align-items: center; gap: 0.35em; }
+  .hc__legend i { width: 0.9em; height: 0.15em; border-radius: 0.1em; }
+  .hc__top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5em; margin-bottom: 0.7em; }
+  .hc__title { margin: 0; font-size: 1em; font-weight: 700; letter-spacing: -0.02em; }
+  .hc__top small { color: var(--e-mut); font-size: 0.78em; }
+  .hc__tm { position: relative; flex: 1; min-height: 15em; }
+  .hc__radar { display: grid; flex: 1; place-items: center; min-height: 15em; }
+  .hd-tile { position: absolute; left: 50%; top: 50%; width: 0; height: 0; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 0.6em 0.7em; border-radius: 0.8em; transition: left 0.7s cubic-bezier(.2,.9,.25,1), top 0.7s cubic-bezier(.2,.9,.25,1), width 0.7s cubic-bezier(.2,.9,.25,1), height 0.7s cubic-bezier(.2,.9,.25,1), filter 0.2s ease; }
+  .hd-tile:hover { filter: brightness(1.08); }
+  .hd-tile__n { display: flex; align-items: center; gap: 0.4em; font-size: 0.7em; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  .hd-tile__n i { flex: none; width: 0.9em; height: 0.9em; border-radius: 0.28em; background: currentColor; opacity: 0.9; }
+  .hd-tile__n span { overflow: hidden; text-overflow: ellipsis; }
+  .hd-tile__v { display: flex; align-items: flex-end; justify-content: space-between; gap: 0.3em; }
+  .hd-tile__v b { font-weight: 500; line-height: 0.95; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .hd-tile__v em { padding: 0.18em 0.35em; border-radius: 0.35em; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.66em; font-style: normal; font-weight: 500; }
+  @media (prefers-reduced-motion: reduce) { .hd-tile { transition: none; } }
   @container erpc (max-width: 46rem) {
-    .hd__h { font-size: 1.55em; } .hd__status { display: none; }
-    .hd__kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .hd__kpi strong { font-size: 1.45em; }
-    .hd__grid { grid-template-columns: 1fr; }
-    .hd__chart { min-height: 7em; }
-    .hd__ledger { min-height: 0; }
-    .hd__time, .hd__step span { display: none; }
-    .hd__row { grid-template-columns: minmax(0, 1fr) auto; }
+    .hd__h { font-size: 1.45em; } .hd__status { display: none; }
+    .hc--a, .hc--c { grid-column: 1 / -1; } .hc--b, .hc--d { display: none; }
+    .hc__num { font-size: 1.7em; }
+    .hc__tm { min-height: 12em; }
   }
 }
+</style>
+<style data-8b-part="hero-tip">
+.hd-tip { position: fixed; z-index: 90; left: 0; top: 0; padding: 0.5rem 0.625rem; border: 0.0625rem solid #d5e6ee; border-radius: 0.75rem; background: rgba(255,255,255,0.96); color: #0b1c25; font-size: 0.75rem; box-shadow: 0 0.5rem 1.5rem rgba(11,28,37,0.2); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
+.hd-tip.is-on { opacity: 1; }
+.hd-tip__t { margin-bottom: 0.25rem; color: #5b7482; }
+.hd-tip__r { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.hd-tip__r span { display: inline-flex; align-items: center; gap: 0.375rem; color: #5b7482; }
+.hd-tip__r i { width: 0.5rem; height: 0.5rem; border-radius: 0.125rem; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://autix.pro/#org","name":"Autix","url":"https://autix.pro/","logo":{"@type":"ImageObject","url":"https://autix.pro/logo-autix.png","width":1000,"height":200},"image":"https://autix.pro/og.jpg","description":"Autix diseña y construye sistemas a medida, webs inteligentes y automatizaciones para cualquier negocio.","contactPoint":[{"@type":"ContactPoint","contactType":"ventas","telephone":"+56992103974","availableLanguage":"es","areaServed":"CL"}]},{"@type":"WebSite","@id":"https://autix.pro/#website","url":"https://autix.pro/","name":"Autix","inLanguage":"es-CL","publisher":{"@id":"https://autix.pro/#org"}},{"@type":"ProfessionalService","@id":"https://autix.pro/#service","name":"Autix","url":"https://autix.pro/","image":"https://autix.pro/og.jpg","telephone":"+56992103974","areaServed":{"@type":"Country","name":"Chile"},"parentOrganization":{"@id":"https://autix.pro/#org"},"serviceType":["Desarrollo de sistemas a medida","Webs inteligentes","Automatización de procesos","Asistentes de IA"],"knowsAbout":["Software a medida","Sistemas de gestión","ERP","Punto de venta","Agenda y reservas","Inventario","Automatización"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de Autix","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistemas a medida","description":"Software de gestión construido alrededor de los procesos de cada negocio: ventas, agenda, inventario, clientes, cobros y reportes.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Webs inteligentes","description":"Sitios web conectados al sistema del negocio: reservas, catálogo y pagos online.","provider":{"@id":"https://autix.pro/#org"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatizaciones y asistentes de IA","description":"Asistentes opcionales que atienden clientes o permiten al equipo consultar y registrar desde el chat.","provider":{"@id":"https://autix.pro/#org"}}}]}},{"@type":"ItemList","name":"Sistemas hechos por Autix","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"velOS","description":"ERP operativo: producción, inventario, ventas, reparto y cobranza conectados en una sola plataforma.","url":"https://velos.autix.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Merka POS","description":"Punto de venta: ventas por peso o unidad, inventario, crédito, caja y rentabilidad.","url":"https://merkapos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"AgendaOS","description":"Reservas y servicios: profesionales, disponibilidad, caja y confirmaciones automáticas.","url":"https://agendaos.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Holu","description":"Sistema para restaurantes: menú QR, pedidos, cocina, caja y delivery en tiempo real.","url":"https://holu.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Métrikas","description":"Gestión de academias de fútbol: jugadores, asistencia, evaluaciones y pagos.","url":"https://metrikas.pro/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Goat League","description":"Sistema para torneos con portal público: equipos, fixtures, resultados, posiciones y pagos.","url":"https://goatleague2026.vercel.app/","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://autix.pro/#org"}}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un sistema a medida y en qué se diferencia de un software normal?","acceptedAnswer":{"@type":"Answer","text":"Un software normal te da funciones fijas y eres tú quien adapta su forma de trabajar. Un sistema a medida se construye después de entender cómo opera tu negocio: tus procesos, tu vocabulario y tus reglas. Incluye solo los módulos que usas, se conecta con cómo trabaja tu equipo hoy y evoluciona cuando tu negocio cambia."}},{"@type":"Question","name":"¿Sirve para mi tipo de negocio?","acceptedAnswer":{"@type":"Answer","text":"Sí. No partimos de un molde por rubro, partimos de cómo funciona tu negocio. Podemos construir sistemas para una tienda de mascotas, una heladería, un estudio jurídico, una clínica, un restaurante, una distribuidora o cualquier negocio que hoy lleve sus procesos en planillas, cuadernos o varios programas que no se hablan. Si tu rubro no está en esa lista, también."}},{"@type":"Question","name":"¿Qué puede incluir mi sistema?","acceptedAnswer":{"@type":"Answer","text":"Lo que tu operación necesite. Algunos de los bloques con los que trabajamos: Ventas y caja: punto de venta, pedidos y boletas Agenda y reservas: citas, profesionales y recordatorios Inventario: stock en tiempo real con alertas Clientes: ficha, historial y crédito asignado Cobros y pagos: deudas, abonos y vencimientos Logística y producción: rutas, entregas, lotes y costos Reportes: cierre del día y estado del mes, sin planillas"}},{"@type":"Question","name":"¿Solo hacen sistemas o también webs?","acceptedAnswer":{"@type":"Answer","text":"Hacemos sistemas completos, webs inteligentes conectadas a tu sistema (reservas, catálogo o pagos online) y automatizaciones. Eliges qué necesitas: no es un paquete cerrado."}},{"@type":"Question","name":"¿Tengo que usar agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"No. Los asistentes de IA son un módulo opcional. Algunos negocios prefieren un sistema simple; otros suman un asistente que atiende clientes por WhatsApp o que opera el sistema desde Telegram. Lo decidimos según lo que tu negocio necesite, no al revés."}},{"@type":"Question","name":"¿Qué sistemas de Autix ya están funcionando?","acceptedAnswer":{"@type":"Answer","text":"Son sistemas hechos por Autix que ya están en uso: velOS (producción, inventario, ventas, reparto y cobranza), Merka POS (punto de venta), AgendaOS (reservas y servicios), Holu (restaurantes), Métrikas (academias de fútbol) y Goat League (torneos con portal público). Puedes abrirlos y ver cómo se ven por dentro. El tuyo se construye según cómo trabaja tu negocio."}},{"@type":"Question","name":"¿Cuánto tiempo toma implementar velOS en mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, y, si los quieres, la configuración de asistentes de IA. Cada implementación tiene un alcance distinto porque cada empresa es distinta — te damos un plazo concreto después de conocer tu operación."}},{"@type":"Question","name":"¿Necesito cambiar cómo trabaja mi equipo para usar velOS?","acceptedAnswer":{"@type":"Answer","text":"No. La idea de construirlo a medida es exactamente lo contrario: el sistema se adapta a tus procesos actuales, no al revés. Si hoy tu conductor recibe la ruta por WhatsApp, seguirá siendo así, solo que ahora la información sale directamente del sistema. Si tu vendedor usa un lenguaje particular para describir un pedido, el sistema lo habla igual, porque se configura con ese lenguaje. Cada usuario ve solo lo que le corresponde según su rol — administración, ventas, conducción o producción — así que la curva de aprendizaje es mínima para cada persona."}},{"@type":"Question","name":"¿Qué pasa después de que el sistema esté funcionando? ¿Hay soporte?","acceptedAnswer":{"@type":"Answer","text":"Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta — porque fue construido pensando en que tu negocio no se queda quieto."}},{"@type":"Question","name":"¿Dónde vive la información? ¿Es seguro tener todo mi negocio en un solo sistema?","acceptedAnswer":{"@type":"Answer","text":"Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol — cada usuario solo ve lo que su función necesita. El acceso al sistema queda restringido a las personas que tú autorices."}},{"@type":"Question","name":"¿Cumple con la Ley 21.719 de protección de datos personales?","acceptedAnswer":{"@type":"Answer","text":"Cada sistema se diseña considerando las obligaciones de la Ley 21.719, que entra en vigencia el 1 de diciembre de 2026 y crea la Agencia de Protección de Datos Personales (APDP). Esto incluye consentimiento y base de licitud para cada tratamiento, capacidad de responder los derechos ARCOP del titular (acceso, rectificación, cancelación, oposición y portabilidad), minimización de datos, medidas de seguridad y registro de actividades de tratamiento. Autix acompaña a cada cliente en la adecuación de su operación antes de esa fecha. De todos modos, el cumplimiento normativo también depende de cómo tu empresa opera: recomendamos validarlo con un abogado especialista."}}]}]}</script>
 </head>
@@ -1178,16 +1075,26 @@
           <div><div class="hd__brand"><img src="logo-velos.png" width="360" height="202" alt="" aria-hidden="true"><span>velOS</span></div><div class="hd__h" id="erp-title"></div><p class="hd__sub" id="erp-sub"></p></div>
           <span class="hd__status" id="erp-status"></span>
         </div>
-        <div class="hd__kpis" id="erp-metrics" aria-label="Indicadores"></div>
         <div class="hd__grid">
-          <section class="hc hc--flow" aria-label="Recorrido conectado">
-            <div class="hc__head"><b>Operación enlazada</b><small>Cada módulo alimenta al siguiente</small></div>
-            <ol class="hd__steps" id="erp-steps"></ol>
-            <div class="hd__chart" id="erp-chart" role="img" aria-label="Actividad del día"><span class="hd__chartlbl">Actividad del día</span></div>
+          <section class="hc hc--a" aria-label="Indicador principal">
+            <p class="hc__lbl" id="hdAl"></p>
+            <p class="hc__num"><span id="hdAn"></span><i class="hc__delta">&#8593;</i></p>
+            <p class="hc__note" id="hdAs"></p>
+            <div class="hc__chart" id="hdA" role="img" aria-label="Actividad del día"></div>
           </section>
-          <section class="hc hc--feed" aria-label="Movimientos conectados">
-            <div class="hc__head"><b>Movimientos conectados</b><small>Todas las áreas</small></div>
-            <div class="hd__ledger" id="erp-ledger" aria-live="polite"></div>
+          <section class="hc hc--b" aria-label="Actividad por hora">
+            <p class="hc__lbl" id="hdBl"></p>
+            <p class="hc__num"><span id="hdBn"></span><i class="hc__delta">&#8593;</i></p>
+            <p class="hc__legend" id="hdBg"></p>
+            <div class="hc__chart" id="hdB" role="img" aria-label="Actividad por hora"></div>
+          </section>
+          <section class="hc hc--c" aria-label="Actividad por módulo">
+            <div class="hc__top"><h3 class="hc__title">Por módulo</h3><small id="hdCs"></small></div>
+            <div class="hc__tm" id="hdC" role="img" aria-label="Actividad por módulo"></div>
+          </section>
+          <section class="hc hc--d" aria-label="Estacionalidad">
+            <div class="hc__top"><h3 class="hc__title">Estacionalidad</h3><small id="hdDs"></small></div>
+            <div class="hc__radar" id="hdD" role="img" aria-label="Ventas por mes"></div>
           </section>
         </div>
         <footer class="erp__foot2"><p id="erp-note"></p><div class="erp__actions"><button class="erp__btn" id="erp-reset" type="button">Reiniciar</button><button class="erp__btn erp__btn--primary" id="erp-run" type="button">Ver recorrido →</button></div></footer>
@@ -1362,56 +1269,6 @@
     <ul class="modulos__grid"><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><h3 class="m-text-5">Ventas y caja</h3><p class="m-text-7">Punto de venta, pedidos y boletas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3 class="m-text-5">Agenda y reservas</h3><p class="m-text-7">Citas, profesionales y recordatorios</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><h3 class="m-text-5">Inventario</h3><p class="m-text-7">Stock en tiempo real con alertas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h3 class="m-text-5">Clientes y fichas</h3><p class="m-text-7">Historial, notas y crédito</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><h3 class="m-text-5">Cobros y deudas</h3><p class="m-text-7">Abonos, vencimientos y caja</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg><h3 class="m-text-5">Compras y proveedores</h3><p class="m-text-7">Órdenes y cuentas por pagar</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h3 class="m-text-5">Reparto y rutas</h3><p class="m-text-7">Entregas y seguimiento por conductor</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><h3 class="m-text-5">Producción</h3><p class="m-text-7">Lotes, recetas y costo real</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><h3 class="m-text-5">Reportes y cierre</h3><p class="m-text-7">El estado del día y del mes</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><h3 class="m-text-5">Usuarios y permisos</h3><p class="m-text-7">Cada quien ve lo que le corresponde</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><h3 class="m-text-5">Web inteligente</h3><p class="m-text-7">Tu sitio conectado al sistema</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg><h3 class="m-text-5">Asistentes de IA</h3><p class="m-text-7">Opcionales: WhatsApp o Telegram</p></li></ul>
   </div>
 </section>
-
-<section class="pnl on-dark" id="panel" data-8b-section="dashboard" aria-labelledby="panel-title">
-  <div class="pnl__sheet m-band-4" aria-hidden="true"></div>
-  <div class="pnl__inner l-wrap">
-    <div class="pnl__head">
-      <p class="pnl__kicker m-text-6">Tu negocio en números</p>
-      <h2 class="m-text-3" id="panel-title" data-8b-motion="captionIn">Cada venta, pedido y cobro, medido sin armar reportes.</h2>
-      <p class="m-text-4">Un panel hecho a tu medida: lo que importa de tu operación, actualizado mientras trabajas. Pasa el cursor por encima para explorarlo.</p>
-    </div>
-    <div class="pnl__stage">
-      <div class="pnl__tilt">
-        <div class="pnl__win">
-          <div class="pnl__bar">
-            <span class="pnl__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="pnl__url">tu-negocio.autix.pro</span>
-            <span class="pnl__tag">Datos ilustrativos</span>
-          </div>
-          <div class="pnl__screen">
-            <div class="pnl__grid">
-              <section class="pc pc--a" aria-label="Ventas del mes">
-                <p class="pc__lbl">Ventas del mes</p>
-                <p class="pc__num"><span id="pnlAn">$18.420.000</span><span class="pc__delta">&#8593; 8,2%</span></p>
-                <p class="pc__note">Ticket promedio $24.800 · últimos 30 días</p>
-                <div class="pc__chart" id="pnlA"></div>
-              </section>
-              <section class="pc pc--b" aria-label="Pedidos por hora">
-                <p class="pc__lbl">Pedidos</p>
-                <p class="pc__num"><span id="pnlBn">3.482</span><span class="pc__delta">&#8593; 12,4%</span></p>
-                <p class="pc__note">Por hora, últimas 3 semanas</p>
-                <p class="pc__legend"><span><i style="background:linear-gradient(90deg,#2fc7e4,#0e7a96)"></i>Mostrador</span><span><i style="background:linear-gradient(90deg,#8b6cff,#4b2fd0)"></i>WhatsApp</span><span><i class="pc__prior"></i>Semanas anteriores</span></p>
-                <div class="pc__chart" id="pnlB"></div>
-              </section>
-              <section class="pc pc--c" aria-label="Ventas por área">
-                <div class="pc__top"><h3 class="pc__title">Ventas por área</h3><p class="pc__legend" id="pnlCl"></p></div>
-                <div class="pc__periods" id="pnlPer" role="group" aria-label="Periodo"></div>
-                <div class="pc__tm" id="pnlC" role="img" aria-label="Ventas por área del negocio"></div>
-              </section>
-              <section class="pc pc--d" aria-label="Estacionalidad">
-                <div class="pc__top"><h3 class="pc__title">Estacionalidad</h3><div class="pc__seg" id="pnlYear" role="group" aria-label="Año"></div></div>
-                <div class="pc__radar" id="pnlD"></div>
-                <div class="pc__stats" id="pnlDs"></div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="caso on-dark" id="caso" data-8b-section="case-video" aria-labelledby="caso-title">
   <div class="caso__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
@@ -1807,290 +1664,6 @@
   });
 })();
 </script>
-<script data-8b-part="section-script:panel">
-(function () {
-  var root = document.getElementById('panel');
-  if (!root || !('IntersectionObserver' in window) || !window.ResizeObserver) return;
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var q = function (s) { return root.querySelector(s); };
-  var fmt = function (n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
-  var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
-  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
-  var started = false, vis = false, t0 = 0;
-  root.classList.add('pnl--js');
-
-  /* ---------- utilidades ---------- */
-  function smooth(P) {
-    var n = P.length, d = 'M' + P[0][0] + ',' + P[0][1], g = function (i) { return P[clamp(i, 0, n - 1)]; };
-    for (var i = 0; i < n - 1; i++) {
-      var a = g(i - 1), b = g(i), c = g(i + 1), e = g(i + 2), k = 0.18;
-      d += 'C' + (b[0] + (c[0] - a[0]) * k) + ',' + (b[1] + (c[1] - a[1]) * k) + ' ' + (c[0] - (e[0] - b[0]) * k) + ',' + (c[1] - (e[1] - b[1]) * k) + ' ' + c[0] + ',' + c[1];
-    }
-    return d;
-  }
-  function sized(el, cb) {
-    new ResizeObserver(function () { var w = Math.round(el.clientWidth), h = Math.round(el.clientHeight); if (w && h) cb(w, h); }).observe(el);
-  }
-  function countTo(el, to, prefix, dur) {
-    cancelAnimationFrame(el._r);
-    var from = el._v || 0, t = performance.now();
-    el._v = to;
-    if (reduce) { el.textContent = prefix + fmt(to); return; }
-    (function f(now) {
-      var k = Math.min(1, (now - t) / (dur || 1100));
-      el.textContent = prefix + fmt(from + (to - from) * ease(k));
-      if (k < 1) el._r = requestAnimationFrame(f);
-    })(t);
-  }
-  var tip = document.createElement('div');
-  tip.className = 'pnl-tip'; tip.setAttribute('role', 'tooltip'); document.body.appendChild(tip);
-  function showTip(x, y, title, rows) {
-    tip.innerHTML = '<div class="pnl-tip__t">' + title + '</div>' + rows.map(function (r) {
-      return '<div class="pnl-tip__r"><span>' + (r[2] ? '<i style="background:' + r[2] + '"></i>' : '') + r[0] + '</span><b>' + r[1] + '</b></div>';
-    }).join('');
-    tip.classList.add('is-on');
-    var b = tip.getBoundingClientRect(), l = x + 14, t = y - b.height - 12;
-    if (l + b.width > innerWidth - 8) l = x - b.width - 14;
-    if (t < 8) t = y + 16;
-    tip.style.transform = 'translate(' + l + 'px,' + t + 'px)';
-  }
-  function hideTip() { tip.classList.remove('is-on'); }
-  var svgOpen = function (w, h, label) { return '<svg width="' + w + '" height="' + h + '" role="img" aria-label="' + label + '">'; };
-
-  /* ---------- A: ventas (línea) ---------- */
-  var REV = [612, 640, 598, 655, 702, 688, 540, 575, 630, 664, 701, 718, 690, 560, 588, 645, 672, 710, 735, 748, 702, 590, 612, 668, 705, 742, 760, 781, 770, 804].map(function (k) { return k * 1000; });
-  var elA = q('#pnlA');
-  sized(elA, function (w, h) {
-    var lo = Math.min.apply(0, REV), hi = Math.max.apply(0, REV), span = hi - lo, mn = lo - span * 0.45, mx = hi + span * 0.08, top = 26, bot = 12;
-    var Y = function (v) { return top + (1 - (v - mn) / (mx - mn)) * (h - top - bot); };
-    var X = function (i) { return 12 + i / (REV.length - 1) * (w - 56); };
-    var P = REV.map(function (v, i) { return [X(i), Y(v)]; }), d = smooth(P), last = P[P.length - 1], ticks = '';
-    [600000, 700000, 800000].forEach(function (v) {
-      ticks += '<line x1="0" x2="' + w + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="#d5e6ee"/><text x="' + (w - 8) + '" y="' + (Y(v) - 5) + '" text-anchor="end" font-size="10" fill="#5b7482">' + (v / 1000) + 'K</text>';
-    });
-    elA.innerHTML = svgOpen(w, h, 'Ventas diarias de los últimos 30 días, de $612.000 a $804.000') +
-      '<defs><linearGradient id="pnlAl" x1="0" x2="1"><stop offset="0" stop-color="#2fc7e4"/><stop offset="1" stop-color="#0e7a96"/></linearGradient><linearGradient id="pnlAa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0e7a96" stop-opacity=".2"/><stop offset="1" stop-color="#0e7a96" stop-opacity="0"/></linearGradient></defs>' +
-      ticks + '<path d="' + d + 'L' + last[0] + ',' + h + 'L' + P[0][0] + ',' + h + 'Z" fill="url(#pnlAa)"/>' +
-      '<path class="pnl-line" pathLength="1" d="' + d + '" fill="none" stroke="url(#pnlAl)" stroke-width="2.5" stroke-linecap="round"/>' +
-      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2"/>' +
-      '<line id="pnlAx" y1="0" y2="' + h + '" stroke="#9bb2bf" visibility="hidden"/><circle id="pnlAc" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2" visibility="hidden"/>' +
-      '<rect width="' + w + '" height="' + h + '" fill="transparent"/></svg>';
-    var hit = elA.querySelector('rect'), ax = elA.querySelector('#pnlAx'), ac = elA.querySelector('#pnlAc');
-    hit.addEventListener('pointermove', function (e) {
-      var r = elA.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 12) / (w - 56) * (REV.length - 1)), 0, REV.length - 1);
-      ax.setAttribute('x1', P[i][0]); ax.setAttribute('x2', P[i][0]); ac.setAttribute('cx', P[i][0]); ac.setAttribute('cy', P[i][1]);
-      ax.setAttribute('visibility', 'visible'); ac.setAttribute('visibility', 'visible');
-      showTip(r.left + P[i][0], r.top + P[i][1], 'Octubre · día ' + (i + 1), [['Ventas', '$' + fmt(REV[i]), '#0e7a96']]);
-    });
-    hit.addEventListener('pointerleave', function () { ax.setAttribute('visibility', 'hidden'); ac.setAttribute('visibility', 'hidden'); hideTip(); });
-  });
-
-  /* ---------- B: pedidos por hora (ondas) ---------- */
-  var bell = function (x, m, s) { return Math.exp(-Math.pow((x - m) / s, 2) / 2); };
-  var HRS = []; for (var hh = 0; hh <= 24; hh++) HRS.push(hh);
-  var MOS = [0, 1, 2].map(function (w) { return HRS.map(function (h) { return Math.round(2400 * (1 - w * 0.16) * (bell(h, 13 - w * 0.6, 3.4) * 0.92 + bell(h, 20, 2.2) * 0.18)); }); });
-  var WAP = [0, 1, 2].map(function (w) { return HRS.map(function (h) { return Math.round(2600 * (1 - w * 0.18) * (bell(h, 20.5 - w * 0.4, 3) * 0.95 + bell(h, 8, 1.8) * 0.2)); }); });
-  var MAXB = Math.max.apply(0, MOS.concat(WAP).reduce(function (a, b) { return a.concat(b); }));
-  var elB = q('#pnlB'), Bs = { w: 0, h: 0, paths: [], on: false };
-  var SETS = []; MOS.forEach(function (a, k) { SETS.push({ a: a, dir: -1, k: k, g: 'd' }); }); WAP.forEach(function (a, k) { SETS.push({ a: a, dir: 1, k: k, g: 'm' }); });
-  var BX = function (i) { return 24 + i / 24 * (Bs.w - 48); };
-  function stepB(t) {
-    var grow = reduce ? 1 : ease(Math.min(1, t / 1.3)), mid = Bs.h / 2, amp = Bs.h / 2 - 14;
-    SETS.forEach(function (s, j) {
-      var br = reduce ? 1 : 1 + Math.sin(t * 1.2 + s.k * 0.9) * 0.035;
-      Bs.paths[j].setAttribute('d', smooth(s.a.map(function (v, i) { return [BX(i), mid + s.dir * (3 + v / MAXB * amp * grow * br)]; })));
-    });
-  }
-  function loopB(now) {
-    if (!vis || reduce) { Bs.on = false; return; }
-    stepB((now - t0) / 1000); requestAnimationFrame(loopB);
-  }
-  function kickB() { if (started && vis && !reduce && !Bs.on) { Bs.on = true; requestAnimationFrame(loopB); } }
-  sized(elB, function (w, h) {
-    Bs.w = w; Bs.h = h;
-    var ps = '';
-    SETS.forEach(function (s) { ps += '<path class="pnl-w" fill="none" stroke="url(#pnlB' + s.g + ')" stroke-width="' + (s.k ? 1.6 : 2.5) + '" stroke-linecap="round" opacity="' + (s.k === 0 ? 1 : s.k === 1 ? 0.55 : 0.3) + '"/>'; });
-    elB.innerHTML = svgOpen(w, h, 'Pedidos por hora: mostrador y WhatsApp') +
-      '<defs><linearGradient id="pnlBd"><stop offset=".1" stop-color="#2fc7e4"/><stop offset=".9" stop-color="#0e7a96"/></linearGradient><linearGradient id="pnlBm"><stop offset=".15" stop-color="#8b6cff"/><stop offset=".85" stop-color="#4b2fd0"/></linearGradient></defs>' +
-      '<line x1="24" x2="' + (w - 24) + '" y1="' + h / 2 + '" y2="' + h / 2 + '" stroke="#d5e6ee"/>' + ps +
-      '<line id="pnlBx" y1="4" y2="' + (h - 4) + '" stroke="#9bb2bf" visibility="hidden"/><rect width="' + w + '" height="' + h + '" fill="transparent"/></svg>';
-    Bs.paths = [].slice.call(elB.querySelectorAll('path.pnl-w'));
-    stepB(started ? (performance.now() - t0) / 1000 : 0);
-    var hit = elB.querySelector('rect'), bx = elB.querySelector('#pnlBx');
-    hit.addEventListener('pointermove', function (e) {
-      var r = elB.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 24) / (w - 48) * 24), 0, 24);
-      bx.setAttribute('x1', BX(i)); bx.setAttribute('x2', BX(i)); bx.setAttribute('visibility', 'visible');
-      showTip(r.left + BX(i), r.top + 12, ('0' + (i % 24)).slice(-2) + ':00 · esta semana', [['Mostrador', fmt(MOS[0][i]), '#2fc7e4'], ['WhatsApp', fmt(WAP[0][i]), '#4b2fd0']]);
-    });
-    hit.addEventListener('pointerleave', function () { bx.setAttribute('visibility', 'hidden'); hideTip(); });
-    kickB();
-  });
-
-  /* ---------- C: ventas por área (treemap) ---------- */
-  var GR = {
-    prod: { n: 'Producción', c: '#1f7a92', ink: '#fff' }, rep: { n: 'Reparto', c: '#2fc7e4', ink: '#0b1c25' }, cob: { n: 'Cobranza', c: '#ff9559', ink: '#0b1c25' },
-    age: { n: 'Agenda', c: '#8b6cff', ink: '#fff' }, otr: { n: 'Otros', c: '#b9c7d0', ink: '#0b1c25' }
-  };
-  var PER = [
-    { l: 'Semanal', t: 4380000, d: '9,6%', c: 'vs $3.996.000 semana anterior' },
-    { l: 'Mensual', t: 18420000, d: '8,2%', c: 'vs $17.020.000 mes anterior' },
-    { l: 'Anual', t: 201300000, d: '22%', c: 'vs $165.000.000 año anterior' }
-  ];
-  var ITEMS = [
-    ['Venta mayorista', 'prod', [1480000, 6200000, 68000000]], ['Producción', 'prod', [820000, 3300000, 36000000]],
-    ['Reparto norte', 'rep', [640000, 2700000, 29000000]], ['Reparto sur', 'rep', [510000, 2150000, 24500000]],
-    ['Cobranza', 'cob', [430000, 1850000, 20400000]], ['Fiado', 'cob', [190000, 820000, 9100000]],
-    ['Reservas', 'age', [210000, 900000, 9800000]], ['Servicios', 'age', [90000, 380000, 4300000]], ['Mostrador', 'otr', [160000, 690000, 7600000]]
-  ];
-  q('#pnlCl').innerHTML = Object.keys(GR).map(function (k) { return '<span><i class="sq" style="background:' + GR[k].c + '"></i>' + GR[k].n + '</span>'; }).join('');
-  var per = 1, elC = q('#pnlC'), tiles = {}, elPer = q('#pnlPer');
-  PER.forEach(function (p, i) {
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'pc__per'; b.dataset.i = i;
-    b.innerHTML = '<b>' + p.l + '</b><strong></strong><small>' + p.c + '</small>';
-    b.addEventListener('click', function () { per = i; syncPer(); layoutC(); });
-    elPer.appendChild(b);
-  });
-  function syncPer() {
-    [].forEach.call(elPer.children, function (b, i) { b.setAttribute('aria-pressed', i === per); if (started) countTo(b.querySelector('strong'), PER[i].t, '$', 900); });
-  }
-  function squarify(items, x, y, w, h) {
-    var total = items.reduce(function (a, b) { return a + b.v; }, 0) || 1, sc = w * h / total, out = [], rest = items.map(function (i) { return { n: i.n, g: i.g, v: i.v, a: i.v * sc }; });
-    var worst = function (row, len) {
-      var s = row.reduce(function (a, b) { return a + b.a; }, 0), mx = Math.max.apply(0, row.map(function (r) { return r.a; })), mn = Math.min.apply(0, row.map(function (r) { return r.a; }));
-      return Math.max(len * len * mx / (s * s), s * s / (len * len * mn));
-    };
-    while (rest.length) {
-      var len = Math.min(w, h), row = [rest[0]], i = 1;
-      while (i < rest.length && worst(row.concat([rest[i]]), len) <= worst(row, len)) row.push(rest[i++]);
-      rest = rest.slice(i);
-      var s = row.reduce(function (a, b) { return a + b.a; }, 0), k;
-      if (w >= h) { var cw = s / h, cy = y; for (k = 0; k < row.length; k++) { var rh = row[k].a / cw; out.push({ n: row[k].n, g: row[k].g, v: row[k].v, x: x, y: cy, w: cw, h: rh }); cy += rh; } x += cw; w -= cw; }
-      else { var rh2 = s / w, cx = x; for (k = 0; k < row.length; k++) { var rw = row[k].a / rh2; out.push({ n: row[k].n, g: row[k].g, v: row[k].v, x: cx, y: y, w: rw, h: rh2 }); cx += rw; } y += rh2; h -= rh2; }
-    }
-    return out;
-  }
-  ITEMS.forEach(function (it) {
-    var g = GR[it[1]], d = document.createElement('div');
-    d.className = 'pnl-tile'; d.style.background = g.c; d.style.color = g.ink;
-    d.innerHTML = '<div class="pnl-tile__n"><i></i><span>' + it[0] + '</span></div><div class="pnl-tile__v"><b></b><em></em></div>';
-    d.addEventListener('pointermove', function (e) {
-      var v = it[2][per], tot = ITEMS.reduce(function (a, b) { return a + b[2][per]; }, 0);
-      showTip(e.clientX, e.clientY, PER[per].l + ' · ' + g.n, [[it[0], '$' + fmt(v), g.c], ['Participación', (v / tot * 100).toFixed(1).replace('.', ',') + '%']]);
-    });
-    d.addEventListener('pointerleave', hideTip);
-    tiles[it[0]] = d; elC.appendChild(d);
-  });
-  function layoutC() {
-    var W = elC.clientWidth, H = elC.clientHeight, G = 6;
-    if (!started || !W || !H) return;
-    var arr = ITEMS.map(function (it) { return { n: it[0], g: it[1], v: it[2][per] }; }).sort(function (a, b) { return b.v - a.v; });
-    var total = arr.reduce(function (a, b) { return a + b.v; }, 0) || 1;
-    squarify(arr, 0, 0, W + G, H + G).forEach(function (r) {
-      var d = tiles[r.n], w = r.w - G, h = r.h - G, chars = fmt(r.v).length + 1, fs = Math.min(26, (w - 24 - 54) / (chars * 0.6)), pct = true;
-      if (fs < 15) { pct = false; fs = Math.min(26, (w - 24) / (chars * 0.6)); }
-      var tiny = fs < 11 || h < 54 || w < 60;
-      d.style.left = r.x + 'px'; d.style.top = r.y + 'px'; d.style.width = w + 'px'; d.style.height = h + 'px';
-      d.querySelector('.pnl-tile__n span').style.display = (h >= 78 && w >= 96) ? '' : 'none';
-      var v = d.querySelector('.pnl-tile__v'), b = v.querySelector('b'), em = v.querySelector('em');
-      v.style.display = tiny ? 'none' : ''; b.style.fontSize = fs + 'px'; em.style.display = pct ? '' : 'none';
-      em.textContent = (r.v / total * 100).toFixed(1).replace('.', ',') + '%';
-      countTo(b, r.v, '$', 800);
-    });
-  }
-  sized(elC, layoutC);
-
-  /* ---------- D: estacionalidad (radar) ---------- */
-  var MES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-  var YRS = [
-    { l: '2026', v: [16120, 20540, 24440, 18460, 28080, 21580, 17160, 25740, 30160, 22880, 32240, 23660],
-      s: [['Promedio mensual', 16775000, '19,6%', '4.221 pedidos'], ['Total del año', 201300000, '22%', '50.652 pedidos']], r: [['Local 1', '$98.200.000'], ['Local 2', '$64.700.000'], ['Local 3', '$38.400.000']] },
-    { l: '2025', v: [13260, 16640, 18720, 22360, 20020, 15860, 14560, 19240, 23920, 26260, 23140, 19760],
-      s: [['Promedio mensual', 13750000, '8,1%', '3.890 pedidos'], ['Total del año', 165000000, '4,4%', '46.680 pedidos']], r: [['Local 1', '$81.000.000'], ['Local 2', '$52.400.000'], ['Local 3', '$31.600.000']] }
-  ];
-  var yr = 0, elD = q('#pnlD'), elDs = q('#pnlDs'), elY = q('#pnlYear'), Ds = { S: 0, line: null, cur: null, raf: 0 };
-  var NN = 12, RAD = '#0e9fbd';
-  YRS.forEach(function (y, i) {
-    var b = document.createElement('button'); b.type = 'button'; b.textContent = y.l;
-    b.addEventListener('click', function () { yr = i; syncYear(); morphD(); });
-    elY.appendChild(b);
-  });
-  function norm(v) { var lo = Math.min.apply(0, v), hi = Math.max.apply(0, v); return v.map(function (x) { return 0.42 + (x - lo) / (hi - lo || 1) * 0.58; }); }
-  function fit(v) {
-    var K = 5, co = [];
-    for (var k = 0; k <= K; k++) {
-      var a = 0, b = 0;
-      v.forEach(function (x, i) { var th = i / NN * Math.PI * 2; a += x * Math.cos(k * th); b += x * Math.sin(k * th); });
-      co.push([a * (k ? 2 : 1) / NN, b * (k ? 2 : 1) / NN]);
-    }
-    return function (th) { return co.reduce(function (r, c, k) { return r + c[0] * Math.cos(k * th) + c[1] * Math.sin(k * th); }, 0); };
-  }
-  function atD(f, th) { var S = Ds.S, R = S / 2 - 34, C = S / 2, v = Math.max(0.05, f(th)), a = -Math.PI / 2 + th; return [C + Math.cos(a) * (R * 0.2 + v * R * 0.8), C + Math.sin(a) * (R * 0.2 + v * R * 0.8)]; }
-  function shapeD(v) { var f = fit(norm(v)), d = ''; for (var j = 0; j <= 180; j++) { var p = atD(f, j / 180 * Math.PI * 2); d += (j ? 'L' : 'M') + p[0].toFixed(2) + ',' + p[1].toFixed(2); } return d + 'Z'; }
-  function morphD() {
-    if (!Ds.line) return;
-    cancelAnimationFrame(Ds.raf);
-    var from = Ds.cur || YRS[yr].v.map(function () { return 1; }), to = YRS[yr].v, t1 = performance.now();
-    (function step(now) {
-      var t = reduce ? 1 : ease(Math.min(1, (now - t1) / 900));
-      Ds.cur = from.map(function (v, i) { return v + (to[i] - v) * t; });
-      Ds.line.setAttribute('d', shapeD(Ds.cur));
-      if (t < 1) Ds.raf = requestAnimationFrame(step);
-    })(t1);
-  }
-  function syncYear() {
-    [].forEach.call(elY.children, function (b, i) { b.setAttribute('aria-pressed', i === yr); });
-    var y = YRS[yr];
-    if (!elDs.children.length) {
-      elDs.innerHTML = y.s.map(function () { return '<p><span></span><strong></strong><small></small></p>'; }).join('') + '<div class="pc__rows"></div>';
-    }
-    [].forEach.call(elDs.querySelectorAll('p'), function (p, i) {
-      p.querySelector('span').textContent = y.s[i][0];
-      p.querySelector('small').innerHTML = '<span style="color:#0f9d63;font-weight:600">&#8593; ' + y.s[i][2] + '</span> ' + y.s[i][3];
-      if (started) countTo(p.querySelector('strong'), y.s[i][1], '$', 1000); else p.querySelector('strong').textContent = '$' + fmt(y.s[i][1]);
-    });
-    elDs.querySelector('.pc__rows').innerHTML = y.r.map(function (r) { return '<div><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join('');
-  }
-  new ResizeObserver(function () { var w = Math.round(elD.clientWidth); if (w) drawD(w); }).observe(elD);
-  function drawD(w) {
-    var S = Math.min(w, 380), R = S / 2 - 34, C = S / 2, g = '', ax = '';
-    Ds.S = S;
-    [0.33, 0.66, 1].forEach(function (k) { g += '<circle cx="' + C + '" cy="' + C + '" r="' + R * k + '" fill="none" stroke="#d5e6ee"/>'; });
-    MES.forEach(function (m, i) {
-      var a = -Math.PI / 2 + i / NN * Math.PI * 2;
-      ax += '<line x1="' + (C + Math.cos(a) * R * 0.2) + '" y1="' + (C + Math.sin(a) * R * 0.2) + '" x2="' + (C + Math.cos(a) * R) + '" y2="' + (C + Math.sin(a) * R) + '" stroke="#d5e6ee"/><text x="' + (C + Math.cos(a) * (R + 18)) + '" y="' + (C + Math.sin(a) * (R + 18)) + '" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#5b7482">' + m + '</text>';
-    });
-    elD.innerHTML = svgOpen(S, S, 'Ventas por mes') + g + ax + '<path id="pnlDp" fill="' + RAD + '" fill-opacity=".1" stroke="' + RAD + '" stroke-width="2.5" stroke-linejoin="round"/>' +
-      '<circle cx="' + C + '" cy="' + C + '" r="' + R * 0.2 + '" fill="#fff" stroke="#d5e6ee"/><circle id="pnlDc" r="4.5" fill="' + RAD + '" stroke="#fff" stroke-width="2" visibility="hidden"/><rect width="' + S + '" height="' + S + '" fill="transparent"/></svg>';
-    Ds.line = elD.querySelector('#pnlDp');
-    Ds.line.setAttribute('d', shapeD(Ds.cur || YRS[yr].v.map(function () { return 1; })));
-    if (started) { Ds.cur = null; morphD(); }
-    var hit = elD.querySelector('rect'), dot = elD.querySelector('#pnlDc');
-    hit.addEventListener('pointermove', function (e) {
-      var r = elD.querySelector('svg').getBoundingClientRect(), x = e.clientX - r.left - C, y = e.clientY - r.top - C;
-      if (Math.hypot(x, y) < R * 0.2) { dot.setAttribute('visibility', 'hidden'); hideTip(); return; }
-      var a = Math.atan2(y, x) + Math.PI / 2; if (a < 0) a += Math.PI * 2;
-      var i = Math.round(a / (Math.PI * 2) * NN) % NN, p = atD(fit(norm(YRS[yr].v)), i / NN * Math.PI * 2);
-      dot.setAttribute('cx', p[0]); dot.setAttribute('cy', p[1]); dot.setAttribute('visibility', 'visible');
-      showTip(r.left + p[0], r.top + p[1], MES[i] + ' ' + YRS[yr].l, [['Ventas', '$' + fmt(YRS[yr].v[i] * 1000), RAD]]);
-    });
-    hit.addEventListener('pointerleave', function () { dot.setAttribute('visibility', 'hidden'); hideTip(); });
-  }
-  syncYear(); syncPer();
-  PER.forEach(function (p, i) { elPer.children[i].querySelector('strong').textContent = '$' + fmt(p.t); });
-
-  /* ---------- arranque ---------- */
-  function start() {
-    started = true; t0 = performance.now();
-    root.classList.add('is-in');
-    countTo(q('#pnlAn'), 18420000, '$', 1300); countTo(q('#pnlBn'), 3482, '', 1300);
-    syncPer(); syncYear(); layoutC(); morphD(); kickB();
-  }
-  new IntersectionObserver(function (es) {
-    es.forEach(function (e) { vis = e.isIntersecting; if (vis && !started && e.intersectionRatio > 0.15) start(); kickB(); });
-  }, { threshold: [0, 0.15] }).observe(root.querySelector('.pnl__stage'));
-  document.addEventListener('scroll', hideTip, { passive: true });
-})();
-</script>
 <script data-8b-part="section-script:agentes">
 (function () {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
@@ -2135,36 +1708,32 @@
 (() => {
   const D = {"order": ["tienda", "clinica", "juridico", "mascotas", "distribucion"], "biz": {"tienda": {"label": "Tienda online", "title": "Tienda online", "sub": "Pedidos, pagos, stock y despacho sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "Cada pedido nuevo entra con sus productos y su pago."}, {"id": "pagos", "label": "Pagos", "icon": "card", "sub": "El pago aprobado confirma el pedido en el acto."}, {"id": "inventario", "label": "Inventario", "icon": "box", "sub": "Cada venta descuenta el stock al instante."}, {"id": "despacho", "label": "Despacho", "icon": "truck", "sub": "El pedido pagado queda listo para entregar al courier."}], "steps": [{"view": "pedidos", "time": "09:12", "area": "Pedidos", "title": "Pedido #2041 recibido", "note": "2 productos · pago con tarjeta", "delta": "$89.980", "status": "Nuevo"}, {"view": "pagos", "time": "09:13", "area": "Pagos", "title": "Pago aprobado", "note": "Pedido #2041 confirmado", "delta": "$89.980", "status": "Aprobado"}, {"view": "inventario", "time": "09:14", "area": "Inventario", "title": "Stock descontado", "note": "Zapatillas trail 42 · quedan 7", "delta": "−1 u.", "status": "Actualizado"}, {"view": "despacho", "time": "10:05", "area": "Despacho", "title": "Etiqueta de envío creada", "note": "Courier · retiro hoy 17:00", "delta": "1 envío", "status": "Listo"}], "metrics": [{"l": "Pedidos hoy", "v": ["37", "38", "38", "38", "38"], "s": "Pedido #2041"}, {"l": "Ventas hoy", "v": ["$1.158.000", "$1.158.000", "$1.248.000", "$1.248.000", "$1.248.000"], "s": "Pago aprobado"}, {"l": "Stock zapatillas", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."], "s": "Talla 42"}, {"l": "Por despachar", "v": ["3", "3", "3", "3", "4"], "s": "Retiro 17:00"}], "detail": {"head": "Pedido #2041", "titles": ["Esperando pedidos", "Pedido recibido", "Pago aprobado", "Stock actualizado", "Listo para despachar"], "desc": "Una venta online recorre catálogo, pago, stock y despacho sin que nadie digite nada dos veces.", "lines": [{"l": "Cliente", "v": ["—", "Valentina R.", "Valentina R.", "Valentina R.", "Valentina R."]}, {"l": "Pago", "v": ["—", "Pendiente", "Aprobado", "Aprobado", "Aprobado"]}, {"l": "Stock", "v": ["8 u.", "8 u.", "8 u.", "7 u.", "7 u."]}, {"l": "Despacho", "v": ["—", "—", "—", "En preparación", "Retiro 17:00"]}]}, "spark": [30, 44, 38, 52, 47, 63, 58, 74, 69, 88], "note": ["Un pedido online atraviesa pago, stock y despacho de forma automática.", "Inicia el recorrido: pedido → pago → stock → despacho."]}, "clinica": {"label": "Clínica", "title": "Clínica", "sub": "Agenda, fichas, atención y cobros sobre una misma operación.", "nav": [{"id": "agenda", "label": "Agenda", "icon": "cal", "sub": "Tus pacientes reservan online y la agenda se ordena sola."}, {"id": "pacientes", "label": "Pacientes", "icon": "user", "sub": "Cada reserva actualiza la ficha del paciente."}, {"id": "atencion", "label": "Atención", "icon": "doc", "sub": "La atención queda registrada con su duración y notas."}, {"id": "cobros", "label": "Cobros", "icon": "card", "sub": "Cada atención genera su cobro y su boleta."}], "steps": [{"view": "agenda", "time": "08:30", "area": "Agenda", "title": "Cita reservada online", "note": "Control dental · Dra. Soto · 15:30", "delta": "15:30", "status": "Agendada"}, {"view": "pacientes", "time": "08:31", "area": "Pacientes", "title": "Ficha del paciente actualizada", "note": "Historial y alergias al día", "delta": "1 ficha", "status": "Actualizada"}, {"view": "atencion", "time": "15:30", "area": "Atención", "title": "Atención registrada", "note": "Limpieza dental · 45 min", "delta": "45 min", "status": "Realizada"}, {"view": "cobros", "time": "16:20", "area": "Cobros", "title": "Pago registrado", "note": "Boleta enviada por correo", "delta": "$35.000", "status": "Pagado"}], "metrics": [{"l": "Citas hoy", "v": ["23", "24", "24", "24", "24"], "s": "Dra. Soto · 9"}, {"l": "Fichas al día", "v": ["96%", "96%", "97%", "97%", "97%"], "s": "Historial completo"}, {"l": "Atenciones", "v": ["18", "18", "18", "19", "19"], "s": "Del día"}, {"l": "Cobrado hoy", "v": ["$412.000", "$412.000", "$412.000", "$412.000", "$447.000"], "s": "Boleta enviada"}], "detail": {"head": "Cita de las 15:30", "titles": ["Agenda libre", "Cita agendada", "Ficha actualizada", "Atención realizada", "Cobrada y cerrada"], "desc": "La cita nace en la web, ordena la agenda, alimenta la ficha clínica y termina en el cobro.", "lines": [{"l": "Paciente", "v": ["—", "M. Fuentes", "M. Fuentes", "M. Fuentes", "M. Fuentes"]}, {"l": "Profesional", "v": ["—", "Dra. Soto", "Dra. Soto", "Dra. Soto", "Dra. Soto"]}, {"l": "Estado", "v": ["—", "Agendada", "Agendada", "Realizada", "Realizada"]}, {"l": "Cobro", "v": ["—", "—", "—", "Pendiente", "$35.000"]}]}, "spark": [55, 62, 48, 70, 66, 82, 74, 90, 78, 86], "note": ["Una cita recorre agenda, ficha, atención y cobro sin planillas.", "Inicia el recorrido: agenda → ficha → atención → cobro."]}, "juridico": {"label": "Estudio jurídico", "title": "Estudio jurídico", "sub": "Causas, plazos, documentos y honorarios sobre una misma operación.", "nav": [{"id": "causas", "label": "Causas", "icon": "scale", "sub": "Cada causa nueva abre su expediente con cliente y materia."}, {"id": "plazos", "label": "Plazos", "icon": "clock", "sub": "El plazo se calcula y se vigila automáticamente."}, {"id": "documentos", "label": "Documentos", "icon": "doc", "sub": "Escritos y contratos quedan ligados a la causa."}, {"id": "honorarios", "label": "Honorarios", "icon": "card", "sub": "Los honorarios se emiten según la etapa de cada causa."}], "steps": [{"view": "causas", "time": "09:00", "area": "Causas", "title": "Causa C-248 ingresada", "note": "Constructora Andes · Civil", "delta": "1 causa", "status": "Abierta"}, {"view": "plazos", "time": "09:05", "area": "Plazos", "title": "Plazo calculado", "note": "Contestar demanda · vence 18 nov", "delta": "15 días", "status": "Vigilado"}, {"view": "documentos", "time": "11:30", "area": "Documentos", "title": "Escrito generado", "note": "Contestación v2 · pendiente de firma", "delta": "1 doc.", "status": "En revisión"}, {"view": "honorarios", "time": "12:10", "area": "Honorarios", "title": "Honorario emitido", "note": "Anticipo etapa 1", "delta": "$450.000", "status": "Emitido"}], "metrics": [{"l": "Causas activas", "v": ["42", "43", "43", "43", "43"], "s": "C-248 nueva"}, {"l": "Plazos 7 días", "v": ["5", "5", "6", "6", "6"], "s": "1 vence hoy"}, {"l": "Documentos", "v": ["118", "118", "118", "119", "119"], "s": "En el mes"}, {"l": "Por cobrar", "v": ["$3,4M", "$3,4M", "$3,4M", "$3,4M", "$3,85M"], "s": "Honorarios"}], "detail": {"head": "Causa C-248", "titles": ["Sin movimientos", "Causa abierta", "Plazo vigilado", "Escrito en revisión", "Honorario emitido"], "desc": "La causa concentra su cliente, sus plazos, sus documentos y sus honorarios: nada se vence sin verlo.", "lines": [{"l": "Cliente", "v": ["—", "Constructora Andes", "Constructora Andes", "Constructora Andes", "Constructora Andes"]}, {"l": "Plazo", "v": ["—", "—", "18 nov", "18 nov", "18 nov"]}, {"l": "Documento", "v": ["—", "—", "—", "Contestación v2", "Contestación v2"]}, {"l": "Honorario", "v": ["—", "—", "—", "—", "$450.000"]}]}, "spark": [32, 40, 36, 52, 49, 58, 66, 61, 78, 84], "note": ["Una causa recorre plazos, documentos y honorarios con todo conectado.", "Inicia el recorrido: causa → plazo → documento → honorario."]}, "mascotas": {"label": "Tienda de mascotas", "title": "Tienda de mascotas", "sub": "Ventas, stock, compras y clientes sobre una misma operación.", "nav": [{"id": "ventas", "label": "Ventas", "icon": "cart", "sub": "La caja registra cada venta en segundos."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "Cada venta descuenta el stock y avisa cuando baja del mínimo."}, {"id": "compras", "label": "Compras", "icon": "truck", "sub": "El sistema sugiere qué reponer y a qué proveedor."}, {"id": "clientes", "label": "Clientes", "icon": "user", "sub": "Cada compra construye el historial del cliente."}], "steps": [{"view": "ventas", "time": "10:15", "area": "Ventas", "title": "Venta #874 en caja", "note": "Alimento perro 15 kg", "delta": "$38.990", "status": "Cobrada"}, {"view": "stock", "time": "10:15", "area": "Stock", "title": "Stock descontado", "note": "Alimento perro 15 kg · quedan 3", "delta": "−1 u.", "status": "Bajo mínimo"}, {"view": "compras", "time": "10:16", "area": "Compras", "title": "Reposición sugerida", "note": "12 bolsas al proveedor habitual", "delta": "12 u.", "status": "Sugerida"}, {"view": "clientes", "time": "10:16", "area": "Clientes", "title": "Historial actualizado", "note": "Próxima compra estimada en 28 días", "delta": "+1 compra", "status": "Registrado"}], "metrics": [{"l": "Ventas hoy", "v": ["$486.000", "$524.990", "$524.990", "$524.990", "$524.990"], "s": "Venta #874"}, {"l": "Stock bajo", "v": ["6", "6", "7", "7", "7"], "s": "Productos"}, {"l": "Reposiciones", "v": ["0", "0", "0", "1", "1"], "s": "Sugeridas"}, {"l": "Clientes frecuentes", "v": ["84", "84", "84", "84", "85"], "s": "Con historial"}], "detail": {"head": "Alimento perro 15 kg", "titles": ["Stock normal", "Venta registrada", "Bajo el mínimo", "Reposición sugerida", "Cliente al día"], "desc": "Lo que se vende en caja actualiza el stock, sugiere compras y alimenta al cliente, sin planillas.", "lines": [{"l": "Venta", "v": ["—", "$38.990", "$38.990", "$38.990", "$38.990"]}, {"l": "Stock", "v": ["4 u.", "4 u.", "3 u.", "3 u.", "3 u."]}, {"l": "Compra sugerida", "v": ["—", "—", "—", "12 u.", "12 u."]}, {"l": "Cliente", "v": ["—", "Camila P.", "Camila P.", "Camila P.", "Camila P. · +1"]}]}, "spark": [40, 46, 38, 52, 60, 88, 74, 66, 72, 80], "note": ["Una venta en caja descuenta stock, sugiere compras y actualiza al cliente.", "Inicia el recorrido: venta → stock → compra → cliente."]}, "distribucion": {"label": "Distribución", "title": "Distribución y reparto", "sub": "Pedidos, stock, rutas y cobranza sobre una misma operación.", "nav": [{"id": "pedidos", "label": "Pedidos", "icon": "cart", "sub": "El pedido confirmado reserva producto del stock."}, {"id": "stock", "label": "Stock", "icon": "box", "sub": "El stock disponible se actualiza con cada pedido."}, {"id": "reparto", "label": "Reparto", "icon": "truck", "sub": "El pedido pasa a una ruta y queda listo para despacho."}, {"id": "cobranza", "label": "Cobranza", "icon": "card", "sub": "Cada entrega se cobra y cierra su deuda."}], "steps": [{"view": "pedidos", "time": "08:40", "area": "Pedidos", "title": "Pedido #1842 confirmado", "note": "120 u. · Distribuidora Sur", "delta": "$948.000", "status": "Confirmado"}, {"view": "stock", "time": "08:41", "area": "Stock", "title": "Stock reservado", "note": "Disponible: 840 → 720 u.", "delta": "−120 u.", "status": "Actualizado"}, {"view": "reparto", "time": "09:30", "area": "Reparto", "title": "Ruta Norte asignada", "note": "Pedido #1842 listo para despacho", "delta": "1 ruta", "status": "Asignada"}, {"view": "cobranza", "time": "12:12", "area": "Cobranza", "title": "Entrega cobrada", "note": "Firma digital · transferencia", "delta": "$948.000", "status": "Cobrado"}], "metrics": [{"l": "Pedidos", "v": ["8", "9", "9", "9", "9"], "s": "Pedido #1842"}, {"l": "Stock disponible", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."], "s": "Bodega central"}, {"l": "Rutas activas", "v": ["3", "3", "3", "4", "4"], "s": "Ruta Norte"}, {"l": "Cobrado hoy", "v": ["$2,1M", "$2,1M", "$2,1M", "$2,1M", "$3,05M"], "s": "Transferencia"}], "detail": {"head": "Pedido #1842", "titles": ["Esperando pedido", "Pedido confirmado", "Stock reservado", "Ruta asignada", "Entregado y cobrado"], "desc": "El pedido reserva stock, se asigna a una ruta y termina en cobranza: todo queda enlazado.", "lines": [{"l": "Cliente", "v": ["—", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur", "Distribuidora Sur"]}, {"l": "Stock", "v": ["840 u.", "840 u.", "720 u.", "720 u.", "720 u."]}, {"l": "Ruta", "v": ["—", "—", "—", "Norte · asignada", "Norte · cerrada"]}, {"l": "Cobro", "v": ["—", "Pendiente", "Pendiente", "Pendiente", "$948.000"]}]}, "spark": [28, 36, 44, 40, 58, 52, 68, 64, 80, 92], "note": ["Un pedido reserva stock, se reparte y se cobra con todo conectado.", "Inicia el recorrido: pedido → stock → ruta → cobro."]}}, "icons": {"resumen": "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", "cart": "M4 6h2l2 11h11l2-8H7M9 21h1M17 21h1", "card": "M3 6h18v12H3zM3 10h18M7 14h4", "box": "M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8", "truck": "M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 19h1M17 19h1", "cal": "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4", "user": "M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0", "doc": "M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6", "scale": "M12 3v18M7 21h10M4 7h16M7 7l-3 7a3.5 3.5 0 007 0zM17 7l-3 7a3.5 3.5 0 007 0z", "clock": "M12 7v5l3 2M12 21a9 9 0 100-18 9 9 0 000 18z"}};
   const root = document.getElementById('erp');
-  if (!root) return;
+  if (!root || !window.ResizeObserver) return;
   const $ = s => root.querySelector(s);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tabsEl = $('.erp__tabs'), stepsEl = $('#erp-steps'), chartEl = $('#erp-chart');
+  const tabsEl = $('.erp__tabs');
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   let biz = D.order[0], phase = 0, timers = [], auto = !reduced, running = false, visible = true, last = {};
   const cur = () => D.biz[biz];
-  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${D.icons[k]}"/></svg>`;
-  const ease = t => 1 - Math.pow(1 - t, 3);
-  const dots = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+  /* datos propios del panel de cada rubro */
+  const X = {
+    tienda:       { main: 1, al: 'Ventas de hoy',   bl: 'Pedidos por hora', ch: ['Web', 'WhatsApp'],       pk: [13, 20.5], base: [610000, 420000, 310000, 180000, 90000],  mes: [16, 20, 24, 18, 28, 21, 17, 25, 30, 22, 32, 23] },
+    clinica:      { main: 3, al: 'Cobrado hoy',     bl: 'Citas por hora',   ch: ['Presencial', 'Online'], pk: [11, 16],   base: [520000, 360000, 240000, 150000, 70000],  mes: [18, 22, 26, 21, 24, 19, 14, 23, 28, 27, 25, 17] },
+    juridico:     { main: 3, al: 'Por cobrar',      bl: 'Actividad por hora', ch: ['Oficina', 'Remoto'],   pk: [10.5, 15], base: [1800000, 1200000, 900000, 600000, 250000], mes: [14, 17, 22, 26, 23, 18, 12, 16, 24, 28, 25, 20] },
+    mascotas:     { main: 0, al: 'Ventas de hoy',   bl: 'Ventas por hora',  ch: ['Caja', 'Online'],        pk: [12.5, 19], base: [480000, 330000, 260000, 140000, 80000],  mes: [15, 14, 18, 20, 23, 21, 19, 24, 22, 26, 31, 34] },
+    distribucion: { main: 3, al: 'Cobrado hoy',     bl: 'Pedidos por hora', ch: ['Teléfono', 'WhatsApp'], pk: [9, 14],    base: [2400000, 1700000, 1300000, 900000, 400000], mes: [21, 19, 23, 25, 22, 26, 24, 27, 29, 28, 33, 30] }
+  };
+  const MES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  const GRP = [['#1f7a92', '#fff'], ['#2fc7e4', '#0b1c25'], ['#ff9559', '#0b1c25'], ['#8b6cff', '#fff'], ['#b9c7d0', '#0b1c25']];
 
   tabsEl.innerHTML = D.order.map(k => `<button class="erp__tab" role="tab" type="button" data-biz="${k}" aria-selected="false">${D.biz[k].label}</button>`).join('');
 
-  /* cuenta animada si el valor es "$1.248.000", "38", "7 u."; si no, texto directo */
-  function setVal(el, text, fromZero) {
-    cancelAnimationFrame(el._r);
-    const m = text.match(/^(\D*)(\d{1,3}(?:\.\d{3})*|\d+)(\D*)$/);
-    if (!m || reduced) { el.textContent = text; el._v = m ? parseInt(m[2].replace(/\./g, ''), 10) : 0; return; }
-    const to = parseInt(m[2].replace(/\./g, ''), 10), from = fromZero ? 0 : (el._v || 0), t0 = performance.now(), thousands = m[2].includes('.');
-    el._v = to;
-    (function f(now) {
-      const k = Math.min(1, (now - t0) / 900), v = from + (to - from) * ease(k);
-      el.textContent = m[1] + (thousands ? dots(v) : String(Math.round(v))) + m[3];
-      if (k < 1) el._r = requestAnimationFrame(f);
-    })(t0);
-  }
-
-  /* gráfico: la línea avanza con cada paso del recorrido */
-  const cs = { w: 0, h: 0, prog: 0.3 };
+  /* ---------- utilidades ---------- */
   function smooth(P) {
-    const n = P.length, g = i => P[Math.max(0, Math.min(n - 1, i))];
+    const n = P.length, g = i => P[clamp(i, 0, n - 1)];
     let d = `M${P[0][0]},${P[0][1]}`;
     for (let i = 0; i < n - 1; i++) {
       const a = g(i - 1), b = g(i), c = g(i + 1), e = g(i + 2), k = 0.18;
@@ -2172,59 +1741,222 @@
     }
     return d;
   }
-  function drawChart() {
-    const { w, h } = cs;
-    if (!w || !h) return;
-    const s = cur().spark, n = s.length, top = 28, bot = 14;
-    const X = i => 14 + i / (n - 1) * (w - 28), Y = v => top + (1 - v / 100) * (h - top - bot);
-    const f = cs.prog * (n - 1), k = Math.floor(f), fr = f - k;
-    const P = s.slice(0, k + 1).map((v, i) => [X(i), Y(v)]);
-    if (k < n - 1) { const v = s[k] + (s[k + 1] - s[k]) * fr; P.push([X(k + fr), Y(v)]); }
-    const prev = s.map((v, i) => [X(i), Y(Math.max(8, v * 0.78 - 4))]);
-    const d = smooth(P), last = P[P.length - 1];
-    chartEl.querySelector('svg')?.remove();
-    chartEl.insertAdjacentHTML('beforeend',
-      `<svg width="${w}" height="${h}" aria-hidden="true"><defs><linearGradient id="hdl" x1="0" x2="1"><stop offset="0" stop-color="#3dd8f0"/><stop offset="1" stop-color="#0e7a96"/></linearGradient><linearGradient id="hda" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0e7a96" stop-opacity=".22"/><stop offset="1" stop-color="#0e7a96" stop-opacity="0"/></linearGradient></defs>` +
-      [25, 50, 75].map(v => `<line x1="0" x2="${w}" y1="${Y(v)}" y2="${Y(v)}" stroke="#d5e6ee"/>`).join('') +
-      `<path d="${smooth(prev)}" fill="none" stroke="#9bb2bf" stroke-width="1.6" stroke-dasharray="4 4"/>` +
-      `<path d="${d}L${last[0]},${h}L${P[0][0]},${h}Z" fill="url(#hda)"/><path d="${d}" fill="none" stroke="url(#hdl)" stroke-width="2.8" stroke-linecap="round"/>` +
-      `<circle cx="${last[0]}" cy="${last[1]}" r="9" fill="#3dd8f0" opacity=".25"/><circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="#0e7a96" stroke="#fff" stroke-width="2"/></svg>`);
+  function sized(el, cb) { new ResizeObserver(() => { const w = Math.round(el.clientWidth), h = Math.round(el.clientHeight); if (w && h) cb(w, h); }).observe(el); }
+  function setVal(el, text, fromZero) {
+    cancelAnimationFrame(el._r);
+    const m = String(text).match(/^(\D*)(\d{1,3}(?:\.\d{3})*|\d+)(\D*)$/);
+    if (!m || reduced) { el.textContent = text; el._v = m ? parseInt(m[2].replace(/\./g, ''), 10) : 0; return; }
+    const to = parseInt(m[2].replace(/\./g, ''), 10), from = fromZero ? 0 : (el._v || 0), t0 = performance.now(), th = m[2].includes('.');
+    el._v = to;
+    (function f(now) {
+      const k = Math.min(1, (now - t0) / 900), v = from + (to - from) * ease(k);
+      el.textContent = m[1] + (th ? fmt(v) : String(Math.round(v))) + m[3];
+      if (k < 1) el._r = requestAnimationFrame(f);
+    })(t0);
   }
-  let chartRaf = 0;
-  function tweenChart(target) {
-    cancelAnimationFrame(chartRaf);
-    if (reduced) { cs.prog = target; drawChart(); return; }
-    const from = cs.prog, t0 = performance.now();
-    (function f(now) { const k = Math.min(1, (now - t0) / 900); cs.prog = from + (target - from) * ease(k); drawChart(); if (k < 1) chartRaf = requestAnimationFrame(f); })(t0);
+  const tip = document.createElement('div');
+  tip.className = 'hd-tip'; tip.setAttribute('role', 'tooltip'); document.body.appendChild(tip);
+  function showTip(x, y, title, rows) {
+    tip.innerHTML = `<div class="hd-tip__t">${title}</div>` + rows.map(r => `<div class="hd-tip__r"><span>${r[2] ? `<i style="background:${r[2]}"></i>` : ''}${r[0]}</span><b>${r[1]}</b></div>`).join('');
+    tip.classList.add('is-on');
+    const b = tip.getBoundingClientRect();
+    let l = x + 14, t = y - b.height - 12;
+    if (l + b.width > innerWidth - 8) l = x - b.width - 14;
+    if (t < 8) t = y + 16;
+    tip.style.transform = `translate(${l}px,${t}px)`;
   }
-  new ResizeObserver(() => { cs.w = Math.round(chartEl.clientWidth); cs.h = Math.round(chartEl.clientHeight); drawChart(); }).observe(chartEl);
+  const hideTip = () => tip.classList.remove('is-on');
+  document.addEventListener('scroll', hideTip, { passive: true });
 
+  /* ---------- A: línea de actividad (avanza con el recorrido) ---------- */
+  const elA = $('#hdA'), As = { w: 0, h: 0, prog: 0.3 };
+  let aRaf = 0;
+  const seriesA = () => cur().spark;
+  function drawA() {
+    const { w, h } = As;
+    if (!w || !h) return;
+    const s = seriesA(), n = s.length, top = 14, bot = 12;
+    const Xp = i => 12 + i / (n - 1) * (w - 24), Yp = v => top + (1 - v / 100) * (h - top - bot);
+    const f = As.prog * (n - 1), k = Math.floor(f), fr = f - k;
+    const P = s.slice(0, k + 1).map((v, i) => [Xp(i), Yp(v)]);
+    if (k < n - 1) P.push([Xp(k + fr), Yp(s[k] + (s[k + 1] - s[k]) * fr)]);
+    const prev = s.map((v, i) => [Xp(i), Yp(Math.max(8, v * 0.78 - 4))]), d = smooth(P), l = P[P.length - 1];
+    elA.innerHTML = `<svg width="${w}" height="${h}" aria-hidden="true"><defs><linearGradient id="hdl" x1="0" x2="1"><stop offset="0" stop-color="#3dd8f0"/><stop offset="1" stop-color="#0e7a96"/></linearGradient><linearGradient id="hda" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0e7a96" stop-opacity=".22"/><stop offset="1" stop-color="#0e7a96" stop-opacity="0"/></linearGradient></defs>` +
+      [25, 50, 75].map(v => `<line x1="0" x2="${w}" y1="${Yp(v)}" y2="${Yp(v)}" stroke="#d5e6ee"/>`).join('') +
+      `<path d="${smooth(prev)}" fill="none" stroke="#9bb2bf" stroke-width="1.5" stroke-dasharray="4 4"/>` +
+      `<path d="${d}L${l[0]},${h}L${P[0][0]},${h}Z" fill="url(#hda)"/><path d="${d}" fill="none" stroke="url(#hdl)" stroke-width="2.6" stroke-linecap="round"/>` +
+      `<circle cx="${l[0]}" cy="${l[1]}" r="8" fill="#3dd8f0" opacity=".25"/><circle cx="${l[0]}" cy="${l[1]}" r="4.2" fill="#0e7a96" stroke="#fff" stroke-width="2"/><rect width="${w}" height="${h}" fill="transparent"/></svg>`;
+    const hit = elA.querySelector('rect');
+    hit.addEventListener('pointermove', e => {
+      const r = elA.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 12) / (w - 24) * (n - 1)), 0, n - 1);
+      showTip(e.clientX, r.top + Yp(s[i]), `Hoy · tramo ${i + 1} de ${n}`, [['Actividad', Math.round(s[i]) + '%', '#0e7a96']]);
+    });
+    hit.addEventListener('pointerleave', hideTip);
+  }
+  function tweenA(target) {
+    cancelAnimationFrame(aRaf);
+    if (reduced) { As.prog = target; drawA(); return; }
+    const from = As.prog, t0 = performance.now();
+    (function f(now) { const k = Math.min(1, (now - t0) / 900); As.prog = from + (target - from) * ease(k); drawA(); if (k < 1) aRaf = requestAnimationFrame(f); })(t0);
+  }
+  sized(elA, (w, h) => { As.w = w; As.h = h; drawA(); });
+
+  /* ---------- B: ondas por hora ---------- */
+  const elB = $('#hdB'), Bs = { w: 0, h: 0, paths: [], on: false, from: null, to: null, k: 1, kt: 0 };
+  const bell = (x, m, s) => Math.exp(-Math.pow((x - m) / s, 2) / 2);
+  const HRS = Array.from({ length: 25 }, (_, i) => i);
+  function setsFor(k) {
+    const p = X[k].pk, out = [];
+    [0, 1, 2].forEach(w => out.push({ dir: -1, k: w, g: 'd', a: HRS.map(h => 2400 * (1 - w * 0.16) * (bell(h, p[0] - w * 0.6, 3.2) * 0.92 + bell(h, p[0] + 6.5, 2.2) * 0.2)) }));
+    [0, 1, 2].forEach(w => out.push({ dir: 1, k: w, g: 'm', a: HRS.map(h => 2600 * (1 - w * 0.18) * (bell(h, p[1] - w * 0.4, 3) * 0.95 + bell(h, p[1] - 11, 1.8) * 0.2)) }));
+    return out;
+  }
+  Bs.to = setsFor(biz);
+  const MAXB = 2700, BX = i => 16 + i / 24 * (Bs.w - 32);
+  function stepB(t) {
+    if (Bs.paths.length !== Bs.to.length) return;
+    const grow = reduced ? 1 : ease(Math.min(1, t / 1.3)), amp = Bs.h / 2 - 10, mid = Bs.h / 2, mix = reduced ? 1 : ease(clamp((performance.now() - Bs.kt) / 700, 0, 1));
+    const gain = [0.62, 0.72, 0.82, 0.92, 1][phase];
+    Bs.to.forEach((s, j) => {
+      const br = reduced ? 1 : 1 + Math.sin(t * 1.2 + s.k * 0.9) * 0.035, fr = Bs.from ? Bs.from[j].a : s.a;
+      Bs.paths[j].setAttribute('d', smooth(s.a.map((v, i) => [BX(i), mid + s.dir * (3 + (fr[i] + (v - fr[i]) * mix) / MAXB * amp * grow * br * gain)])));
+    });
+  }
+  let bT0 = performance.now();
+  function loopB(now) { if (!visible || reduced) { Bs.on = false; return; } stepB((now - bT0) / 1000); requestAnimationFrame(loopB); }
+  function kickB() { if (visible && !reduced && !Bs.on) { Bs.on = true; requestAnimationFrame(loopB); } }
+  sized(elB, (w, h) => {
+    Bs.w = w; Bs.h = h;
+    elB.innerHTML = `<svg width="${w}" height="${h}" aria-hidden="true"><defs><linearGradient id="hbd"><stop offset=".1" stop-color="#2fc7e4"/><stop offset=".9" stop-color="#0e7a96"/></linearGradient><linearGradient id="hbm"><stop offset=".15" stop-color="#8b6cff"/><stop offset=".85" stop-color="#4b2fd0"/></linearGradient></defs><line x1="16" x2="${w - 16}" y1="${h / 2}" y2="${h / 2}" stroke="#d5e6ee"/>` +
+      Bs.to.map(s => `<path fill="none" stroke="url(#hb${s.g})" stroke-width="${s.k ? 1.5 : 2.4}" stroke-linecap="round" opacity="${s.k === 0 ? 1 : s.k === 1 ? 0.55 : 0.3}"/>`).join('') +
+      `<line id="hdBx" y1="3" y2="${h - 3}" stroke="#9bb2bf" visibility="hidden"/><rect width="${w}" height="${h}" fill="transparent"/></svg>`;
+    Bs.paths = [...elB.querySelectorAll('path')];
+    stepB((performance.now() - bT0) / 1000);
+    const hit = elB.querySelector('rect'), bx = elB.querySelector('#hdBx');
+    hit.addEventListener('pointermove', e => {
+      const r = elB.querySelector('svg').getBoundingClientRect(), i = clamp(Math.round((e.clientX - r.left - 16) / (w - 32) * 24), 0, 24), c = X[biz].ch;
+      bx.setAttribute('x1', BX(i)); bx.setAttribute('x2', BX(i)); bx.setAttribute('visibility', 'visible');
+      showTip(e.clientX, r.top + 10, `${('0' + (i % 24)).slice(-2)}:00 · esta semana`, [[c[0], fmt(Bs.to[0].a[i]), '#2fc7e4'], [c[1], fmt(Bs.to[3].a[i]), '#4b2fd0']]);
+    });
+    hit.addEventListener('pointerleave', () => { bx.setAttribute('visibility', 'hidden'); hideTip(); });
+    kickB();
+  });
+
+  /* ---------- C: bloques por módulo ---------- */
+  const elC = $('#hdC'), tiles = [];
+  function itemsC() {
+    const b = cur(), base = X[biz].base;
+    return b.nav.map((n, i) => ({ n: n.label, g: i, v: base[i] * (phase > i ? 1.18 : 1) })).concat([{ n: 'Otros', g: 4, v: base[4] }]);
+  }
+  function squarify(items, x, y, w, h) {
+    const total = items.reduce((a, b) => a + b.v, 0) || 1, sc = w * h / total, out = [];
+    let rest = items.map(i => ({ ...i, a: i.v * sc }));
+    const worst = (row, len) => { const s = row.reduce((a, b) => a + b.a, 0), mx = Math.max(...row.map(r => r.a)), mn = Math.min(...row.map(r => r.a)); return Math.max(len * len * mx / (s * s), s * s / (len * len * mn)); };
+    while (rest.length) {
+      const len = Math.min(w, h), row = [rest[0]];
+      let i = 1;
+      while (i < rest.length && worst([...row, rest[i]], len) <= worst(row, len)) row.push(rest[i++]);
+      rest = rest.slice(i);
+      const s = row.reduce((a, b) => a + b.a, 0);
+      if (w >= h) { const cw = s / h; let cy = y; for (const r of row) { const rh = r.a / cw; out.push({ ...r, x, y: cy, w: cw, h: rh }); cy += rh; } x += cw; w -= cw; }
+      else { const rh = s / w; let cx = x; for (const r of row) { const rw = r.a / rh; out.push({ ...r, x: cx, y, w: rw, h: rh }); cx += rw; } y += rh; h -= rh; }
+    }
+    return out;
+  }
+  for (let i = 0; i < 5; i++) {
+    const d = document.createElement('div');
+    d.className = 'hd-tile'; d.innerHTML = '<div class="hd-tile__n"><i></i><span></span></div><div class="hd-tile__v"><b></b><em></em></div>';
+    d.addEventListener('pointerleave', hideTip);
+    tiles.push(d); elC.appendChild(d);
+  }
+  function layoutC(fresh) {
+    const W = elC.clientWidth, H = elC.clientHeight, G = 5;
+    if (!W || !H) return;
+    const items = itemsC(), total = items.reduce((a, b) => a + b.v, 0);
+    squarify(items.slice().sort((a, b) => b.v - a.v), 0, 0, W + G, H + G).forEach(r => {
+      const d = tiles[r.g], w = r.w - G, h = r.h - G, g = GRP[r.g];
+      const chars = fmt(r.v).length + 1;
+      let fs = Math.min(20, (w - 18 - 40) / (chars * 0.6)), pct = true;
+      if (fs < 11) { pct = false; fs = Math.min(20, (w - 18) / (chars * 0.6)); }
+      const tiny = fs < 9 || h < 44 || w < 52;
+      d.style.background = g[0]; d.style.color = g[1];
+      Object.assign(d.style, { left: r.x + 'px', top: r.y + 'px', width: w + 'px', height: h + 'px' });
+      d.querySelector('.hd-tile__n span').textContent = r.n;
+      d.querySelector('.hd-tile__n span').style.display = (h >= 60 && w >= 76) ? '' : 'none';
+      const v = d.querySelector('.hd-tile__v'), b = v.querySelector('b'), em = v.querySelector('em');
+      v.style.display = tiny ? 'none' : ''; b.style.fontSize = fs + 'px'; em.style.display = pct ? '' : 'none';
+      em.textContent = (r.v / total * 100).toFixed(0) + '%';
+      setVal(b, '$' + fmt(r.v), fresh);
+      d.onpointermove = e => showTip(e.clientX, e.clientY, r.n, [['Hoy', '$' + fmt(r.v), g[0]], ['Participación', (r.v / total * 100).toFixed(1).replace('.', ',') + '%']]);
+    });
+  }
+  sized(elC, () => layoutC(false));
+
+  /* ---------- D: radar de estacionalidad ---------- */
+  const elD = $('#hdD'), Ds = { S: 0, line: null, cur: null, raf: 0 }, NN = 12, RAD = '#0e9fbd';
+  const norm = v => { const lo = Math.min(...v), hi = Math.max(...v); return v.map(x => 0.42 + (x - lo) / (hi - lo || 1) * 0.58); };
+  function fit(v) {
+    const co = [];
+    for (let k = 0; k <= 5; k++) { let a = 0, b = 0; v.forEach((x, i) => { const th = i / NN * Math.PI * 2; a += x * Math.cos(k * th); b += x * Math.sin(k * th); }); co.push([a * (k ? 2 : 1) / NN, b * (k ? 2 : 1) / NN]); }
+    return th => co.reduce((r, c, k) => r + c[0] * Math.cos(k * th) + c[1] * Math.sin(k * th), 0);
+  }
+  function atD(f, th) { const S = Ds.S, R = S / 2 - 26, C = S / 2, v = Math.max(0.05, f(th)), a = -Math.PI / 2 + th; return [C + Math.cos(a) * (R * 0.2 + v * R * 0.8), C + Math.sin(a) * (R * 0.2 + v * R * 0.8)]; }
+  function shapeD(v) { const f = fit(norm(v)); let d = ''; for (let j = 0; j <= 160; j++) { const p = atD(f, j / 160 * Math.PI * 2); d += (j ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); } return d + 'Z'; }
+  function morphD() {
+    if (!Ds.line) return;
+    cancelAnimationFrame(Ds.raf);
+    const to = X[biz].mes, from = Ds.cur || to.map(() => 1), t1 = performance.now();
+    (function step(now) {
+      const t = reduced ? 1 : ease(Math.min(1, (now - t1) / 900));
+      Ds.cur = from.map((v, i) => v + (to[i] - v) * t);
+      Ds.line.setAttribute('d', shapeD(Ds.cur));
+      if (t < 1) Ds.raf = requestAnimationFrame(step);
+    })(t1);
+  }
+  new ResizeObserver(() => {
+    const w = Math.round(elD.clientWidth), h = Math.round(elD.clientHeight), S = Math.min(w, h, 270);
+    if (!S) return;
+    Ds.S = S;
+    const R = S / 2 - 26, C = S / 2;
+    let g = '', ax = '';
+    [0.33, 0.66, 1].forEach(k => { g += `<circle cx="${C}" cy="${C}" r="${R * k}" fill="none" stroke="#d5e6ee"/>`; });
+    MES.forEach((m, i) => { const a = -Math.PI / 2 + i / NN * Math.PI * 2; ax += `<line x1="${C + Math.cos(a) * R * 0.2}" y1="${C + Math.sin(a) * R * 0.2}" x2="${C + Math.cos(a) * R}" y2="${C + Math.sin(a) * R}" stroke="#d5e6ee"/><text x="${C + Math.cos(a) * (R + 13)}" y="${C + Math.sin(a) * (R + 13)}" text-anchor="middle" dominant-baseline="central" font-size="9" fill="#5b7482">${m}</text>`; });
+    elD.innerHTML = `<svg width="${S}" height="${S}" aria-hidden="true">${g}${ax}<path id="hdDp" fill="${RAD}" fill-opacity=".1" stroke="${RAD}" stroke-width="2.2" stroke-linejoin="round"/><circle cx="${C}" cy="${C}" r="${R * 0.2}" fill="#fff" stroke="#d5e6ee"/><circle id="hdDc" r="4" fill="${RAD}" stroke="#fff" stroke-width="2" visibility="hidden"/><rect width="${S}" height="${S}" fill="transparent"/></svg>`;
+    Ds.line = elD.querySelector('#hdDp');
+    Ds.line.setAttribute('d', shapeD(Ds.cur || X[biz].mes));
+    const hit = elD.querySelector('rect'), dot = elD.querySelector('#hdDc');
+    hit.addEventListener('pointermove', e => {
+      const r = elD.querySelector('svg').getBoundingClientRect(), x = e.clientX - r.left - C, y = e.clientY - r.top - C;
+      if (Math.hypot(x, y) < R * 0.2) { dot.setAttribute('visibility', 'hidden'); hideTip(); return; }
+      let a = Math.atan2(y, x) + Math.PI / 2; if (a < 0) a += Math.PI * 2;
+      const i = Math.round(a / (Math.PI * 2) * NN) % NN, p = atD(fit(norm(X[biz].mes)), i / NN * Math.PI * 2);
+      dot.setAttribute('cx', p[0]); dot.setAttribute('cy', p[1]); dot.setAttribute('visibility', 'visible');
+      showTip(e.clientX, e.clientY, `${MES[i]} · ${D.biz[biz].label}`, [['Nivel de ventas', X[biz].mes[i] + ' / 35', RAD]]);
+    });
+    hit.addEventListener('pointerleave', () => { dot.setAttribute('visibility', 'hidden'); hideTip(); });
+  }).observe(elD);
+
+  /* ---------- render ---------- */
   function render(newIndex = -1, fresh = false) {
-    const b = cur();
+    const b = cur(), x = X[biz], m = b.metrics[x.main], m0 = b.metrics[0];
     $('#erp-title').textContent = b.title;
     $('#erp-sub').textContent = b.sub;
     $('#erp-status').textContent = phase === 4 ? 'Recorrido completo' : phase === 0 ? 'Listo para iniciar' : `Paso ${phase} de 4`;
-    /* KPIs */
-    const box = $('#erp-metrics');
-    if (fresh || box.children.length !== b.metrics.length) {
-      box.innerHTML = b.metrics.map(m => `<div class="hd__kpi"><span>${m.l}</span><strong></strong><small>${m.s}</small></div>`).join('');
-    }
-    [...box.children].forEach((el, i) => {
-      const m = b.metrics[i], val = m.v[phase], changed = !fresh && last.biz === biz && last.vals && last.vals[i] !== val;
-      el.querySelector('span').textContent = m.l; el.querySelector('small').textContent = m.s;
-      setVal(el.querySelector('strong'), val, fresh);
-      if (changed) { el.classList.add('is-bump'); setTimeout(() => el.classList.remove('is-bump'), 1100); }
-    });
-    last = { biz, phase, vals: b.metrics.map(m => m.v[phase]) };
-    /* pasos */
-    stepsEl.innerHTML = b.nav.map((n, i) => `<li class="hd__step${phase > i ? ' is-done' : ''}${phase === i + 1 ? ' is-now' : ''}${phase >= i + 2 ? ' is-link' : ''}"><span class="hd__node">${icon(n.icon)}</span><span>${n.label}</span></li>`).join('');
-    /* movimientos */
-    const rows = b.steps.slice(0, phase);
-    $('#erp-ledger').innerHTML = rows.length ? rows.map((s, i) => `<div class="hd__row${i === newIndex ? ' is-new' : ''}"><div class="hd__time">${s.time}</div><div><strong>${s.title}</strong><small>${s.note}</small></div><div class="hd__right"><span class="hd__delta">${s.delta}</span><span class="hd__chip">${s.status}</span></div></div>`).join('')
-      : `<div class="hd__empty">Ejecuta el recorrido para ver cómo se conectan los módulos.</div>`;
+    $('#hdAl').textContent = x.al; $('#hdAs').textContent = m.s;
+    setVal($('#hdAn'), m.v[phase], fresh);
+    $('#hdBl').textContent = x.bl;
+    setVal($('#hdBn'), m0.v[phase], fresh);
+    $('#hdBg').innerHTML = `<span><i style="background:linear-gradient(90deg,#2fc7e4,#0e7a96)"></i>${x.ch[0]}</span><span><i style="background:linear-gradient(90deg,#8b6cff,#4b2fd0)"></i>${x.ch[1]}</span><span><i style="background:#9bb2bf"></i>Semanas anteriores</span>`;
+    $('#hdCs').textContent = phase === 0 ? 'Antes del recorrido' : 'Actualizado en vivo';
+    const best = x.mes.indexOf(Math.max(...x.mes));
+    $('#hdDs').textContent = `Mes más fuerte: ${MES[best]}`;
     $('#erp-note').textContent = phase === 0 ? b.note[1] : phase === 4 ? b.note[0] : b.steps[phase - 1].note;
-    tweenChart([0.32, 0.5, 0.66, 0.82, 1][phase]);
     tabsEl.querySelectorAll('.erp__tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.biz === biz)));
+    layoutC(fresh);
+    tweenA([0.32, 0.5, 0.66, 0.82, 1][phase]);
+    $('#hdAn').nextElementSibling.style.opacity = phase ? 1 : 0.3;
+    if (fresh) { Bs.from = Bs.to; Bs.to = setsFor(biz); Bs.kt = performance.now(); morphD(); }
+    last = { biz, phase };
   }
   function toast(step) {
     const t = $('#erp-toast');
@@ -2246,7 +1978,7 @@
     }, 1000 + i * 1250)));
   }
   function setBiz(k, autoplay) {
-    biz = k; phase = 0; last = {}; cs.prog = 0.3;
+    biz = k; phase = 0; As.prog = 0.3;
     render(-1, true);
     if (autoplay) play(); else { stop(); phase = 4; render(); }
   }
@@ -2254,7 +1986,7 @@
 
   tabsEl.addEventListener('click', e => { const t = e.target.closest('.erp__tab'); if (!t) return; auto = false; setBiz(t.dataset.biz, true); });
   $('#erp-run').addEventListener('click', () => { auto = false; play(); });
-  $('#erp-reset').addEventListener('click', () => { auto = false; stop(); phase = 0; last = {}; render(-1, true); });
+  $('#erp-reset').addEventListener('click', () => { auto = false; stop(); phase = 0; render(-1, false); });
   root.addEventListener('pointerdown', () => { auto = false; });
 
   if (reduced) { phase = 4; render(-1, true); return; }
@@ -2263,7 +1995,7 @@
     new IntersectionObserver(([en]) => {
       visible = en.isIntersecting;
       if (!visible) { stop(); }
-      else if (auto && !running) play();
+      else { kickB(); if (auto && !running) play(); }
     }, { threshold: 0.25 }).observe(root);
   }
   setTimeout(() => { if (auto && !running && visible) play(); }, 700);
