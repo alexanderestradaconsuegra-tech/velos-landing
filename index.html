@@ -986,6 +986,88 @@
   @media (max-width: 63.99rem) { #caso .caso__head { grid-template-columns: 1fr; } }
 }
 </style>
+<style data-8b-part="section:automation">
+@layer sections {
+  #automatizacion { position: relative; isolation: isolate; overflow-x: clip; color: var(--color-2); padding-block: var(--space-2); }
+  #automatizacion > :not(.ax__sheet) { position: relative; z-index: 1; }
+  #automatizacion .ax__head { display: grid; gap: 1.25rem; max-width: 50rem; justify-items: start; }
+  #automatizacion .ax__kicker { color: var(--color-4); }
+  #automatizacion .ax__head .m-text-4 { color: var(--color-7); }
+  #automatizacion .ax__grid { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+  #automatizacion .ax__grid--top { margin-top: clamp(2.5rem, 5vw, 4rem); grid-template-columns: 1fr 1.25fr 1fr; }
+  #automatizacion .ax__grid--bottom { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #automatizacion svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  #automatizacion .axc { position: relative; display: flex; flex-direction: column; min-height: 18.5rem; overflow: hidden; border-radius: 1.5rem; background: #fff; color: #0b1c25; box-shadow: 0 0 0 0.0625rem rgba(255,255,255,0.08), 0 1.5rem 3rem -1.5rem rgba(0,0,0,0.5); }
+  #automatizacion .axc__title { margin: 0; padding: 1.5rem 1.5rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em; text-align: center; text-wrap: balance; }
+  #automatizacion .axc__title--b { padding: 0 1.5rem 1.5rem; }
+  #automatizacion .axc__visual { position: relative; flex: 1; min-height: 12rem; }
+
+  /* 1: cuadrícula de eventos */
+  #automatizacion .axv-grid { overflow: hidden; }
+  #automatizacion .axv-grid__in { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 4.25rem); grid-auto-rows: 4.25rem; justify-content: center; align-content: center; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 35%, transparent 90%); }
+  #automatizacion .axv-grid i { display: grid; place-items: center; border: 0.0625rem solid rgba(11,28,37,0.08); color: #5b7482; animation: ax-ping 9s ease-in-out infinite; animation-delay: calc(var(--d, 0) * 1s); }
+  #automatizacion .axv-grid i svg { width: 1.5rem; height: 1.5rem; }
+  #automatizacion .axv-grid i.is-core { position: relative; background: #e3f7fb; color: #0e7a96; animation: none; }
+  #automatizacion .axv-grid i.is-core svg { width: 2rem; height: 2rem; stroke-width: 1.6; }
+  #automatizacion .axv-grid i.is-core::after { content: ""; position: absolute; inset: 0; border: 0.125rem solid #2fc7e4; animation: ax-ring 2.4s ease-out infinite; }
+  @keyframes ax-ping { 0%, 14%, 100% { background: transparent; color: #5b7482; } 4%, 8% { background: #e3f7fb; color: #0e7a96; } }
+  @keyframes ax-ring { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(1.6); opacity: 0; } }
+
+  /* 2: flujo */
+  #automatizacion .axv-flow { flex: 1; display: grid; align-content: start; gap: 0.9rem; padding: 1.1rem 1.5rem 1.5rem; }
+  #automatizacion .axv-flow__top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  #automatizacion .axv-flow__tag { padding: 0.3rem 0.75rem; border-radius: 62.5rem; background: #e3f7fb; color: #0e6a80; font-size: 0.75rem; font-weight: 700; }
+  #automatizacion .axv-flow__time { color: #5b7482; font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+  #automatizacion .axv-flow__list { position: relative; display: grid; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+  #automatizacion .axv-flow__list::before { content: ""; position: absolute; left: 1.1rem; top: 1.1rem; bottom: 1.1rem; width: 0.125rem; background: linear-gradient(#2fc7e4, #2fc7e4) 0 0 / 100% calc(var(--p, 0) * 100%) no-repeat, #e1edf2; transition: background-size 0.8s ease; }
+  #automatizacion .axv-flow__list li { position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto; align-items: center; gap: 0.75rem; padding: 0.5rem 0.75rem 0.5rem 0; border-radius: 0.875rem; font-size: 0.875rem; font-weight: 500; opacity: 0.45; transition: opacity 0.5s ease, background 0.5s ease; }
+  #automatizacion .axv-flow__list li i { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #e3f0f6; color: #5b7482; transition: background 0.5s ease, color 0.5s ease, transform 0.5s ease; }
+  #automatizacion .axv-flow__list li i svg { width: 1.125rem; height: 1.125rem; }
+  #automatizacion .axv-flow__list li em { padding: 0.15rem 0.55rem; border-radius: 62.5rem; background: #e3f0f6; color: #5b7482; font-size: 0.6875rem; font-style: normal; font-weight: 700; opacity: 0; transition: opacity 0.4s ease 0.2s; }
+  #automatizacion .axv-flow__list li.is-on { opacity: 1; }
+  #automatizacion .axv-flow__list li.is-on i { background: #2fc7e4; color: #06323d; transform: scale(1.08); }
+  #automatizacion .axv-flow__list li.is-on em { opacity: 1; background: #dff6fb; color: #0e6a80; }
+
+  /* 3: órbita */
+  #automatizacion .axv-orbit { display: grid; place-items: center; color: #fff; }
+  #automatizacion .axv-orbit { background: #0b1c25; }
+  #automatizacion .axv-orbit svg { width: 100%; height: 100%; max-height: 14rem; }
+  #automatizacion .axc--orbit { background: #0b1c25; color: #fff; }
+  #automatizacion .axc--orbit .axc__title { color: #fff; }
+  #automatizacion .axc--orbit { box-shadow: 0 0 0 0.0625rem rgba(61,216,240,0.25), 0 1.5rem 3rem -1.5rem rgba(0,0,0,0.5); }
+
+  /* 4: reglas */
+  #automatizacion .axv-rules { margin: 1.1rem 1rem 0 1rem; flex: 1; overflow: hidden; border: 0.0625rem solid #e1edf2; border-radius: 1rem 1rem 0 0; border-bottom: 0; background: #fff; box-shadow: 0 -0.5rem 1.875rem rgba(16,24,40,0.06); }
+  #automatizacion .axv-rules__bar { display: flex; align-items: center; gap: 0.9rem; padding: 0.7rem 1rem; border-bottom: 0.0625rem solid #e8f0f4; color: #5b7482; font-size: 0.75rem; }
+  #automatizacion .axv-rules__dots { display: flex; gap: 0.375rem; } #automatizacion .axv-rules__dots i { width: 0.625rem; height: 0.625rem; border-radius: 50%; background: #ff6159; } #automatizacion .axv-rules__dots i:nth-child(2) { background: #febc2e; } #automatizacion .axv-rules__dots i:nth-child(3) { background: #28c840; }
+  #automatizacion .axv-rules__tag { margin-left: auto; }
+  #automatizacion .axv-rules__code { margin: 0; padding: 1rem 1.1rem; min-height: 11rem; overflow: hidden; font: 0.8125rem/1.7 ui-monospace, SFMono-Regular, Menlo, monospace; color: #0b1c25; white-space: pre-wrap; }
+  #automatizacion .axv-rules__code .k { color: #7c4ddb; font-weight: 600; } #automatizacion .axv-rules__code .v { color: #0e7a96; } #automatizacion .axv-rules__code .c { display: inline-block; width: 0.5rem; height: 1em; margin-left: 0.1rem; vertical-align: -0.15em; background: #2fc7e4; animation: ax-caret 1s steps(1) infinite; }
+  @keyframes ax-caret { 50% { opacity: 0; } }
+
+  /* 5: cinta */
+  #automatizacion .axv-belt svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* 6: horas */
+  #automatizacion .axv-hours { flex: 1; display: grid; align-content: center; justify-items: center; gap: 0.35rem; padding: 1rem 1.5rem 1.5rem; text-align: center; }
+  #automatizacion .axv-hours__num { margin: 0; font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; }
+  #automatizacion .axv-hours__num span { font-size: 0.4em; color: #5b7482; letter-spacing: 0; }
+  #automatizacion .axv-hours__sub { margin: 0; color: #5b7482; font-size: 0.875rem; }
+  #automatizacion .axv-hours__bars { display: flex; align-items: flex-end; gap: 0.4rem; width: min(100%, 15rem); height: 4.5rem; margin-top: 1rem; }
+  #automatizacion .axv-hours__bars i { flex: 1; height: var(--h); border-radius: 0.4rem 0.4rem 0.15rem 0.15rem; background: linear-gradient(#2fc7e4, #0e7a96); transform: scaleY(0); transform-origin: 50% 100%; transition: transform 0.9s cubic-bezier(0.2, 0.9, 0.25, 1); }
+  #automatizacion .axv-hours.is-in .axv-hours__bars i { transform: none; }
+  #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(2) { transition-delay: 0.08s; } #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(3) { transition-delay: 0.16s; } #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(4) { transition-delay: 0.24s; } #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(5) { transition-delay: 0.32s; } #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(6) { transition-delay: 0.4s; } #automatizacion .axv-hours.is-in .axv-hours__bars i:nth-child(7) { transition-delay: 0.48s; }
+  #automatizacion .axv-hours__note { margin: 0.75rem 0 0; color: #7d93a0; font-size: 0.6875rem; }
+
+  #automatizacion:not(.is-live) .axv-grid i, #automatizacion:not(.is-live) .axv-grid i.is-core::after, #automatizacion:not(.is-live) .c { animation-play-state: paused; }
+  @media (max-width: 63.99rem) { #automatizacion .ax__grid--top, #automatizacion .ax__grid--bottom { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) {
+    #automatizacion .axv-grid i, #automatizacion .axv-grid i.is-core::after, #automatizacion .c { animation: none; }
+    #automatizacion .axv-hours__bars i { transform: none; transition: none; }
+    #automatizacion .axv-flow__list li, #automatizacion .axv-flow__list li em { transition: none; }
+  }
+}
+</style>
 <style data-8b-part="hero-dash">
 @layer sections {
   /* encaje en pantallas de escritorio: el tamaño depende del ancho y del alto disponibles */
@@ -1282,6 +1364,117 @@
     <ul class="modulos__grid"><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 17.5v-11"/></svg><h3 class="m-text-5">Ventas y caja</h3><p class="m-text-7">Punto de venta, pedidos y boletas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h3 class="m-text-5">Agenda y reservas</h3><p class="m-text-7">Citas, profesionales y recordatorios</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><h3 class="m-text-5">Inventario</h3><p class="m-text-7">Stock en tiempo real con alertas</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><h3 class="m-text-5">Clientes y fichas</h3><p class="m-text-7">Historial, notas y crédito</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 000 4h4v-4z"/></svg><h3 class="m-text-5">Cobros y deudas</h3><p class="m-text-7">Abonos, vencimientos y caja</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg><h3 class="m-text-5">Compras y proveedores</h3><p class="m-text-7">Órdenes y cuentas por pagar</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v11a1 1 0 001 1h2"/><path d="M15 18H9M19 18h2a1 1 0 001-1v-3.65a1 1 0 00-.22-.62l-3.48-4.35A1 1 0 0017.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h3 class="m-text-5">Reparto y rutas</h3><p class="m-text-7">Entregas y seguimiento por conductor</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7 5V8l-7 5V4a2 2 0 00-2-2H4a2 2 0 00-2 2z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg><h3 class="m-text-5">Producción</h3><p class="m-text-7">Lotes, recetas y costo real</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><h3 class="m-text-5">Reportes y cierre</h3><p class="m-text-7">El estado del día y del mes</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><h3 class="m-text-5">Usuarios y permisos</h3><p class="m-text-7">Cada quien ve lo que le corresponde</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><h3 class="m-text-5">Web inteligente</h3><p class="m-text-7">Tu sitio conectado al sistema</p></li><li class="modulos__tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg><h3 class="m-text-5">Asistentes de IA</h3><p class="m-text-7">Opcionales: WhatsApp o Telegram</p></li></ul>
   </div>
 </section>
+
+<section class="ax on-dark" id="automatizacion" data-8b-section="automation" aria-labelledby="ax-title">
+  <div class="ax__sheet m-band-4" aria-hidden="true"></div>
+  <div class="ax__inner l-wrap">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="ax-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+        <symbol id="ax-plane" viewBox="0 0 24 24"><path d="M21 3L3 11l7 2 2 7zM10 13L21 3"/></symbol>
+        <symbol id="ax-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></symbol>
+        <symbol id="ax-table" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M10 5v14"/></symbol>
+        <symbol id="ax-card" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 10h18M7 14h4"/></symbol>
+        <symbol id="ax-cal" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol>
+        <symbol id="ax-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0112 0v5l2 2H4zM10 21h4"/></symbol>
+        <symbol id="ax-box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5zM3 8l9 5 9-5M12 13v8"/></symbol>
+        <symbol id="ax-truck" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 19h1M17 19h1"/></symbol>
+        <symbol id="ax-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></symbol>
+        <symbol id="ax-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-5M12 16V8M16 16v-3"/></symbol>
+        <symbol id="ax-spark" viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></symbol>
+        <symbol id="ax-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+        <symbol id="ax-users" viewBox="0 0 24 24"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21a8 8 0 0116 0"/></symbol>
+        <symbol id="ax-wallet" viewBox="0 0 24 24"><path d="M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2zM3 7l12-4v4M17 14h2"/></symbol>
+        <symbol id="ax-db" viewBox="0 0 24 24"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+        <symbol id="ax-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      </defs>
+    </svg>
+    <div class="ax__head">
+      <p class="ax__kicker m-text-6">Automatización</p>
+      <h2 class="m-text-3" id="ax-title" data-8b-motion="captionIn">Lo repetitivo se hace solo. Tu equipo se dedica a lo importante.</h2>
+      <p class="m-text-4">Conectamos tu sistema con WhatsApp, el correo, los pagos y las herramientas que ya usas, para que cada tarea se dispare sola: sin copiar y pegar, sin planillas y sin depender de que alguien se acuerde.</p>
+    </div>
+
+    <div class="ax__grid ax__grid--top">
+      <article class="axc axc--events">
+        <h3 class="axc__title">Todo parte de un evento: un mensaje, un pago, una reserva.</h3>
+        <div class="axc__visual axv-grid" aria-hidden="true">
+          <div class="axv-grid__in">
+            <i style="--d:0"><svg><use href="#ax-chat"/></svg></i><i style="--d:3"><svg><use href="#ax-mail"/></svg></i><i style="--d:6"><svg><use href="#ax-card"/></svg></i><i style="--d:1"><svg><use href="#ax-cal"/></svg></i><i style="--d:4"><svg><use href="#ax-receipt"/></svg></i>
+            <i style="--d:7"><svg><use href="#ax-users"/></svg></i><i style="--d:2"><svg><use href="#ax-table"/></svg></i><i class="is-core"><svg><use href="#ax-bolt"/></svg></i><i style="--d:5"><svg><use href="#ax-db"/></svg></i><i style="--d:8"><svg><use href="#ax-wallet"/></svg></i>
+            <i style="--d:2"><svg><use href="#ax-box"/></svg></i><i style="--d:5"><svg><use href="#ax-truck"/></svg></i><i style="--d:0"><svg><use href="#ax-bell"/></svg></i><i style="--d:7"><svg><use href="#ax-chart"/></svg></i><i style="--d:3"><svg><use href="#ax-plane"/></svg></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="axc axc--flow">
+        <h3 class="axc__title">Así trabaja una automatización, paso a paso.</h3>
+        <div class="axv-flow" id="axFlow" aria-label="Ejemplo: pedido por WhatsApp">
+          <div class="axv-flow__top"><span class="axv-flow__tag">Pedido por WhatsApp</span><span class="axv-flow__time">3 segundos</span></div>
+          <ol class="axv-flow__list">
+            <li><i><svg><use href="#ax-chat"/></svg></i><span>Llega un pedido por WhatsApp</span><em>Recibido</em></li>
+            <li><i><svg><use href="#ax-spark"/></svg></i><span>La IA entiende producto y cantidad</span><em>Entendido</em></li>
+            <li><i><svg><use href="#ax-receipt"/></svg></i><span>El sistema crea la venta</span><em>Creada</em></li>
+            <li><i><svg><use href="#ax-box"/></svg></i><span>Descuenta stock y reserva el despacho</span><em>Actualizado</em></li>
+            <li><i><svg><use href="#ax-bell"/></svg></i><span>Avisa al cliente y a tu equipo</span><em>Enviado</em></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="axc axc--orbit">
+        <div class="axc__visual axv-orbit" aria-hidden="true">
+          <svg class="ax-anim" viewBox="0 0 300 180" fill="none">
+            <ellipse cx="150" cy="92" rx="124" ry="52" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-dasharray="3 6"/>
+            <image href="mark-autix.png" x="124" y="60" width="52" height="64"/>
+            <g class="axo" fill="#0b1c25"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#e6f8fc"/><use href="#ax-chat" x="-10" y="-10" width="20" height="20" stroke="#0e7a96" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="0s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+            <g class="axo"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#efe9ff"/><use href="#ax-plane" x="-10" y="-10" width="20" height="20" stroke="#4b2fd0" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="-4.3s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+            <g class="axo"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#fff1e8"/><use href="#ax-mail" x="-10" y="-10" width="20" height="20" stroke="#d9531a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="-8.6s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+            <g class="axo"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#e6f8fc"/><use href="#ax-table" x="-10" y="-10" width="20" height="20" stroke="#0e7a96" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="-13s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+            <g class="axo"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#efe9ff"/><use href="#ax-card" x="-10" y="-10" width="20" height="20" stroke="#4b2fd0" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="-17.3s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+            <g class="axo"><rect x="-17" y="-17" width="34" height="34" rx="10" fill="#fff1e8"/><use href="#ax-cal" x="-10" y="-10" width="20" height="20" stroke="#d9531a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><animateMotion dur="26s" begin="-21.6s" repeatCount="indefinite" path="M26,92 a124,52 0 1,0 248,0 a124,52 0 1,0 -248,0"/></g>
+          </svg>
+        </div>
+        <h3 class="axc__title axc__title--b">Conectado con lo que ya usas: WhatsApp, Telegram, correo, planillas, pagos y agenda.</h3>
+      </article>
+    </div>
+
+    <div class="ax__grid ax__grid--bottom">
+      <article class="axc axc--rules">
+        <h3 class="axc__title">Reglas hechas a tu medida, sin programar.</h3>
+        <div class="axv-rules" aria-label="Ejemplo de regla de automatización">
+          <div class="axv-rules__bar"><span class="axv-rules__dots" aria-hidden="true"><i></i><i></i><i></i></span><span>regla-pedidos</span><span class="axv-rules__tag">Lenguaje simple</span></div>
+          <pre class="axv-rules__code" id="axRules"><code></code></pre>
+        </div>
+      </article>
+
+      <article class="axc axc--belt">
+        <div class="axc__visual axv-belt" aria-hidden="true">
+          <svg class="ax-anim" viewBox="0 0 371 258" fill="none" preserveAspectRatio="xMidYMid slice">
+            <path d="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172" stroke="rgba(11,28,37,0.12)" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
+            <g><animateMotion dur="22s" begin="0s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#0b1c25"/><use href="#ax-receipt" x="-14" y="-14" width="28" height="28" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><animateMotion dur="22s" begin="-3.67s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#2fc7e4"/><use href="#ax-card" x="-14" y="-14" width="28" height="28" stroke="#06323d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><animateMotion dur="22s" begin="-7.33s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#8b6cff"/><use href="#ax-box" x="-14" y="-14" width="28" height="28" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><animateMotion dur="22s" begin="-11s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#ff9559"/><use href="#ax-bell" x="-14" y="-14" width="28" height="28" stroke="#3a1704" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><animateMotion dur="22s" begin="-14.67s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#0b1c25"/><use href="#ax-chart" x="-14" y="-14" width="28" height="28" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <g><animateMotion dur="22s" begin="-18.33s" repeatCount="indefinite" rotate="auto" path="M-40 172C20 172 55 112 185.5 112C316 112 351 172 411 172"/><rect x="-26" y="-26" width="52" height="52" rx="15" fill="#2fc7e4"/><use href="#ax-wallet" x="-14" y="-14" width="28" height="28" stroke="#06323d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </svg>
+        </div>
+        <h3 class="axc__title axc__title--b">Facturas, pagos, stock, recordatorios, reportes y cobranza: tareas que ya nadie hace a mano.</h3>
+      </article>
+
+      <article class="axc axc--hours">
+        <h3 class="axc__title">Tiempo que recuperas cada mes.</h3>
+        <div class="axv-hours" id="axHours">
+          <p class="axv-hours__num"><b id="axHn">0</b><span> h</span></p>
+          <p class="axv-hours__sub">ahorradas al mes en tareas repetidas</p>
+          <div class="axv-hours__bars" aria-hidden="true"><i style="--h:34%"></i><i style="--h:48%"></i><i style="--h:41%"></i><i style="--h:63%"></i><i style="--h:58%"></i><i style="--h:79%"></i><i style="--h:92%"></i></div>
+          <p class="axv-hours__note">Ejemplo ilustrativo. El ahorro real depende de cada negocio.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
 <section class="caso on-dark" id="caso" data-8b-section="case-video" aria-labelledby="caso-title">
   <div class="caso__sheet m-band-3" aria-hidden="true" data-8b-motion="bandRise"></div>
@@ -2012,6 +2205,75 @@
     }, { threshold: 0.25 }).observe(root);
   }
   setTimeout(() => { if (auto && !running && visible) play(); }, 700);
+})();
+</script>
+<script data-8b-part="section-script:automation">
+(function () {
+  var root = document.getElementById('automatizacion');
+  if (!root || !('IntersectionObserver' in window)) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var svgs = [].slice.call(root.querySelectorAll('svg.ax-anim'));
+  var live = false, ft = 0, tt = 0, counted = false;
+
+  /* flujo paso a paso */
+  var flow = document.getElementById('axFlow'), items = [].slice.call(flow.querySelectorAll('li')), fi = 0;
+  function paint() { items.forEach(function (el, i) { el.classList.toggle('is-on', i < fi); }); flow.querySelector('ol').style.setProperty('--p', fi ? (fi - 0.5) / items.length : 0); }
+  function flowTick() {
+    if (!live) return;
+    paint();
+    ft = setTimeout(function () { fi = fi >= items.length ? 0 : fi + 1; flowTick(); }, fi >= items.length ? 2600 : 1000);
+  }
+
+  /* regla que se escribe sola */
+  var RULE = [
+    [['k', 'cuando '], ['', 'llega un pedido por '], ['v', 'WhatsApp']],
+    [['k', '  entonces '], ['', 'crear la venta en el sistema']],
+    [['k', '  y '], ['', 'descontar el stock']],
+    [['k', '  y '], ['', 'avisar al cliente por '], ['v', 'WhatsApp']],
+    [['k', 'si '], ['', 'el stock queda bajo el mínimo']],
+    [['k', '  entonces '], ['', 'sugerir compra al proveedor']]
+  ];
+  var code = document.querySelector('#axRules code'), total = RULE.reduce(function (a, l) { return a + l.reduce(function (b, s) { return b + s[1].length; }, 0) + 1; }, 0), pos = 0;
+  var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+  function drawRule(n) {
+    var left = n, html = '';
+    for (var i = 0; i < RULE.length && left > 0; i++) {
+      for (var j = 0; j < RULE[i].length && left > 0; j++) {
+        var t = RULE[i][j][1].slice(0, left); left -= t.length;
+        html += RULE[i][j][0] ? '<span class="' + RULE[i][j][0] + '">' + esc(t) + '</span>' : esc(t);
+      }
+      if (left > 0 && i < RULE.length - 1) { html += '\n'; left -= 1; }
+    }
+    code.innerHTML = html + '<span class="c"></span>';
+  }
+  function typeTick() {
+    if (!live) return;
+    drawRule(pos);
+    if (pos >= total) { tt = setTimeout(function () { pos = 0; typeTick(); }, 3600); return; }
+    pos++; tt = setTimeout(typeTick, 34);
+  }
+
+  /* horas recuperadas */
+  var hn = document.getElementById('axHn'), hours = document.getElementById('axHours');
+  function countUp() {
+    if (counted) return; counted = true; hours.classList.add('is-in');
+    var t0 = performance.now();
+    (function f(now) { var k = Math.min(1, (now - t0) / 1500); hn.textContent = Math.round(38 * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(f); })(t0);
+  }
+
+  function setLive(on) {
+    if (on === live) return;
+    live = on; root.classList.toggle('is-live', on);
+    svgs.forEach(function (s) { try { (on && !reduce) ? s.unpauseAnimations() : s.pauseAnimations(); } catch (e) {} });
+    if (on) { countUp(); if (!reduce) { flowTick(); typeTick(); } }
+    else { clearTimeout(ft); clearTimeout(tt); }
+  }
+
+  if (reduce) { fi = items.length; paint(); drawRule(total); hn.textContent = '38'; hours.classList.add('is-in'); counted = true; svgs.forEach(function (s) { try { s.pauseAnimations(); } catch (e) {} }); return; }
+  paint(); drawRule(0);
+  svgs.forEach(function (s) { try { s.pauseAnimations(); } catch (e) {} });
+  new IntersectionObserver(function (es) { es.forEach(function (e) { setLive(e.isIntersecting); }); }, { threshold: 0.25 }).observe(root.querySelector('.ax__grid--top'));
+  new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !live) setLive(true); }); }, { threshold: 0.05 }).observe(root.querySelector('.ax__grid--bottom'));
 })();
 </script>
 <script data-8b-part="section-script:folders">
