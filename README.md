@@ -7,7 +7,7 @@ Landing page de **Autix**: sistemas a medida para cualquier negocio (ventas, age
 ```
 index.html      → la página completa (HTML + CSS + JS inline)
 logo-autix.png (logo de Autix, barra y pie), logo-velos.png (velOS, dentro del sistema del hero), favicon.png, og.jpg → marca
-hero-planta.webp, planta-1..5.webp → foto del hero y recortes (derivados de hero-planta.webp)
+mark-autix.png → isotipo del cierre (sección #start); el plano de módulos está hecho en CSS y SVG, sin fotos
 rubro-*.svg → imágenes de ejemplo de cada rubro (mascotas, heladería, jurídico, clínica, distribución): reemplazar por fotos reales y cambiar el `src` en index.html
 casos/flujo-1..5 (.mp4, .webm, .jpg) → recorrido en video de un sistema real de pedidos y ventas (sección #caso). Si no existen, se muestra un aviso
 LICENSE-8b-template → licencia MIT del diseño base

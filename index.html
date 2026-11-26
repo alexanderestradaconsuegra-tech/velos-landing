@@ -311,7 +311,7 @@
 <style data-8b-part="scene-style:listen">
 @layer scenes {
   @media (prefers-reduced-motion: no-preference) {
-    #listen.is-staged .listen__hold { height: 250vh; }
+    #listen.is-staged .listen__hold { height: 175vh; }
     #listen.is-staged .listen__stage { position: sticky; top: 0; display: flex; flex-direction: column; justify-content: center; height: 100vh; padding-block: 5.5rem 2rem; }
   }
 }
@@ -324,7 +324,7 @@
   #calls .calls__head-copy { display: grid; gap: 1.75rem; justify-items: start; background: var(--color-6); }
   #calls .calls__lead { color: var(--color-7); }
   #calls .calls__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 4rem; margin-top: clamp(3rem, 6vw, 5rem); }
-  #calls .calls__item { display: flex; flex-direction: column; justify-content: center; gap: 0.625rem; min-height: 44vh; padding-left: 1.5rem; border-left: 0.125rem solid color-mix(in srgb, var(--color-2) 18%, transparent); }
+  #calls .calls__item { display: flex; flex-direction: column; justify-content: center; gap: 0.625rem; min-height: 32vh; padding-left: 1.5rem; border-left: 0.125rem solid color-mix(in srgb, var(--color-2) 18%, transparent); }
   #calls .calls__item .m-text-8 { max-width: 28rem; }
   #calls .calls__aside { position: relative; pointer-events: none; }
   #calls .calls__sticky { position: sticky; top: calc(50vh - 17.5rem); display: flex; justify-content: center; }
@@ -363,7 +363,7 @@
     #calls .phone__log { gap: 0.3em; }
     #calls .phone__note { display: none; }
     #calls .calls__list { padding-bottom: calc(32.25 * 0.66rem + 2.5rem); }
-    #calls .calls__item { min-height: 44vh; justify-content: flex-start; padding-top: 1.5rem; }
+    #calls .calls__item { min-height: 30vh; justify-content: flex-start; padding-top: 1.5rem; }
   }
 }
 </style>
@@ -437,10 +437,23 @@
   }
 }
 </style>
+<style data-autix="hover-copy">
+.touch-only { display: none; }
+@media (hover: none) { .hover-only { display: none; } .touch-only { display: inline; } }
+</style>
+<style data-autix="rooms-mobile">
+/* Móvil: carrusel nativo con snap, sin escena fija ni scroll secuestrado */
+@media (max-width: 47.99rem) {
+  #rooms .rooms__track { display: flex; grid-template-columns: none; gap: 1rem; padding-inline: var(--space-1); padding-bottom: 0.5rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  #rooms .rooms__track::-webkit-scrollbar { display: none; }
+  #rooms .rooms__place, #rooms .rooms__place:last-child { flex: none; width: 82vw; height: min(60vh, 32rem); aspect-ratio: auto; scroll-snap-align: center; }
+  #rooms .rooms__lines { display: none; }
+}
+</style>
 <style data-8b-part="scene-style:rooms">
 @layer scenes {
   @media (prefers-reduced-motion: no-preference) {
-    #rooms.is-track .rooms__hold { height: calc(100vh + var(--rooms-travel, 0px) * 1.5); padding-bottom: 0; }
+    #rooms.is-track .rooms__hold { height: calc(100vh + var(--rooms-travel, 0px) * 1.15); padding-bottom: 0; }
     #rooms.is-track .rooms__stage { position: sticky; top: 0; display: flex; flex-direction: column; justify-content: center; height: 100vh; padding-top: 4.5rem; overflow: hidden; }
     #rooms.is-track .rooms__track { display: flex; width: max-content; max-width: none; margin: 0; gap: clamp(1rem, 2.4vw, 2.25rem); padding-inline: var(--space-1); }
     #rooms.is-track .rooms__place { flex: none; width: clamp(16rem, 34vw, 30rem); height: min(66vh, 40rem); aspect-ratio: auto; }
@@ -548,15 +561,31 @@
   #start > :not(.start__sheet) { position: relative; z-index: 1; }
   #start .start__inner { display: grid; }
   #start .start__window, #start .start__copy { grid-area: 1 / 1; }
-  #start .start__window { position: relative; overflow: hidden; height: min(86vh, 50rem); min-height: 34rem; background: var(--color-8); clip-path: inset(0% 0% 0% 0% round var(--radius-2)); }
-  #start .start__window img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; }
-  #start .start__window::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--color-1) 72%, transparent), color-mix(in srgb, var(--color-1) 20%, transparent) 55%, transparent 75%); }
+  #start .start__window { position: relative; overflow: hidden; height: min(86vh, 50rem); min-height: 34rem; background: radial-gradient(58% 70% at 72% 42%, color-mix(in srgb, var(--color-4) 20%, transparent), transparent 72%), linear-gradient(135deg, var(--color-6), var(--color-1) 78%); clip-path: inset(0% 0% 0% 0% round var(--radius-2)); }
+  #start .start__window::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(color-mix(in srgb, var(--color-4) 9%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--color-4) 9%, transparent) 1px, transparent 1px); background-size: 3rem 3rem; mask-image: radial-gradient(70% 80% at 72% 45%, #000, transparent 85%); }
+  #start .plan { position: absolute; top: 4%; bottom: 4%; right: 3%; width: 56%; }
+  #start .plan__lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  #start .plan__lines line { stroke: color-mix(in srgb, var(--color-4) 55%, transparent); stroke-width: 1.5; stroke-dasharray: 5 7; vector-effect: non-scaling-stroke; }
+  #start .plan__ring { position: absolute; left: 50%; top: 50%; border: 1px solid color-mix(in srgb, var(--color-4) 22%, transparent); border-radius: 50%; translate: -50% -50%; }
+  #start .plan__ring--a { width: 46%; aspect-ratio: 1; }
+  #start .plan__ring--b { width: 82%; aspect-ratio: 1; border-style: dashed; }
+  #start .plan__core { position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: clamp(4.5rem, 8vw, 6.5rem); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; background: var(--color-1); box-shadow: 0 0 0 0.5rem color-mix(in srgb, var(--color-4) 16%, transparent), 0 0 0 1px color-mix(in srgb, var(--color-4) 60%, transparent); }
+  #start .plan__core img { width: 62%; height: auto; }
+  #start .plan__node { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); translate: -50% -50%; padding: 0.6rem 1rem; border-radius: var(--radius-3); background: color-mix(in srgb, var(--color-1) 78%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-4) 38%, transparent), 0 14px 30px -18px rgba(0, 0, 0, 0.7); color: var(--color-2); font-size: 0.9375rem; font-weight: 600; line-height: 1; white-space: nowrap; backdrop-filter: blur(6px); }
+  #start .plan__node::before { content: ""; display: inline-block; width: 0.5rem; height: 0.5rem; margin-right: 0.55rem; border-radius: 50%; background: var(--color-4); }
+  @media (prefers-reduced-motion: no-preference) {
+    #start .plan__lines line { animation: plan-flow 3.2s linear infinite; }
+    @keyframes plan-flow { to { stroke-dashoffset: -24; } }
+  }
   #start .start__copy { position: relative; z-index: 2; align-self: end; display: grid; gap: 1.5rem; justify-items: start; max-width: 34rem; padding: clamp(1.75rem, 4.5vw, 4rem); }
   #start .start__copy .m-text-4 { max-width: 26rem; }
   #start .start__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
   @media (max-width: 47.99rem) {
-    #start .start__window { height: min(88vh, 42rem); }
-    #start .start__window img { object-position: 68% 30%; }
+    #start .start__window { height: min(92vh, 46rem); }
+    #start .plan { top: 3%; bottom: auto; left: 8%; right: 8%; width: auto; height: 44%; }
+    #start .plan__node { padding: 0.5rem 0.75rem; font-size: 0.8125rem; }
+    #start .plan__node::before { margin-right: 0.4rem; }
+    #start .plan__ring--b { width: 70%; }
     #start .start__window::after { background: linear-gradient(0deg, color-mix(in srgb, var(--color-1) 85%, transparent), color-mix(in srgb, var(--color-1) 30%, transparent) 60%, transparent); }
   }
 }
@@ -639,7 +668,6 @@
   #contact .contact__tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   #contact .contact__tags li { padding: 0.5rem 1rem; border-radius: var(--radius-3); background: var(--color-3); }
   #contact .contact__form .m-text-8 { max-width: 28rem; }
-  #start .start__window img { object-position: 78% 55%; }
   #calls .phone__bar span:nth-child(n+2) { color: var(--color-5); }
   #nav .nav__word { font-size: 1.625rem; letter-spacing: -0.04em; }
   #nav .nav__brand { padding-block: 0.25rem; }
@@ -1128,7 +1156,7 @@
     <ul class="nav__links m-text-6">
       <li><a class="m-link-2" href="#listen">A medida</a></li><li><a class="m-link-2" href="#rooms">Tu negocio</a></li><li><a class="m-link-2" href="#modulos">Módulos</a></li><li><a class="m-link-2" href="#voices">Sistemas</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li>
     </ul>
-    <a class="m-btn-3 nav__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+    <a class="m-btn-3 nav__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20un%20sistema%20a%20medida%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
     <button class="m-icon-btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
   </nav>
   <div class="menu" id="menu" data-lenis-prevent hidden role="dialog" aria-modal="true" aria-label="Menú">
@@ -1136,7 +1164,7 @@
     <ul class="menu__links m-text-5">
       <li><a class="m-link-2" href="#listen">A medida</a></li><li><a class="m-link-2" href="#rooms">Tu negocio</a></li><li><a class="m-link-2" href="#modulos">Módulos</a></li><li><a class="m-link-2" href="#voices">Sistemas</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li>
     </ul>
-    <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+    <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20un%20sistema%20a%20medida%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
   </div>
 </header>
 
@@ -1194,7 +1222,7 @@
           <li><svg viewBox="0 0 16 16" aria-hidden="true"><path class="hero__tick" d="M3 8.5l3 3 7-7"/></svg>Tus datos, bajo tu control</li>
         </ul>
         <div class="hero__actions">
-          <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+          <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20vi%20el%20sistema%20de%20ejemplo%20y%20quiero%20uno%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
           <a class="m-link m-text-6" href="#listen">Qué es un sistema a medida</a>
         </div>
       </div>
@@ -1231,7 +1259,7 @@
       <h2 class="m-text-3" id="calls-title" data-8b-motion="captionIn">Así se vive un sistema a medida.</h2>
       <div class="calls__head-copy">
         <p class="m-text-4 calls__lead">Cada negocio tiene su propio panel. Este es un ejemplo de cómo se ve el día a día: ventas, agenda, stock y cobros conectados, sin planillas ni llamadas para saber cómo vas.</p>
-        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20vi%20c%C3%B3mo%20funciona%20el%20d%C3%ADa%20a%20d%C3%ADa%20de%20un%20sistema%20y%20quiero%20algo%20as%C3%AD%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
       </div>
     </div>
     <div class="calls__grid">
@@ -1477,7 +1505,7 @@
     </div>
     <div class="caso__cta">
       <p class="m-text-4">¿Tu negocio tiene una operación parecida? Cuéntanos cómo trabajas hoy y te decimos qué se puede conectar.</p>
-      <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener"><span class="m-btn__label">Quiero algo así para mi negocio</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+      <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20vi%20el%20recorrido%20de%20un%20sistema%20real%20y%20quiero%20algo%20parecido%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Quiero algo así para mi negocio</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
     </div>
   </div>
 </section>
@@ -1518,7 +1546,7 @@
   <div class="sist__inner l-wrap">
     <div class="sist__head">
       <h2 class="m-text-2" id="voices-title" data-8b-motion="captionIn">Sistemas reales. Ábrelos y míralos funcionar.</h2>
-      <p class="m-text-4">Estos sistemas hechos por Autix ya están en uso. Pasa el mouse por cada carpeta, ábrelos y comprueba cómo se siente algo construido a la medida de un negocio.</p>
+      <p class="m-text-4">Estos sistemas hechos por Autix ya están en uso. <span class="hover-only">Pasa el mouse por cada carpeta, ábrelos</span><span class="touch-only">Toca cada carpeta, ábrelos</span> y comprueba cómo se siente algo construido a la medida de un negocio.</p>
     </div>
     <ul class="sist__grid">
       <li class="sist__item">
@@ -1679,7 +1707,7 @@
     <div class="faqc">
       <div class="faqc__tabs" role="tablist" aria-label="Categorías de preguntas"><span class="faqc__pill" aria-hidden="true"></span><button class="faqc__tab" type="button" role="tab" id="faqc-t0" aria-controls="faqc-p0" aria-selected="true">General</button><button class="faqc__tab" type="button" role="tab" id="faqc-t1" aria-controls="faqc-p1" aria-selected="false">El proyecto</button><button class="faqc__tab" type="button" role="tab" id="faqc-t2" aria-controls="faqc-p2" aria-selected="false">Datos y ley</button></div>
       <div class="faqc__panels"><div class="faqc__panel is-active" role="tabpanel" id="faqc-p0" aria-labelledby="faqc-t0"><div class="faqc__item is-open"><button class="faqc__q" type="button" aria-expanded="true" aria-controls="faqc-a0-0" id="faqc-q0-0"><span>¿Qué es un sistema a medida y en qué se diferencia de un software normal?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-0" role="region" aria-labelledby="faqc-q0-0"><div><p class="m-text">Un software normal te da funciones fijas y eres tú quien adapta su forma de trabajar. Un sistema a medida se construye después de entender cómo opera tu negocio: tus procesos, tu vocabulario y tus reglas.</p><p class="m-text">Incluye solo los módulos que usas, se conecta con cómo trabaja tu equipo hoy y evoluciona cuando tu negocio cambia.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a0-1" id="faqc-q0-1"><span>¿Sirve para mi tipo de negocio?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-1" role="region" aria-labelledby="faqc-q0-1"><div><p class="m-text">Sí. No partimos de un molde por rubro, partimos de cómo funciona tu negocio. Podemos construir sistemas para una tienda de mascotas, una heladería, un estudio jurídico, una clínica, un restaurante, una distribuidora o cualquier negocio que hoy lleve sus procesos en planillas, cuadernos o varios programas que no se hablan.</p><p class="m-text">Si tu rubro no está en esa lista, también.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a0-2" id="faqc-q0-2"><span>¿Qué puede incluir mi sistema?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-2" role="region" aria-labelledby="faqc-q0-2"><div><p class="m-text">Lo que tu operación necesite. Algunos de los bloques con los que trabajamos:</p><ul class="m-text"><li><strong>Ventas y caja:</strong> punto de venta, pedidos y boletas</li><li><strong>Agenda y reservas:</strong> citas, profesionales y recordatorios</li><li><strong>Inventario:</strong> stock en tiempo real con alertas</li><li><strong>Clientes:</strong> ficha, historial y crédito asignado</li><li><strong>Cobros y pagos:</strong> deudas, abonos y vencimientos</li><li><strong>Logística y producción:</strong> rutas, entregas, lotes y costos</li><li><strong>Reportes:</strong> cierre del día y estado del mes, sin planillas</li></ul></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a0-3" id="faqc-q0-3"><span>¿Solo hacen sistemas o también webs?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-3" role="region" aria-labelledby="faqc-q0-3"><div><p class="m-text">Hacemos sistemas completos, webs inteligentes conectadas a tu sistema (reservas, catálogo o pagos online) y automatizaciones. Eliges qué necesitas: no es un paquete cerrado.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a0-4" id="faqc-q0-4"><span>¿Tengo que usar agentes de IA?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-4" role="region" aria-labelledby="faqc-q0-4"><div><p class="m-text">No. Los asistentes de IA son un módulo opcional. Algunos negocios prefieren un sistema simple; otros suman un asistente que atiende clientes por WhatsApp o que opera el sistema desde Telegram. Lo decidimos según lo que tu negocio necesite, no al revés.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a0-5" id="faqc-q0-5"><span>¿Qué sistemas de Autix ya están funcionando?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a0-5" role="region" aria-labelledby="faqc-q0-5"><div><p class="m-text">Son sistemas hechos por Autix que ya están en uso: <strong>velOS</strong> (producción, inventario, ventas, reparto y cobranza), <strong>Merka POS</strong> (punto de venta), <strong>AgendaOS</strong> (reservas y servicios), <strong>Holu</strong> (restaurantes), <strong>Métrikas</strong> (academias de fútbol) y <strong>Goat League</strong> (torneos con portal público).</p><p class="m-text">Puedes abrirlos y ver cómo se ven por dentro. El tuyo se construye según cómo trabaja tu negocio.</p></div></div></div></div><div class="faqc__panel" role="tabpanel" id="faqc-p1" aria-labelledby="faqc-t1"><div class="faqc__item is-open"><button class="faqc__q" type="button" aria-expanded="true" aria-controls="faqc-a1-0" id="faqc-q1-0"><span>¿Cuánto tiempo toma implementar mi sistema?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a1-0" role="region" aria-labelledby="faqc-q1-0"><div><p class="m-text">Depende de la complejidad y cantidad de módulos que tu operación necesite. El proceso comienza con un levantamiento de cómo trabaja tu empresa hoy, seguido del diseño y desarrollo de los módulos específicos, y termina con la puesta en marcha junto a tu equipo, y, si los quieres, la configuración de asistentes de IA. Cada implementación tiene un alcance distinto porque cada empresa es distinta — te damos un plazo concreto después de conocer tu operación.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a1-1" id="faqc-q1-1"><span>¿Necesito cambiar cómo trabaja mi equipo para usar el sistema?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a1-1" role="region" aria-labelledby="faqc-q1-1"><div><p class="m-text">No. La idea de construirlo a medida es exactamente lo contrario: el sistema se adapta a tus procesos actuales, no al revés. Si hoy tu conductor recibe la ruta por WhatsApp, seguirá siendo así, solo que ahora la información sale directamente del sistema. Si tu vendedor usa un lenguaje particular para describir un pedido, el sistema lo habla igual, porque se configura con ese lenguaje.</p> <p class="m-text">Cada usuario ve solo lo que le corresponde según su rol — administración, ventas, conducción o producción — así que la curva de aprendizaje es mínima para cada persona.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a1-2" id="faqc-q1-2"><span>¿Qué pasa después de que el sistema esté funcionando? ¿Hay soporte?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a1-2" role="region" aria-labelledby="faqc-q1-2"><div><p class="m-text">Sí. Autix acompaña el sistema después de la puesta en marcha: soporte ante cualquier falla o duda, y evolución continua a medida que tu empresa crece o cambian sus necesidades. Si mañana agregas una nueva línea de producción, un nuevo canal de venta o necesitas un reporte que hoy no existe, el sistema se ajusta — porque fue construido pensando en que tu negocio no se queda quieto.</p></div></div></div></div><div class="faqc__panel" role="tabpanel" id="faqc-p2" aria-labelledby="faqc-t2"><div class="faqc__item is-open"><button class="faqc__q" type="button" aria-expanded="true" aria-controls="faqc-a2-0" id="faqc-q2-0"><span>¿Dónde vive la información? ¿Es seguro tener todo mi negocio en un solo sistema?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a2-0" role="region" aria-labelledby="faqc-q2-0"><div><p class="m-text">Tu información se almacena en infraestructura en la nube con cifrado en tránsito y en reposo, respaldo y control de acceso por rol — cada usuario solo ve lo que su función necesita. El acceso al sistema queda restringido a las personas que tú autorices.</p></div></div></div><div class="faqc__item"><button class="faqc__q" type="button" aria-expanded="false" aria-controls="faqc-a2-1" id="faqc-q2-1"><span>¿Cumple con la Ley 21.719 de protección de datos personales?</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqc__a" id="faqc-a2-1" role="region" aria-labelledby="faqc-q2-1"><div><p class="m-text">Cada sistema se diseña considerando las obligaciones de la Ley 21.719, que <strong>entra en vigencia el 1 de diciembre de 2026</strong> y crea la Agencia de Protección de Datos Personales (APDP). Esto incluye consentimiento y base de licitud para cada tratamiento, capacidad de responder los derechos ARCOP del titular (acceso, rectificación, cancelación, oposición y portabilidad), minimización de datos, medidas de seguridad y registro de actividades de tratamiento.</p> <p class="m-text">Autix acompaña a cada cliente en la adecuación de su operación antes de esa fecha. De todos modos, el cumplimiento normativo también depende de cómo tu empresa opera: recomendamos validarlo con un abogado especialista.</p></div></div></div></div></div>
-      <a class="faqc__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20tengo%20una%20pregunta%20sobre%20velOS" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      <a class="faqc__cta" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20tengo%20una%20pregunta%20sobre%20sistemas%20a%20medida" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -1688,14 +1716,27 @@
   <div class="start__sheet m-band-4" aria-hidden="true"></div>
   <div class="start__inner l-wrap">
     <div class="start__window">
-      <img sizes="(max-width: 767px) 269vw, 92vw" src="hero-planta.webp" width="1672" height="941" alt="Notebook con el panel de un sistema Autix" loading="lazy" decoding="async" style="object-position:78% 55%">
+      <div class="plan" aria-hidden="true">
+        <svg class="plan__lines" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+          <line x1="50" y1="50" x2="21" y2="17"/><line x1="50" y1="50" x2="79" y2="14"/><line x1="50" y1="50" x2="90" y2="50"/>
+          <line x1="50" y1="50" x2="76" y2="85"/><line x1="50" y1="50" x2="23" y2="82"/><line x1="50" y1="50" x2="10" y2="50"/>
+        </svg>
+        <span class="plan__ring plan__ring--a"></span><span class="plan__ring plan__ring--b"></span>
+        <span class="plan__core"><img src="mark-autix.png" width="600" height="418" alt="" loading="lazy" decoding="async"></span>
+        <span class="plan__node" style="--x:21;--y:17">Ventas y caja</span>
+        <span class="plan__node" style="--x:79;--y:14">Agenda y reservas</span>
+        <span class="plan__node" style="--x:90;--y:50">Inventario</span>
+        <span class="plan__node" style="--x:76;--y:85">Cobros y deudas</span>
+        <span class="plan__node" style="--x:23;--y:82">Clientes y fichas</span>
+        <span class="plan__node" style="--x:10;--y:50">Reportes</span>
+      </div>
     </div>
     <div class="start__copy">
       <h2 class="m-text-3" id="start-title">Cuéntanos cómo trabaja tu negocio.</h2>
       <p class="m-text-4">Te mostramos cómo se vería tu sistema a medida. Sin plantillas genéricas, sin módulos que no usas. Solo lo que tu operación necesita.</p>
       <div class="start__actions">
-        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
-        <a class="m-link m-text-6" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20velOS%20para%20mi%20empresa" target="_blank" rel="noopener">Conversemos por WhatsApp</a>
+        <a class="m-btn" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20un%20sistema%20a%20medida%20para%20mi%20negocio" target="_blank" rel="noopener"><span class="m-btn__label">Agenda una demo</span><span class="m-btn__wave" aria-hidden="true"><i></i><i></i><i></i></span></a>
+        <a class="m-link m-text-6" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20conversar%20sobre%20un%20sistema%20a%20medida%20para%20mi%20empresa" target="_blank" rel="noopener">Conversemos por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1713,7 +1754,7 @@
       <div class="footer__cols m-text-6">
         <div class="footer__col"><h2 class="m-text-6">Autix</h2><ul><li><a class="m-link-2" href="#listen">Sistemas a medida</a></li><li><a class="m-link-2" href="#rooms">Para tu negocio</a></li><li><a class="m-link-2" href="#setup">Proceso</a></li><li><a class="m-link-2" href="#faq">Preguntas</a></li></ul></div>
         <div class="footer__col"><h2 class="m-text-6">Sistemas</h2><ul><li><a class="m-link-2" href="https://velos.autix.pro/" target="_blank" rel="noopener">velOS</a></li><li><a class="m-link-2" href="https://merkapos.pro/" target="_blank" rel="noopener">Merka POS</a></li><li><a class="m-link-2" href="https://agendaos.pro/" target="_blank" rel="noopener">AgendaOS</a></li><li><a class="m-link-2" href="#voices">Ver todos</a></li></ul></div>
-        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20velOS" target="_blank" rel="noopener">Agenda una demo</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener">Cuéntanos tu caso</a></li></ul></div>
+        <div class="footer__col"><h2 class="m-text-6">Contacto</h2><ul><li><a class="m-link-2" href="https://wa.me/56992103974" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="m-link-2" href="https://autix.pro/">autix.pro</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20una%20demo%20de%20un%20sistema%20a%20medida%20para%20mi%20negocio" target="_blank" rel="noopener">Agenda una demo</a></li><li><a class="m-link-2" href="https://wa.me/56992103974?text=Hola%20Autix%2C%20quiero%20contarles%20mi%20caso" target="_blank" rel="noopener">Cuéntanos tu caso</a></li></ul></div>
       </div>
     </div>
     <div class="footer__legal m-text-7">
@@ -2341,7 +2382,7 @@ function refreshScroll() {
 }
 gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
   const bar = document.querySelector('#nav .nav__bar');
-  const lenis = window.lenis = new Lenis({ lerp: 0.085, anchors: { offset: -(bar ? Math.ceil(bar.getBoundingClientRect().bottom) : 0) } });
+  const lenis = window.lenis = new Lenis({ lerp: 0.12, anchors: { offset: -(bar ? Math.ceil(bar.getBoundingClientRect().bottom) : 0) } });
   const tick = time => lenis.raf(time * 1000);
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(tick);
@@ -2544,7 +2585,7 @@ queueMotion(() => {
     const cyan = tokens.getPropertyValue('--color-4').trim();
     const step = 0.3, count = { n: 0 };
     countEl.textContent = '0';
-    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'tune', trigger: root, start: 'top 30%', end: 'top -45%', scrub: true, invalidateOnRefresh: true } });
+    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'tune', trigger: root, start: 'top 30%', end: 'top -22%', scrub: true, invalidateOnRefresh: true } });
     mods.forEach((mod, i) => {
       const at = i * step;
       tl.fromTo(mod, { backgroundColor: 'rgba(244,250,252,0.07)', color: 'rgba(244,250,252,0.4)' }, { backgroundColor: cyan, color: ink, duration: 0.25 }, at)
@@ -2564,7 +2605,7 @@ queueMotion(() => {
   const track = root.querySelector('.rooms__track');
   const places = [...track.querySelectorAll('.rooms__place')];
   const lines = root.querySelectorAll('.rooms__line');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)' }, context => {
     const { wide } = context.conditions;
     root.classList.add('is-track');
     const travel = () => Math.max(0, track.scrollWidth - innerWidth);
@@ -2609,7 +2650,7 @@ queueMotion(() => {
 queueMotion(() => {
   const root = document.getElementById('start');
   const frame = root.querySelector('.start__window');
-  const image = frame.querySelector('img');
+  const image = frame.querySelector('.plan');
   const heading = root.querySelector('.start__copy h2');
   gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
     const { wide } = context.conditions;
